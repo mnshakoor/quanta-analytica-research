@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://research.quanta-analytica.com/sitemap.xml
+
+# Block the reader overlay from being indexed as a separate URL
+Disallow: /*?q=

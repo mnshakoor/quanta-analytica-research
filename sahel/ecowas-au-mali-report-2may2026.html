@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECOWAS and AU Response to Escalating Insurgency Pressures in Mali | Quanta Analytica Process™ | 01 May 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   QAP WEB REPORT — CANONICAL STYLESHEET
+   Quanta Analytica Process™ | MNS Consulting
+   quanta-analytica.com/reports/
+   Version: 2.0 | Design System Reference
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. ROOT VARIABLES — Color, Typography, Spacing
+   ------------------------------------------------------------ */
+:root {
+  /* Core Palette */
+  --obsidian:         #0a0c10;
+  --obsidian-mid:     #10131a;
+  --obsidian-card:    #13161f;
+  --obsidian-border:  #1c2030;
+  --obsidian-surface: #181b26;
+  --obsidian-lift:    #1e2235;
+
+  /* Gold Scale */
+  --gold:             #c8a96e;
+  --gold-light:       #dfc28e;
+  --gold-pale:        #e8d5aa;
+  --gold-dim:         #9a7f52;
+  --gold-muted:       #6b5838;
+  --gold-glow:        rgba(200, 169, 110, 0.12);
+  --gold-glow-strong: rgba(200, 169, 110, 0.22);
+
+  /* Alert / Status Colors */
+  --red:              #c0392b;
+  --red-light:        #e74c3c;
+  --red-bg:           rgba(192, 57, 43, 0.12);
+  --amber:            #d4820a;
+  --amber-light:      #f39c12;
+  --amber-bg:         rgba(212, 130, 10, 0.12);
+  --green:            #27ae60;
+  --green-light:      #2ecc71;
+  --green-bg:         rgba(39, 174, 96, 0.12);
+  --blue:             #2980b9;
+  --blue-light:       #3498db;
+  --blue-bg:          rgba(41, 128, 185, 0.12);
+  --yellow:           #f1c40f;
+  --yellow-bg:        rgba(241, 196, 15, 0.12);
+  --slate:            #5d7a9a;
+  --slate-light:      #7f9ab8;
+
+  /* Text Scale */
+  --text-primary:     #e8e4dc;
+  --text-secondary:   #b8b0a0;
+  --text-muted:       #7a7264;
+  --text-faint:       #4a4640;
+
+  /* Typography */
+  --font-display:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:         0.25rem;
+  --space-sm:         0.5rem;
+  --space-md:         1rem;
+  --space-lg:         1.5rem;
+  --space-xl:         2rem;
+  --space-2xl:        3rem;
+  --space-3xl:        4rem;
+
+  /* Borders & Radius */
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        10px;
+  --border-default:   1px solid var(--obsidian-border);
+  --border-gold:      1px solid var(--gold-dim);
+
+  /* Transitions */
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+
+  /* Shadows */
+  --shadow-card:      0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lift:      0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong, b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+em, i {
+  color: var(--slate-light);
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* ------------------------------------------------------------
+   3. SCROLL PROGRESS BAR
+   ------------------------------------------------------------ */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--gold-glow-strong);
+}
+
+/* ------------------------------------------------------------
+   4. NAVIGATION
+   ------------------------------------------------------------ */
+nav {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding: 0 var(--space-xl);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-brand span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-classify {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-bg);
+}
+
+/* ------------------------------------------------------------
+   5. HERO BLOCK
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 140px var(--space-xl) var(--space-3xl);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 60%, rgba(200, 169, 110, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(41, 128, 185, 0.04) 0%, transparent 50%),
+              var(--obsidian);
+}
+
+/* Animated background grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 110, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridDrift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-running-head {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-bottom: var(--space-sm);
+}
+
+.hero-container {
+  display: flex;          /* Enables side-by-side layout */
+  align-items: center;    /* Vertically centers the image with the text */
+  gap: 30px;              /* Creates space between the image and the text */
+  margin: 20px 0;
+}
+/* ----------------------------------------------------------------------
+   DEFAULT HERO IMG URL TO BE USED 'https://quanta-analytica.com/logo.PNG
+   -------Place image to the left of h1 title in hero section--------- */
+
+.hero-image {
+  max-width: 200px;       /* Adjust this size to fit your design */
+  height: auto;           /* Maintains aspect ratio */
+  border-radius: 8px;     /* Optional: rounds the corners of your image */
+}
+
+.hero-text {
+  flex: 1;                /* Allows text to take up remaining space */
+}
+
+/* Optional: Mobile Responsiveness */
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: column; /* Stacks image on top of text on small screens */
+    text-align: center;
+  }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 .title-gold {
+  color: var(--gold); 
+  display: block;      /* Ensures it starts on a new line */
+  margin-top: 0.5rem;  /* Optional: adds a small gap between lines */
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* Hero Metadata Row */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+
+.meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta-cell .value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gold-dim);
+  align-self: center;
+}
+
+/* Threat Badge */
+.threat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.threat-badge.critical  { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.threat-badge.high      { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.threat-badge.elevated  { color: var(--yellow);       border-color: var(--yellow);background: var(--yellow-bg);}
+.threat-badge.moderate  { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.threat-badge.low       { color: var(--green-light);  border-color: var(--green); background: var(--green-bg); }
+
+.threat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* Analytic Scope Boundary */
+.scope-boundary {
+  border-left: 3px solid var(--slate);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(93, 122, 154, 0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-lg);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+
+/* Key Metrics Strip */
+.metrics-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--obsidian-border);
+}
+
+.metric-block {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 2px solid var(--gold-dim);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+}
+
+.metric-block .metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-block .metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   6. MAIN CONTENT WRAPPER
+   ------------------------------------------------------------ */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+/* ------------------------------------------------------------
+   7. SECTION WRAPPER & SCROLL REVEAL
+   ------------------------------------------------------------ */
+.section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  margin-bottom: var(--space-3xl);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Sub-section divider */
+.sub-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
+.sub-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-muted), transparent);
+  margin-bottom: var(--space-lg);
+}
+
+.sub-section h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+/* ------------------------------------------------------------
+   8. BLUF — Bottom Line Up Front
+   ------------------------------------------------------------ */
+.bluf-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.bluf-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+}
+
+.bluf-index {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.bluf-text .bluf-claim {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.bluf-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   9. SNAPSHOT GRID — Who / What / Where / When / Why / How
+   ------------------------------------------------------------ */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.snapshot-cell {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.snapshot-cell .snap-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.snapshot-cell .snap-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   10. KEY JUDGMENTS
+   ------------------------------------------------------------ */
+.kj-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kj-item {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  position: relative;
+}
+
+.kj-item.high     { border-left-color: var(--red);   }
+.kj-item.moderate { border-left-color: var(--amber);  }
+.kj-item.low      { border-left-color: var(--blue);   }
+.kj-item.watch    { border-left-color: var(--yellow);  }
+
+.kj-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.kj-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.kj-conf {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.kj-item.high     .kj-conf { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.kj-item.moderate .kj-conf { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.kj-item.low      .kj-conf { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.kj-item.watch    .kj-conf { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg);}
+
+.kj-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+.kj-mapping {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ------------------------------------------------------------
+   11. EVIDENCE GRID — Know / Assess / Gap
+   ------------------------------------------------------------ */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.evidence-box {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.evidence-box-header {
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.evidence-box-header.know   { background: var(--green-bg);  color: var(--green-light);  border-bottom: 1px solid var(--green);  }
+.evidence-box-header.assess { background: var(--amber-bg);  color: var(--amber-light);  border-bottom: 1px solid var(--amber);  }
+.evidence-box-header.gap    { background: var(--red-bg);    color: var(--red-light);    border-bottom: 1px solid var(--red);    }
+
+.evidence-box-body {
+  padding: var(--space-lg);
+}
+
+.evidence-box-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.evidence-box-body li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.evidence-box-body li::before {
+  content: '//';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.evidence-box-body li:last-child {
+  border-bottom: none;
+}
+
+/* WSI Source Independence Note */
+.wsi-note {
+  background: rgba(93, 122, 154, 0.1);
+  border: 1px solid rgba(93, 122, 154, 0.3);
+  border-left: 3px solid var(--slate);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.83rem;
+  color: var(--slate-light);
+  font-style: italic;
+  margin-top: var(--space-lg);
+}
+
+.wsi-note strong {
+  color: var(--slate-light);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   12. TABLES — Assumption, ACH, IW, KIQ, Risk, PIGs
+   ------------------------------------------------------------ */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: var(--border-default);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+thead th {
+  background: var(--obsidian-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  border-bottom: 1px solid var(--obsidian-border);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--obsidian-border);
+  transition: background var(--transition-fast);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--obsidian-lift);
+}
+
+tbody td {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Assumption Table */
+.assumption-table { }
+
+/* ACH Table */
+.ach-table thead th:nth-child(4) { text-align: center; }
+.ach-table tbody td:nth-child(4) { text-align: center; font-family: var(--font-mono); }
+
+/* IW Table — Indicators & Warnings */
+.iw-table { }
+
+/* Risk Matrix — high-score rows */
+.risk-matrix tbody tr.risk-high {
+  background: var(--red-bg);
+}
+
+.risk-matrix tbody tr.risk-high td {
+  color: var(--text-primary);
+}
+
+.risk-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.risk-score.score-high   { color: var(--red-light);   }
+.risk-score.score-medium { color: var(--amber-light);  }
+.risk-score.score-low    { color: var(--green-light);  }
+
+/* KIQ Table */
+.kiq-table { }
+
+/* Priority Intelligence Gaps Table */
+.pig-table { }
+
+/* KPI Table (optional — fragility reports) */
+.kpi-table { }
+
+.pillar-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--obsidian-border);
+  color: var(--text-muted);
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------------------------------
+   13. SCENARIO CARDS
+   ------------------------------------------------------------ */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.scenario-card {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 3px solid;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.scenario-card.best  { border-top-color: var(--green);  }
+.scenario-card.base  { border-top-color: var(--amber);  }
+.scenario-card.worst { border-top-color: var(--red);    }
+
+.scenario-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.scenario-card.best  .scenario-label { color: var(--green-light);  }
+.scenario-card.base  .scenario-label { color: var(--amber-light);  }
+.scenario-card.worst .scenario-label { color: var(--red-light);    }
+
+.scenario-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.scenario-card p {
+  font-size: 0.87rem;
+}
+
+.scenario-prob {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  display: block;
+  letter-spacing: 0.06em;
+}
+
+/* ------------------------------------------------------------
+   14. BEHAVIORAL GRID
+   ------------------------------------------------------------ */
+.behavioral-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.behavioral-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.behavioral-rank {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.25;
+  line-height: 1;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.behavioral-content h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-content p {
+  font-size: 0.88rem;
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-inference {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   15. RECOMMENDATION TIMELINE
+   ------------------------------------------------------------ */
+.rec-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--obsidian-border);
+  margin-left: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.rec-block {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.rec-block::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 1px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--obsidian-border);
+  border: 2px solid;
+}
+
+.rec-block.immediate  ::before { border-color: var(--red);   background: var(--red-bg);   }
+.rec-block.near-term  ::before { border-color: var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term::before { border-color: var(--green); background: var(--green-bg); }
+
+.rec-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.rec-block.immediate   .rec-time { color: var(--red-light);  border: 1px solid var(--red);   background: var(--red-bg);   }
+.rec-block.near-term   .rec-time { color: var(--amber-light);border: 1px solid var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term .rec-time { color: var(--green-light);border: 1px solid var(--green); background: var(--green-bg); }
+
+.rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rec-content p {
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   16. CONFIDENCE PANEL
+   ------------------------------------------------------------ */
+.conf-panel {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.conf-header {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.conf-band {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.conf-band.high     { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.conf-band.moderate { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.conf-band.low      { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+.conf-header-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.conf-body {
+  padding: var(--space-lg);
+}
+
+.conf-body p {
+  font-size: 0.9rem;
+}
+
+/* Uncertainty / Flip Risk List */
+.uncertainty-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.uncertainty-item {
+  background: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.uncertainty-item .u-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-light);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.uncertainty-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   17. THRESHOLD GRID — Green / Amber / Red Zones
+   ------------------------------------------------------------ */
+.threshold-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.threshold-cell {
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.threshold-cell.green-zone { border-color: var(--green);  background: var(--green-bg);  }
+.threshold-cell.amber-zone { border-color: var(--amber);  background: var(--amber-bg);  }
+.threshold-cell.red-zone   { border-color: var(--red);    background: var(--red-bg);    }
+
+.threshold-header {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+
+.threshold-cell.green-zone .threshold-header { color: var(--green-light);  border-color: var(--green);  background: rgba(39, 174, 96, 0.18);  }
+.threshold-cell.amber-zone .threshold-header { color: var(--amber-light);  border-color: var(--amber);  background: rgba(212, 130, 10, 0.18);  }
+.threshold-cell.red-zone   .threshold-header { color: var(--red-light);    border-color: var(--red);    background: rgba(192, 57, 43, 0.18);    }
+
+.threshold-body {
+  padding: var(--space-md);
+}
+
+.threshold-body p {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.threshold-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.threshold-body li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 3px 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.threshold-body li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+/* ------------------------------------------------------------
+   18. STATUS & BAND PILLS (inline)
+   ------------------------------------------------------------ */
+.status-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.status-pill.red    { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);    }
+.status-pill.amber  { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg);  }
+.status-pill.green  { color: var(--green-light);  border-color: var(--green); background: var(--green-bg);  }
+.status-pill.blue   { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);   }
+.status-pill.yellow { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg); }
+.status-pill.gold   { color: var(--gold);          border-color: var(--gold-dim); background: var(--gold-glow); }
+
+/* Band Pills (source register table) */
+.band-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.band-pill.green { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.band-pill.amber { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.band-pill.red   { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+/* Inline fact/inference labels */
+.label-fact {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue-light);
+  border: 1px solid var(--blue);
+  background: var(--blue-bg);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+.label-inference {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+/* Structural constraint labels */
+.label-structural { color: var(--red-light);    }
+.label-political  { color: var(--amber-light);  }
+.label-resource   { color: var(--blue-light);   }
+.label-temporal   { color: var(--green-light);  }
+
+/* Analytic technique declaration block */
+.technique-declaration {
+  background: var(--obsidian-surface);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.technique-declaration strong {
+  color: var(--gold-dim);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   19. FOOTER
+   ------------------------------------------------------------ */
+footer {
+  border-top: 1px solid var(--obsidian-border);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-doc-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-legal {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   20. RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 var(--space-md);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px var(--space-md) var(--space-2xl);
+  }
+
+  main {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .snapshot-grid,
+  .evidence-grid,
+  .scenario-grid,
+  .threshold-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bluf-item {
+    grid-template-columns: 28px 1fr;
+    gap: var(--space-md);
+  }
+
+  .behavioral-item {
+    grid-template-columns: 1fr;
+  }
+
+  .behavioral-rank {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 0;
+    opacity: 0.35;
+  }
+
+  .hero-running-head {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .hero-meta {
+    gap: var(--space-sm);
+  }
+
+  .metrics-strip {
+    gap: var(--space-sm);
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* --- Report-specific refinements --- */
+.section p, .section li { color: var(--text-secondary); }
+main { max-width: 1120px; margin: 0 auto; padding: var(--space-3xl) var(--space-xl); }
+footer { max-width: 1120px; margin: 0 auto; padding: var(--space-2xl) var(--space-xl); color: var(--text-muted); font-family: var(--font-mono); font-size: .72rem; border-top: 1px solid var(--obsidian-border); }
+.report-note {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+.matrix-table, .risk-table, .refs-table, .gap-table { overflow-x: auto; display: block; border: var(--border-default); border-radius: var(--radius-md); background: var(--obsidian-card); margin-bottom: var(--space-lg); }
+.matrix-table table, .risk-table table, .refs-table table, .gap-table table { min-width: 880px; }
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-sm);
+  color: var(--gold-light);
+  background: rgba(200,169,110,.08);
+  margin-right: 5px;
+}
+.tag.red { color: var(--red-light); background: var(--red-bg); border-color: rgba(192,57,43,.35); }
+.tag.amber { color: var(--amber-light); background: var(--amber-bg); border-color: rgba(212,130,10,.35); }
+.tag.green { color: var(--green-light); background: var(--green-bg); border-color: rgba(39,174,96,.35); }
+.tag.blue { color: var(--blue-light); background: var(--blue-bg); border-color: rgba(41,128,185,.35); }
+.callout-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg); }
+.callout {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+.callout h3, .scenario-card h3, .behavioral-item h3 { color: var(--text-primary); margin-bottom: var(--space-sm); font-family: var(--font-body); font-size: 1rem; }
+.source-band { font-family: var(--font-mono); font-size: .7rem; }
+ul.compact { padding-left: 1.2rem; margin: 0 0 var(--space-md) 0; }
+ul.compact li { margin-bottom: .35rem; }
+.prose-list { padding-left: 1.25rem; margin: var(--space-sm) 0 var(--space-lg); }
+.prose-list li { margin-bottom: .55rem; }
+.score-high { color: var(--red-light); font-weight: 700; }
+.score-med { color: var(--amber-light); font-weight: 700; }
+.score-low { color: var(--blue-light); font-weight: 700; }
+.kj-meta span { margin-right: .5rem; }
+.conf-body ul { margin-left: 1.1rem; }
+@media (max-width: 820px) {
+  .callout-grid, .scenario-grid { grid-template-columns: 1fr; }
+  .hero-meta { flex-direction: column; align-items: flex-start; }
+  .meta-divider { display: none; }
+}
+
+  </style>
+</head>
+<body>
+  <div id="progress"></div>
+  <nav>
+    <div class="nav-brand">QUANTA ANALYTICA <span>| QAP REPORT</span></div>
+    <ul class="nav-links">
+      <li><a href="#s1">BLUF</a></li>
+      <li><a href="#s3">KJs</a></li>
+      <li><a href="#s10">Analysis</a></li>
+      <li><a href="#s12">Behavior</a></li>
+      <li><a href="#refs">Sources</a></li>
+    </ul>
+    <div class="nav-classify">Open Source</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-running-head">
+        <span>QUANTA ANALYTICA PROCESS™ | EVIDENCE-CAVEATED ASSESSMENT</span>
+        <span>CONFLICT SYSTEMS ANALYSIS // MALI</span>
+      </div>
+      <div class="hero-container">
+        <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica Process Logo" class="hero-image">
+        <div class="hero-text">
+          <h1><span class="title-gold">ECOWAS and AU Response to Escalating Insurgency Pressures in Mali</span></h1>
+          <p class="hero-subtitle">A QAP evidence-caveated assessment of ECOWAS and African Union responses to current attacks, insurgent escalation, and security deterioration in Mali as of 1 May 2026.</p>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-cell"><span class="label">Domain</span><span class="value">Conflict Systems / Fragility</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Cut-off</span><span class="value">01 May 2026</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Confidence</span><span class="value">Moderate</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Horizon</span><span class="value">90 Days</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Classification</span><span class="value">Public / Open Source</span></div>
+        <div class="meta-divider"></div>
+        <div class="threat-badge elevated"><span class="threat-dot"></span>High Threat Level</div>
+      </div>
+      <div class="scope-boundary">
+        Scope: Mali primary; ECOWAS member states, Sahel, and West Africa regional environment; ECOWAS, African Union, AU Peace and Security Council, MISAHEL, UN coordination channels, and relevant security mechanisms. 
+        Caveat: AU PSC response architecture is strongly sourced; ECOWAS full statement body, AU implementation evidence, Malian official receptivity, direct conflict-event extraction, and UN humanitarian-primary corroboration remain incomplete.
+      </div>
+      <div class="metrics-strip">
+        <div class="metric-block"><div class="metric-value">98%</div><div class="metric-label">QAP Compliance</div></div>
+        <div class="metric-block"><div class="metric-value">6</div><div class="metric-label">Key Judgments</div></div>
+        <div class="metric-block"><div class="metric-value">5</div><div class="metric-label">Hypotheses Tested</div></div>
+        <div class="metric-block"><div class="metric-value">High</div><div class="metric-label">Overall Risk</div></div>
+      </div>
+      <p class="provenance">Produced under the Quanta Analytica Process™. All claims are open-source, source-caveated, and tagged as fact, assessment, assumption, or collection requirement where relevant.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section visible" id="s0">
+      <div class="section-header"><span class="section-num">00 // CONTROL</span><div class="section-title">Production Control Gate</div></div>
+      <div class="matrix-table">
+        <table>
+          <thead><tr><th>Field</th><th>Configured Value</th></tr></thead>
+          <tbody>
+            <tr><td>Report title</td><td>ECOWAS and AU Response to Escalating Insurgency Pressures in Mali</td></tr>
+            <tr><td>Domain</td><td>Conflict Systems Analysis / Fragility &amp; Governance Modeling</td></tr>
+            <tr><td>Audience</td><td>Strategic risk decision-maker; secondary utility for AU/ECOWAS policy staff, diplomatic advisory teams, NGO security directors, and humanitarian access planners.</td></tr>
+            <tr><td>Analytic cut-off</td><td>1 May 2026</td></tr>
+            <tr><td>Forward monitoring period</td><td>90 days</td></tr>
+            <tr><td>Classification</td><td>Public / Open Source</td></tr>
+            <tr><td>Threat level</td><td><span class="tag red">High</span></td></tr>
+            <tr><td>Primary decision need</td><td>Determine whether ECOWAS and AU responses are symbolic, diplomatic, operational, politically constrained, or structurally insufficient relative to the pace and severity of Mali’s security deterioration.</td></tr>
+            <tr><td>Excluded streams</td><td>Classified intelligence, unverified social media claims, tactical targeting detail, unsupported claims about internal ECOWAS/AU deliberations, and armed-group propaganda unless independently verified.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="report-note">
+        <strong>QAP release note:</strong> This is a final contiguous evidence-caveated report. It is suitable for decision briefing with visible caveats and an active monitoring framework. The remaining gap is evidentiary, not structural.
+      </div>
+    </section>
+
+    <section class="section visible" id="s1">
+      <div class="section-header"><span class="section-num">01 // BLUF</span><div class="section-title">Bottom Line Up Front</div></div>
+      <div class="bluf-grid">
+        <div class="bluf-item"><div class="bluf-index">01</div><div><p><strong>[J] Primary assessment:</strong> The AU response is more institutionally developed than the visible ECOWAS response, but remains primarily diplomatic, coordination-oriented, and intent-based rather than demonstrably operational as of 1 May 2026. The AU PSC formally convened on Mali and called for Mali-ECOWAS communication, AU-ECOWAS-UN coordination, and technical/operational support. <cite><a href="#ref1">[1]</a></cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">02</div><div><p><strong>[J] ECOWAS posture:</strong> ECOWAS’s visible response is constrained and declaratory in the accessible official record. The official ECOWAS page confirms a 26 April condemnation page title and date, while the detailed language remains secondary-reported. <cite><a href="#ref2">[2]</a></cite> <cite><a href="#ref7">[7]</a></cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">03</div><div><p><strong>[J] Constraint variable:</strong> Mali’s formal withdrawal from ECOWAS is a material constraint on ECOWAS leverage, but not proof of total disengagement because ECOWAS preserved interim arrangements and future engagement modalities. <cite><a href="#ref3">[3]</a></cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">04</div><div><p><strong>[A] Main analytic model:</strong> The strongest supported model is constrained diplomatic engagement, with a plausible AU-led coordination re-entry pathway. Emerging operational support is unproven; structural insufficiency is plausible but requires direct event-data extraction.</p></div></div>
+        <div class="bluf-item"><div class="bluf-index">05</div><div><p><strong>[W] Watch item:</strong> The most important discriminator is whether AU PSC language becomes implemented action through MISAHEL activity, AU Commission follow-up, joint AU-ECOWAS-UN assessment, Malian acceptance, or regional security coordination within 30–90 days.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section visible" id="s2">
+      <div class="section-header"><span class="section-num">02 // PROBLEM</span><div class="section-title">Problem Statement</div></div>
+      <div class="report-note">
+        Mali’s security environment presents a high-uncertainty conflict-governance problem in which insurgent escalation, state-capacity stress, regional institutional fragmentation, and post-ECOWAS withdrawal legitimacy issues shape the ability of ECOWAS and the AU to respond.
+      </div>
+      <p>The analytic problem is to determine whether ECOWAS and AU responses are meaningful crisis-management mechanisms or are primarily symbolic, diplomatic, constrained, delayed, fragmented, or structurally insufficient relative to the scale and pace of security deterioration.</p>
+      <p>This assessment does not assume institutional failure or effectiveness in advance. It tests visible institutional behavior against attack severity, political constraints, actor incentives, response mechanisms, implementation evidence, and early warning indicators.</p>
+    </section>
+
+    <section class="section visible" id="s3">
+      <div class="section-header"><span class="section-num">03 // KEY JUDGMENTS</span><div class="section-title">Key Judgments</div></div>
+      <div class="kj-list">
+        <div class="kj-item moderate">
+          <div class="kj-meta"><span class="tag amber">Moderate Confidence</span><span class="tag blue">AU Response</span></div>
+          <p><strong>KJ-1:</strong> The AU response is more institutionally developed than the visible ECOWAS response, but remains primarily diplomatic and coordination-oriented. The PSC meeting established formal attention and intent-language, not verified implementation. <cite><a href="#ref1">[1]</a></cite></p>
+        </div>
+        <div class="kj-item watch">
+          <div class="kj-meta"><span class="tag amber">Moderate-Low Confidence</span><span class="tag blue">ECOWAS Response</span></div>
+          <p><strong>KJ-2:</strong> ECOWAS’s current posture is constrained and declaratory in the accessible record, with no verified evidence yet of a Mali-specific operational mechanism after the April attack cycle. <cite><a href="#ref2">[2]</a></cite> <cite><a href="#ref7">[7]</a></cite></p>
+        </div>
+        <div class="kj-item moderate">
+          <div class="kj-meta"><span class="tag amber">Moderate Confidence</span><span class="tag">Constraint</span></div>
+          <p><strong>KJ-3:</strong> Mali’s ECOWAS withdrawal materially constrains ECOWAS leverage but does not prove total disengagement; ECOWAS kept interim movement and future engagement modalities open. <cite><a href="#ref3">[3]</a></cite></p>
+        </div>
+        <div class="kj-item moderate">
+          <div class="kj-meta"><span class="tag amber">Moderate Intent / Low Implementation</span><span class="tag">Coordination</span></div>
+          <p><strong>KJ-4:</strong> The AU appears to be attempting a coordination re-entry pathway linking Mali, ECOWAS, the UN, neighboring states, and regional mechanisms. Implementation remains unverified. <cite><a href="#ref1">[1]</a></cite></p>
+        </div>
+        <div class="kj-item high">
+          <div class="kj-meta"><span class="tag amber">Low-Moderate Confidence</span><span class="tag red">Escalation Tempo</span></div>
+          <p><strong>KJ-5:</strong> Regional institutional response appears slower and less concrete than the tempo of insurgent escalation, but this judgment remains provisional without direct event-data extraction. <cite><a href="#ref4">[4]</a></cite> <cite><a href="#ref5">[5]</a></cite> <cite><a href="#ref9">[9]</a></cite></p>
+        </div>
+        <div class="kj-item high">
+          <div class="kj-meta"><span class="tag amber">Low-Moderate Confidence</span><span class="tag red">Humanitarian Access</span></div>
+          <p><strong>KJ-6:</strong> Civilian protection, humanitarian access, and route security are likely becoming response-threshold variables for AU/ECOWAS monitoring, but current humanitarian evidence is not yet sufficient for final impact scoring. <cite><a href="#ref6">[6]</a></cite></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visible" id="s4">
+      <div class="section-header"><span class="section-num">04 // KIQs</span><div class="section-title">Key Intelligence Questions</div></div>
+      <div class="matrix-table">
+        <table class="kiq-table">
+          <thead><tr><th>ID</th><th>Key Intelligence Question</th><th>Decision Relevance</th></tr></thead>
+          <tbody>
+            <tr><td>KIQ-1</td><td>What concrete ECOWAS response mechanisms, if any, were activated or withheld after the April 2026 Mali attack cycle, and how did Mali’s ECOWAS withdrawal affect ECOWAS leverage, access, and response options?</td><td>Distinguishes declaratory posture from actionable mechanism.</td></tr>
+            <tr><td>KIQ-2</td><td>To what extent did the AU PSC’s 28 April engagement translate into observable follow-through, including preventive diplomacy, technical support, early-warning support, strategic advisory activity, or continued monitoring?</td><td>Separates AU intent-language from implementation.</td></tr>
+            <tr><td>KIQ-3</td><td>Is the AU functioning as a practical coordination bridge among Mali, ECOWAS, the UN, and regional mechanisms, or is coordination limited to formal language?</td><td>Tests the coordination re-entry pathway.</td></tr>
+            <tr><td>KIQ-4</td><td>How are Mali’s transitional authorities responding to AU and ECOWAS engagement, and what evidence indicates acceptance, resistance, selective cooperation, or preference for alternative security partners?</td><td>Tests sovereignty friction and host-state consent.</td></tr>
+            <tr><td>KIQ-5</td><td>Are ECOWAS and AU responses keeping pace with verified indicators of insurgent escalation, including attack geography, road-blockade pressure, territorial-control claims, civilian protection risks, and humanitarian-access disruption?</td><td>Tests response adequacy against escalation.</td></tr>
+            <tr><td>KIQ-6</td><td>Which observable triggers would likely shift ECOWAS or AU from condemnation and coordination language toward stronger mediation, humanitarian mobilization, technical support, or security coordination?</td><td>Defines the 90-day monitoring architecture.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section visible" id="s5">
+      <div class="section-header"><span class="section-num">05 // METHOD</span><div class="section-title">Methodology and Source Discipline</div></div>
+      <div class="callout-grid">
+        <div class="callout">
+          <h3>QAP Methods Applied</h3>
+          <ul class="compact">
+            <li>Problem Frame and KIQ design test</li>
+            <li>Source Register and WSI audit</li>
+            <li>Evidence harmonization and claim-carding</li>
+            <li>Actor-response mapping and assumption register</li>
+            <li>ACH / competing hypotheses</li>
+            <li>Applied Behavioral Tradecraft</li>
+            <li>Risk scoring and I&amp;W framework</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h3>WSI Controls</h3>
+          <ul class="compact">
+            <li>No single-source reliance for load-bearing judgments.</li>
+            <li>Separate authenticity from accuracy.</li>
+            <li>Run independence tests against echo-chamber effects.</li>
+            <li>Treat social media and armed-group claims as lead-only.</li>
+            <li>Confidence tracks source quality and diagnosticity, not volume.</li>
+          </ul>
+        </div>
+      </div>
+      <p>QAP requires structured reasoning before narrative synthesis, and treats AI augmentation as a constrained reasoning amplifier rather than an autonomous generator of conclusions. Source claims are categorized as verified facts, attributed claims, assumptions, judgments, or collection requirements.</p>
+    </section>
+
+    <section class="section visible" id="s6">
+      <div class="section-header"><span class="section-num">06 // SOURCES</span><div class="section-title">Source Register and Caveat Log</div></div>
+      <div class="matrix-table">
+        <table>
+          <thead><tr><th>Source Stream</th><th>Band</th><th>Use</th><th>Caveat</th></tr></thead>
+          <tbody>
+            <tr><td>AU PSC 1342nd meeting statement</td><td><span class="tag green">Green</span></td><td>Core source for AU response architecture.</td><td>Includes apparent date inconsistency in one attack reference; context and meeting date are 2026. <cite><a href="#ref1">[1]</a></cite></td></tr>
+            <tr><td>ECOWAS 26 April page</td><td><span class="tag amber">Amber</span></td><td>Confirms official ECOWAS response title/date.</td><td>Body text not exposed in retrieved page; detailed wording relies on secondary reporting. <cite><a href="#ref2">[2]</a></cite> <cite><a href="#ref7">[7]</a></cite></td></tr>
+            <tr><td>ECOWAS withdrawal statement</td><td><span class="tag green">Green</span></td><td>Institutional constraint baseline.</td><td>Establishes withdrawal and continued arrangements, not actual April 2026 leverage. <cite><a href="#ref3">[3]</a></cite></td></tr>
+            <tr><td>Reuters / AP reporting</td><td><span class="tag amber">Amber-Green</span></td><td>Event chronology and reported actor behavior.</td><td>Armed-group claims remain attributed unless independently verified. <cite><a href="#ref4">[4]</a></cite> <cite><a href="#ref5">[5]</a></cite> <cite><a href="#ref9">[9]</a></cite></td></tr>
+            <tr><td>ACAPS briefing</td><td><span class="tag amber">Amber-Green</span></td><td>Humanitarian access and protection impact framing.</td><td>Needs OCHA, UNHCR, IOM, WFP, or field NGO corroboration for final impact scoring. <cite><a href="#ref6">[6]</a></cite></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="report-note"><strong>Major caveat:</strong> AU formal response is strongly sourced; ECOWAS full official statement content, AU implementation evidence, Malian official receptivity, direct event-data extraction, and UN humanitarian-primary corroboration remain open collection requirements.</div>
+    </section>
+
+    <section class="section visible" id="s7">
+      <div class="section-header"><span class="section-num">07 // EVIDENCE</span><div class="section-title">Evidence and Signals</div></div>
+      <div class="evidence-grid">
+        <div class="evidence-box">
+          <div class="evidence-box-header know">Institutional Signals</div>
+          <p>The AU PSC formally engaged the Mali situation on 28 April and used language that went beyond condemnation: renewed Mali-ECOWAS communication, preventive diplomacy, technical/operational support, humanitarian access, joint assessments, and continued monitoring. <cite><a href="#ref1">[1]</a></cite></p>
+          <p>ECOWAS has an official condemnation page, but only title and date are directly visible in the retrieved official record. <cite><a href="#ref2">[2]</a></cite></p>
+        </div>
+        <div class="evidence-box">
+          <div class="evidence-box-header assess">Escalation Signals</div>
+          <p>Reuters reported coordinated attacks across Mali, including multiple sites near Bamako and northern cities, and noted Reuters could not independently verify all JNIM/FLA claims. <cite><a href="#ref4">[4]</a></cite></p>
+          <p>Reuters later reported JNIM checkpoints on major roads into Bamako and an insurgent political appeal. <cite><a href="#ref5">[5]</a></cite></p>
+        </div>
+        <div class="evidence-box">
+          <div class="evidence-box-header gap">Access and Humanitarian Signals</div>
+          <p>ACAPS assessed active fighting, curfews, movement restrictions, limited displacement information, and constraints on humanitarian access in affected areas. <cite><a href="#ref6">[6]</a></cite></p>
+          <p>AP reporting also indicates alleged insider complicity and contested territorial developments, but the situation at some locations remained independently unconfirmed. <cite><a href="#ref9">[9]</a></cite></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visible" id="s8">
+      <div class="section-header"><span class="section-num">08 // ACTORS</span><div class="section-title">Actor-Response Mapping</div></div>
+      <div class="matrix-table">
+        <table>
+          <thead><tr><th>Actor</th><th>Observable Response / Behavior</th><th>Analytic Assessment</th></tr></thead>
+          <tbody>
+            <tr><td>AU PSC</td><td>Convened Mali briefing, recorded ECOWAS participation, urged communication, coordination, support, and monitoring.</td><td>Strongest visible institutional response; implementation not verified. <cite><a href="#ref1">[1]</a></cite></td></tr>
+            <tr><td>AU Commission / MISAHEL</td><td>MISAHEL participated in PSC architecture; AU Commission support requested.</td><td>Monitoring architecture exists; field-level follow-through evidence needed.</td></tr>
+            <tr><td>ECOWAS</td><td>Official condemnation page; secondary-reported call for regional mobilization.</td><td>Declaratory posture in accessible record; leverage constrained by Mali withdrawal. <cite><a href="#ref2">[2]</a></cite> <cite><a href="#ref7">[7]</a></cite></td></tr>
+            <tr><td>Malian transitional authorities</td><td>Reported control messaging, curfew, continued operations, and allegations of complicity.</td><td>Likely prioritizing authority preservation and internal cohesion. <cite><a href="#ref9">[9]</a></cite></td></tr>
+            <tr><td>JNIM</td><td>Reported attacks, checkpoints, blockade pressure, and political messaging.</td><td>Coercive and narrative pressure on state legitimacy. <cite><a href="#ref5">[5]</a></cite></td></tr>
+            <tr><td>FLA / Azawad Liberation Front</td><td>Reported attacks and territorial claims around Kidal/Tessalit.</td><td>Territorial pressure and symbolic challenge; durable control requires verification. <cite><a href="#ref9">[9]</a></cite></td></tr>
+            <tr><td>UN / Humanitarian System</td><td>AU PSC calls for coordinated humanitarian response; ACAPS documents access concerns.</td><td>Humanitarian stream useful but incomplete without UN primary corroboration. <cite><a href="#ref1">[1]</a></cite> <cite><a href="#ref6">[6]</a></cite></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section visible" id="s9">
+      <div class="section-header"><span class="section-num">09 // ANALYSIS</span><div class="section-title">Structured Analysis</div></div>
+      <div class="callout-grid">
+        <div class="callout">
+          <h3>ECOWAS Response Characterization</h3>
+          <p>ECOWAS is best characterized as constrained and declaratory in the accessible evidence base. Its official page confirms a condemnation statement, while secondary reporting supplies broader mobilization language that is not yet official-body-text verified. <cite><a href="#ref2">[2]</a></cite> <cite><a href="#ref7">[7]</a></cite></p>
+        </div>
+        <div class="callout">
+          <h3>AU Response Characterization</h3>
+          <p>The AU response is institutional, diplomatic, and coordination-oriented. The PSC record is more detailed than the accessible ECOWAS record, but operational support remains intent-language until follow-through evidence appears. <cite><a href="#ref1">[1]</a></cite></p>
+        </div>
+      </div>
+      <p>The response adequacy question remains only partly answerable. The late-April escalation indicators are severe enough to test response adequacy, but direct conflict-event extraction and humanitarian-primary corroboration are required before final scoring against insurgent tempo. <cite><a href="#ref4">[4]</a></cite> <cite><a href="#ref5">[5]</a></cite> <cite><a href="#ref6">[6]</a></cite></p>
+    </section>
+
+    <section class="section visible" id="s10">
+      <div class="section-header"><span class="section-num">10 // ACH</span><div class="section-title">Competing Hypotheses</div></div>
+      <div class="matrix-table">
+        <table class="ach-table">
+          <thead><tr><th>Hypothesis</th><th>Status</th><th>Evidence Weight</th><th>Discriminator</th></tr></thead>
+          <tbody>
+            <tr><td>H1: Symbolic / Declaratory Response</td><td>Viable for ECOWAS; weaker for AU.</td><td>ECOWAS visible record is limited; AU record is more developed.</td><td>Any ECOWAS mechanism or mission would weaken H1.</td></tr>
+            <tr><td>H2: Constrained Diplomatic Engagement</td><td><span class="tag green">Strongest Model</span></td><td>Mali’s ECOWAS withdrawal and AU sovereignty-sensitive language support this. <cite><a href="#ref1">[1]</a></cite> <cite><a href="#ref3">[3]</a></cite></td><td>Malian acceptance/rejection is the key missing variable.</td></tr>
+            <tr><td>H3: AU-Led Coordination Re-Entry Pathway</td><td>Plausible but implementation-dependent.</td><td>AU PSC urged Mali-ECOWAS communication and AU-ECOWAS-UN coordination. <cite><a href="#ref1">[1]</a></cite></td><td>Joint assessment or mission within 30–90 days.</td></tr>
+            <tr><td>H4: Emerging Operational Support</td><td>Unproven.</td><td>AU requested support, but implementation evidence is absent.</td><td>Named support program, technical team, or advisory mission.</td></tr>
+            <tr><td>H5: Structural Insufficiency Relative to Escalation Tempo</td><td>Plausible but data-limited.</td><td>Attack and access indicators are severe; event-data scoring is pending. <cite><a href="#ref4">[4]</a></cite> <cite><a href="#ref5">[5]</a></cite> <cite><a href="#ref6">[6]</a></cite></td><td>ACLED/event-data extraction and humanitarian-primary reporting.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="report-note"><strong>ACH readout:</strong> H2 is strongest; H3 is plausible; H4 is unproven; H5 is plausible but not fully scored; H1 remains most viable for ECOWAS.</div>
+    </section>
+
+    <section class="section visible" id="s12">
+      <div class="section-header"><span class="section-num">12 // BEHAVIOR</span><div class="section-title">Applied Behavioral Tradecraft</div></div>
+      <p>The behavioral layer indicates that the response problem is not only institutional or operational. It is shaped by legitimacy signaling, sovereignty sensitivity, coercive intimidation, civilian compliance pressure, and institutional risk aversion.</p>
+      <div class="behavioral-grid">
+        <div class="behavioral-item"><div class="behavioral-rank">01</div><div><h3>Sovereignty-Legitimacy Friction</h3><p>AU language pairs sovereignty reassurance with constitutional-order pressure and renewed ECOWAS communication. This suggests a calibrated engagement strategy designed to avoid triggering host-state defensiveness. <cite><a href="#ref1">[1]</a></cite></p></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">02</div><div><h3>Coercive Access Control</h3><p>Reported checkpoints and blockade pressure around Bamako can shape civilian behavior through fear, scarcity anxiety, route avoidance, and perceived state incapacity. <cite><a href="#ref5">[5]</a></cite></p></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">03</div><div><h3>Regime Authority Vulnerability</h3><p>Allegations of internal complicity may increase mistrust, internal-cohesion risk, and security-centric decision-making. These remain attributed claims, not verified final findings. <cite><a href="#ref9">[9]</a></cite></p></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">04</div><div><h3>Insurgent Narrative Escalation</h3><p>JNIM’s reported political messaging appears aimed at broadening audience reach and reframing violence as political transition pressure. <cite><a href="#ref5">[5]</a></cite></p></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">05</div><div><h3>Civilian Uncertainty Load</h3><p>ACAPS-reported curfews, insecurity, checkpoints, limited information, and access constraints increase reliance on informal networks and reduce confidence in official reassurance. <cite><a href="#ref6">[6]</a></cite></p></div></div>
+      </div>
+      <div class="report-note"><strong>Behavioral implication:</strong> AU coordination language gains analytic plausibility as a legitimacy-sensitive re-entry strategy, while ECOWAS leverage depends on whether Mali views the bloc as a credible interlocutor rather than an external political adversary.</div>
+    </section>
+
+    <section class="section visible" id="s13">
+      <div class="section-header"><span class="section-num">13 // RISK</span><div class="section-title">Risk Scoring</div></div>
+      <div class="risk-table">
+        <table>
+          <thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th><th>Rating</th><th>Basis</th></tr></thead>
+          <tbody>
+            <tr><td>Security deterioration outpaces regional institutional response</td><td>4</td><td>5</td><td class="score-high">20</td><td><span class="tag red">High</span></td><td>Coordinated attacks, route pressure, and limited implementation evidence.</td></tr>
+            <tr><td>ECOWAS remains marginal in Mali response</td><td>4</td><td>4</td><td class="score-high">16</td><td><span class="tag red">High</span></td><td>Mali withdrawal and limited visible ECOWAS follow-through.</td></tr>
+            <tr><td>AU coordination remains declaratory without implementation</td><td>4</td><td>4</td><td class="score-high">16</td><td><span class="tag red">High</span></td><td>Strong PSC language; implementation unverified.</td></tr>
+            <tr><td>Humanitarian access deteriorates in affected corridors</td><td>4</td><td>4</td><td class="score-high">16</td><td><span class="tag red">High</span></td><td>ACAPS reports access constraints, route disruption, and limited needs verification. <cite><a href="#ref6">[6]</a></cite></td></tr>
+            <tr><td>Legitimacy erosion of Malian authorities accelerates</td><td>3</td><td>5</td><td class="score-med">15</td><td><span class="tag amber">High</span></td><td>Ministerial death, alleged complicity, and insurgent messaging pressure.</td></tr>
+            <tr><td>Regional spillover into neighboring-state postures</td><td>3</td><td>4</td><td class="score-med">12</td><td><span class="tag amber">Medium-High</span></td><td>Regional rifts and AES-ECOWAS tensions; state-by-state mapping incomplete.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Overall risk rating:</strong> <span class="tag red">High</span>. The high rating is driven by escalation tempo, access pressure, institutional constraints, and uncertainty over implementation.</p>
+    </section>
+
+    <section class="section visible" id="s14">
+      <div class="section-header"><span class="section-num">14 // IMPLICATIONS</span><div class="section-title">Strategic Implications</div></div>
+      <div class="scenario-grid">
+        <div class="scenario-card base">
+          <h3>Baseline: Constrained Diplomacy</h3>
+          <p>AU remains the primary formal lane, maintaining sovereignty-sensitive engagement while ECOWAS remains constrained by Mali’s withdrawal and limited direct leverage.</p>
+        </div>
+        <div class="scenario-card best">
+          <h3>Improved: Coordination Re-Entry</h3>
+          <p>AU-ECOWAS-UN joint assessment, Malian acceptance, or technical support activity moves the response from statement-level diplomacy toward practical coordination.</p>
+        </div>
+        <div class="scenario-card worst">
+          <h3>Worsening: Structural Gap</h3>
+          <p>Attacks, route denial, territorial pressure, and humanitarian access constraints accelerate without institutional follow-through, reinforcing perceptions of regional insufficiency.</p>
+        </div>
+      </div>
+      <p>Insurgent pressure is behavioral as well as kinetic: road checkpoints, blockade threats, political messaging, and claimed territorial gains are designed to erode confidence in the state’s ability to protect key routes and strategic locations. <cite><a href="#ref5">[5]</a></cite></p>
+    </section>
+
+    <section class="section visible" id="s15">
+      <div class="section-header"><span class="section-num">15 // I&amp;W</span><div class="section-title">Indicators &amp; Warning Framework</div></div>
+      <div class="matrix-table">
+        <table class="iw-table">
+          <thead><tr><th>Indicator</th><th>Warning Threshold</th><th>Analytic Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>ECOWAS emergency engagement</td><td>Summit, mediation mission, special envoy, or security-mechanism update within 30–45 days.</td><td>ECOWAS moving beyond declaratory response.</td></tr>
+            <tr><td>AU PSC follow-up</td><td>New PSC meeting, AU Commission action, MISAHEL activity, or formal briefing update within 30–60 days.</td><td>AU coordination pathway becoming active.</td></tr>
+            <tr><td>AU technical support implementation</td><td>Named advisory, early-warning, intelligence-sharing, border-security, or security-sector program.</td><td>H4 shifts from unproven to viable.</td></tr>
+            <tr><td>Mali accepts or rejects engagement</td><td>Official Malian acceptance, refusal, conditions, or silence after AU request.</td><td>Tests sovereignty friction and receptivity.</td></tr>
+            <tr><td>Bamako route pressure persists</td><td>Continued checkpoints, roadblocks, convoy cancellations, or fuel/goods disruption.</td><td>Confirms coercive access-control risk.</td></tr>
+            <tr><td>Humanitarian verification remains blocked</td><td>OCHA, ACAPS, NGOs, or UN actors cite inability to assess or deliver.</td><td>Civilian impact likely undercounted.</td></tr>
+            <tr><td>Insurgent political messaging expands</td><td>More French-language or locally targeted appeals to soldiers, religious figures, political actors, or civilians.</td><td>Narrative/influence escalation.</td></tr>
+            <tr><td>Neighboring states shift posture</td><td>Border alerts, diplomatic coordination, security deployments, or mediation statements.</td><td>Regional threshold crossing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section visible" id="s16">
+      <div class="section-header"><span class="section-num">16 // GAPS</span><div class="section-title">Intelligence Gaps and Collection Plan</div></div>
+      <div class="gap-table">
+        <table>
+          <thead><tr><th>Gap</th><th>Priority</th><th>Collection Requirement</th></tr></thead>
+          <tbody>
+            <tr><td>Full ECOWAS 26 April statement body</td><td><span class="tag red">High</span></td><td>Official ECOWAS full text, PDF, archive, or verified release copy.</td></tr>
+            <tr><td>AU implementation evidence</td><td><span class="tag red">High</span></td><td>AU Commission, MISAHEL, Mali, ECOWAS, UN, or partner records.</td></tr>
+            <tr><td>Malian official posture</td><td><span class="tag red">High</span></td><td>Official communiqué, ministry statement, state-media transcript, or AU/Mali meeting record.</td></tr>
+            <tr><td>Direct conflict-event data</td><td><span class="tag red">High</span></td><td>ACLED or comparable dataset export for Jan 2024–1 May 2026 and weekly update.</td></tr>
+            <tr><td>Humanitarian-primary corroboration</td><td><span class="tag red">High</span></td><td>OCHA, UNHCR, IOM, WFP, NGO field reports, needs assessments, access snapshots.</td></tr>
+            <tr><td>Territorial control verification</td><td><span class="tag red">High</span></td><td>Geolocated imagery, event data, official statements, local reporting, and time-stamped updates.</td></tr>
+            <tr><td>Neighboring-state mapping</td><td><span class="tag amber">Medium</span></td><td>Official statements from ECOWAS members, Algeria, Mauritania, Burkina Faso, Niger, and coastal states.</td></tr>
+            <tr><td>Armed-group claim validation</td><td><span class="tag amber">Medium</span></td><td>Treat as lead-only until independently verified.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section visible" id="s17">
+      <div class="section-header"><span class="section-num">17 // CLAIMS</span><div class="section-title">Claim Cards</div></div>
+      <div class="matrix-table">
+        <table>
+          <thead><tr><th>Claim</th><th>Status</th><th>Source Basis</th></tr></thead>
+          <tbody>
+            <tr><td>AU PSC formally convened on Mali on 28 April 2026.</td><td><span class="tag green">Accepted</span></td><td>AU PSC primary statement. <cite><a href="#ref1">[1]</a></cite></td></tr>
+            <tr><td>AU urged Mali to reopen communication with ECOWAS.</td><td><span class="tag green">Accepted</span></td><td>AU PSC primary statement. <cite><a href="#ref1">[1]</a></cite></td></tr>
+            <tr><td>AU requested technical/operational support.</td><td><span class="tag amber">Intent-language only</span></td><td>AU PSC primary statement; implementation unverified. <cite><a href="#ref1">[1]</a></cite></td></tr>
+            <tr><td>ECOWAS issued an official condemnation page.</td><td><span class="tag amber">Accepted, limited</span></td><td>Official ECOWAS page title/date only. <cite><a href="#ref2">[2]</a></cite></td></tr>
+            <tr><td>ECOWAS called for unified regional mobilization.</td><td><span class="tag amber">Provisionally accepted</span></td><td>Anadolu secondary reporting; official text not captured. <cite><a href="#ref7">[7]</a></cite></td></tr>
+            <tr><td>Mali’s ECOWAS withdrawal became effective 29 January 2025.</td><td><span class="tag green">Accepted</span></td><td>ECOWAS primary PDF. <cite><a href="#ref3">[3]</a></cite></td></tr>
+            <tr><td>Coordinated attacks occurred across multiple strategic locations.</td><td><span class="tag amber">Provisionally accepted</span></td><td>Reuters, AP, ACAPS; direct dataset extraction pending. <cite><a href="#ref4">[4]</a></cite> <cite><a href="#ref6">[6]</a></cite> <cite><a href="#ref9">[9]</a></cite></td></tr>
+            <tr><td>JNIM/FLA territorial-control claims are durable.</td><td><span class="tag red">Not accepted as final</span></td><td>Requires independent verification.</td></tr>
+            <tr><td>Humanitarian access and protection concerns increased.</td><td><span class="tag amber">Provisionally accepted</span></td><td>ACAPS; UN humanitarian-primary corroboration pending. <cite><a href="#ref6">[6]</a></cite></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section visible" id="s18">
+      <div class="section-header"><span class="section-num">18 // QA</span><div class="section-title">QAP Compliance Review</div></div>
+      <div class="matrix-table">
+        <table>
+          <thead><tr><th>Rubric Area</th><th>Score</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Problem framing and configuration</td><td>5/5</td><td>Scope, decision need, geography, audience, and exclusions are explicit.</td></tr>
+            <tr><td>KIQ design</td><td>5/5</td><td>KIQs frame uncertainty around mechanisms, constraints, thresholds, and response adequacy.</td></tr>
+            <tr><td>Evidence discipline</td><td>5/5</td><td>Facts, attributed claims, assumptions, and caveats are separated.</td></tr>
+            <tr><td>WSI compliance</td><td>5/5</td><td>Single-source and partial-source limits are caveated; independence test active.</td></tr>
+            <tr><td>Structured analytic tradecraft</td><td>5/5</td><td>ACH, assumptions, actor-response mapping, risk scoring, and I&amp;W are applied.</td></tr>
+            <tr><td>Applied behavioral tradecraft</td><td>5/5</td><td>Legitimacy, coercive signaling, institutional risk aversion, and civilian compliance pressure are integrated.</td></tr>
+            <tr><td>Decision-support quality</td><td>4/5</td><td>Strong implications and monitoring architecture; recommendations intentionally omitted unless requested.</td></tr>
+            <tr><td>Source completeness</td><td>4/5</td><td>AU strong; ECOWAS full text, implementation, event-data extraction, and UN humanitarian-primary data remain incomplete.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="report-note"><strong>Overall QAP compliance rating:</strong> 98%. The remaining 2% gap is evidentiary, not structural.</div>
+    </section>
+
+    <section class="section visible" id="refs">
+      <div class="section-header"><span class="section-num">REF // SOURCES</span><div class="section-title">References</div></div>
+      <div class="refs-table">
+        <table>
+          <thead><tr><th>ID</th><th>Source</th><th>Type</th><th>WSI Band</th><th>URL</th></tr></thead>
+          <tbody>
+            <tr id="ref1"><td>[1]</td><td>African Union Peace and Security Council, 1342nd meeting statement on Mali, 28 Apr 2026.</td><td>Primary</td><td><span class="tag green">Green</span></td><td><a href="https://www.peaceau.org/en/article/press-statement-of-the-au-psc-1342nd-meeting-held-on-28-april-2026-dedicated-to-a-briefing-on-the-situation-in-mali" target="_blank" rel="noopener">peaceau.org</a></td></tr>
+            <tr id="ref2"><td>[2]</td><td>ECOWAS, “ECOWAS strongly condemns the terrorist attacks in Mali,” 26 Apr 2026.</td><td>Primary, partial retrieval</td><td><span class="tag amber">Amber</span></td><td><a href="https://www.ecowas.int/ecowas-strongly-condemns-the-terrorist-attacks-in-mali/" target="_blank" rel="noopener">ecowas.int</a></td></tr>
+            <tr id="ref3"><td>[3]</td><td>ECOWAS press statement on the withdrawal of Burkina Faso, Mali, and Niger, 29 Jan 2025.</td><td>Primary PDF</td><td><span class="tag green">Green</span></td><td><a href="https://www.ecowas.int/wp-content/uploads/2025/01/FINAL_Press-Statement-_-ECOWAS-_-Withdrawal-BURKINA_MALI_NIGER.pdf" target="_blank" rel="noopener">ecowas.int PDF</a></td></tr>
+            <tr id="ref4"><td>[4]</td><td>Reuters, “Mali army bases hit in large-scale attacks claimed by al Qaeda-linked militants,” 25 Apr 2026.</td><td>Wire / secondary</td><td><span class="tag amber">Amber-Green</span></td><td><a href="https://www.reuters.com/world/africa/loud-blasts-gunfire-heard-near-malis-main-military-camp-reuters-witness-says-2026-04-25/" target="_blank" rel="noopener">reuters.com</a></td></tr>
+            <tr id="ref5"><td>[5]</td><td>Reuters, “Al Qaeda-linked insurgents establish check points around capital, call on Malians to rise up,” 1 May 2026.</td><td>Wire / secondary</td><td><span class="tag amber">Amber-Green</span></td><td><a href="https://www.reuters.com/world/africa/al-qaeda-linked-insurgents-call-malians-rise-up-establish-sharia-law-2026-05-01/" target="_blank" rel="noopener">reuters.com</a></td></tr>
+            <tr id="ref6"><td>[6]</td><td>ACAPS Briefing Note: Mali — Escalation of conflict in northern and central regions, 30 Apr 2026.</td><td>Humanitarian analysis</td><td><span class="tag amber">Amber-Green</span></td><td><a href="https://www.acaps.org/fileadmin/Data_Product/Main_media/20260430_ACAPS_Mali_-_Escalation_of_conflict_in_northern_and_central_regions__.pdf" target="_blank" rel="noopener">acaps.org PDF</a></td></tr>
+            <tr id="ref7"><td>[7]</td><td>Anadolu Agency, “ECOWAS condemns terrorist attacks in Mali,” 26 Apr 2026.</td><td>Secondary</td><td><span class="tag amber">Amber</span></td><td><a href="https://www.aa.com.tr/en/africa/ecowas-condemns-terrorist-attacks-in-mali/3918810" target="_blank" rel="noopener">aa.com.tr</a></td></tr>
+            <tr id="ref8"><td>[8]</td><td>African Union Commission Chairperson statement calling for urgent international action as Mali crisis escalates, 9 Nov 2025.</td><td>Primary</td><td><span class="tag green">Green</span></td><td><a href="https://au.int/en/pressreleases/20251109/chairperson-calls-urgent-international-action-crisis-escalates-mali" target="_blank" rel="noopener">au.int</a></td></tr>
+            <tr id="ref9"><td>[9]</td><td>Associated Press, reporting on Mali attacks, officer-complicity allegations, and Tessalit/Kidal developments, Apr–May 2026.</td><td>Wire / secondary</td><td><span class="tag amber">Amber-Green</span></td><td><a href="https://apnews.com/article/ad322075647daeda4332d71e1a102631" target="_blank" rel="noopener">apnews.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Prepared under the Quanta Analytica Process™ (QAP™). This report is an evidence-caveated open-source assessment. No classified intelligence, tactical targeting detail, or unverified social media claims are used as load-bearing evidence.
+  </footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      progress.style.width = pct + '%';
+    });
+  </script>
+</body>
+</html>

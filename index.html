@@ -2148,7 +2148,7 @@
 
           <div
             class="partner-card reveal"
-            onclick="openReport('https://quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf','The Mauritanian Paradox — PDF','Full Report · PDF')"
+            onclick="openCanvaReport('DAHIlZEe67M','Ms9-XmolbDdG_v4JvVZsnA','The Mauritanian Paradox: Institutional Sabotage, State Fragility, and Pathways to Legitimacy','Full Report · Canva Embed')"
             style="transition-delay:0.08s;"
           >
             <span class="kicker-label kicker-fragility">PDF Report</span>
@@ -2293,6 +2293,61 @@
     const backdrop    = document.getElementById('readerBackdrop');
 
     let currentUrl = '';
+
+    /* ----------------------------------------------------------
+       CANVA EMBED READER
+       For documents published via Canva — these embed cleanly
+       in iframes unlike GitHub Pages PDFs.
+       Parameters: designId, viewId, title, type
+    ---------------------------------------------------------- */
+    function openCanvaReport(designId, viewId, title, type) {
+      const canvaUrl     = `https://www.canva.com/design/${designId}/${viewId}/view?embed`;
+      const canvaPageUrl = `https://www.canva.com/design/${designId}/${viewId}/view?utm_content=${designId}&utm_campaign=designshare&utm_medium=embeds&utm_source=research.quanta-analytica.com`;
+
+      currentUrl = 'https://quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf';
+      docTitle.textContent = title;
+      docType.textContent  = type || 'QAP Report';
+      urlBar.textContent   = 'quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf';
+
+      // Reset state
+      loading.style.display = 'flex';
+      loading.innerHTML     = `
+        <div class="reader-spinner"></div>
+        <div class="reader-loading-text">Loading document…</div>
+      `;
+      iframe.style.display  = 'none';
+      iframe.src            = '';
+
+      overlay.classList.add('active');
+      document.body.classList.add('reader-open');
+
+      // Canva embed uses a specific aspect ratio wrapper but inside our
+      // fixed-height reader panel we just let it fill the available space.
+      // Override the iframe to fill the panel, then point at the embed URL.
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          // Remove any inline styles that would constrain the iframe
+          iframe.removeAttribute('style');
+          iframe.style.cssText = 'flex:1; border:none; display:block; width:100%; background:#fff;';
+          iframe.allow         = 'fullscreen';
+          iframe.src           = canvaUrl;
+        }, 80);
+      });
+
+      iframe.onload = function () {
+        loading.style.display = 'none';
+        iframe.style.display  = 'block';
+      };
+
+      iframe.onerror = function () {
+        loading.innerHTML = `
+          <div style="text-align:center; padding:32px;">
+            <div style="font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Unable to load Canva embed</div>
+            <a href="https://quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.66rem; color:var(--gold-light); letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--gold-dim); padding-bottom:2px;">Open on GitHub &rarr;</a>
+          </div>
+        `;
+      };
+    }
 
     function openReport(url, title, type) {
       currentUrl = url;

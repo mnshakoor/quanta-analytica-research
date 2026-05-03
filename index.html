@@ -2298,34 +2298,129 @@
       currentUrl = url;
       docTitle.textContent = title;
       docType.textContent  = type || 'QAP Report';
-      urlBar.textContent   = url.replace('https://quanta-analytica.com/', 'quanta-analytica.com/');
+      urlBar.textContent   = url.replace('https://quanta-analytica.com/', 'quanta-analytica.com/').replace('https://research.quanta-analytica.com/', 'research.quanta-analytica.com/');
 
-      // Show loading state
-      loading.style.display  = 'flex';
-      iframe.style.display   = 'none';
-      iframe.src             = '';
+      // Reset panel state
+      loading.style.display = 'flex';
+      iframe.style.display  = 'none';
+      iframe.src            = '';
 
       // Open overlay
       overlay.classList.add('active');
       document.body.classList.add('reader-open');
 
-      // Set iframe source after a brief tick so the animation fires first
+      // ── PDF INTERCEPT ─────────────────────────────────────
+      // Browsers block cross-origin PDF embedding in iframes
+      // regardless of sandbox settings. Detect and intercept
+      // before attempting to load — show a purpose-built card
+      // with direct open/download actions instead.
+      if (url.toLowerCase().endsWith('.pdf')) {
+        loading.innerHTML = `
+          <div style="
+            display:flex; flex-direction:column; align-items:center;
+            justify-content:center; gap:24px; padding:48px 32px;
+            text-align:center; max-width:540px; margin:0 auto;
+          ">
+            <!-- PDF icon -->
+            <div style="
+              width:72px; height:72px; border-radius:12px;
+              background:rgba(200,169,110,0.08);
+              border:1px solid rgba(200,169,110,0.20);
+              display:flex; align-items:center; justify-content:center;
+              flex-shrink:0;
+            ">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4h10l8 8v16a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 4v8h8" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 17h12M10 21h8" stroke="#9a7f52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Label -->
+            <div>
+              <div style="
+                font-family:var(--font-mono); font-size:0.58rem;
+                letter-spacing:0.20em; text-transform:uppercase;
+                color:var(--gold-dim); margin-bottom:10px;
+              ">PDF Report &nbsp;|&nbsp; Full Document</div>
+              <div style="
+                font-family:'Libre Baskerville',Georgia,serif;
+                font-size:1.15rem; font-weight:700; line-height:1.35;
+                color:var(--text-primary); margin-bottom:10px;
+              ">${title}</div>
+              <div style="
+                font-family:var(--font-mono); font-size:0.64rem;
+                color:var(--text-muted); line-height:1.5;
+                max-width:420px;
+              ">PDF documents cannot be displayed inside the in-page reader due to browser security restrictions. Use the buttons below to open or download the full report.</div>
+            </div>
+
+            <!-- Action buttons -->
+            <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+              <a
+                href="${url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  display:inline-flex; align-items:center; gap:8px;
+                  background:var(--gold); color:var(--obsidian);
+                  font-family:var(--font-mono); font-size:0.66rem;
+                  letter-spacing:0.14em; text-transform:uppercase;
+                  font-weight:700; padding:11px 20px;
+                  border-radius:3px; text-decoration:none;
+                  transition:background 0.2s;
+                "
+                onmouseover="this.style.background='#dfc28e'"
+                onmouseout="this.style.background='#c8a96e'"
+              >
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Open PDF
+              </a>
+              <a
+                href="${url}"
+                download
+                style="
+                  display:inline-flex; align-items:center; gap:8px;
+                  background:transparent; color:var(--gold-light);
+                  font-family:var(--font-mono); font-size:0.66rem;
+                  letter-spacing:0.14em; text-transform:uppercase;
+                  font-weight:600; padding:11px 20px;
+                  border-radius:3px; text-decoration:none;
+                  border:1px solid var(--gold-dim);
+                  transition:background 0.2s, border-color 0.2s;
+                "
+                onmouseover="this.style.background='rgba(200,169,110,0.10)'"
+                onmouseout="this.style.background='transparent'"
+              >
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download
+              </a>
+            </div>
+
+            <!-- File path reference -->
+            <div style="
+              font-family:var(--font-mono); font-size:0.56rem;
+              letter-spacing:0.08em; color:var(--text-faint);
+              word-break:break-all;
+            ">${url.replace('https://quanta-analytica.com/', 'quanta-analytica.com/').replace('https://research.quanta-analytica.com/', 'research.quanta-analytica.com/')}</div>
+          </div>
+        `;
+        return; // Do not attempt iframe load
+      }
+
+      // ── HTML REPORT: normal iframe path ───────────────────
       requestAnimationFrame(() => {
-        setTimeout(() => {
-          iframe.src = url;
-        }, 80);
+        setTimeout(() => { iframe.src = url; }, 80);
       });
 
-      // Listen for iframe load
       iframe.onload = function () {
         loading.style.display = 'none';
         iframe.style.display  = 'block';
       };
 
-      // Handle iframe errors gracefully
       iframe.onerror = function () {
         loading.innerHTML = `
-          <div style="text-align:center; padding: 32px;">
+          <div style="text-align:center; padding:32px;">
             <div style="font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Unable to load in reader</div>
             <a href="${url}" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.66rem; color:var(--gold-light); letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--gold-dim); padding-bottom:2px;">Open in new tab &rarr;</a>
           </div>
@@ -2336,11 +2431,15 @@
     function closeReader() {
       overlay.classList.remove('active');
       document.body.classList.remove('reader-open');
-      // Clear iframe after transition to stop loading/audio
       setTimeout(() => {
-        iframe.src             = '';
-        iframe.style.display   = 'none';
-        loading.style.display  = 'flex';
+        iframe.src            = '';
+        iframe.style.display  = 'none';
+        // Reset loading panel to original spinner state
+        loading.style.display = 'flex';
+        loading.innerHTML     = `
+          <div class="reader-spinner"></div>
+          <div class="reader-loading-text">Loading report…</div>
+        `;
       }, 320);
     }
 

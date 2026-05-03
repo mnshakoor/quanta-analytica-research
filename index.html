@@ -819,21 +819,45 @@
 
     /* Card visual shared */
     .card-visual {
-      min-height: 200px;
-      background: linear-gradient(155deg, rgba(155,35,53,0.14), rgba(200,169,110,0.07), transparent 80%), var(--obsidian-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 240px;
       position: relative;
       overflow: hidden;
+      background: var(--obsidian-mid);
+    }
+    /* Full-bleed image fill */
+    .card-visual-logo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.72;
+      z-index: 1;
+      filter: none;
+    }
+    /* Gradient overlay so confidence badge + card body transition cleanly */
+    .card-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,16,0.10) 0%,
+        rgba(10,12,16,0.15) 60%,
+        rgba(10,12,16,0.72) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
     }
     .card-visual-grid {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
       background-size: 36px 36px;
+      z-index: 3;
+      pointer-events: none;
     }
-    .card-visual-logo { width: 64px; opacity: 0.65; position: relative; z-index: 1; filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5)); }
     .card-confidence {
       position: absolute;
       bottom: 12px; right: 12px;
@@ -846,7 +870,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gold-dim);
-      z-index: 2;
+      z-index: 4;
     }
     .card-body { padding: 20px; }
     .card-body .kicker-label { margin-bottom: 10px; display: inline-flex; }
@@ -1124,15 +1148,35 @@
     }
     .blog-feature:hover { border-color: rgba(200,169,110,0.30); }
     .blog-feature-visual {
-      min-height: 220px;
-      background: linear-gradient(165deg, rgba(74,111,165,0.16), rgba(200,169,110,0.06), transparent 88%), var(--obsidian-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 280px;
       position: relative;
       overflow: hidden;
+      background: var(--obsidian-mid);
     }
-    .blog-feature-visual img { width: 72px; opacity: 0.55; position: relative; z-index: 1; filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5)); }
+    .blog-feature-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.70;
+      z-index: 1;
+      filter: none;
+    }
+    .blog-feature-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,16,0.08) 0%,
+        rgba(10,12,16,0.20) 55%,
+        rgba(10,12,16,0.78) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
     .blog-visual-label {
       position: absolute;
       top: 14px; left: 14px;
@@ -1145,7 +1189,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-muted);
-      z-index: 2;
+      z-index: 4;
     }
     .blog-feature-body { padding: 24px; }
     .blog-feature-body .kicker-label { display: inline-flex; margin-bottom: 11px; }
@@ -1354,6 +1398,29 @@
     }
     .dispatch-form button:hover { background: var(--gold-light); }
     .dispatch-note { margin-top: 13px; font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-muted); }
+    .dispatch-subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--gold);
+      color: var(--obsidian);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 13px 28px;
+      font-family: var(--font-mono);
+      font-size: 0.70rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(200,169,110,0.25);
+    }
+    .dispatch-subscribe-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(200,169,110,0.35);
+    }
 
     /* ============================================================
        FOOTER
@@ -1521,7 +1588,7 @@
       </nav>
       <div class="masthead-cta">
         <a class="btn-outline" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">Archive</a>
-        <a class="btn-solid" href="https://aracinternational.substack.com?utm_source=research.quanta-analytica.com&utm_medium=masthead&utm_campaign=dispatch" target="_blank" rel="noopener">Flashpoints &amp; Frameworks ↗</a>
+        <a class="btn-solid" href="https://newsletter.arac-international.org/subscribe?utm_source=research.quanta-analytica.com&utm_medium=masthead&utm_campaign=dispatch" target="_blank" rel="noopener">Flashpoints &amp; Frameworks ↗</a>
       </div>
     </div>
   </header>
@@ -2113,9 +2180,8 @@
 
     <!-- ============================================================
          DISPATCH — Flashpoints & Frameworks | ARAC International
-         Substack: https://aracinternational.substack.com
-         Custom domain: https://newsletter.arac-international.org
-         Subscription endpoint: Substack embed API
+         Subscribe URL: https://newsletter.arac-international.org/subscribe
+         Direct-link CTA — no embedded form required
     ============================================================ -->
     <section class="dispatch" id="dispatch">
       <div class="shell">
@@ -2123,7 +2189,7 @@
 
           <!-- Publication identity strip -->
           <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:20px;">
-            <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" style="width:55px; height:55px; object-fit:contain; opacity:0.8;" />
+            <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" style="width:60px; height:60px; object-fit:contain; opacity:0.8;" />
             <div style="width:1px; height:28px; background:var(--obsidian-border);"></div>
             <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold-dim);">ARAC International &nbsp;|&nbsp; Quanta Analytica &nbsp;|&nbsp; MNS Consulting</span>
           </div>
@@ -2132,41 +2198,18 @@
           <h2 class="dispatch-title">Intelligence delivered to your inbox.</h2>
           <p class="dispatch-body">Subscribe to Flashpoints &amp; Frameworks — the official research newsletter of ARAC International and Quanta Analytica. QAP assessments, conflict systems analysis, situational briefs, and analytic editorials, published on a structured release cycle.</p>
 
-          <!-- Substack embed form
-               Action points to Substack's subscribe endpoint.
-               Substack handles validation, confirmation email, and list management.
-               UTM parameters track subscriptions originating from this gateway.
-          -->
-          <form
-            class="dispatch-form"
-            action="https://aracinternational.substack.com/api/v1/free?nojs=true"
-            method="post"
-            target="_blank"
-            onsubmit="handleDispatchSubmit(event)"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              aria-label="Email address"
-              required
-              autocomplete="email"
-            />
-            <!-- UTM hidden fields — tracked in Substack subscriber source -->
-            <input type="hidden" name="first_url" value="https://research.quanta-analytica.com/?utm_source=research-gateway&utm_medium=dispatch-form&utm_campaign=flashpoints-frameworks" />
-            <input type="hidden" name="first_referrer" value="https://research.quanta-analytica.com/" />
-            <button type="submit">Subscribe Free</button>
-          </form>
-
-          <!-- Success state — shown after submit -->
-          <div id="dispatch-success" style="display:none; margin-top:18px;">
-            <div style="display:inline-flex; align-items:center; gap:10px; background:var(--accent-sage-bg); border:1px solid rgba(61,122,92,0.35); border-radius:var(--radius-sm); padding:10px 18px;">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#6db890" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span style="font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:#6db890;">Check your inbox to confirm your subscription.</span>
-            </div>
+          <!-- Subscribe CTA — direct link to Flashpoints & Frameworks subscribe page -->
+          <div style="display:flex; justify-content:center; margin-bottom:4px;">
+            <a
+              href="https://newsletter.arac-international.org/subscribe?utm_source=research.quanta-analytica.com&utm_medium=dispatch-cta&utm_campaign=flashpoints-frameworks"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="dispatch-subscribe-btn"
+            >
+              Subscribe Free
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="margin-left:6px;"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
-
-          <iframe src="https://newsletter.arac-international.org/embed" width="580" height="400" style="border: 1px solid #EEE; background: black" frameborder="0" scrolling="no"></iframe>
 
           <!-- Footer notes -->
           <p class="dispatch-note" style="margin-top:16px;">
@@ -2314,32 +2357,6 @@
     });
 
     /* ----------------------------------------------------------
-       DISPATCH — SUBSTACK SUBSCRIBE HANDLER
-       The form posts to Substack's nojs endpoint which opens
-       a new tab for Substack's confirmation flow. We show a
-       local success nudge simultaneously so the reader gets
-       immediate feedback on the gateway page itself.
-    ---------------------------------------------------------- */
-    function handleDispatchSubmit(e) {
-      const email = e.target.querySelector('input[type="email"]').value;
-      if (!email) return;
-
-      // Show the inline success message
-      const success = document.getElementById('dispatch-success');
-      if (success) {
-        success.style.display = 'block';
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-
-      // Append UTM to the form action dynamically
-      const form = e.target;
-      const base = 'https://aracinternational.substack.com/api/v1/free?nojs=true';
-      form.action = base + '&utm_source=research-gateway&utm_medium=dispatch-form&utm_campaign=flashpoints-frameworks';
-
-      // Allow the form to submit normally (opens Substack in new tab via target="_blank")
-      // No return false — the native submit proceeds
-    }
-
     /* ----------------------------------------------------------
        SCROLL PROGRESS RULE
     ---------------------------------------------------------- */

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>QAP Slide Deck | SA Xenophobic Mobilization Risk | 08 May 2026</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0c10'/><polygon points='16,4 28,12 28,20 16,28 4,20 4,12' fill='none' stroke='%23c8a96e' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%23c8a96e'/></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#0a0c10;--obsidian-mid:#10131a;--obsidian-card:#13161f;
+  --obsidian-border:#1c2030;--obsidian-surface:#181b26;--obsidian-lift:#1e2235;
+  --gold:#c8a96e;--gold-light:#dfc28e;--gold-pale:#e8d5aa;--gold-dim:#9a7f52;
+  --gold-muted:#6b5838;--gold-glow:rgba(200,169,110,.12);
+  --red:#c0392b;--red-light:#e74c3c;--red-bg:rgba(192,57,43,.12);
+  --amber:#d4820a;--amber-light:#f39c12;--amber-bg:rgba(212,130,10,.12);
+  --green:#27ae60;--green-light:#2ecc71;--green-bg:rgba(39,174,96,.12);
+  --blue:#2980b9;--blue-light:#3498db;--blue-bg:rgba(41,128,185,.12);
+  --yellow:#f1c40f;--yellow-bg:rgba(241,196,15,.12);
+  --slate:#5d7a9a;--slate-light:#7f9ab8;
+  --text-primary:#e8e4dc;--text-secondary:#b8b0a0;--text-muted:#7a7264;--text-faint:#4a4640;
+  --font-display:'Libre Baskerville',Georgia,serif;
+  --font-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --font-mono:'IBM Plex Mono','Courier New',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--obsidian);font-family:var(--font-body);color:var(--text-primary);}
+a{color:var(--gold);text-decoration:none;}
+a:hover{color:var(--gold-light);text-decoration:underline;}
+
+/* ---- DECK ---- */
+#deck{width:100%;height:100%;position:relative;}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;background:var(--obsidian);overflow:hidden;}
+.slide.active{display:flex;}
+
+/* ---- HEADER ---- */
+.s-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;border-bottom:1px solid var(--obsidian-border);
+  background:rgba(10,12,16,.97);flex-shrink:0;gap:8px;
+}
+.s-brand{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;}
+.s-brand span{color:var(--text-faint);}
+.s-doc{font-family:var(--font-mono);font-size:.58rem;color:var(--text-faint);letter-spacing:.1em;flex:1;text-align:center;}
+.s-header-right{display:flex;align-items:center;gap:8px;}
+.s-classify{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--amber);border:1px solid var(--amber);padding:2px 7px;border-radius:3px;background:var(--amber-bg);white-space:nowrap;}
+
+/* ---- NAV MENU BUTTON ---- */
+.nav-toggle{
+  display:flex;align-items:center;gap:5px;
+  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--obsidian-card);border:1px solid var(--obsidian-border);color:var(--gold);
+  padding:4px 10px;border-radius:3px;cursor:pointer;transition:.15s;white-space:nowrap;
+}
+.nav-toggle:hover{background:var(--obsidian-lift);border-color:var(--gold-dim);}
+.nav-toggle svg{width:12px;height:12px;fill:var(--gold);transition:transform .2s;}
+.nav-toggle.open svg{transform:rotate(180deg);}
+
+/* ---- NAV DROPDOWN ---- */
+#nav-menu{
+  position:fixed;top:43px;right:16px;z-index:9999;
+  background:var(--obsidian-card);border:1px solid var(--obsidian-border);
+  border-radius:6px;min-width:260px;overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,.6);
+  display:none;
+}
+#nav-menu.open{display:block;}
+.nav-menu-header{
+  padding:8px 14px;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold-dim);border-bottom:1px solid var(--obsidian-border);
+  background:var(--obsidian-surface);
+}
+.nav-menu-item{
+  display:flex;align-items:center;gap:10px;padding:9px 14px;cursor:pointer;
+  border-bottom:1px solid var(--obsidian-border);transition:background .12s;
+}
+.nav-menu-item:last-child{border-bottom:none;}
+.nav-menu-item:hover{background:var(--obsidian-lift);}
+.nav-menu-item.current{background:var(--gold-glow);}
+.nav-item-num{
+  font-family:var(--font-mono);font-size:.58rem;color:var(--gold-dim);
+  background:var(--obsidian-surface);border:1px solid var(--obsidian-border);
+  padding:1px 5px;border-radius:2px;white-space:nowrap;min-width:38px;text-align:center;
+}
+.nav-item-label{font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary);letter-spacing:.04em;}
+.nav-menu-item.current .nav-item-label{color:var(--gold);}
+
+/* ---- FOOTER ---- */
+.s-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 16px;border-top:1px solid var(--obsidian-border);
+  background:rgba(10,12,16,.97);flex-shrink:0;gap:8px;
+}
+.s-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-faint);letter-spacing:.1em;white-space:nowrap;}
+.s-nav{display:flex;gap:8px;}
+.s-nav button{
+  font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--obsidian-card);border:1px solid var(--obsidian-border);color:var(--gold);
+  padding:4px 14px;border-radius:3px;cursor:pointer;transition:.15s;
+}
+.s-nav button:hover{background:var(--obsidian-lift);border-color:var(--gold-dim);}
+.s-nav button:disabled{opacity:.3;cursor:default;}
+.s-progress-bar{height:2px;background:var(--obsidian-border);flex:1;border-radius:2px;overflow:hidden;}
+.s-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .3s ease;border-radius:2px;}
+
+/* ---- BODY ---- */
+.s-body{flex:1;overflow:hidden;padding:16px 32px 12px;display:flex;flex-direction:column;gap:12px;}
+
+/* ---- TAGS ---- */
+.sec-tag{display:inline-flex;align-items:center;gap:8px;}
+.sec-num{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-dim);background:var(--gold-glow);border:1px solid var(--gold-muted);padding:2px 8px;border-radius:3px;}
+.slide-h2{font-family:var(--font-display);font-size:clamp(1rem,1.6vw,1.5rem);font-weight:700;color:var(--text-primary);line-height:1.2;}
+
+/* ---- TITLE SLIDE ---- */
+.title-logo{width:64px;height:auto;margin-bottom:12px;}
+.title-eyebrow{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.title-h1{font-family:var(--font-display);font-size:clamp(1.3rem,2.2vw,2rem);font-weight:700;line-height:1.18;color:var(--text-primary);margin-bottom:8px;}
+.title-h1 .gold{color:var(--gold);}
+.title-sub{font-size:.88rem;color:var(--text-secondary);max-width:660px;line-height:1.6;margin-bottom:16px;}
+.meta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:14px;}
+.meta-cell{display:flex;flex-direction:column;gap:2px;}
+.meta-cell .lbl{font-family:var(--font-mono);font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);}
+.meta-cell .val{font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:var(--text-primary);}
+.meta-div{width:1px;height:28px;background:var(--gold-dim);align-self:center;}
+.threat-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.65rem;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:3px;border:1px solid;}
+.threat-badge.elevated{color:var(--yellow);border-color:var(--yellow);background:var(--yellow-bg);}
+.threat-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 1.6s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.metrics-row{display:flex;gap:8px;flex-wrap:wrap;}
+.metric-b{background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-top:2px solid var(--gold-dim);padding:7px 14px;border-radius:5px;}
+.metric-b .mv{font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--gold);line-height:1;}
+.metric-b .ml{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:3px;}
+
+/* ---- BLUF ---- */
+.bluf-list{display:flex;flex-direction:column;gap:7px;overflow:hidden;}
+.bluf-i{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:9px 12px;
+  background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-left:3px solid var(--gold-dim);border-radius:5px;}
+.bluf-n{font-family:var(--font-mono);font-size:1rem;font-weight:700;color:var(--gold-pale);opacity:.35;line-height:1;padding-top:2px;}
+.bluf-claim{font-weight:700;color:var(--text-primary);font-size:.82rem;display:block;margin-bottom:2px;}
+.bluf-body{font-size:.75rem;color:var(--text-secondary);line-height:1.5;}
+
+/* ---- TWO-COL ---- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;overflow:hidden;}
+.panel{background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-radius:6px;padding:12px 14px;overflow:hidden;}
+.panel-title{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+
+/* ---- KJ ---- */
+.kj-list{display:flex;flex-direction:column;gap:6px;overflow:hidden;}
+.kj-i{padding:8px 12px;background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-radius:5px;border-left:4px solid;}
+.kj-i.mod{border-left-color:var(--amber);}
+.kj-i.watch{border-left-color:var(--yellow);}
+.kj-top{display:flex;align-items:center;gap:8px;margin-bottom:3px;}
+.kj-id{font-family:var(--font-mono);font-size:.58rem;color:var(--text-muted);}
+.kj-conf{font-family:var(--font-mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 5px;border-radius:3px;border:1px solid;}
+.kj-i.mod .kj-conf{color:var(--amber-light);border-color:var(--amber);background:var(--amber-bg);}
+.kj-i.watch .kj-conf{color:var(--yellow);border-color:var(--yellow);background:var(--yellow-bg);}
+.kj-text{font-size:.76rem;color:var(--text-secondary);line-height:1.5;}
+
+/* ---- EVIDENCE ---- */
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;flex:1;overflow:hidden;}
+.ev-box{background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-radius:6px;overflow:hidden;}
+.ev-hdr{padding:5px 12px;font-family:var(--font-mono);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+.ev-hdr.know{background:var(--green-bg);color:var(--green-light);border-bottom:1px solid var(--green);}
+.ev-hdr.assess{background:var(--amber-bg);color:var(--amber-light);border-bottom:1px solid var(--amber);}
+.ev-hdr.gap{background:var(--red-bg);color:var(--red-light);border-bottom:1px solid var(--red);}
+.ev-body{padding:8px 12px;}
+.ev-body li{list-style:none;font-size:.73rem;color:var(--text-secondary);line-height:1.5;padding:3px 0 3px 14px;border-bottom:1px solid var(--obsidian-border);position:relative;}
+.ev-body li::before{content:'//';position:absolute;left:0;color:var(--text-faint);font-family:var(--font-mono);font-size:.6rem;}
+.ev-body li:last-child{border-bottom:none;}
+
+/* ---- TABLES ---- */
+.tbl-wrap{overflow:auto;flex:1;}
+table{width:100%;border-collapse:collapse;font-size:.72rem;}
+thead th{background:var(--obsidian-surface);padding:6px 9px;text-align:left;font-family:var(--font-mono);font-size:.56rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dim);border-bottom:1px solid var(--obsidian-border);}
+tbody tr{border-bottom:1px solid var(--obsidian-border);}
+tbody tr:last-child{border-bottom:none;}
+tbody td{padding:6px 9px;color:var(--text-secondary);vertical-align:top;line-height:1.5;}
+tbody td:first-child{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);}
+
+/* ---- SCENARIOS ---- */
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;}
+.sc-card{background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-top:3px solid;border-radius:6px;padding:14px;}
+.sc-card.best{border-top-color:var(--green);}
+.sc-card.base{border-top-color:var(--amber);}
+.sc-card.worst{border-top-color:var(--red);}
+.sc-lbl{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:5px;display:block;}
+.sc-card.best .sc-lbl{color:var(--green-light);}
+.sc-card.base .sc-lbl{color:var(--amber-light);}
+.sc-card.worst .sc-lbl{color:var(--red-light);}
+.sc-h{font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--text-primary);margin-bottom:5px;}
+.sc-p{font-size:.74rem;color:var(--text-secondary);line-height:1.5;}
+.sc-prob{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);margin-top:7px;display:block;}
+
+/* ---- THRESHOLDS ---- */
+.thr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;}
+.thr-cell{border-radius:6px;border:1px solid;overflow:hidden;}
+.thr-cell.g{border-color:var(--green);background:var(--green-bg);}
+.thr-cell.a{border-color:var(--amber);background:var(--amber-bg);}
+.thr-cell.r{border-color:var(--red);background:var(--red-bg);}
+.thr-hdr{padding:5px 12px;font-family:var(--font-mono);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid;}
+.thr-cell.g .thr-hdr{color:var(--green-light);border-color:var(--green);background:rgba(39,174,96,.18);}
+.thr-cell.a .thr-hdr{color:var(--amber-light);border-color:var(--amber);background:rgba(212,130,10,.18);}
+.thr-cell.r .thr-hdr{color:var(--red-light);border-color:var(--red);background:rgba(192,57,43,.18);}
+.thr-body{padding:10px 12px;}
+.thr-body p{font-size:.74rem;color:var(--text-secondary);line-height:1.5;margin-bottom:5px;}
+.thr-body li{list-style:none;font-size:.72rem;color:var(--text-secondary);line-height:1.5;padding:2px 0 2px 12px;position:relative;}
+.thr-body li::before{content:'›';position:absolute;left:0;color:var(--text-faint);}
+
+/* ---- BEHAVIORAL ---- */
+.beh-list{display:flex;flex-direction:column;gap:6px;overflow:hidden;flex:1;}
+.beh-i{display:grid;grid-template-columns:40px 1fr;gap:10px;padding:9px 12px;
+  background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-radius:5px;}
+.beh-rank{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--gold-pale);opacity:.25;line-height:1;text-align:center;}
+.beh-h{font-weight:700;font-size:.8rem;color:var(--text-primary);margin-bottom:2px;}
+.beh-p{font-size:.73rem;color:var(--text-secondary);line-height:1.5;}
+.beh-inf{font-family:var(--font-mono);font-size:.62rem;color:var(--slate-light);font-style:italic;display:block;margin-top:2px;}
+
+/* ---- CONFIDENCE ---- */
+.conf-box{background:var(--obsidian-card);border:1px solid var(--obsidian-border);border-radius:6px;overflow:hidden;margin-bottom:10px;}
+.conf-hdr{padding:7px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--obsidian-border);}
+.conf-band{font-family:var(--font-mono);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid;}
+.conf-band.mod{color:var(--amber-light);border-color:var(--amber);background:var(--amber-bg);}
+.conf-lbl{font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted);}
+.conf-body{padding:10px 14px;font-size:.78rem;color:var(--text-secondary);line-height:1.6;}
+.flip-list{display:flex;flex-direction:column;gap:6px;}
+.flip-i{background:var(--red-bg);border:1px solid var(--red);border-radius:5px;padding:7px 12px;}
+.flip-lbl{font-family:var(--font-mono);font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-light);display:block;margin-bottom:2px;}
+.flip-p{font-size:.74rem;color:var(--text-secondary);}
+
+/* ---- PILLS ---- */
+.band-pill{display:inline-block;font-family:var(--font-mono);font-size:.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;border:1px solid;}
+.band-pill.green{color:var(--green-light);border-color:var(--green);background:var(--green-bg);}
+.sp{display:inline-block;font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:1px 5px;border-radius:3px;border:1px solid;}
+.sp.red{color:var(--red-light);border-color:var(--red);background:var(--red-bg);}
+.sp.amber{color:var(--amber-light);border-color:var(--amber);background:var(--amber-bg);}
+
+/* ---- MISC ---- */
+.bg-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(200,169,110,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,169,110,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.scope-note{background:rgba(93,122,154,.1);border:1px solid rgba(93,122,154,.3);border-left:3px solid var(--slate);
+  border-radius:5px;padding:7px 12px;font-size:.73rem;color:var(--slate-light);font-style:italic;line-height:1.5;}
+
+/* Source link styling */
+.src-link{color:var(--gold);font-family:var(--font-mono);font-size:.65rem;display:inline-block;margin-top:3px;}
+.src-link:hover{color:var(--gold-light);}
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<!-- NAV DROPDOWN (shared, outside slides) -->
+<div id="nav-menu">
+  <div class="nav-menu-header">Section Navigation</div>
+</div>
+
+<script>
+const SLIDES = [
+  {tag:'00 // TITLE',   label:'Title & Metadata'},
+  {tag:'00 // CONTROL', label:'Production Control Gate'},
+  {tag:'01 // BLUF',    label:'Bottom Line Up Front'},
+  {tag:'03 // SNAPSHOT',label:'Situation Snapshot'},
+  {tag:'04 // KEY JUDGMENTS', label:'Key Judgments'},
+  {tag:'05 // EVIDENCE',label:'Evidence Summary'},
+  {tag:'06 // ACH',     label:'Analysis of Competing Hypotheses'},
+  {tag:'06 // SCENARIOS',label:'Scenario Modeling'},
+  {tag:'07 // BEHAVIORAL',label:'Behavioral Tradecraft'},
+  {tag:'08 // THRESHOLDS',label:'Decision Thresholds'},
+  {tag:'09 // CONFIDENCE',label:'Confidence & Flip Risks'},
+  {tag:'ANNEX A // I&W', label:'Indicators & Warnings'},
+  {tag:'ANNEX B // GAPS',label:'Priority Intelligence Gaps'},
+  {tag:'10 // SOURCES', label:'Source Register & WSI Audit'},
+];
+
+function renderSlide(i){
+  switch(i){
+    case 0: return slideTitle();
+    case 1: return slideControl();
+    case 2: return slideBLUF();
+    case 3: return slideSnapshot();
+    case 4: return slideKJs();
+    case 5: return slideEvidence();
+    case 6: return slideACH();
+    case 7: return slideScenarios();
+    case 8: return slideBehavioral();
+    case 9: return slideThresholds();
+    case 10: return slideConfidence();
+    case 11: return slideEWI();
+    case 12: return slideGaps();
+    case 13: return slideSources();
+  }
+}
+
+/* ===== SLIDE CONTENT ===== */
+function slideTitle(){return `
+<div class="bg-grid"></div>
+<div class="s-body" style="justify-content:center;align-items:flex-start;padding:24px 52px;">
+  <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" class="title-logo"/>
+  <div class="title-eyebrow">Quanta Analytica Process™ v2.0 | Intelligence Assessment | 08 May 2026</div>
+  <h1 class="title-h1">Escalating Anti-Immigrant Mobilization<br>and Foreign-National Security Risk<br><span class="gold">in South Africa</span></h1>
+  <p class="title-sub">A structured assessment of near-term xenophobic violence risk, vigilante mobilization, service denial, repatriation pressure, and NGO field-access exposure in South Africa's urban economic hubs.</p>
+  <div class="meta-row">
+    <div class="meta-cell"><span class="lbl">Domain</span><span class="val">NGO SRM</span></div>
+    <div class="meta-div"></div>
+    <div class="meta-cell"><span class="lbl">Date</span><span class="val">08 May 2026</span></div>
+    <div class="meta-div"></div>
+    <div class="meta-cell"><span class="lbl">Confidence</span><span class="val">Moderate</span></div>
+    <div class="meta-div"></div>
+    <div class="threat-badge elevated"><span class="threat-dot"></span>ELEVATED</div>
+    <div class="meta-div"></div>
+    <div class="meta-cell"><span class="lbl">Classification</span><span class="val">Open Source / Partner-Facing</span></div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-b"><div class="mv">30D</div><div class="ml">Forecast Horizon</div></div>
+    <div class="metric-b"><div class="mv">14+</div><div class="ml">Source Register</div></div>
+    <div class="metric-b"><div class="mv">1994–2026</div><div class="ml">Historical Baseline</div></div>
+    <div class="metric-b"><div class="mv">7</div><div class="ml">Source Streams</div></div>
+  </div>
+</div>`;}
+
+function slideControl(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">00 // CONTROL</span></div>
+  <div class="slide-h2">Production Control Gate & Analytic Scope</div>
+  <div class="scope-note"><strong>Analytic Scope Boundary:</strong> Open-source reporting through 08 May 2026. Operational lookback: 24 April–08 May 2026. Forward horizon: 30 days. XenoWatch data (through 02 Feb 2026) used as systemic baseline only. Excluded: classified reporting, non-public SAPS datasets, hospital admissions, shelter records, consular case files, unauthenticated social media claims.</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Field</th><th>Configuration</th><th>Analytic Control</th></tr></thead>
+    <tbody>
+      <tr><td>Primary Domain</td><td>NGO Security Risk Management</td><td>Duty of care, field access, protection, consular coordination.</td></tr>
+      <tr><td>Supporting Domains</td><td>Conflict Systems Analysis; Behavioral Risk Diagnostics; Information Integrity Analysis</td><td>Escalation pathways, identity-based mobilization, rumor and narrative amplification.</td></tr>
+      <tr><td>Decision Need</td><td>Determine whether acute anti-immigrant activity is localized or transitioning toward broader multi-region violence.</td><td>Defines thresholds for movement restriction, field suspension, protection coordination, and repatriation support.</td></tr>
+      <tr><td>Evidence Discipline</td><td>Source register, WSI audit, RAPITIS, C-D-F, ACH, KAC, scenario modeling, I&amp;W, confidence audit.</td><td>Structured reasoning precedes narrative judgment.</td></tr>
+      <tr><td>Key Caveat</td><td>No consolidated verified public incident dataset for the past 14 days was identified.</td><td>XenoWatch is used for historical systems context only.</td></tr>
+    </tbody>
+  </table></div>
+</div>`;}
+
+function slideBLUF(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">01 // BLUF</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Bottom Line Up Front</div>
+  <div class="bluf-list">
+    <div class="bluf-i"><div class="bluf-n">01</div><div><span class="bluf-claim">[ASSESS] Elevated localized risk — not a confirmed systemic multi-region violence surge.</span><span class="bluf-body">Protests, diplomatic warnings, and repatriation requests are visible. No verified consolidated 14-day incident ledger across provinces. [S1] [S2] [S3]</span></div></div>
+    <div class="bluf-i"><div class="bluf-n">02</div><div><span class="bluf-claim">[ASSESS] Current unrest is an acute symptom of an established systemic pattern.</span><span class="bluf-body">XenoWatch historical data shows xenophobic discrimination as recurrent and spatially patterned. Present episode sits inside a longer governance, service-delivery, labor-market, identity, and vigilante-enforcement system. [S7] [S8]</span></div></div>
+    <div class="bluf-i"><div class="bluf-n">03</div><div><span class="bluf-claim">[FACT] Diplomatic concern has crossed an operational threshold for foreign missions.</span><span class="bluf-body">Kenya, Malawi, Lesotho, Zimbabwe, Ghana, and Nigeria-linked reporting reflects advisories and repatriation pressure. At least 130 Nigerians sought repatriation. [S1] [S2] [S12]</span></div></div>
+    <div class="bluf-i"><div class="bluf-n">04</div><div><span class="bluf-claim">[ASSESS] Most actionable near-term risk is coercive civic gatekeeping.</span><span class="bluf-body">Clinic obstruction, school and service-access disruption, document checks, business shutdown pressure — not only mob violence. [S4] [S5] [S6]</span></div></div>
+    <div class="bluf-i"><div class="bluf-n">05</div><div><span class="bluf-claim">[ASSESS] Move to heightened protective coordination now, with Orange and Red triggers tied to verified mobilization.</span><span class="bluf-body">Repatriation support reserved for multi-site violence, nationality targeting, shelter saturation, or police inability to secure movement. [S1] [S2] [S11]</span></div></div>
+  </div>
+</div>`;}
+
+function slideSnapshot(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">03 // SNAPSHOT</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Situation Snapshot</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;flex:1;overflow:hidden;">
+    <div class="panel"><div class="panel-title">Who</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">March and March, Operation Dudula, migrant communities, South African authorities, foreign missions, civil society groups, law enforcement.</p></div>
+    <div class="panel"><div class="panel-title">What</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">Anti-immigration protests, intimidation and violence against foreign nationals, clinic-access obstruction, diplomatic advisories, voluntary repatriation requests.</p></div>
+    <div class="panel"><div class="panel-title">Where</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">Johannesburg, Pretoria, KwaZulu-Natal, Eastern Cape, Durban. Urban economic hubs where migrant-owned businesses and public services intersect.</p></div>
+    <div class="panel"><div class="panel-title">When</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">Operational lookback: 24 Apr–08 May 2026. Historical systems context via XenoWatch through 02 Feb 2026.</p></div>
+    <div class="panel"><div class="panel-title">Why (Exposure)</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">Foreign nationals and NGOs face exposure through movement, commerce, healthcare access, school access, documentation checks, and protest-adjacent violence.</p></div>
+    <div class="panel"><div class="panel-title">How (Risk Mechanisms)</div><p style="font-size:.74rem;color:var(--text-secondary);line-height:1.5;">Grievance mobilization, social proof, rumor amplification, vigilantism, service denial, intimidation, business closure pressure, underreported protection needs.</p></div>
+  </div>
+</div>`;}
+
+function slideKJs(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">04 // KEY JUDGMENTS</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Key Judgments</div>
+  <div class="kj-list">
+    <div class="kj-i mod"><div class="kj-top"><span class="kj-id">KJ-1</span><span class="kj-conf">Moderate</span></div><div class="kj-text">[ASSESS] Multi-localized pressure, not a confirmed systemic surge. Absence of verified 14-day incident ledger prevents higher-confidence systemic-violence judgment.</div></div>
+    <div class="kj-i mod"><div class="kj-top"><span class="kj-id">KJ-2</span><span class="kj-conf">Moderate</span></div><div class="kj-text">[ASSESS] Organized mobilization is a significant accelerant. No current evidence of centralized national command. March and March and Operation Dudula visible in service-denial pathways.</div></div>
+    <div class="kj-i mod"><div class="kj-top"><span class="kj-id">KJ-3</span><span class="kj-conf">Moderate</span></div><div class="kj-text">[ASSESS] State response visible but behaviorally mixed. Officials condemned xenophobia; enforcement gaps documented around clinic obstruction and vigilante screening.</div></div>
+    <div class="kj-i mod"><div class="kj-top"><span class="kj-id">KJ-4</span><span class="kj-conf">Moderate</span></div><div class="kj-text">[ASSESS] Behavioral escalation centers on movement from grievance rhetoric to logistics: patrols, ID checks, clinic presence, business shutdown demands, crowd formation.</div></div>
+    <div class="kj-i mod"><div class="kj-top"><span class="kj-id">KJ-5</span><span class="kj-conf">Moderate</span></div><div class="kj-text">[ASSESS] Repatriation support should not be triggered by rhetoric alone. Thresholds: verified multi-site violence, nationality targeting, shelter saturation, consular emergency, or police inability to secure movement.</div></div>
+    <div class="kj-i watch"><div class="kj-top"><span class="kj-id">WATCH</span><span class="kj-conf">Low–Moderate</span></div><div class="kj-text">[CAVEAT] Information-triggered flashpoint risk is plausible. Viral claims tied to crime, service access, or business competition could rapidly mobilize crowds.</div></div>
+  </div>
+</div>`;}
+
+function slideEvidence(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">05 // EVIDENCE</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Evidence Summary and Epistemic Audit</div>
+  <div class="ev-grid">
+    <div class="ev-box"><div class="ev-hdr know">What We Know</div><div class="ev-body"><ul>
+      <li>Anti-immigration protests visible across credible reporting streams.</li>
+      <li>At least 130 Nigerians sought repatriation amid renewed tensions.</li>
+      <li>South Africa: 3M+ immigrants, 5.1% of population (Stats SA).</li>
+      <li>Unemployment: 31.4% in Q4 2025 (Stats SA QLFS).</li>
+      <li>Courts and government statements document prior obstruction of foreign nationals from public services.</li>
+    </ul></div></div>
+    <div class="ev-box"><div class="ev-hdr assess">What We Assess</div><div class="ev-body"><ul>
+      <li>Acute protest cycle is nested in a systemic xenophobic-discrimination pattern.</li>
+      <li>Service denial and intimidation are more likely than a uniform national violence wave in the immediate term.</li>
+      <li>Economic scarcity narratives mobilize but do not prove migrant causation.</li>
+      <li>State condemnation reduces risk; inconsistent enforcement creates perceived permission structure.</li>
+    </ul></div></div>
+    <div class="ev-box"><div class="ev-hdr gap">What We Do Not Know</div><div class="ev-body"><ul>
+      <li>Verified incident count by location, date, type, and victim nationality (past 14 days).</li>
+      <li>Whether group coordination is logistical, rhetorical, or command-directed.</li>
+      <li>Facility-level compliance with clinic and school access protections.</li>
+      <li>Consular case trends beyond public repatriation and advisory reporting.</li>
+    </ul></div></div>
+  </div>
+  <div class="scope-note" style="margin-top:8px;"><strong>WSI Note:</strong> No consolidated SAPS, municipal, hospital, shelter, or foreign mission incident dataset identified. Load-bearing claims draw from wire, official SA sources, court records, official statistics, and specialized monitoring datasets.</div>
+</div>`;}
+
+function slideACH(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">06 // ACH</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Analysis of Competing Hypotheses</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Hypothesis</th><th>Evidence For</th><th>Evidence Against / Limits</th><th>Diag.</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>H1 Localized Harassment</td><td>Protests and intimidation without verified national ledger.</td><td>Diplomatic warnings suggest broader perceived risk.</td><td>4</td><td>Least disconfirmed baseline.</td></tr>
+      <tr><td>H2 Coordinated Vigilante Expansion</td><td>Operation Dudula and March and March show mobilizing structures and service-denial precedent.</td><td>No public proof of centralized national command in current cycle.</td><td>4</td><td>Secondary accelerant.</td></tr>
+      <tr><td>H3 State Weakness / Permission Structure</td><td>Court and GroundUp reporting indicate enforcement gaps around clinic access.</td><td>Government has publicly condemned xenophobia and obstruction.</td><td>4</td><td>Material risk condition.</td></tr>
+      <tr><td>H4 Systemic Violence Surge</td><td>Historical recurrence and multi-state concern increase consequence risk.</td><td>No verified current multi-province synchronized violence dataset.</td><td>5</td><td>Watch, not baseline.</td></tr>
+      <tr><td>H5 Info-Triggered Flashpoint</td><td>Recent reporting references viral-video and narrative-amplification concerns.</td><td>Social media authenticity remains weak unless independently verified.</td><td>4</td><td>Overlay risk.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="scope-note" style="margin-top:8px;"><strong>ACH Result:</strong> Least-disconfirmed: H1 + H3. H2 is a significant accelerant. H5 is an overlay risk. H4 would upgrade rapidly if verified multi-site violence, deaths, displacement, or police inability to secure movement are confirmed.</div>
+</div>`;}
+
+function slideScenarios(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">06 // SCENARIO MODELING</span></div>
+  <div class="slide-h2" style="margin-bottom:10px;">Scenario Modeling: 30-Day Outlook</div>
+  <div class="sc-grid">
+    <div class="sc-card best"><span class="sc-lbl">Best / Contained</span><div class="sc-h">Contained Localized Tension</div><p class="sc-p">Protests continue but police and municipal authorities prevent service obstruction, looting, and repeat intimidation. Field access remains possible with localized restrictions.</p><span class="sc-prob">Probability: 25–30% | Confidence: Moderate</span></div>
+    <div class="sc-card base"><span class="sc-lbl">Base / Episodic</span><div class="sc-h">Episodic Local Escalation</div><p class="sc-p">Harassment, business closure fear, clinic or school friction, and crowd intimidation recur in exposed urban hubs. No confirmed sustained national violence wave emerges.</p><span class="sc-prob">Probability: 45–55% | Confidence: Moderate</span></div>
+    <div class="sc-card worst"><span class="sc-lbl">Worst / Surge</span><div class="sc-h">Coordinated Multi-Hub Pressure</div><p class="sc-p">Repeated patrols, shutdown demands, service obstruction, viral allegations, and protest-linked violence across multiple cities, forcing field suspension and consular escalation.</p><span class="sc-prob">Probability: 20–25% | Confidence: Low–Moderate</span></div>
+  </div>
+</div>`;}
+
+function slideBehavioral(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">07 // BEHAVIORAL TRADECRAFT</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Applied Behavioral Tradecraft</div>
+  <div class="beh-list">
+    <div class="beh-i"><div class="beh-rank">01</div><div><div class="beh-h">Scarcity-to-scapegoating conversion</div><p class="beh-p">High unemployment and service pressure become actionable when mobilizers frame foreign nationals as the cause of citizen exclusion from jobs, clinics, or schools.</p><span class="beh-inf">Warning: rhetoric becomes risk when it names a place, time, group, or target category.</span></div></div>
+    <div class="beh-i"><div class="beh-rank">02</div><div><div class="beh-h">Moral exclusion and service-denial normalization</div><p class="beh-p">Clinic and service obstruction pathways are material, not speculative. Court and government records make this documented and traceable.</p><span class="beh-inf">Warning: one verified clinic or school denial triggers Orange posture.</span></div></div>
+    <div class="beh-i"><div class="beh-rank">03</div><div><div class="beh-h">Vigilante legitimacy framing</div><p class="beh-p">Groups presenting as community protectors convert distrust in state capacity into public acceptance of unlawful inspections, ID checks, or exclusionary gatekeeping.</p><span class="beh-inf">Warning: monitor uniforms, patrols, inspection notices, and claims of local mandate.</span></div></div>
+    <div class="beh-i"><div class="beh-rank">04</div><div><div class="beh-h">Social proof and copycat mobilization</div><p class="beh-p">Visible marches, shop closures, and historical recurrence lower perceived barriers to imitation before formal organization is visible.</p><span class="beh-inf">Warning: track repeat incidents within 7 days of high-visibility protests.</span></div></div>
+    <div class="beh-i"><div class="beh-rank">05</div><div><div class="beh-h">Rumor-to-mobility pathway</div><p class="beh-p">Unverified videos or allegations function as mobilization cues even when authenticity is contested. Social media is a lead for verification, not a fact stream.</p><span class="beh-inf">Warning: viral claim + offline gathering = Red trigger.</span></div></div>
+  </div>
+</div>`;}
+
+function slideThresholds(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">08 // DECISION THRESHOLDS</span></div>
+  <div class="slide-h2" style="margin-bottom:10px;">Strategic Implications and Decision Thresholds</div>
+  <div class="thr-grid">
+    <div class="thr-cell g"><div class="thr-hdr">Green — Routine Monitoring</div><div class="thr-body"><p>No verified threats in operating area.</p><ul><li>No active gathering call near field sites.</li><li>No service obstruction reported.</li><li>Standard police liaison cadence.</li></ul></div></div>
+    <div class="thr-cell a"><div class="thr-hdr">Yellow / Orange — Heightened Posture</div><div class="thr-body"><p>Credible rhetoric, isolated harassment, patrols, or facility pressure.</p><ul><li>Restrict nonessential movement in affected areas.</li><li>Increase police, municipal, and consular liaison.</li><li>Daily facility access checks.</li><li>Activate incident log.</li></ul></div></div>
+    <div class="thr-cell r"><div class="thr-hdr">Red / Black — Emergency Coordination</div><div class="thr-body"><p>Violence, forced closures, roadblocks, direct targeting, shelter saturation, or police inability to secure movement.</p><ul><li>Suspend exposed field activity.</li><li>Coordinate consular support.</li><li>Voluntary repatriation assistance.</li><li>Activate protection cluster coordination.</li></ul></div></div>
+  </div>
+  <div class="scope-note" style="margin-top:10px;"><strong>Action Timeline:</strong> 0–72 hrs: daily verification cell, route mapping. 3–30 days: shared incident log, Orange posture on verified triggers. 30–180 days: systemic monitoring baseline, de-escalatory community liaison integration.</div>
+</div>`;}
+
+function slideConfidence(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">09 // CONFIDENCE AND UNCERTAINTIES</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Confidence Assessment and Flip Risks</div>
+  <div class="conf-box"><div class="conf-hdr"><span class="conf-band mod">Moderate</span><span class="conf-lbl">Overall Confidence — QAP-SAF-XENO-2026-0508</span></div><div class="conf-body">Source base is strong for public protests, diplomatic reactions, government and court positions, labor-market context, and historical systems baseline. Confidence is constrained by the absence of a consolidated, verified current incident dataset from SAPS, municipalities, hospitals, shelters, or foreign missions.</div></div>
+  <div class="flip-list">
+    <div class="flip-i"><span class="flip-lbl">Flip Risk 01 — Upgrade</span><p class="flip-p">If verified incidents show synchronized attacks across multiple provinces, the baseline shifts from localized pressure to systemic violence surge.</p></div>
+    <div class="flip-i"><span class="flip-lbl">Flip Risk 02 — Downgrade</span><p class="flip-p">If court orders and official condemnation produce visible enforcement and no repeat obstruction, service-denial risk declines.</p></div>
+    <div class="flip-i"><span class="flip-lbl">Flip Risk 03 — Downgrade</span><p class="flip-p">If viral claims are independently debunked and do not generate offline gatherings, information-triggered flashpoint risk falls.</p></div>
+  </div>
+</div>`;}
+
+function slideEWI(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">ANNEX A // EARLY WARNING INDICATORS</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Indicators and Warnings</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>ID</th><th>Indicator</th><th>Why It Matters</th><th>Threshold</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>EWI-1</td><td>Verified harassment in operating area</td><td>Stage 1 escalation</td><td>One verified incident</td><td style="color:var(--yellow);">Yellow</td></tr>
+      <tr><td>EWI-2</td><td>Call to gather near clinics, schools, shelters, markets</td><td>Rhetoric becomes logistics</td><td>Specific time/place, two streams</td><td style="color:var(--amber-light);">Orange</td></tr>
+      <tr><td>EWI-3</td><td>Clinic or school access obstruction</td><td>Service-denial pathway</td><td>One verified denial</td><td style="color:var(--amber-light);">Orange</td></tr>
+      <tr><td>EWI-4</td><td>Patrols, uniforms, or ID checks</td><td>Vigilante enforcement</td><td>Observed presence</td><td style="color:var(--amber-light);">Orange</td></tr>
+      <tr><td>EWI-5</td><td>Business shutdown demand</td><td>Economic coercion</td><td>Credible written or repeated verbal demand</td><td style="color:var(--red-light);">Red</td></tr>
+      <tr><td>EWI-6</td><td>Violence or property damage at migrant-linked businesses</td><td>High-impact flashpoint</td><td>One verified incident</td><td style="color:var(--red-light);">Red</td></tr>
+      <tr><td>EWI-7</td><td>Viral allegation naming nationality + offline gathering</td><td>Info-to-mobility conversion</td><td>Both conditions met</td><td style="color:var(--red-light);">Red</td></tr>
+      <tr><td>EWI-8</td><td>Consular advisory escalation</td><td>Mission threshold</td><td>Formal warning or emergency notice</td><td style="color:var(--red-light);">Red</td></tr>
+      <tr><td>EWI-9</td><td>Shelter occupancy spike</td><td>Displacement signal</td><td>80% capacity or rapid 48-hr rise</td><td style="color:var(--red-light);">Red–Black</td></tr>
+      <tr><td>EWI-10</td><td>Multi-neighborhood incidents in 72 hours</td><td>Systemic shift signal</td><td>3+ verified sites</td><td style="color:var(--red-light);">Black</td></tr>
+    </tbody>
+  </table></div>
+</div>`;}
+
+function slideGaps(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">ANNEX B // PRIORITY INTELLIGENCE GAPS</span></div>
+  <div class="slide-h2" style="margin-bottom:8px;">Priority Intelligence Gaps and Collection Plan</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Gap ID</th><th>Gap</th><th>Why It Matters</th><th>Collection Method</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>G1</td><td>Verified incident count and locations for current 14-day window.</td><td>Determines localized vs. systemic pattern.</td><td>SAPS, hospitals, shelters, NGOs, media coding, consular liaison.</td><td><span class="sp red">Critical</span></td></tr>
+      <tr><td>G2</td><td>Service-denial pattern by clinic and school.</td><td>Protects health and education access.</td><td>Facility manager call-down and legal-aid partners.</td><td><span class="sp red">Critical</span></td></tr>
+      <tr><td>G3</td><td>Anti-immigration group coordination and logistics.</td><td>Distinguishes protest from organized expansion.</td><td>Open-source monitoring, transport observations, community liaison.</td><td><span class="sp amber">High</span></td></tr>
+      <tr><td>G4</td><td>Police response posture and local implementation.</td><td>Determines whether field access can rely on state protection.</td><td>Station-level liaison, deployment checks, arrest updates.</td><td><span class="sp red">Critical</span></td></tr>
+      <tr><td>G5</td><td>Foreign mission repatriation and advisory trends.</td><td>Sets Red and Black thresholds.</td><td>Consular coordination calls and advisory tracking.</td><td><span class="sp amber">High</span></td></tr>
+      <tr><td>G6</td><td>Shelter capacity and safe movement corridors.</td><td>Supports emergency protection and voluntary repatriation.</td><td>Shelter network, transport partners, protection cluster coordination.</td><td><span class="sp amber">High</span></td></tr>
+    </tbody>
+  </table></div>
+</div>`;}
+
+function slideSources(){return `
+<div class="bg-grid"></div>
+<div class="s-body">
+  <div class="sec-tag"><span class="sec-num">10 // SOURCE REGISTER AND WSI AUDIT</span></div>
+  <div class="slide-h2" style="margin-bottom:6px;">Source Register</div>
+  <div class="tbl-wrap"><table style="font-size:.68rem;">
+    <thead><tr><th>Src</th><th>Source / Type</th><th>Date</th><th>Atomic Claim</th><th>RAPITIS</th><th>C-D-F</th><th>Link</th></tr></thead>
+    <tbody>
+      <tr><td>S1</td><td>Reuters / Wire</td><td>07 May 2026</td><td>African countries warned citizens about xenophobic attacks; protests and violence.</td><td><span class="band-pill green">Green</span></td><td>C5 D4 F4</td><td><a class="src-link" href="https://www.reuters.com/world/africa/african-countries-warn-citizens-xenophobic-attacks-south-africa-2026-05-07/" target="_blank" rel="noopener">↗ Reuters</a></td></tr>
+      <tr><td>S2</td><td>AP / Wire</td><td>05 May 2026</td><td>130 Nigerians sought voluntary repatriation; Nigerian authorities raised concern.</td><td><span class="band-pill green">Green</span></td><td>C5 D5 F5</td><td><a class="src-link" href="https://apnews.com/article/a45b2df526f7ed248ed7c222fb359559" target="_blank" rel="noopener">↗ AP</a></td></tr>
+      <tr><td>S3</td><td>AP / Wire</td><td>29 Apr 2026</td><td>Johannesburg protest by March and March; Operation Dudula present; shops closed.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F5</td><td><a class="src-link" href="https://apnews.com/article/south-africa-illegal-immigration-march-protests-cbc323b775625516597792db82d87ae0" target="_blank" rel="noopener">↗ AP</a></td></tr>
+      <tr><td>S4</td><td>SA Government / Primary</td><td>05 Jul 2025</td><td>Blocking foreign nationals from healthcare violates constitutional rights.</td><td><span class="band-pill green">Green</span></td><td>C5 D5 F5</td><td><a class="src-link" href="https://www.gov.za/news/media-statements/government-blocking-access-healthcare-services-05-jul-2025" target="_blank" rel="noopener">↗ gov.za</a></td></tr>
+      <tr><td>S5</td><td>Parliament SA / Primary</td><td>05 Nov 2025</td><td>High Court interdicted Operation Dudula from disrupting foreign national access to social services.</td><td><span class="band-pill green">Green</span></td><td>C5 D5 F5</td><td><a class="src-link" href="https://www.parliament.gov.za/press-releases/media-statement-court-interdict-against-operation-dudula-line-education-committees-publicly-expressed-sentiment" target="_blank" rel="noopener">↗ Parliament</a></td></tr>
+      <tr><td>S6</td><td>GroundUp / Local journalism</td><td>27 Mar 2026</td><td>Court warned government to comply with order to protect clinic access; enforcement gaps.</td><td><span class="band-pill green">Green</span></td><td>C4 D5 F4</td><td><a class="src-link" href="https://groundup.org.za/article/court-warns-government-to-comply-with-order-to-protect-clinic-access-for-all-patients/" target="_blank" rel="noopener">↗ GroundUp</a></td></tr>
+      <tr><td>S7</td><td>XenoWatch / Monitoring</td><td>Acc. 08 May 2026</td><td>Dashboard covers xenophobic-discrimination incidents 1994–02 Feb 2026.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F4</td><td><a class="src-link" href="https://www.xenowatch.ac.za/statistics-dashboard/" target="_blank" rel="noopener">↗ XenoWatch</a></td></tr>
+      <tr><td>S8</td><td>ACMS / Migration.org.za</td><td>17 Nov 2025</td><td>Xenophobic discrimination persistent and widespread; recurring in urban areas.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F4</td><td><a class="src-link" href="https://migration.org.za/report-xenophobic-discrimination-in-south-africa-an-overview-of-trends-effects-and-responses-2022-2024/" target="_blank" rel="noopener">↗ ACMS</a></td></tr>
+      <tr><td>S9</td><td>Stats SA / Official</td><td>25 Feb 2026</td><td>3M+ immigrants, 5.1% of population.</td><td><span class="band-pill green">Green</span></td><td>C5 D3 F5</td><td><a class="src-link" href="https://www.statssa.gov.za/?p=19221" target="_blank" rel="noopener">↗ Stats SA</a></td></tr>
+      <tr><td>S10</td><td>Stats SA / Labor</td><td>Feb 2026</td><td>Unemployment: 31.4% in Q4 2025.</td><td><span class="band-pill green">Green</span></td><td>C5 D3 F5</td><td><a class="src-link" href="https://www.statssa.gov.za/publications/P0211/Presentation%20QLFS%20Q4%202025.pdf" target="_blank" rel="noopener">↗ Stats SA QLFS</a></td></tr>
+      <tr><td>S11</td><td>EWN / Local journalism</td><td>06 May 2026</td><td>Ramaphosa and Chapo discussed tensions; protests must be peaceful.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F4</td><td><a class="src-link" href="https://www.ewn.co.za/2026/05/06/ramaphosa-and-chapo-south-africa-is-not-xenophobic" target="_blank" rel="noopener">↗ EWN</a></td></tr>
+      <tr><td>S12</td><td>Reuters / Wire</td><td>04 May 2026</td><td>130 Nigerians sought repatriation; Nigeria summoned South African representative.</td><td><span class="band-pill green">Green</span></td><td>C5 D5 F5</td><td><a class="src-link" href="https://www.reuters.com/world/africa/least-130-nigerians-seek-repatriation-south-africa-after-protests-abuja-says-2026-05-04/" target="_blank" rel="noopener">↗ Reuters</a></td></tr>
+      <tr><td>S13</td><td>Reuters / Wire</td><td>24 Apr 2026</td><td>South Africa promised crackdown after Ghana complaints.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F5</td><td><a class="src-link" href="https://www.reuters.com/world/africa/south-africa-promises-crackdown-xenophobic-attacks-after-ghana-protests-2026-04-24/" target="_blank" rel="noopener">↗ Reuters</a></td></tr>
+      <tr><td>S14</td><td>EWN / Local journalism</td><td>28 Apr 2026</td><td>Ramaphosa: immigration concerns should not give rise to xenophobia.</td><td><span class="band-pill green">Green</span></td><td>C4 D4 F4</td><td><a class="src-link" href="https://www.ewn.co.za/ramaphosa-says-illegal-immigration-concerns-shouldn-t-give-rise-to-xenophobia/" target="_blank" rel="noopener">↗ EWN</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="scope-note" style="margin-top:6px;">WSI Audit: 14/14 Green-band sources. 7 independent streams. No social media, Wikipedia, AI-generated summaries, or partisan aggregators. Primary gap: no consolidated 14-day incident dataset.</div>
+</div>`;}
+
+/* ===== BUILD ENGINE ===== */
+let cur = 0;
+const deck = document.getElementById('deck');
+const navMenu = document.getElementById('nav-menu');
+
+// Build nav items
+SLIDES.forEach((s,i)=>{
+  const item = document.createElement('div');
+  item.className = 'nav-menu-item' + (i===0?' current':'');
+  item.dataset.idx = i;
+  item.innerHTML = `<span class="nav-item-num">${s.tag.split('//')[0].trim()}</span><span class="nav-item-label">${s.label}</span>`;
+  item.onclick = ()=>{ go(i); closeNav(); };
+  navMenu.appendChild(item);
+});
+
+// Build slides
+const slideEls = SLIDES.map((_,i)=>{
+  const el = document.createElement('div');
+  el.className = 'slide' + (i===0?' active':'');
+  el.innerHTML = renderSlide(i);
+  // header
+  const hdr = document.createElement('div');
+  hdr.className = 's-header';
+  hdr.innerHTML = `
+    <div class="s-brand">QUANTA ANALYTICA <span>| MNS CONSULTING</span></div>
+    <div class="s-doc">QAP-SAF-XENO-2026-0508</div>
+    <div class="s-header-right">
+      <div class="s-classify">Open Source</div>
+      <button class="nav-toggle" id="nav-btn-${i}" onclick="toggleNav(this)">
+        <svg viewBox="0 0 12 12"><path d="M1 2h10M1 6h10M1 10h10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        Sections
+        <svg viewBox="0 0 10 6" style="width:8px;height:8px;fill:none;stroke:var(--gold);stroke-width:1.5"><path d="M1 1l4 4 4-4"/></svg>
+      </button>
+    </div>`;
+  el.insertBefore(hdr, el.firstChild);
+  // footer
+  const ftr = document.createElement('div');
+  ftr.className = 's-footer';
+  ftr.innerHTML = `
+    <div class="s-num">${i+1} / ${SLIDES.length}</div>
+    <div class="s-progress-bar"><div class="s-progress-fill" style="width:${((i+1)/SLIDES.length*100).toFixed(1)}%"></div></div>
+    <div class="s-nav">
+      <button onclick="go(cur-1)" ${i===0?'disabled':''}>◀ Prev</button>
+      <button onclick="go(cur+1)" ${i===SLIDES.length-1?'disabled':''}>Next ▶</button>
+    </div>`;
+  el.appendChild(ftr);
+  deck.appendChild(el);
+  return el;
+});
+
+function go(n){
+  if(n<0||n>=SLIDES.length) return;
+  slideEls[cur].classList.remove('active');
+  cur=n;
+  slideEls[cur].classList.add('active');
+  // update nav highlight
+  navMenu.querySelectorAll('.nav-menu-item').forEach((el,i)=>{
+    el.classList.toggle('current', i===cur);
+  });
+}
+
+let navOpen = false;
+function toggleNav(btn){
+  navOpen = !navOpen;
+  navMenu.classList.toggle('open', navOpen);
+  document.querySelectorAll('.nav-toggle').forEach(b=>b.classList.toggle('open', navOpen));
+}
+function closeNav(){
+  navOpen = false;
+  navMenu.classList.remove('open');
+  document.querySelectorAll('.nav-toggle').forEach(b=>b.classList.remove('open'));
+}
+
+// Close nav on outside click
+document.addEventListener('click', e=>{
+  if(navOpen && !navMenu.contains(e.target) && !e.target.closest('.nav-toggle')) closeNav();
+});
+
+// Keyboard nav
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown') go(cur+1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp') go(cur-1);
+  if(e.key==='Escape') closeNav();
+});
+</script>
+</body>
+</html>

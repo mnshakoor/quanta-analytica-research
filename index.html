@@ -1,525 +1,2572 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSINT to Intelligence Manual | Structured Analytic Tradecraft for Analysts</title>
-<meta name="description" content="OSINT to Intelligence is a professional analyst tradecraft manual that teaches how to turn open-source evidence into structured, defensible intelligence judgments using QAP, source validation, ACH, confidence calibration, and decision-ready briefing workflows.">
-<link rel="canonical" href="https://quanta-analytica.com/osint-to-intelligence/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0c10'/><polygon points='16,4 28,12 28,20 16,28 4,20 4,12' fill='none' stroke='%23c8a96e' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%23c8a96e'/></svg>" />
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Quanta Analytica | MNS Consulting">
-<meta name="theme-color" content="#0a0c10">
-<meta property="og:type" content="product">
-<meta property="og:title" content="OSINT to Intelligence: A Professional Analyst Tradecraft Manual">
-<meta property="og:description" content="Learn how to turn open-source evidence into structured, defensible intelligence judgments using QAP, source validation, ACH, confidence calibration, and decision-ready briefing workflows.">
-<meta property="og:url" content="https://quanta-analytica.com/osint-to-intelligence/">
-<meta property="og:site_name" content="Quanta Analytica">
-<meta property="og:image" content="https://quanta-analytica.com/images/osint-to-intelligence-cover.png">
-<meta property="og:image:alt" content="OSINT to Intelligence professional analyst tradecraft manual cover">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OSINT to Intelligence: A Professional Analyst Tradecraft Manual">
-<meta name="twitter:description" content="A professional tradecraft manual for converting open-source evidence into structured analytic judgments.">
-<meta name="twitter:image" content="https://quanta-analytica.com/images/osint-to-intelligence-cover.png">
-<meta name="twitter:image:alt" content="OSINT to Intelligence professional analyst tradecraft manual cover">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"OSINT to Intelligence: Turning Open-Source Evidence into Structured Analytic Judgments","description":"A professional analyst tradecraft manual that teaches how to convert open-source information into structured, defensible intelligence judgments using source validation, evidence governance, atomic claim extraction, ACH, confidence calibration, indicators and warnings, risk scoring, and final brief production.","brand":{"@type":"Brand","name":"Quanta Analytica"},"publisher":{"@type":"Organization","name":"MNS Consulting","url":"https://quanta-analytica.com"},"image":"https://quanta-analytica.com/images/osint-to-intelligence-cover.png","url":"https://quanta-analytica.com/osint-to-intelligence/","sku":"QA-OSINT-INTEL-2026","productID":"QA-OSINT-INTEL-2026","category":"Professional Training Manual","offers":{"@type":"Offer","url":"https://quanta-analytica.com/osint-to-intelligence/","priceCurrency":"USD","price":"67.00","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is this manual for?","acceptedAnswer":{"@type":"Answer","text":"This manual is designed for OSINT practitioners, NGO security analysts, corporate risk professionals, researchers, conflict analysts, and intelligence-adjacent teams that need to convert open-source evidence into structured analytic judgments."}},{"@type":"Question","name":"What formats are included?","acceptedAnswer":{"@type":"Answer","text":"Purchase includes PDF, HTML, and ePub editions of the manual."}},{"@type":"Question","name":"Is this a beginner or advanced product?","acceptedAnswer":{"@type":"Answer","text":"The manual is designed for beginner to intermediate analysts, but it is structured as a professional tradecraft manual rather than a general-interest OSINT book."}},{"@type":"Question","name":"Does this teach OSINT tools?","acceptedAnswer":{"@type":"Answer","text":"The manual focuses on analytic tradecraft, source validation, evidence governance, hypothesis testing, confidence calibration, and intelligence writing. It is not primarily a tool directory."}}]}</script>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --obsidian:#0a0b0e;
-  --obsidian-2:#0f1014;
-  --obsidian-3:#14161b;
-  --obsidian-4:#1c1f26;
-  --obsidian-5:#252930;
-  --gold:#c9a84c;
-  --gold-light:#e2c47a;
-  --gold-dim:#8a6e2f;
-  --gold-muted:rgba(201,168,76,0.10);
-  --text-primary:#f0ede6;
-  --text-secondary:#9a9690;
-  --text-muted:#5a5750;
-  --border:#1e2128;
-  --border-gold:rgba(201,168,76,0.22);
-}
-html{scroll-behavior:smooth}
-body{background:var(--obsidian);color:var(--text-primary);font-family:'IBM Plex Sans',sans-serif;line-height:1.65;overflow-x:hidden}
+  <!-- ============================================================
+       QUANTA ANALYTICA RESEARCH — SEO & SOCIAL META v1.0
+       URL: https://research.quanta-analytica.com
+       Last updated: 30 April 2026
+  ============================================================ -->
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,11,14,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand img{height:28px;display:block}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:13px;color:var(--text-secondary);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{font-size:12px;padding:7px 20px;border:1px solid var(--gold-dim);color:var(--gold);background:transparent;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;letter-spacing:0.07em;text-decoration:none;transition:all 0.2s}
-.nav-cta:hover{background:var(--gold-muted);border-color:var(--gold)}
-@media(max-width:700px){.nav-links{display:none}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 2rem 80px;border-bottom:1px solid var(--border)}
-.hero-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
-.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem}
-h1{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--text-primary);margin-bottom:0.75rem}
-h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:1.1rem;font-family:'Libre Baskerville',serif;font-style:italic;color:var(--text-secondary);font-weight:400;margin-bottom:1.5rem;line-height:1.6}
-.hero-pitch{font-size:0.92rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:2rem;border-left:2px solid var(--gold-dim);padding-left:1.25rem}
-.hero-price-block{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.6rem}
-.price-launch{font-family:'IBM Plex Mono',monospace;font-size:2rem;color:var(--gold);font-weight:500}
-.price-reg{font-size:14px;color:var(--text-muted);text-decoration:line-through;font-family:'IBM Plex Mono',monospace}
-.price-label{font-size:11px;color:var(--text-muted);letter-spacing:0.1em;margin-bottom:1.5rem}
-.btn-buy{display:inline-block;padding:15px 40px;background:var(--gold);color:var(--obsidian);font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.1em;border:none;cursor:pointer;text-decoration:none;transition:all 0.2s;text-align:center}
-.btn-buy:hover{background:var(--gold-light)}
-.trust-strip{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.25rem}
-.trust-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid var(--border-gold);color:var(--text-muted);letter-spacing:0.08em}
-.hero-micro{font-size:12px;color:var(--text-muted);margin-top:1rem;line-height:1.6}
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://research.quanta-analytica.com/" />
 
-/* COVER SIDE */
-.cover-wrap{position:relative}
-.cover-img{width:100%;max-width:340px;display:block;border:1px solid var(--border-gold);box-shadow:0 0 60px rgba(201,168,76,0.08)}
-.format-badges{display:flex;gap:8px;margin-top:1.25rem;justify-content:center}
-.fmt-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:6px 16px;border:1px solid var(--border-gold);color:var(--gold);letter-spacing:0.1em}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem}.cover-wrap{order:-1;text-align:center}.cover-img{max-width:260px;margin:0 auto}}
+  <!-- TITLE — 58 chars, primary keyword first -->
+  <title>Geopolitical Risk Research &amp; Intelligence Analysis | Quanta Analytica</title>
 
-/* SECTION COMMONS */
-.section-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1.25rem}
-h2{font-family:'Libre Baskerville',serif;font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:400;line-height:1.25;margin-bottom:1.25rem}
-h2 em{font-style:italic;color:var(--gold)}
-.body-text{font-size:0.92rem;color:var(--text-secondary);line-height:1.85;font-weight:300}
-.section-pad{padding:90px 2rem}
-.section-pad-alt{padding:90px 2rem;background:var(--obsidian-2)}
-.inner{max-width:1020px;margin:0 auto}
-.inner-narrow{max-width:720px;margin:0 auto}
-.divider{max-width:1020px;margin:0 auto;height:1px;background:var(--border)}
+  <!-- META DESCRIPTION — 158 chars -->
+  <meta name="description" content="QAP-governed intelligence assessments, situational briefs, conflict systems research, and analytic editorials — produced by Quanta Analytica and MNS Consulting." />
 
-/* PROBLEM */
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
-.problem-quote{font-family:'Libre Baskerville',serif;font-size:1.3rem;font-style:italic;color:var(--gold-light);line-height:1.5;margin-bottom:1.5rem;padding-left:1.5rem;border-left:2px solid var(--gold-dim)}
-@media(max-width:768px){.problem-grid{grid-template-columns:1fr;gap:2.5rem}}
+  <!-- KEYWORDS -->
+  <meta name="keywords" content="geopolitical risk analysis, intelligence assessments, conflict systems research, situational intelligence briefs, QAP framework, open source intelligence, OSINT analysis, state fragility, governance risk, MNS Consulting, Quanta Analytica Process, global security research, structured analytic techniques" />
 
-/* OUTCOME LIST */
-.outcome-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem}
-.outcome-list li{display:flex;gap:1rem;align-items:flex-start;font-size:13px;color:var(--text-secondary);line-height:1.7;font-weight:300}
-.outcome-list li::before{content:'→';color:var(--gold-dim);font-family:'IBM Plex Mono',monospace;font-size:12px;flex-shrink:0;margin-top:2px}
+  <!-- ATTRIBUTION -->
+  <meta name="author"    content="M. Nuri Shakoor, SRMP-R — MNS Consulting / Quanta Analytica" />
+  <meta name="publisher" content="Quanta Analytica | MNS Consulting" />
+  <meta name="copyright" content="© 2026 MNS Consulting. All rights reserved." />
 
-/* AUDIENCE */
-.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem}
-.aud-card{background:var(--obsidian-3);padding:1.5rem 1.75rem}
-.aud-title{font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:0.3rem}
-.aud-body{font-size:12px;color:var(--text-muted);line-height:1.6}
-@media(max-width:768px){.audience-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.audience-grid{grid-template-columns:1fr}}
+  <!-- ROBOTS — live site, fully indexable -->
+  <meta name="robots"    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-/* MODULES */
-.module-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3rem}
-.module-card{background:var(--obsidian-3);padding:1.4rem 1.75rem;display:flex;gap:1.25rem;align-items:flex-start}
-.module-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold-dim);flex-shrink:0;padding-top:2px;letter-spacing:0.06em;min-width:36px}
-.module-title{font-size:13px;color:var(--text-secondary);line-height:1.55;font-weight:300}
-@media(max-width:600px){.module-grid{grid-template-columns:1fr}}
+  <!-- LANGUAGE -->
+  <meta name="language" content="English" />
+  <link rel="alternate" hreflang="en" href="https://research.quanta-analytica.com/" />
 
-/* STATS BAR */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:2.5rem}
-.stat-item{background:var(--obsidian-4);padding:1.75rem 1.5rem;text-align:center}
-.stat-n{font-family:'IBM Plex Mono',monospace;font-size:1.8rem;color:var(--gold);font-weight:500;line-height:1}
-.stat-l{font-size:11px;color:var(--text-muted);margin-top:0.5rem;letter-spacing:0.04em;line-height:1.4}
-@media(max-width:600px){.stats-bar{grid-template-columns:repeat(2,1fr)}}
+  <!-- THEME -->
+  <meta name="theme-color"           content="#0a0c10" />
+  <meta name="msapplication-TileColor" content="#0a0c10" />
 
-/* WHY DIFFERENT */
-.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
-.diff-col h3{font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
-.diff-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-.diff-list li{font-size:13px;color:var(--text-secondary);line-height:1.6;font-weight:300;display:flex;gap:0.75rem}
-.diff-list.bad li::before{content:'✕';color:var(--text-muted);font-size:11px;flex-shrink:0;margin-top:3px}
-.diff-list.good li::before{content:'✓';color:var(--gold-dim);font-size:11px;flex-shrink:0;margin-top:3px}
-@media(max-width:600px){.diff-grid{grid-template-columns:1fr}}
+  <!-- ── OPEN GRAPH ─────────────────────────────────────────── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:site_name"    content="Quanta Analytica Research" />
+  <meta property="og:url"          content="https://research.quanta-analytica.com/" />
+  <meta property="og:title"        content="Quanta Analytica Research | Geopolitical Risk &amp; Intelligence Analysis" />
+  <meta property="og:description"  content="QAP-governed intelligence assessments, conflict systems research, situational briefs, and analytic editorials from MNS Consulting and Quanta Analytica." />
+  <meta property="og:image"        content="https://quanta-analytica.com/quanta-analytica-mns-consulting2.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="Quanta Analytica Research — geopolitical risk intelligence and analysis" />
+  <meta property="og:locale"       content="en_US" />
 
-/* DELIVERABLES */
-.deliver-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);margin-top:3rem}
-.deliver-card{background:var(--obsidian-3);padding:2rem 1.75rem}
-.deliver-icon{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.75rem}
-.deliver-title{font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:0.5rem}
-.deliver-body{font-size:12px;color:var(--text-secondary);line-height:1.7;font-weight:300}
-@media(max-width:600px){.deliver-grid{grid-template-columns:1fr}}
+  <!-- ── TWITTER / X CARD ──────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@QuantaAnalytica" />
+  <meta name="twitter:creator"     content="@MNShakoor" />
+  <meta name="twitter:url"         content="https://research.quanta-analytica.com/" />
+  <meta name="twitter:title"       content="Quanta Analytica Research | Geopolitical Risk &amp; Intelligence Analysis" />
+  <meta name="twitter:description" content="QAP-governed intelligence assessments, conflict systems research, situational briefs, and analytic editorials from MNS Consulting and Quanta Analytica." />
+  <meta name="twitter:image"       content="https://quanta-analytica.com/quanta-analytica-mns-consulting2.png" />
+  <meta name="twitter:image:alt"   content="Quanta Analytica Research — geopolitical risk intelligence" />
 
-/* PRICING */
-.pricing-wrap{max-width:560px;margin:3rem auto 0}
-.pricing-card{background:var(--obsidian-3);border:1px solid var(--border-gold);padding:3rem;position:relative;overflow:hidden}
-.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
-.pricing-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--gold);margin-bottom:1rem}
-.pricing-title{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:var(--text-primary);margin-bottom:0.4rem}
-.pricing-sub{font-size:13px;color:var(--text-secondary);margin-bottom:1.75rem;font-weight:300}
-.pricing-includes{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem}
-.pricing-includes span{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 12px;border:1px solid var(--border-gold);color:var(--gold-dim);letter-spacing:0.08em}
-.pricing-price-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.4rem}
-.pp-launch{font-family:'IBM Plex Mono',monospace;font-size:2.4rem;color:var(--gold);font-weight:500}
-.pp-reg{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text-muted);text-decoration:line-through}
-.pp-label{font-size:11px;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:1.75rem}
-.btn-buy-lg{display:block;width:100%;padding:16px;background:var(--gold);color:var(--obsidian);font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.12em;border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all 0.2s}
-.btn-buy-lg:hover{background:var(--gold-light)}
-.pricing-note{font-size:11px;color:var(--text-muted);margin-top:1rem;text-align:center;line-height:1.6}
+  <!-- ── SCHEMA.ORG STRUCTURED DATA ────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://research.quanta-analytica.com/#website",
+        "url": "https://research.quanta-analytica.com/",
+        "name": "Quanta Analytica Research",
+        "description": "Public research gateway for QAP-governed intelligence assessments, situational briefs, conflict systems research, and analytic editorials.",
+        "publisher": { "@id": "https://quanta-analytica.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://research.quanta-analytica.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://research.quanta-analytica.com/#webpage",
+        "url": "https://research.quanta-analytica.com/",
+        "name": "Geopolitical Risk Research & Intelligence Analysis | Quanta Analytica",
+        "description": "QAP-governed intelligence assessments, situational briefs, conflict systems research, and analytic editorials produced by Quanta Analytica and MNS Consulting.",
+        "isPartOf": { "@id": "https://research.quanta-analytica.com/#website" },
+        "about": { "@id": "https://quanta-analytica.com/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://quanta-analytica.com/quanta-analytica-mns-consulting2.png",
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": "2026-04-30",
+        "dateModified": "2026-05-02",
+        "inLanguage": "en-US",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Quanta Analytica",
+              "item": "https://quanta-analytica.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Research Portal",
+              "item": "https://research.quanta-analytica.com/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://quanta-analytica.com/#organization",
+        "name": "Quanta Analytica",
+        "alternateName": ["MNS Consulting", "ARAC International Inc", "Lladner Business Solutions"],
+        "url": "https://quanta-analytica.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://quanta-analytica.com/logo.PNG",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://quanta-analytica.com/quanta-analytica-mns-consulting2.png",
+        "description": "Quanta Analytica is a geopolitical risk intelligence and consulting firm applying the Quanta Analytica Process™ — a framework-governed structured analytic methodology — to produce defensible intelligence assessments, situational briefs, and conflict systems research.",
+        "knowsAbout": [
+          "Geopolitical Risk Analysis",
+          "Conflict Systems Research",
+          "Structured Analytic Techniques",
+          "Open Source Intelligence",
+          "State Fragility Assessment",
+          "Intelligence Tradecraft",
+          "Global Security Analysis",
+          "Humanitarian Risk Assessment",
+          "Information Integrity"
+        ],
+        "sameAs": [
+          "https://quanta-analytica.com/",
+          "https://research.quanta-analytica.com/"
+        ],
+        "founder": {
+          "@type": "Person",
+          "@id": "https://quanta-analytica.com/#nuri-shakoor",
+          "name": "M. Nuri Shakoor",
+          "honorificSuffix": "SRMP-R",
+          "jobTitle": "Global Security Analyst & Founder",
+          "worksFor": { "@id": "https://quanta-analytica.com/#organization" },
+          "url": "https://quanta-analytica.com/nuri-shakoor-bio.html"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://research.quanta-analytica.com/#collection",
+        "url": "https://research.quanta-analytica.com/",
+        "name": "Quanta Analytica Research Archive",
+        "description": "Curated index of QAP intelligence assessments, situational briefs, conflict systems reports, editorials, and analytic research notes.",
+        "publisher": { "@id": "https://quanta-analytica.com/#organization" },
+        "about": [
+          { "@type": "Thing", "name": "Geopolitical Risk" },
+          { "@type": "Thing", "name": "Conflict Analysis" },
+          { "@type": "Thing", "name": "State Fragility" },
+          { "@type": "Thing", "name": "Intelligence Analysis" },
+          { "@type": "Thing", "name": "Open Source Intelligence" }
+        ]
+      }
+    ]
+  }
+  </script>
 
-/* LICENSE */
-.license-card{background:var(--obsidian-4);border:1px solid var(--border);padding:2rem 2.5rem;margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto}
-.license-card h3{font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:0.75rem;letter-spacing:0.04em}
-.license-card p{font-size:13px;color:var(--text-secondary);line-height:1.8;font-weight:300}
+  <!-- ── FAVICON ────────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0c10'/><polygon points='16,4 28,12 28,20 16,28 4,20 4,12' fill='none' stroke='%23c8a96e' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%23c8a96e'/></svg>" />
 
-/* FAQ */
-.faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:0}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;background:none;border:none;text-align:left;padding:1.25rem 0;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--text-primary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q .arrow{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--gold-dim);transition:transform 0.25s;flex-shrink:0}
-.faq-a{font-size:13px;color:var(--text-secondary);line-height:1.8;font-weight:300;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
-.faq-item.open .faq-a{max-height:200px;padding-bottom:1.25rem}
-.faq-item.open .arrow{transform:rotate(45deg)}
+  <!-- ── PERFORMANCE: PRECONNECT & PRELOAD ─────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="https://quanta-analytica.com/logo.PNG" />
 
-/* FINAL CTA */
-.final-cta{padding:120px 2rem;text-align:center;background:var(--obsidian-2);border-top:1px solid var(--border)}
-.final-cta h2{font-family:'Libre Baskerville',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;margin-bottom:1rem}
-.final-cta p{font-size:0.92rem;color:var(--text-secondary);max-width:560px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM — QUANTA ANALYTICA RESEARCH GATEWAY v2.1
+       + IFRAME READER SYSTEM
+       Base: quanta-analytica.com obsidian/gold brand
+    ============================================================ */
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:2.25rem 2rem}
-.footer-inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-brand{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold-dim)}
-.footer-copy{font-size:12px;color:var(--text-muted)}
-.footer-links{display:flex;gap:1.5rem}
-.footer-links a{font-size:12px;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
-.footer-links a:hover{color:var(--gold)}
-</style>
+    :root {
+      --obsidian: #0a0c10;
+      --obsidian-mid: #0e1118;
+      --obsidian-card: #12151d;
+      --obsidian-surface: #171a24;
+      --obsidian-lift: #1c2030;
+      --obsidian-border: #1e2235;
+      --gold: #c8a96e;
+      --gold-light: #dfc28e;
+      --gold-pale: #edd9b4;
+      --gold-dim: #9a7f52;
+      --gold-muted: #5e4e30;
+      --gold-glow: rgba(200,169,110,0.10);
+      --gold-glow-strong: rgba(200,169,110,0.20);
+      --accent-crimson-bg: rgba(155,35,53,0.10);
+      --accent-slate-bg: rgba(74,111,165,0.10);
+      --accent-sage-bg: rgba(61,122,92,0.10);
+      --accent-amber-bg: rgba(184,115,51,0.10);
+      --text-primary: #ece8e0;
+      --text-secondary: #b0a898;
+      --text-muted: #6e6760;
+      --text-faint: #3e3c38;
+      --font-display: 'Libre Baskerville', Georgia, serif;
+      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --radius-sm: 3px;
+      --radius-md: 6px;
+      --radius-lg: 12px;
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.38);
+      --shadow-lift: 0 20px 60px rgba(0,0,0,0.55);
+      --max: 1240px;
+      --col-gap: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--obsidian);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body.reader-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .shell { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    /* ============================================================
+       SCROLL PROGRESS
+    ============================================================ */
+    .progress-rule {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+      z-index: 10001;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 10px var(--gold-glow-strong);
+    }
+
+    /* ============================================================
+       IFRAME READER OVERLAY
+    ============================================================ */
+    #reader-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      display: flex;
+      align-items: stretch;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+    #reader-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Dimmed backdrop — clicking closes the reader */
+    .reader-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 5, 8, 0.82);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+    }
+
+    /* Reader panel — slides up from bottom / in from right */
+    .reader-panel {
+      position: relative;
+      z-index: 1;
+      margin: auto;
+      width: min(1100px, calc(100vw - 40px));
+      height: calc(100vh - 60px);
+      background: var(--obsidian-mid);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lift), 0 0 0 1px rgba(200,169,110,0.12);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: translateY(24px);
+      transition: transform 0.30s cubic-bezier(0.22,1,0.36,1);
+    }
+    #reader-overlay.active .reader-panel {
+      transform: translateY(0);
+    }
+
+    /* Reader toolbar */
+    .reader-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 18px;
+      background: var(--obsidian-card);
+      border-bottom: 1px solid var(--obsidian-border);
+      flex-shrink: 0;
+    }
+    .reader-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .reader-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .reader-doc-info { min-width: 0; }
+    .reader-doc-label {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1px;
+    }
+    .reader-doc-title {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 680px;
+    }
+    .reader-toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .reader-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--obsidian-border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .reader-btn:hover {
+      border-color: var(--gold-dim);
+      color: var(--gold-light);
+      background: var(--gold-glow);
+    }
+    .reader-btn-close {
+      border-color: rgba(155,35,53,0.3);
+      color: #e07080;
+      background: rgba(155,35,53,0.06);
+    }
+    .reader-btn-close:hover {
+      border-color: rgba(155,35,53,0.6);
+      color: #f09090;
+      background: rgba(155,35,53,0.14);
+    }
+    .reader-btn svg { flex-shrink: 0; }
+
+    /* Loading state inside reader */
+    .reader-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex: 1;
+      background: var(--obsidian-mid);
+    }
+    .reader-spinner {
+      width: 32px;
+      height: 32px;
+      border: 2px solid var(--obsidian-border);
+      border-top-color: var(--gold-dim);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .reader-loading-text {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* iframe */
+    #reader-iframe {
+      flex: 1;
+      border: none;
+      background: #fff;
+      display: block;
+      width: 100%;
+    }
+
+    /* Status bar */
+    .reader-statusbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 18px;
+      border-top: 1px solid var(--obsidian-border);
+      background: var(--obsidian-card);
+      flex-shrink: 0;
+    }
+    .reader-status-left {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .reader-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .reader-status-right {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.10em;
+      color: var(--text-faint);
+    }
+
+    /* ============================================================
+       MASTHEAD
+    ============================================================ */
+    .masthead {
+      border-bottom: 1px solid var(--obsidian-border);
+      background: rgba(10,12,16,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+    }
+    .masthead-strip {
+      border-bottom: 1px solid var(--obsidian-border);
+      padding: 6px 0;
+    }
+    .masthead-strip-inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .strip-label {
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .strip-label strong { color: var(--gold-dim); }
+    .strip-date {
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.10em;
+      color: var(--text-muted);
+    }
+    .strip-links {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .strip-links a:hover { color: var(--gold-light); }
+
+    .masthead-main {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 34px; height: 34px; object-fit: contain; }
+    .brand-text { display: flex; flex-direction: column; gap: 1px; }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .nav-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      list-style: none;
+    }
+    .nav-primary li a {
+      display: block;
+      padding: 8px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-primary li a:hover, .nav-primary li a.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+    .masthead-cta { display: flex; align-items: center; gap: 12px; }
+    .btn-outline {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: var(--gold-glow); }
+    .btn-solid {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--obsidian);
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-solid:hover { background: var(--gold-light); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding: 0;
+      border-bottom: 1px solid var(--obsidian-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 60%; height: 140%;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.06), transparent 65%);
+      pointer-events: none;
+    }
+    .edition-banner {
+      background: var(--gold);
+      padding: 7px 0;
+      text-align: center;
+    }
+    .edition-banner span {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--obsidian);
+      font-weight: 700;
+    }
+    .hero-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 0;
+      min-height: 520px;
+    }
+    .hero-feature {
+      padding: 42px 42px 42px 0;
+      border-right: 1px solid var(--obsidian-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .feature-kicker { display: flex; align-items: center; gap: 10px; }
+    .kicker-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+    .kicker-featured  { background: var(--gold-glow-strong); border: 1px solid var(--gold-dim); color: var(--gold-light); }
+    .kicker-conflict  { background: var(--accent-crimson-bg); border: 1px solid rgba(155,35,53,0.3); color: #e07080; }
+    .kicker-fragility { background: var(--accent-amber-bg); border: 1px solid rgba(184,115,51,0.3); color: #d4944a; }
+    .kicker-governance{ background: var(--accent-slate-bg); border: 1px solid rgba(74,111,165,0.3); color: #7da8d8; }
+    .kicker-editorial { background: rgba(255,255,255,0.05); border: 1px solid var(--obsidian-border); color: var(--text-secondary); }
+    .kicker-brief     { background: var(--accent-sage-bg); border: 1px solid rgba(61,122,92,0.3); color: #6db890; }
+    .kicker-sitrep    { background: var(--accent-amber-bg); border: 1px solid rgba(184,115,51,0.3); color: #d4944a; }
+    .kicker-blog      { background: rgba(255,255,255,0.04); border: 1px solid var(--obsidian-border); color: var(--text-muted); }
+    .kicker-risk      { background: rgba(155,35,53,0.08); border: 1px solid rgba(155,35,53,0.25); color: #e07080; }
+    .kicker-partner   { background: rgba(74,111,165,0.08); border: 1px solid rgba(74,111,165,0.25); color: #7da8d8; }
+    .kicker-date {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .feature-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      color: var(--text-primary);
+      max-width: 680px;
+    }
+    .feature-headline em { font-style: italic; color: var(--gold-light); }
+    .feature-deck {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 600px;
+      border-left: 3px solid var(--gold-dim);
+      padding-left: 18px;
+    }
+    .feature-byline { display: flex; align-items: center; gap: 16px; }
+    .byline-marker { width: 28px; height: 2px; background: var(--gold); }
+    .byline-text {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .byline-text strong { color: var(--gold-dim); }
+    .feature-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+      width: fit-content;
+      cursor: pointer;
+      background: none;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+    }
+    .feature-read-link:hover { color: var(--gold-pale); border-color: var(--gold); }
+    .feature-read-link:hover svg { transform: translateX(3px); }
+    .feature-read-link svg { transition: transform 0.2s; }
+
+    /* Sidebar */
+    .hero-sidebar { padding: 28px 0 28px 28px; display: flex; flex-direction: column; }
+    .sidebar-label {
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--obsidian-border);
+    }
+    .sidebar-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--obsidian-border);
+      cursor: pointer;
+      transition: padding-left 0.2s;
+    }
+    .sidebar-item:hover { padding-left: 6px; }
+    .sidebar-item:last-child { border-bottom: none; }
+    .sidebar-item .kicker-label { margin-bottom: 8px; display: inline-flex; }
+    .sidebar-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.96rem;
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+    .sidebar-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ============================================================
+       TICKER
+    ============================================================ */
+    .ticker {
+      background: rgba(14,17,24,0.80);
+      border-bottom: 1px solid var(--obsidian-border);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner { display: flex; align-items: center; }
+    .ticker-label {
+      flex-shrink: 0;
+      padding: 9px 18px;
+      background: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--obsidian);
+      font-weight: 700;
+    }
+    .ticker-track {
+      display: inline-flex;
+      gap: 40px;
+      padding: 9px 0 9px 28px;
+      animation: loop 42s linear infinite;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.10em;
+      color: var(--text-muted);
+    }
+    .ticker-track strong { color: var(--gold-dim); }
+    .ticker-sep { color: var(--gold-muted); }
+    @keyframes loop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ============================================================
+       SECTIONS — SHARED
+    ============================================================ */
+    section { border-bottom: 1px solid var(--obsidian-border); }
+    .section-padding { padding: 54px 0; }
+    .section-masthead {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 22px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--gold-dim);
+    }
+    .section-masthead-left { display: flex; align-items: baseline; gap: 16px; }
+    .section-numeral {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.18em;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .section-view-all {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 1px;
+      white-space: nowrap;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    .section-view-all:hover { color: var(--gold-pale); }
+
+    /* Card visual shared */
+    .card-visual {
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      background: var(--obsidian-mid);
+    }
+    /* Full-bleed image fill */
+    .card-visual-logo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.72;
+      z-index: 1;
+      filter: none;
+    }
+    /* Gradient overlay so confidence badge + card body transition cleanly */
+    .card-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,16,0.10) 0%,
+        rgba(10,12,16,0.15) 60%,
+        rgba(10,12,16,0.72) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+    .card-visual-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .card-confidence {
+      position: absolute;
+      bottom: 12px; right: 12px;
+      background: rgba(10,12,16,0.88);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-sm);
+      padding: 4px 9px;
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      z-index: 4;
+    }
+    .card-body { padding: 20px; }
+    .card-body .kicker-label { margin-bottom: 10px; display: inline-flex; }
+    .card-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1.3;
+      font-weight: 700;
+      margin-bottom: 9px;
+      color: var(--text-primary);
+    }
+    .card-body p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid var(--obsidian-border);
+      padding-top: 12px;
+    }
+    .card-meta-left { font-family: var(--font-mono); font-size: 0.60rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .card-meta-right { font-family: var(--font-mono); font-size: 0.60rem; letter-spacing: 0.08em; color: var(--gold-dim); }
+
+    /* ============================================================
+       SECTION 01 — REPORTS
+    ============================================================ */
+    .reports-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: var(--col-gap);
+      align-items: start;
+    }
+    .report-card-lead {
+      background: var(--obsidian-card);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .report-card-lead:hover { border-color: rgba(200,169,110,0.35); transform: translateY(-3px); }
+
+    .report-card-compact {
+      background: var(--obsidian-card);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .report-card-compact:hover { border-color: rgba(200,169,110,0.30); transform: translateY(-2px); }
+    .report-card-compact h3 {
+      font-family: var(--font-display);
+      font-size: 1.0rem;
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .report-card-compact p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .report-index { display: flex; flex-direction: column; }
+    .report-index-item {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--obsidian-border);
+      cursor: pointer;
+      transition: padding-left 0.2s;
+    }
+    .report-index-item:hover { padding-left: 6px; }
+    .report-index-item:first-child { padding-top: 0; }
+    .report-index-item .kicker-label { margin-bottom: 5px; display: inline-flex; }
+    .report-index-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .report-index-item .item-meta {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       SECTION 02 — EDITORIALS
+    ============================================================ */
+    .editorial-band {
+      background: linear-gradient(165deg, rgba(14,17,24,0.96), rgba(10,12,16,1));
+    }
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--col-gap);
+    }
+    .editorial-card {
+      padding: 24px;
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      background: rgba(18,21,29,0.72);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .editorial-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold-dim);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .editorial-card:hover { border-color: rgba(200,169,110,0.28); background: rgba(22,25,36,0.88); transform: translateY(-2px); }
+    .editorial-card:hover::before { opacity: 1; }
+    .editorial-card .kicker-label { display: inline-flex; }
+    .editorial-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      line-height: 1.35;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+    .editorial-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55; flex: 1; }
+    .editorial-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--obsidian-border);
+      padding-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .read-arrow { color: var(--gold-dim); transition: color 0.2s, transform 0.2s; display: inline-block; }
+    .editorial-card:hover .read-arrow { color: var(--gold); transform: translateX(3px); }
+
+    /* ============================================================
+       SECTION 03 — INTEL BRIEFS
+    ============================================================ */
+    .briefs-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--col-gap);
+      align-items: start;
+    }
+    .brief-list { display: flex; flex-direction: column; }
+    .brief-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      background: var(--obsidian-card);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 10px;
+    }
+    .brief-row:hover { border-color: rgba(200,169,110,0.28); background: rgba(20,23,32,0.9); }
+    .brief-num {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgba(200,169,110,0.20);
+      line-height: 1;
+      text-align: center;
+    }
+    .brief-content h4 {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .brief-content p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+    .brief-meta { text-align: right; flex-shrink: 0; }
+    .brief-type-badge {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      display: block;
+      margin-bottom: 5px;
+      white-space: nowrap;
+    }
+    .brief-date-tag { font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-muted); display: block; }
+
+    .signals-panel {
+      background: var(--obsidian-card);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .signals-panel-header {
+      padding: 13px 16px;
+      background: rgba(200,169,110,0.05);
+      border-bottom: 1px solid var(--obsidian-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .signals-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold-glow-strong);
+      animation: pulse 2s infinite;
+    }
+    .signals-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .signal-entries { padding: 0 16px; }
+    .signal-entry { padding: 13px 0; border-bottom: 1px solid var(--obsidian-border); }
+    .signal-entry:last-child { border-bottom: none; }
+    .signal-entry .kicker-label { display: inline-flex; margin-bottom: 6px; }
+    .signal-entry h5 {
+      font-family: var(--font-display);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+    .signal-entry p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; }
+    .panel-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--obsidian-border);
+    }
+    .panel-metric {
+      padding: 13px 16px;
+      border-right: 1px solid var(--obsidian-border);
+      border-bottom: 1px solid var(--obsidian-border);
+    }
+    .panel-metric:nth-child(even) { border-right: none; }
+    .panel-metric:nth-last-child(-n+2) { border-bottom: none; }
+    .metric-val { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 3px; }
+    .metric-lbl { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* ============================================================
+       SECTION 04 — BLOG
+    ============================================================ */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: var(--col-gap);
+      align-items: start;
+    }
+    .blog-feature {
+      background: var(--obsidian-card);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.25s;
+    }
+    .blog-feature:hover { border-color: rgba(200,169,110,0.30); }
+    .blog-feature-visual {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      background: var(--obsidian-mid);
+    }
+    .blog-feature-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.70;
+      z-index: 1;
+      filter: none;
+    }
+    .blog-feature-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,16,0.08) 0%,
+        rgba(10,12,16,0.20) 55%,
+        rgba(10,12,16,0.78) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+    .blog-visual-label {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(10,12,16,0.84);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-sm);
+      padding: 4px 9px;
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      z-index: 4;
+    }
+    .blog-feature-body { padding: 24px; }
+    .blog-feature-body .kicker-label { display: inline-flex; margin-bottom: 11px; }
+    .blog-feature-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.25;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 13px;
+    }
+    .blog-feature-body p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+    .blog-feature-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--obsidian-border);
+      padding-top: 13px;
+    }
+
+    .blog-sidebar { display: flex; flex-direction: column; }
+    .blog-sidebar-header {
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 13px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--obsidian-border);
+    }
+    .blog-index-item {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--obsidian-border);
+      cursor: pointer;
+      transition: padding-left 0.2s;
+    }
+    .blog-index-item:hover { padding-left: 6px; }
+    .blog-index-item .kicker-label { display: inline-flex; margin-bottom: 5px; }
+    .blog-index-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.90rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .blog-index-item .item-meta { font-family: var(--font-mono); font-size: 0.57rem; letter-spacing: 0.06em; color: var(--text-muted); }
+
+    /* ============================================================
+       SECTION 05 — TAXONOMY
+    ============================================================ */
+    .taxonomy-band {
+      background: radial-gradient(circle at 15% 50%, rgba(200,169,110,0.06), transparent 36%), var(--obsidian-mid);
+    }
+    .taxonomy-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .taxon-tile {
+      background: rgba(18,21,29,0.7);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      padding: 16px 13px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 108px;
+      justify-content: space-between;
+    }
+    .taxon-tile:hover { border-color: var(--gold-dim); background: rgba(30,34,53,0.7); transform: translateY(-2px); }
+    .taxon-num { font-family: var(--font-mono); font-size: 0.60rem; letter-spacing: 0.18em; color: var(--gold-muted); }
+    .taxon-name { font-family: var(--font-display); font-size: 0.84rem; font-weight: 700; color: var(--text-secondary); line-height: 1.25; }
+
+    /* ============================================================
+       METHODS BAND
+    ============================================================ */
+    .methods-band { background: linear-gradient(145deg, #05060a, #0a0c10 48%, #0e1118); }
+    .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--col-gap); }
+    .method-panel {
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.25s;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .method-panel:hover { border-color: rgba(200,169,110,0.30); }
+    .method-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(200,169,110,0.032) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.032) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+    .method-bg-glow {
+      position: absolute;
+      top: -30%; left: -10%;
+      width: 70%; height: 70%;
+      background: radial-gradient(circle, rgba(200,169,110,0.07), transparent 65%);
+    }
+    .method-content { position: relative; z-index: 1; }
+    .method-eyebrow { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 11px; }
+    .method-panel h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 11px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .method-panel p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ============================================================
+       PARTNER PORTAL SECTION
+    ============================================================ */
+    .partner-band { background: var(--obsidian-mid); }
+    .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--col-gap); }
+    .partner-card {
+      background: var(--obsidian-card);
+      border: 1px solid var(--obsidian-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .partner-card:hover { border-color: rgba(74,111,165,0.4); transform: translateY(-2px); }
+    .partner-card .kicker-label { display: inline-flex; }
+    .partner-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .partner-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55; flex: 1; }
+    .partner-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--obsidian-border);
+      padding-top: 11px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       DISPATCH
+    ============================================================ */
+    .dispatch {
+      padding: 72px 0;
+      background: radial-gradient(circle at 50% 0%, rgba(200,169,110,0.10), transparent 46%), var(--obsidian);
+      text-align: center;
+    }
+    .dispatch-card {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px;
+      border: 1px solid var(--gold-muted);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(150deg, rgba(18,21,29,0.95), rgba(10,12,16,0.98));
+      box-shadow: var(--shadow-lift);
+    }
+    .dispatch-overline { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 13px; }
+    .dispatch-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 11px; }
+    .dispatch-body { font-size: 0.94rem; color: var(--text-secondary); max-width: 490px; margin: 0 auto 26px; line-height: 1.65; }
+    .dispatch-form { display: flex; gap: 8px; max-width: 440px; margin: 0 auto; }
+    .dispatch-form input {
+      flex: 1;
+      background: var(--obsidian);
+      border: 1px solid var(--obsidian-lift);
+      color: var(--text-primary);
+      padding: 11px 13px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .dispatch-form input:focus { border-color: var(--gold-dim); }
+    .dispatch-form input::placeholder { color: var(--text-muted); }
+    .dispatch-form button {
+      background: var(--gold);
+      color: var(--obsidian);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 11px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .dispatch-form button:hover { background: var(--gold-light); }
+    .dispatch-note { margin-top: 13px; font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-muted); }
+    .dispatch-subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--gold);
+      color: var(--obsidian);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 13px 28px;
+      font-family: var(--font-mono);
+      font-size: 0.70rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(200,169,110,0.25);
+    }
+    .dispatch-subscribe-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(200,169,110,0.35);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer { background: var(--obsidian-mid); border-top: 1px solid var(--obsidian-border); padding: 42px 0 24px; }
+    .footer-layout { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 38px; margin-bottom: 34px; }
+    .footer-brand img { width: 34px; margin-bottom: 11px; }
+    .footer-brand-name { font-family: var(--font-display); font-size: 0.96rem; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+    .footer-brand-sub { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 13px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; max-width: 270px; }
+    .footer-col-title { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; padding-bottom: 7px; border-bottom: 1px solid var(--obsidian-border); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links li a { font-size: 0.83rem; color: var(--text-muted); transition: color 0.2s; }
+    .footer-links li a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--obsidian-border);
+      padding-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.52s ease, transform 0.52s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1100px) {
+      .reports-layout { grid-template-columns: 1fr 1fr; }
+      .reports-layout > *:last-child { display: none; }
+      .editorial-grid { grid-template-columns: 1fr 1fr; }
+      .taxonomy-grid { grid-template-columns: repeat(4, 1fr); }
+      .partner-grid { grid-template-columns: 1fr 1fr; }
+      .footer-layout { grid-template-columns: 1fr 1fr; gap: 26px; }
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-feature { padding: 32px 0; border-right: none; border-bottom: 1px solid var(--obsidian-border); }
+      .hero-sidebar { padding: 24px 0 0; }
+      .briefs-layout, .blog-layout, .methods-grid { grid-template-columns: 1fr; }
+      .masthead-strip-inner .strip-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: calc(100% - 28px); }
+      .masthead-main { grid-template-columns: 1fr auto; }
+      .nav-primary { display: none; }
+      .reports-layout { grid-template-columns: 1fr; }
+      .editorial-grid, .partner-grid { grid-template-columns: 1fr; }
+      .taxonomy-grid { grid-template-columns: repeat(2, 1fr); }
+      .brief-row { grid-template-columns: 1fr; }
+      .brief-num { display: none; }
+      .dispatch-form { flex-direction: column; }
+      .footer-layout { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+      .reader-doc-title { max-width: 220px; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="https://quanta-analytica.com"><img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" style="height:60px"></a>
-    <ul class="nav-links">
-      <li><a href="#inside">Inside</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://quanta-analytica.com">Quanta Analytica</a></li>
-    </ul>
-    <a href="#https://www.paypal.com/ncp/payment/TLFYYCMF69924" class="nav-cta">BUY THE MANUAL</a>
-  </div>
-</nav>
+  <div class="progress-rule" id="progressRule"></div>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Quanta Analytica · MNS Consulting · 2026 Edition</div>
-      <h1>OSINT to <em>Intelligence</em></h1>
-      <p class="hero-sub">Turning Open-Source Evidence into Structured Analytic Judgments</p>
-      <p class="hero-pitch">Most OSINT training teaches collection. This manual teaches the analytic workflow that turns evidence into decision-ready intelligence.</p>
-      <div class="hero-price-block">
-        <span class="price-launch">$67</span>
-        <span class="price-reg">$97</span>
-      </div>
-      <div class="price-label">LAUNCH PRICE · PDF + HTML + ePub included</div>
-      <a href="https://www.paypal.com/ncp/payment/TLFYYCMF69924" class="btn-buy">BUY THE MANUAL</a>
-      <div class="trust-strip">
-        <span class="trust-badge">PDF EDITION</span>
-        <span class="trust-badge">HTML EDITION</span>
-        <span class="trust-badge">ePub EDITION</span>
-        <span class="trust-badge">QAP v2.0</span>
-        <span class="trust-badge">DIGITAL DELIVERY</span>
-      </div>
-      <p class="hero-micro">For OSINT practitioners, NGO security analysts, corporate risk teams, conflict analysts, researchers, and intelligence-adjacent professionals.</p>
-    </div>
-    <div class="cover-wrap">
-      <img src="https://quanta-analytica.com/images/osint-to-intel-promo.png" alt="OSINT to Intelligence professional analyst tradecraft manual cover" class="cover-img" loading="eager">
-      <div class="format-badges">
-        <span class="fmt-badge">PDF</span>
-        <span class="fmt-badge">HTML</span>
-        <span class="fmt-badge">ePub</span>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ============================================================
+       IFRAME READER OVERLAY
+       Opened by openReport(url, title, type) calls throughout the page
+  ============================================================ -->
+  <div id="reader-overlay" role="dialog" aria-modal="true" aria-label="Report reader">
+    <div class="reader-backdrop" id="readerBackdrop"></div>
+    <div class="reader-panel">
 
-<!-- PROBLEM -->
-<section class="section-pad">
-  <div class="inner">
-    <div class="section-label">The Intelligence Gap</div>
-    <h2>Collection Is Not <em>Analysis</em></h2>
-    <div class="problem-grid">
-      <div>
-        <p class="problem-quote">"Many analysts can find information. Fewer can explain why a source should be trusted, whether a claim is independently corroborated, or what decision should follow."</p>
-        <p class="body-text">The gap between OSINT collection and intelligence judgment is where most analysts stall. Without a structured tradecraft layer, open-source research stays raw — findings that look like intelligence but cannot survive source audit, stress-testing, or senior review.</p>
+      <!-- Toolbar -->
+      <div class="reader-toolbar">
+        <div class="reader-toolbar-left">
+          <img class="reader-logo" src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" />
+          <div class="reader-doc-info">
+            <div class="reader-doc-label" id="readerDocType">QAP Report</div>
+            <div class="reader-doc-title" id="readerDocTitle">Loading…</div>
+          </div>
+        </div>
+        <div class="reader-toolbar-right">
+          <button class="reader-btn" id="readerOpenTab" onclick="openInNewTab()">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V7M8 1h3m0 0v3m0-3L5.5 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Open in new tab
+          </button>
+          <a class="reader-btn" id="readerPdfDownload" href="#" download target="_blank" rel="noopener noreferrer" style="display:none; text-decoration:none;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v6M3.5 5.5L6 8l2.5-2.5M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+          <button class="reader-btn reader-btn-close" onclick="closeReader()">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Close
+          </button>
+        </div>
       </div>
-      <div>
-        <p class="body-text" style="margin-bottom:1.25rem">This manual closes that gap.</p>
-        <p class="body-text">It teaches analysts how to move from open-source material to structured judgment through disciplined problem framing, source validation, evidence governance, hypothesis testing, confidence calibration, indicators and warnings, and final brief production — the full analytic workflow that turns collection into decision-grade intelligence.</p>
+
+      <!-- Loading state (hidden once iframe loads) -->
+      <div class="reader-loading" id="readerLoading">
+        <div class="reader-spinner"></div>
+        <div class="reader-loading-text">Loading report…</div>
       </div>
+
+      <!-- The iframe -->
+      <iframe
+        id="reader-iframe"
+        title="Report reader"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+        style="display:none;"
+      ></iframe>
+
+      <!-- Status bar -->
+      <div class="reader-statusbar">
+        <div class="reader-status-left">
+          <div class="reader-status-dot"></div>
+          <span>Quanta Analytica Research Portal &nbsp;|&nbsp; research.quanta-analytica.com</span>
+        </div>
+        <div class="reader-status-right" id="readerUrlBar"></div>
+      </div>
+
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- OUTCOMES -->
-<section class="section-pad-alt" id="outcomes">
-  <div class="inner">
-    <div class="section-label">What This Manual Helps Analysts Do</div>
-    <h2>What This Manual Helps <em>Analysts Do</em></h2>
-    <p class="body-text" style="max-width:620px">By working through the manual, you will learn how to:</p>
-    <ul class="outcome-list">
-      <li>Distinguish raw information, OSINT findings, evaluated evidence, and intelligence judgments</li>
-      <li>Build a problem frame before collecting sources</li>
-      <li>Convert Key Intelligence Questions into collection requirements</li>
-      <li>Evaluate source reliability, access, provenance, independence, timeliness, specificity, and manipulation risk</li>
-      <li>Extract atomic claims from reporting and separate facts, inferences, assumptions, and unknowns</li>
-      <li>Detect false corroboration and derivative reporting across multiple sources</li>
-      <li>Apply mini-ACH to competing explanations and hypotheses</li>
-      <li>Write key judgments with calibrated confidence language</li>
-      <li>Convert judgments into indicators, warnings, risk implications, and decision thresholds</li>
-      <li>Use LLMs as analytic assistants without transferring judgment to the model</li>
-      <li>Produce a short intelligence brief that can survive source and reasoning audit</li>
-    </ul>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- AUDIENCE -->
-<section class="section-pad">
-  <div class="inner">
-    <div class="section-label">Who This Manual Is For</div>
-    <h2>Built for Analysts Who Need <em>Defensible Judgments</em></h2>
-    <p class="body-text">Not just more sources.</p>
-    <div class="audience-grid">
-      <div class="aud-card"><div class="aud-title">OSINT Practitioners</div><div class="aud-body">Moving from collection workflows to structured analytic output</div></div>
-      <div class="aud-card"><div class="aud-title">NGO Security Analysts</div><div class="aud-body">Field-facing analysts who need defensible threat assessments</div></div>
-      <div class="aud-card"><div class="aud-title">Corporate Risk Professionals</div><div class="aud-body">Operational risk and due diligence teams in complex environments</div></div>
-      <div class="aud-card"><div class="aud-title">Conflict & Geopolitical Analysts</div><div class="aud-body">Regional specialists building structured scenario assessments</div></div>
-      <div class="aud-card"><div class="aud-title">Investigative Researchers</div><div class="aud-body">Researchers who need audit-ready sourcing and evidence chains</div></div>
-      <div class="aud-card"><div class="aud-title">AI-Assisted Intel Workflows</div><div class="aud-body">Small teams integrating LLMs into structured analytic pipelines</div></div>
-      <div class="aud-card"><div class="aud-title">Intelligence Studies Students</div><div class="aud-body">Beginner to intermediate analysts building professional tradecraft</div></div>
-      <div class="aud-card"><div class="aud-title">Humanitarian Access Teams</div><div class="aud-body">Security and access planning teams in fragile contexts</div></div>
-      <div class="aud-card"><div class="aud-title">Internal Analytic Standards Teams</div><div class="aud-body">Small organizations building repeatable analytic frameworks</div></div>
-    </div>
-    <p class="body-text" style="margin-top:2rem;font-style:italic;color:var(--text-muted)">This is not a directory of OSINT tools. It is a tradecraft manual for converting open-source evidence into structured analytic output.</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- INSIDE -->
-<section class="section-pad-alt" id="inside">
-  <div class="inner">
-    <div class="section-label">Inside the Manual</div>
-    <h2>14-Module <em>Curriculum</em></h2>
-    <p class="body-text" style="max-width:580px;margin-bottom:0">A structured learning path from first principles to capstone brief production.</p>
-    <div class="stats-bar">
-      <div class="stat-item"><div class="stat-n">153</div><div class="stat-l">Pages</div></div>
-      <div class="stat-item"><div class="stat-n">14</div><div class="stat-l">Modules</div></div>
-      <div class="stat-item"><div class="stat-n">3</div><div class="stat-l">Formats included</div></div>
-      <div class="stat-item"><div class="stat-n">QAP™</div><div class="stat-l">Framework-native</div></div>
-    </div>
-    <div class="module-grid">
-      <div class="module-card"><div class="module-num">MOD 01</div><div class="module-title">Where OSINT Ends and Intelligence Begins</div></div>
-      <div class="module-card"><div class="module-num">MOD 02</div><div class="module-title">Problem Framing Before Collection</div></div>
-      <div class="module-card"><div class="module-num">MOD 03</div><div class="module-title">Key Intelligence Questions and Collection Requirements</div></div>
-      <div class="module-card"><div class="module-num">MOD 04</div><div class="module-title">Source Intake and Triage</div></div>
-      <div class="module-card"><div class="module-num">MOD 05</div><div class="module-title">Web-Sourced Information Governance</div></div>
-      <div class="module-card"><div class="module-num">MOD 06</div><div class="module-title">Atomic Claim Extraction</div></div>
-      <div class="module-card"><div class="module-num">MOD 07</div><div class="module-title">Fact, Inference, Assumption, and Unknown</div></div>
-      <div class="module-card"><div class="module-num">MOD 08</div><div class="module-title">Source Independence and False Corroboration</div></div>
-      <div class="module-card"><div class="module-num">MOD 09</div><div class="module-title">From Evidence to Hypotheses</div></div>
-      <div class="module-card"><div class="module-num">MOD 10</div><div class="module-title">Writing Key Judgments</div></div>
-      <div class="module-card"><div class="module-num">MOD 11</div><div class="module-title">Confidence Language and Evidence Limits</div></div>
-      <div class="module-card"><div class="module-num">MOD 12</div><div class="module-title">Indicators, Warnings, and Risk Thresholds</div></div>
-      <div class="module-card"><div class="module-num">MOD 13</div><div class="module-title">LLM-Governed OSINT Analysis</div></div>
-      <div class="module-card"><div class="module-num">MOD 14</div><div class="module-title">Capstone Brief: The OSINT-to-Intelligence Product</div></div>
-    </div>
-    <p class="body-text" style="margin-top:1.5rem;font-size:12px;color:var(--text-muted)">Each module includes applied examples, learner exercises, instructor notes, and quality-control checklists.</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHY DIFFERENT -->
-<section class="section-pad">
-  <div class="inner">
-    <div class="section-label">Why This Is Different From a Standard OSINT Book</div>
-    <h2>Collection vs. <em>Judgment</em></h2>
-    <p class="body-text" style="max-width:620px">Most OSINT products focus on discovery. This manual focuses on the structured reasoning layer between collection and decision support.</p>
-    <div class="diff-grid">
-      <div class="diff-col">
-        <h3>Standard OSINT Training</h3>
-        <ul class="diff-list bad">
-          <li>Teaches platforms, tools, and discovery techniques</li>
-          <li>Stops at the point of finding information</li>
-          <li>Does not address source reliability or independence</li>
-          <li>No structured hypothesis testing workflow</li>
-          <li>No confidence calibration or evidence limits</li>
-          <li>Output is a summary, not an intelligence judgment</li>
-        </ul>
-      </div>
-      <div class="diff-col">
-        <h3>OSINT to Intelligence</h3>
-        <ul class="diff-list good">
-          <li>Teaches the analytic tradecraft layer after collection</li>
-          <li>Converts raw evidence into structured judgments</li>
-          <li>WSI™-aligned source validation and independence auditing</li>
-          <li>Mini-ACH hypothesis testing built into the workflow</li>
-          <li>Explicit confidence language and evidence limit notation</li>
-          <li>Output is a decision-grade brief that survives audit</li>
+  <!-- ============================================================
+       MASTHEAD
+  ============================================================ -->
+  <header class="masthead">
+    <div class="masthead-strip">
+      <div class="masthead-strip-inner">
+        <span class="strip-label"><strong>research.quanta-analytica.com</strong> &nbsp;|&nbsp; Public Research Gateway</span>
+        <span class="strip-date" id="liveDate"></span>
+        <ul class="strip-links">
+          <li><a href="https://quanta-analytica.com" target="_blank" rel="noopener">quanta-analytica.com</a></li>
+          <li><a href="https://quanta-analytica.com/mns-lbs.html" target="_blank" rel="noopener">MNS Consulting</a></li>
+          <li><a href="https://arac-international.org" target="_blank" rel="noopener">ARAC International</a></li>
+          <li><a href="https://iosi.global" target="_blank" rel="noopener">IOSI Global</a></li>
         </ul>
       </div>
     </div>
-    <div class="license-card" style="margin-top:3rem;background:var(--obsidian-3);border-color:var(--border-gold)">
-      <p class="body-text">Built around the <strong style="color:var(--text-primary);font-weight:500">Quanta Analytica Process™</strong> — including evidence governance, source validation, structured analytic techniques, confidence calibration, and AI-governed analytic workflows.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- DELIVERABLES -->
-<section class="section-pad-alt">
-  <div class="inner">
-    <div class="section-label">What You Get</div>
-    <h2>Your Purchase <em>Includes</em></h2>
-    <div class="deliver-grid">
-      <div class="deliver-card">
-        <div class="deliver-icon">PDF EDITION</div>
-        <div class="deliver-title">Desktop & Print</div>
-        <p class="deliver-body">Full 153-page manual in PDF format. Personal license allows printing one copy for individual use.</p>
-      </div>
-      <div class="deliver-card">
-        <div class="deliver-icon">HTML EDITION</div>
-        <div class="deliver-title">Browser-Based</div>
-        <p class="deliver-body">Fully formatted HTML edition for browser-based reading — no app required, readable on any device.</p>
-      </div>
-      <div class="deliver-card">
-        <div class="deliver-icon">ePub EDITION</div>
-        <div class="deliver-title">eReader Compatible</div>
-        <p class="deliver-body">ePub edition for Kindle, Apple Books, and all compatible eReader applications.</p>
-      </div>
-      <div class="deliver-card">
-        <div class="deliver-icon">14-MODULE PATH</div>
-        <div class="deliver-title">Structured Learning</div>
-        <p class="deliver-body">Progressive module structure from first principles through capstone brief production.</p>
-      </div>
-      <div class="deliver-card">
-        <div class="deliver-icon">EXERCISES & CHECKLISTS</div>
-        <div class="deliver-title">Applied Tradecraft</div>
-        <p class="deliver-body">Learner exercises, applied examples, instructor notes, and quality-control checklists throughout.</p>
-      </div>
-      <div class="deliver-card">
-        <div class="deliver-icon">CAPSTONE WORKFLOW</div>
-        <div class="deliver-title">Capstone Brief</div>
-        <p class="deliver-body">Module 14 guides production of a complete OSINT-to-Intelligence brief using the full QAP™ pipeline.</p>
+    <div class="masthead-main">
+      <a class="brand" href="https://research.quanta-analytica.com" aria-label="Quanta Analytica Research">
+        <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" />
+        <div class="brand-text">
+          <span class="brand-name">Quanta Analytica</span>
+          <span class="brand-sub">Research &amp; Analysis</span>
+        </div>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-primary">
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#editorials">Editorials</a></li>
+          <li><a href="#briefs">Intel Briefs</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#taxonomy">Research Lines</a></li>
+          <li><a href="#partners">Partners</a></li>
+        </ul>
+      </nav>
+      <div class="masthead-cta">
+        <a class="btn-outline" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">Archive</a>
+        <a class="btn-solid" href="https://newsletter.arac-international.org/subscribe?utm_source=research.quanta-analytica.com&utm_medium=masthead&utm_campaign=dispatch" target="_blank" rel="noopener">Flashpoints &amp; Frameworks ↗</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<div class="divider"></div>
-
-<!-- PRICING -->
-<section class="section-pad" id="pricing">
-  <div class="inner-narrow" style="text-align:center">
-    <div class="section-label">Launch Edition Pricing</div>
-    <h2>Get the <em>Manual</em></h2>
-  </div>
-  <div class="pricing-wrap">
-    <div class="pricing-card">
-      <div class="pricing-tag">LAUNCH EDITION · 2026</div>
-      <div class="pricing-title">OSINT to Intelligence</div>
-      <div class="pricing-sub">Turning Open-Source Evidence into Structured Analytic Judgments</div>
-      <div class="pricing-includes">
-        <span>PDF</span><span>HTML</span><span>ePub</span>
-      </div>
-      <div class="pricing-price-row">
-        <span class="pp-launch">$67</span>
-        <span class="pp-reg">$97</span>
-      </div>
-      <div class="pp-label">LAUNCH PRICE · Limited period</div>
-      <a href="https://www.paypal.com/ncp/payment/TLFYYCMF69924" class="btn-buy-lg">BUY THE MANUAL</a>
-      <p class="pricing-note">Secure checkout · Digital delivery · Personal professional development license included</p>
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <div class="hero">
+    <div class="edition-banner">
+      <span>QAP-Governed Intelligence &nbsp;//&nbsp; Open Source Analysis &nbsp;//&nbsp; May 2026 Edition</span>
     </div>
-    <div class="license-card" style="margin-top:1.5rem">
-      <h3>Personal Use License</h3>
-      <p>Purchase includes a personal, non-transferable license for individual professional development and reference use. Organizations, teams, training programs, academic departments, and agencies requiring group use should <a href="https://quanta-analytica.com/contact-form.html" style="color:var(--gold-dim);text-decoration:none">contact MNS Consulting</a> for organizational licensing.</p>
-    </div>
-  </div>
-</section>
+    <div class="shell">
+      <div class="hero-layout">
 
-<div class="divider"></div>
+        <!-- Featured: Narrative Control — 1 May 2026 -->
+        <div class="hero-feature">
+          <div>
+            <div class="feature-kicker">
+              <span class="kicker-label kicker-featured">Featured Assessment</span>
+              <span class="kicker-date">1 May 2026</span>
+            </div>
+          </div>
+          <h1 class="feature-headline">
+            Narrative Control and <em>Conflict Power</em> in the Sahel
+          </h1>
+          <p class="feature-deck">
+            Sovereignty, security, and legitimacy narratives across Mali, Burkina Faso, and Niger are functioning as a conflict-power system — masking structural drivers while enabling coercive governance, civic-space contraction, and accountability evasion.
+          </p>
+          <div class="feature-byline">
+            <div class="byline-marker"></div>
+            <span class="byline-text"><strong>QAP Information Integrity &amp; Conflict Systems</strong> &nbsp;|&nbsp; Confidence: Moderate &nbsp;|&nbsp; OSINT / Open Source</span>
+          </div>
+          <button
+            class="feature-read-link"
+            onclick="openReport('https://research.quanta-analytica.com/sahel/sahel-narrative-control-2026.html','Narrative Control and Conflict Power in the Sahel','Information Integrity · Conflict Systems · 1 May 2026')"
+          >
+            Read Full Assessment
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
 
-<!-- FAQ -->
-<section class="section-pad-alt" id="faq">
-  <div class="inner-narrow">
-    <div class="section-label">Frequently Asked Questions</div>
-    <h2>Buyer <em>Questions</em></h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Who is this manual for?<span class="arrow">+</span></button>
-        <div class="faq-a">Designed for OSINT practitioners, NGO security analysts, corporate risk professionals, researchers, conflict analysts, and intelligence-adjacent teams that need to convert open-source evidence into structured analytic judgments.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">What formats are included?<span class="arrow">+</span></button>
-        <div class="faq-a">Purchase includes PDF, HTML, and ePub editions of the full 153-page manual.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Is this a beginner or advanced product?<span class="arrow">+</span></button>
-        <div class="faq-a">Designed for beginner to intermediate analysts, but structured as a professional tradecraft manual rather than a general-interest OSINT book. Advanced analysts will find the QAP™-native framework and evidence governance modules directly applicable to live workflows.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Does this teach OSINT tools?<span class="arrow">+</span></button>
-        <div class="faq-a">The manual focuses on analytic tradecraft, source validation, evidence governance, hypothesis testing, confidence calibration, and intelligence writing. It is not primarily a tool directory.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Does this include video training?<span class="arrow">+</span></button>
-        <div class="faq-a">No. This launch edition includes the manual in PDF, HTML, and ePub formats.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Can teams use this for training?<span class="arrow">+</span></button>
-        <div class="faq-a">Team, classroom, and organizational use require a separate organizational license. Contact MNS Consulting to discuss group licensing options.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Is this based on classified methods or materials?<span class="arrow">+</span></button>
-        <div class="faq-a">No. The manual uses open-source analytic methods only and contains no classified material.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggle(this)">Can I print the PDF?<span class="arrow">+</span></button>
-        <div class="faq-a">Yes. The personal license allows the purchaser to print one copy for individual use.</div>
+        <!-- Sidebar: recent publications -->
+        <aside class="hero-sidebar" aria-label="Recent publications">
+          <div class="sidebar-label">Recent Publications</div>
+
+          <div class="sidebar-item" onclick="openReport('https://research.quanta-analytica.com/sahel/ecowas-au-mali-report-2may2026.html','ECOWAS and AU Response to Escalating Insurgency Pressures in Mali','Conflict Systems · 1 May 2026')">
+            <span class="kicker-label kicker-conflict">Conflict</span>
+            <h4>ECOWAS and AU Response to Escalating Insurgency Pressures in Mali</h4>
+            <p>Evidence-caveated assessment of institutional response architecture, diplomatic capacity limits, and 90-day operational horizon.</p>
+          </div>
+
+          <div class="sidebar-item" onclick="openReport('https://quanta-analytica.com/reports/mauritania-fragility-report-apr2026.html','Mauritania: Selective State Functionality','Fragility &amp; Governance')">
+            <span class="kicker-label kicker-fragility">Fragility</span>
+            <h4>Mauritania and Selective State Functionality</h4>
+            <p>Governance capacity, exclusion loops, and institutional legitimacy under resource constraint.</p>
+          </div>
+
+          <div class="sidebar-item" onclick="openReport('https://quanta-analytica.com/reports/nigeria-palm-sunday-middle-belt-conflict-v2.html','Nigeria Middle Belt Conflict Analysis','Editorial · Conflict Systems')">
+            <span class="kicker-label kicker-editorial">Editorial</span>
+            <h4>Nigeria's Middle Belt: Violence as Governance Failure</h4>
+            <p>A QAP process analysis of communal conflict, state incapacity, and structural grievance feedback.</p>
+          </div>
+
+          <div class="sidebar-item" onclick="openReport('https://quanta-analytica.com/reports/drc/drc_april_2026_sitrep.html','DRC April 2026 Situational Intelligence Brief','SitRep · Conflict Systems')">
+            <span class="kicker-label kicker-sitrep">SitRep</span>
+            <h4>DRC April 2026 Situational Intelligence Brief</h4>
+            <p>M23 consolidation, FARDC posture, Goma humanitarian access, and 90-day horizon assessment.</p>
+          </div>
+        </aside>
+
       </div>
     </div>
   </div>
-</section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="section-label" style="margin-bottom:1.5rem">Ready to Build the Tradecraft Layer</div>
-  <h2>Start Turning OSINT into <em>Structured Intelligence</em></h2>
-  <p>Build the tradecraft layer between open-source evidence and defensible analytic judgment.</p>
-  <a href="https://www.paypal.com/ncp/payment/TLFYYCMF69924" class="btn-buy">BUY THE MANUAL</a>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Quanta Analytica™ · An MNS Consulting Initiative</div>
-    <div class="footer-links">
-      <a href="https://quanta-analytica.com">Home</a>
-      <a href="https://quanta-analytica.com/about.html">About</a>
-      <a href="https://quanta-analytica.com/reports/">Reports</a>
-      <a href="https://quanta-analytica.com/contact-form.html">Contact</a>
+  <!-- ============================================================
+       TICKER
+  ============================================================ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="ticker-label">Research Feed</span>
+      <div class="ticker-track">
+        <span><strong>QAP</strong> Conflict Systems Analysis <span class="ticker-sep">//</span></span>
+        <span><strong>WSI</strong> Source Validation &amp; RAPITIS Scoring <span class="ticker-sep">//</span></span>
+        <span><strong>SITREP</strong> Monthly Situational Intelligence Briefs <span class="ticker-sep">//</span></span>
+        <span><strong>CARVER</strong> Infrastructure &amp; Risk Scoring <span class="ticker-sep">//</span></span>
+        <span><strong>ACH</strong> Analysis of Competing Hypotheses <span class="ticker-sep">//</span></span>
+        <span><strong>I&amp;W</strong> Early Warning Indicators <span class="ticker-sep">//</span></span>
+        <span><strong>KAC</strong> Key Assumptions Check <span class="ticker-sep">//</span></span>
+        <span><strong>IGRIS™</strong> Intelligence Dashboard <span class="ticker-sep">//</span></span>
+        <span><strong>QA-CSRF™</strong> Conflict Systems Risk Framework <span class="ticker-sep">//</span></span>
+        <span><strong>QAP</strong> Conflict Systems Analysis <span class="ticker-sep">//</span></span>
+        <span><strong>WSI</strong> Source Validation &amp; RAPITIS Scoring <span class="ticker-sep">//</span></span>
+        <span><strong>SITREP</strong> Monthly Situational Intelligence Briefs <span class="ticker-sep">//</span></span>
+        <span><strong>CARVER</strong> Infrastructure &amp; Risk Scoring <span class="ticker-sep">//</span></span>
+        <span><strong>ACH</strong> Analysis of Competing Hypotheses <span class="ticker-sep">//</span></span>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 MNS Consulting. All rights reserved.</div>
   </div>
-</footer>
 
-<script>
-function toggle(btn){
-  const item=btn.parentElement;
-  const wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen)item.classList.add('open');
-}
-</script>
+  <main>
+
+    <!-- ============================================================
+         SECTION 01 — QAP INTELLIGENCE ASSESSMENTS
+    ============================================================ -->
+    <section class="section-padding" id="reports">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">01</span>
+            <h2 class="section-title">Intelligence Assessments</h2>
+          </div>
+          <a class="section-view-all" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">View Full Archive &rarr;</a>
+        </div>
+
+        <div class="reports-layout">
+
+          <!-- Lead card: Narrative Control — latest full QAP web report -->
+          <div
+            class="report-card-lead reveal"
+            onclick="openReport('https://research.quanta-analytica.com/sahel/sahel-narrative-control-2026.html','Narrative Control and Conflict Power in the Sahel','Information Integrity · Conflict Systems · 1 May 2026')"
+            style="transition-delay:0.04s;"
+          >
+            <div class="card-visual">
+              <div class="card-visual-grid"></div>
+              <img class="card-visual-logo" src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" />
+              <span class="card-confidence">Confidence: Moderate</span>
+            </div>
+            <div class="card-body">
+              <span class="kicker-label kicker-editorial">Information Integrity</span>
+              <h3>Narrative Control and Conflict Power in the Sahel</h3>
+              <p>How sovereignty, security, and legitimacy narratives across Mali, Burkina Faso, and Niger mask structural conflict drivers while enabling coercive governance and accountability evasion. 3 country cases, 6 key judgments, 15 core sources.</p>
+              <div class="card-meta">
+                <span class="card-meta-left">1 May 2026 &nbsp;|&nbsp; QAP Strategic Assessment</span>
+                <span class="card-meta-right">OSINT &nbsp;|&nbsp; Open Source</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second card: ECOWAS/AU Mali -->
+          <div
+            class="report-card-compact reveal"
+            onclick="openReport('https://research.quanta-analytica.com/sahel/ecowas-au-mali-report-2may2026.html','ECOWAS and AU Response to Escalating Insurgency Pressures in Mali','Conflict Systems · 1 May 2026')"
+            style="transition-delay:0.08s;"
+          >
+            <span class="kicker-label kicker-conflict">Conflict Systems</span>
+            <h3>ECOWAS and AU Response to Escalating Insurgency Pressures in Mali</h3>
+            <p>Evidence-caveated assessment of ECOWAS and African Union institutional response architecture, diplomatic capacity limits, and the gap between intent-based commitments and operational delivery. 90-day forward horizon.</p>
+            <div class="card-meta">
+              <span class="card-meta-left">1 May 2026 &nbsp;|&nbsp; QAP Assessment</span>
+              <span class="card-meta-right">Confidence: Moderate</span>
+            </div>
+          </div>
+
+          <!-- Index column: recent reports -->
+          <div class="report-index reveal" style="transition-delay:0.12s;">
+            <div class="report-index-item" onclick="openReport('https://research.quanta-analytica.com/africa-south/south-africa-xenophobic-mobilization-risk-reportv2','South Africa: Xenophobic Mobilization Risk Assessment','Conflict Systems · Governance · May 2026','https://research.quanta-analytica.com/africa-south/sa-xeno-qap-report.pdf')">
+              <span class="kicker-label kicker-conflict">Conflict</span>
+              <h4>South Africa: Xenophobic Mobilization Risk Assessment</h4>
+              <span class="item-meta">May 2026 &nbsp;|&nbsp; QAP Web Report</span>
+            </div>
+            <div class="report-index-item" onclick="openReport('https://quanta-analytica.com/reports/mali-coercive-fragmentation-qap-web-report-29Apr2026.html','Mali: Coercive Fragmentation — QAP Web Report','Conflict Systems · Apr 2026')">
+              <span class="kicker-label kicker-conflict">Conflict</span>
+              <h4>Mali: Coercive Fragmentation and the Collapse of Transitional Legitimacy</h4>
+              <span class="item-meta">29 Apr 2026 &nbsp;|&nbsp; QAP Web Report</span>
+            </div>
+            <div class="report-index-item" onclick="openReport('https://quanta-analytica.com/reports/mauritania-governance-exclusion-loop.html','Mauritania: Governance Exclusion Loop','Fragility · Apr 2026')">
+              <span class="kicker-label kicker-fragility">Fragility</span>
+              <h4>Mauritania: Governance Exclusion Loop and Institutional Legitimacy</h4>
+              <span class="item-meta">Apr 2026 &nbsp;|&nbsp; Full Assessment</span>
+            </div>
+            <div class="report-index-item" onclick="openReport('https://quanta-analytica.com/reports/chad-sudan-border-crisis.html','Chad–Sudan Border Crisis Assessment','Conflict Systems · Mar 2026')">
+              <span class="kicker-label kicker-conflict">Conflict</span>
+              <h4>Chad–Sudan Border Crisis: Feedback Loop Analysis</h4>
+              <span class="item-meta">Mar 2026 &nbsp;|&nbsp; QAP-CSRF™ Model</span>
+            </div>
+            <div class="report-index-item" onclick="openReport('https://quanta-analytica.com/reports/haiti-security-assessment-march-2026v2.html','Haiti Security Assessment — March 2026 v2','Fragility · Mar 2026')">
+              <span class="kicker-label kicker-fragility">Fragility</span>
+              <h4>Haiti Security Assessment: Transition Council and Gang Consolidation</h4>
+              <span class="item-meta">Mar 2026 &nbsp;|&nbsp; Full Assessment</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 02 — EDITORIALS
+    ============================================================ -->
+    <section class="section-padding editorial-band" id="editorials">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">02</span>
+            <h2 class="section-title">Editorials &amp; Commentary</h2>
+          </div>
+          <a class="section-view-all" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">All Editorials &rarr;</a>
+        </div>
+        <div class="editorial-grid">
+
+          <div
+            class="editorial-card reveal"
+            onclick="openReport('https://research.quanta-analytica.com/sahel/sahel-narrative-control-2026.html','Narrative Control and Conflict Power in the Sahel','Information Integrity · Conflict Systems · 1 May 2026')"
+            style="transition-delay:0.04s;"
+          >
+            <span class="kicker-label kicker-editorial">Information Integrity</span>
+            <h3>Narrative Control and Conflict Power in the Sahel</h3>
+            <p>How sovereignty, security, and legitimacy narratives across Mali, Burkina Faso, and Niger mask structural conflict drivers while enabling coercive governance and accountability evasion. 3 country cases, 6 key judgments.</p>
+            <div class="editorial-card-footer">
+              <span>1 May 2026 &nbsp;|&nbsp; Strategic Assessment</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+          <div
+            class="editorial-card reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/nigeria-palm-sunday-middle-belt-conflict-v2.html','Nigeria Middle Belt Conflict: Palm Sunday Analysis v2','Editorial · Flashpoints &amp; Frameworks')"
+            style="transition-delay:0.08s;"
+          >
+            <span class="kicker-label kicker-editorial">Flashpoints &amp; Frameworks</span>
+            <h3>Nigeria's Middle Belt: When the State Fails to Govern the Margins</h3>
+            <p>Communal violence in the Middle Belt is not an ethnic conflict. It is a governance failure expressed as violence — and the distinction matters for policy.</p>
+            <div class="editorial-card-footer">
+              <span>Apr 2026 &nbsp;|&nbsp; Op-Ed</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+          <div
+            class="editorial-card reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/authoritarian-ai-4Apr2026-report.html','Authoritarian AI: Governance and Control Risk Report','Analysis · Digital Navigator')"
+            style="transition-delay:0.12s;"
+          >
+            <span class="kicker-label kicker-editorial">Digital Navigator</span>
+            <h3>Authoritarian AI: Governance, Surveillance, and Control Risk in 2026</h3>
+            <p>How authoritarian states are integrating AI systems into social control architectures — and what the analytic implications are for open-source monitoring.</p>
+            <div class="editorial-card-footer">
+              <span>4 Apr 2026 &nbsp;|&nbsp; Analysis</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+          <div
+            class="editorial-card reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/qap-llm-detection-lag-report-v2.html','QAP LLM Detection Lag Report v2','Analysis · Information Integrity')"
+            style="transition-delay:0.16s;"
+          >
+            <span class="kicker-label kicker-editorial">Information Integrity</span>
+            <h3>LLM Detection Lag and the Open Source Intelligence Problem</h3>
+            <p>When synthetic content outpaces detection, the sourcing discipline of the analyst — not the tool — becomes the primary integrity check.</p>
+            <div class="editorial-card-footer">
+              <span>Apr 2026 &nbsp;|&nbsp; Analysis</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 03 — INTEL BRIEFS
+    ============================================================ -->
+    <section class="section-padding" id="briefs">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">03</span>
+            <h2 class="section-title">Situational Intelligence Briefs</h2>
+          </div>
+          <a class="section-view-all" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">Brief Index &rarr;</a>
+        </div>
+        <div class="briefs-layout">
+          <div class="brief-list">
+
+            <div
+              class="brief-row reveal"
+              onclick="openReport('https://research.quanta-analytica.com/sahel/ecowas-au-mali-report-2may2026.html','ECOWAS and AU Response to Escalating Insurgency Pressures in Mali','Conflict Systems · 1 May 2026')"
+              style="transition-delay:0.04s;"
+            >
+              <div class="brief-num">01</div>
+              <div class="brief-content">
+                <div style="margin-bottom:6px;"><span class="kicker-label kicker-conflict">Conflict</span></div>
+                <h4>ECOWAS and AU Response to Escalating Insurgency Pressures in Mali</h4>
+                <p>Evidence-caveated assessment of institutional response architecture, the gap between diplomatic intent and operational delivery, and a 90-day forward monitoring framework. 6 key judgments, 5 hypotheses tested.</p>
+              </div>
+              <div class="brief-meta">
+                <span class="brief-type-badge kicker-conflict">QAP Assessment</span>
+                <span class="brief-date-tag">1 May 2026</span>
+              </div>
+            </div>
+
+            <div
+              class="brief-row reveal"
+              onclick="openReport('https://quanta-analytica.com/reports/drc/drc_april_2026_sitrep.html','DRC Monthly Brief — April 2026','Monthly SitRep')"
+              style="transition-delay:0.08s;"
+            >
+              <div class="brief-num">02</div>
+              <div class="brief-content">
+                <div style="margin-bottom:6px;"><span class="kicker-label kicker-sitrep">SitRep</span></div>
+                <h4>DRC Monthly Brief — April 2026</h4>
+                <p>M23 consolidation, FARDC posture, Goma humanitarian access, and 90-day horizon assessment.</p>
+              </div>
+              <div class="brief-meta">
+                <span class="brief-type-badge kicker-sitrep">Monthly SitRep</span>
+                <span class="brief-date-tag">Apr 2026</span>
+              </div>
+            </div>
+
+            <div
+              class="brief-row reveal"
+              onclick="openReport('https://quanta-analytica.com/reports/mali-on-the-brink-qap.html','Mali: On the Brink — QAP Brief','Conflict SitRep')"
+              style="transition-delay:0.12s;"
+            >
+              <div class="brief-num">03</div>
+              <div class="brief-content">
+                <div style="margin-bottom:6px;"><span class="kicker-label kicker-sitrep">SitRep</span></div>
+                <h4>Mali: On the Brink — Situational Intelligence Brief</h4>
+                <p>Coercive fragmentation dynamics, JNIM territorial expansion, and transitional authority legitimacy collapse.</p>
+              </div>
+              <div class="brief-meta">
+                <span class="brief-type-badge kicker-sitrep">SitRep</span>
+                <span class="brief-date-tag">Apr 2026</span>
+              </div>
+            </div>
+
+            <div
+              class="brief-row reveal"
+              onclick="openReport('https://quanta-analytica.com/reports/sahel-02Apr2026-report.html','Sahel Security Report — 2 April 2026','Regional Brief')"
+              style="transition-delay:0.16s;"
+            >
+              <div class="brief-num">04</div>
+              <div class="brief-content">
+                <div style="margin-bottom:6px;"><span class="kicker-label kicker-brief">Regional</span></div>
+                <h4>Sahel Security Report — 2 April 2026</h4>
+                <p>Weekly escalation signals, actor posture shifts, and humanitarian corridor status across the Sahel arc.</p>
+              </div>
+              <div class="brief-meta">
+                <span class="brief-type-badge kicker-brief">Regional Brief</span>
+                <span class="brief-date-tag">2 Apr 2026</span>
+              </div>
+            </div>
+
+            <div
+              class="brief-row reveal"
+              onclick="openReport('https://quanta-analytica.com/reports/red-sea-corporate-risk-assessment.html','Red Sea Corporate Risk Assessment','Corporate Risk')"
+              style="transition-delay:0.20s;"
+            >
+              <div class="brief-num">05</div>
+              <div class="brief-content">
+                <div style="margin-bottom:6px;"><span class="kicker-label kicker-risk">Risk</span></div>
+                <h4>Red Sea: Corporate Risk Assessment</h4>
+                <p>Houthi interdiction risk, shipping corridor disruption modeling, and supply chain exposure for corporate stakeholders.</p>
+              </div>
+              <div class="brief-meta">
+                <span class="brief-type-badge kicker-risk">Corporate Risk</span>
+                <span class="brief-date-tag">Apr 2026</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Signals panel -->
+          <aside class="signals-panel reveal" style="transition-delay:0.10s;">
+            <div class="signals-panel-header">
+              <div class="signals-dot"></div>
+              <span class="signals-title">Priority Signal Watch</span>
+            </div>
+            <div class="signal-entries">
+              <div class="signal-entry">
+                <span class="kicker-label kicker-conflict">Watch</span>
+                <h5>Ceasefire Compliance vs. Field Behavior</h5>
+                <p>Track divergence between diplomatic commitments and recorded violence at the tactical level.</p>
+              </div>
+              <div class="signal-entry">
+                <span class="kicker-label kicker-governance">Monitor</span>
+                <h5>Selective State Functionality</h5>
+                <p>Where institutions perform coercively but fail administratively — the fragility fingerprint.</p>
+              </div>
+              <div class="signal-entry">
+                <span class="kicker-label kicker-fragility">Behavioral</span>
+                <h5>Identity Threat and Legitimacy Framing</h5>
+                <p>Narratives that convert latent grievance into active mobilization and collective action.</p>
+              </div>
+            </div>
+            <div class="panel-metrics">
+              <div class="panel-metric">
+                <div class="metric-val">38</div>
+                <div class="metric-lbl">Reports Published</div>
+              </div>
+              <div class="panel-metric">
+                <div class="metric-val">A/B</div>
+                <div class="metric-lbl">Source Tier</div>
+              </div>
+              <div class="panel-metric">
+                <div class="metric-val">QAP</div>
+                <div class="metric-lbl">Method Standard</div>
+              </div>
+              <div class="panel-metric">
+                <div class="metric-val">OSINT</div>
+                <div class="metric-lbl">Classification</div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 04 — BLOG & RESEARCH NOTES
+    ============================================================ -->
+    <section class="section-padding" id="blog">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">04</span>
+            <h2 class="section-title">Blog &amp; Research Notes</h2>
+          </div>
+          <a class="section-view-all" href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">All Posts &rarr;</a>
+        </div>
+        <div class="blog-layout">
+
+          <!-- Featured: Architecture of Collapse -->
+          <div
+            class="blog-feature reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/architecture-of-collapse.html','The Architecture of Collapse','Research Note · Systems Analysis')"
+          >
+            <div class="blog-feature-visual">
+              <div class="card-visual-grid"></div>
+              <img src="https://quanta-analytica.com/quanta-analytica-mns-consulting2.png" alt="QAP" />
+              <span class="blog-visual-label">QAP Research Note</span>
+            </div>
+            <div class="blog-feature-body">
+              <span class="kicker-label kicker-blog">Systems Analysis</span>
+              <h3>The Architecture of Collapse: Feedback Loops, Tipping Points, and State Failure</h3>
+              <p>State collapse is not a single event. It is a process — a cascade of failed feedback corrections, exhausted buffering mechanisms, and institutional substitution that precedes visible breakdown by months or years. This research note traces the analytic architecture of that process using QAP-CSRF™ modeling discipline applied to contemporary fragile state cases.</p>
+              <div class="blog-feature-footer">
+                <span class="byline-text"><strong>M. Nuri Shakoor, SRMP-R</strong> &nbsp;|&nbsp; QAP Research</span>
+                <button class="feature-read-link" onclick="event.stopPropagation(); openReport('https://quanta-analytica.com/reports/architecture-of-collapse.html','The Architecture of Collapse','Research Note')">
+                  Read Note
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog sidebar: additional content -->
+          <aside class="blog-sidebar reveal" style="transition-delay:0.08s;">
+            <div class="blog-sidebar-header">More Research Notes</div>
+
+            <div class="blog-index-item" onclick="openReport('https://quanta-analytica.com/reports/qap-africa-regime-futures.html','QAP Africa Regime Futures Analysis','Research Note · Governance')">
+              <span class="kicker-label kicker-governance">Governance</span>
+              <h4>Africa Regime Futures: Analytic Scenarios for 2026–2028</h4>
+              <span class="item-meta">Apr 2026 &nbsp;|&nbsp; Scenario Analysis</span>
+            </div>
+
+            <div class="blog-index-item" onclick="openReport('https://quanta-analytica.com/reports/western-hemisphere-democratic-renewal-v3.html','Western Hemisphere: Democratic Renewal Assessment v3','Research Note · Governance')">
+              <span class="kicker-label kicker-governance">Governance</span>
+              <h4>Western Hemisphere: Democratic Renewal — Assessment v3</h4>
+              <span class="item-meta">Apr 2026 &nbsp;|&nbsp; Regional Analysis</span>
+            </div>
+
+            <div class="blog-index-item" onclick="openReport('https://quanta-analytica.com/reports/venezuel-leadership-capacity-governance-fragility.html','Venezuela: Leadership Capacity and Governance Fragility','Research Note · Fragility')">
+              <span class="kicker-label kicker-fragility">Fragility</span>
+              <h4>Venezuela: Leadership Capacity and Governance Fragility</h4>
+              <span class="item-meta">Apr 2026 &nbsp;|&nbsp; Country Assessment</span>
+            </div>
+
+            <div class="blog-index-item" onclick="openReport('https://quanta-analytica.com/reports/us-k-shaped-09apr2026.html','US: K-Shaped Recovery and Social Fragility','Research Note · Governance')">
+              <span class="kicker-label kicker-governance">Governance</span>
+              <h4>United States: K-Shaped Recovery and Social Fragility Indicators</h4>
+              <span class="item-meta">9 Apr 2026 &nbsp;|&nbsp; Domestic Risk</span>
+            </div>
+
+            <div class="blog-index-item" onclick="openReport('https://quanta-analytica.com/reports/mozambique-stability-geopolitical-risk-2026.html','Mozambique: Stability and Geopolitical Risk 2026','Research Note · Conflict')">
+              <span class="kicker-label kicker-conflict">Conflict</span>
+              <h4>Mozambique: Stability and Geopolitical Risk — 2026 Assessment</h4>
+              <span class="item-meta">Mar 2026 &nbsp;|&nbsp; Country Assessment</span>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 05 — RESEARCH TAXONOMY
+    ============================================================ -->
+    <section class="section-padding taxonomy-band" id="taxonomy">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">05</span>
+            <h2 class="section-title">Research Lines</h2>
+          </div>
+        </div>
+        <div class="taxonomy-grid">
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.03s;">
+            <span class="taxon-num">01</span>
+            <span class="taxon-name">Conflict Systems</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.06s;">
+            <span class="taxon-num">02</span>
+            <span class="taxon-name">Fragility &amp; Governance</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.09s;">
+            <span class="taxon-num">03</span>
+            <span class="taxon-name">Behavioral Risk</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.12s;">
+            <span class="taxon-num">04</span>
+            <span class="taxon-name">Humanitarian Access</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.15s;">
+            <span class="taxon-num">05</span>
+            <span class="taxon-name">Strategic Minerals</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.18s;">
+            <span class="taxon-num">06</span>
+            <span class="taxon-name">Information Integrity</span>
+          </a>
+          <a class="taxon-tile reveal" href="#reports" style="transition-delay:0.21s;">
+            <span class="taxon-num">07</span>
+            <span class="taxon-name">Analytic Tradecraft</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 06 — PARTNER PORTAL
+    ============================================================ -->
+    <section class="section-padding partner-band" id="partners">
+      <div class="shell">
+        <div class="section-masthead reveal">
+          <div class="section-masthead-left">
+            <span class="section-numeral">06</span>
+            <h2 class="section-title">Partner Research</h2>
+          </div>
+        </div>
+        <div class="partner-grid">
+
+          <div
+            class="partner-card reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/partners/the-human-rupture-partner-iosi-global.html','The Human Rupture — IOSI Global Partner Report','Partner Research · IOSI Global')"
+            style="transition-delay:0.04s;"
+          >
+            <span class="kicker-label kicker-partner">IOSI Global</span>
+            <h4>The Human Rupture: Conflict, Displacement, and Humanitarian System Stress</h4>
+            <p>A partner research product developed in collaboration with IOSI Global examining the intersection of mass displacement, international protection systems, and state fragility across active conflict zones.</p>
+            <div class="partner-card-footer">
+              <span>Partner Research &nbsp;|&nbsp; Apr 2026</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+          <div
+            class="partner-card reveal"
+            onclick="openCanvaReport('DAHIlZEe67M','Ms9-XmolbDdG_v4JvVZsnA','The Mauritanian Paradox: Institutional Sabotage, State Fragility, and Pathways to Legitimacy','Full Report · Canva Embed')"
+            style="transition-delay:0.08s;"
+          >
+            <span class="kicker-label kicker-fragility">PDF Report</span>
+            <h4>The Mauritanian Paradox: Institutional Sabotage, State Fragility, and Pathways to Legitimacy</h4>
+            <p>Full PDF version of the Mauritania systems analysis — available for download and offline reference. Covers institutional sabotage mechanisms, fragility pathways, and legitimacy recovery conditions.</p>
+            <div class="partner-card-footer">
+              <span>Full Report &nbsp;|&nbsp; PDF</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+          <div
+            class="partner-card reveal"
+            onclick="openReport('https://quanta-analytica.com/reports/sierra-leone-illicit-hub-ecowas-terrorism-nexus.html','Sierra Leone: Illicit Hub and ECOWAS Terrorism Nexus','Regional Risk · Partner Research')"
+            style="transition-delay:0.12s;"
+          >
+            <span class="kicker-label kicker-partner">Regional Risk</span>
+            <h4>Sierra Leone: Illicit Economy Hub and the ECOWAS Terrorism Nexus</h4>
+            <p>Assessment of Sierra Leone's role in regional illicit economy networks, the trafficking-terrorism interface, and ECOWAS institutional capacity to address the nexus.</p>
+            <div class="partner-card-footer">
+              <span>Regional Risk &nbsp;|&nbsp; 2026</span>
+              <span class="read-arrow">&#8594;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DISPATCH — Flashpoints & Frameworks | ARAC International
+         Subscribe URL: https://newsletter.arac-international.org/subscribe
+         Direct-link CTA — no embedded form required
+    ============================================================ -->
+    <section class="dispatch" id="dispatch">
+      <div class="shell">
+        <div class="dispatch-card reveal">
+
+          <!-- Publication identity strip -->
+          <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:20px;">
+            <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" style="width:60px; height:60px; object-fit:contain; opacity:0.8;" />
+            <div style="width:1px; height:28px; background:var(--obsidian-border);"></div>
+            <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold-dim);">ARAC International &nbsp;|&nbsp; Quanta Analytica &nbsp;|&nbsp; MNS Consulting</span>
+          </div>
+
+          <div class="dispatch-overline">Flashpoints &amp; Frameworks &nbsp;//&nbsp; The Research Dispatch</div>
+          <h2 class="dispatch-title">Intelligence delivered to your inbox.</h2>
+          <p class="dispatch-body">Subscribe to Flashpoints &amp; Frameworks — the official research newsletter of ARAC International and Quanta Analytica. QAP assessments, conflict systems analysis, situational briefs, and analytic editorials, published on a structured release cycle.</p>
+
+          <!-- Subscribe CTA — direct link to Flashpoints & Frameworks subscribe page -->
+          <div style="display:flex; justify-content:center; margin-bottom:4px;">
+            <a
+              href="https://newsletter.arac-international.org/subscribe?utm_source=research.quanta-analytica.com&utm_medium=dispatch-cta&utm_campaign=flashpoints-frameworks"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="dispatch-subscribe-btn"
+            >
+              Subscribe Free
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="margin-left:6px;"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Footer notes -->
+          <p class="dispatch-note" style="margin-top:16px;">
+            Free to subscribe. Published by ARAC International &amp; MNS Consulting.
+            &nbsp;|&nbsp;
+            <a href="https://newsletter.arac-international.org" target="_blank" rel="noopener" style="color:var(--gold-dim); border-bottom:1px solid var(--gold-muted); padding-bottom:1px;">View archive ↗</a>
+            &nbsp;|&nbsp;
+            <a href="https://aracinternational.substack.com" target="_blank" rel="noopener" style="color:var(--gold-dim); border-bottom:1px solid var(--gold-muted); padding-bottom:1px;">Open on Substack ↗</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="shell">
+      <div class="footer-layout">
+        <div class="footer-brand">
+          <img src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica" />
+          <div class="footer-brand-name">Quanta Analytica</div>
+          <div class="footer-brand-sub">MNS Consulting &nbsp;|&nbsp; research.quanta-analytica.com</div>
+          <p>A public research gateway for QAP-governed intelligence assessments, situational briefs, and analytic editorials. Powered by the Quanta Analytica Process™.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Research</div>
+          <ul class="footer-links">
+            <li><a href="#reports">Intelligence Assessments</a></li>
+            <li><a href="#briefs">Situational Briefs</a></li>
+            <li><a href="#editorials">Editorials</a></li>
+            <li><a href="#blog">Research Notes</a></li>
+            <li><a href="https://quanta-analytica.com/reports/index.html" target="_blank" rel="noopener">Full Archive</a></li>
+            <li><a href="https://newsletter.arac-international.org" target="_blank" rel="noopener">Flashpoints &amp; Frameworks ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Methods</div>
+          <ul class="footer-links">
+            <li><a href="https://quanta-analytica.com/qap.html" target="_blank" rel="noopener">QAP Framework</a></li>
+            <li><a href="https://quanta-analytica.com/qa-csrf.html" target="_blank" rel="noopener">QA-CSRF™</a></li>
+            <li><a href="https://quanta-analytica.com/igris.html" target="_blank" rel="noopener">IGRIS™ Dashboard</a></li>
+            <li><a href="https://quanta-analytica.com/carver.html" target="_blank" rel="noopener">CARVER Tool</a></li>
+            <li><a href="https://quanta-analytica.com/qa-process.html" target="_blank" rel="noopener">QA Process Overview</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Network</div>
+          <ul class="footer-links">
+            <li><a href="https://quanta-analytica.com" target="_blank" rel="noopener">quanta-analytica.com</a></li>
+            <li><a href="https://quanta-analytica.com/mns-lbs.html" target="_blank" rel="noopener">MNS Consulting / LBS</a></li>
+            <li><a href="https://arac-international.org" target="_blank" rel="noopener">ARAC International</a></li>
+            <li><a href="https://iosi.global" target="_blank" rel="noopener">IOSI Global</a></li>
+            <li><a href="https://quanta-analytica.com/contact.html" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 MNS Consulting &nbsp;|&nbsp; Quanta Analytica Process™. All rights reserved.</span>
+        <span>research.quanta-analytica.com &nbsp;|&nbsp; v2.1</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    /* ----------------------------------------------------------
+       IFRAME READER SYSTEM
+    ---------------------------------------------------------- */
+    const overlay     = document.getElementById('reader-overlay');
+    const iframe      = document.getElementById('reader-iframe');
+    const loading     = document.getElementById('readerLoading');
+    const docTitle    = document.getElementById('readerDocTitle');
+    const docType     = document.getElementById('readerDocType');
+    const urlBar      = document.getElementById('readerUrlBar');
+    const backdrop    = document.getElementById('readerBackdrop');
+
+    let currentUrl = '';
+
+    /* ----------------------------------------------------------
+       CANVA EMBED READER
+       For documents published via Canva — these embed cleanly
+       in iframes unlike GitHub Pages PDFs.
+       Parameters: designId, viewId, title, type
+    ---------------------------------------------------------- */
+    function openCanvaReport(designId, viewId, title, type) {
+      const canvaUrl     = `https://www.canva.com/design/${designId}/${viewId}/view?embed`;
+      const canvaPageUrl = `https://www.canva.com/design/${designId}/${viewId}/view?utm_content=${designId}&utm_campaign=designshare&utm_medium=embeds&utm_source=research.quanta-analytica.com`;
+
+      currentUrl = 'https://quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf';
+      docTitle.textContent = title;
+      docType.textContent  = type || 'QAP Report';
+      urlBar.textContent   = 'quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf';
+
+      // Reset state
+      loading.style.display = 'flex';
+      loading.innerHTML     = `
+        <div class="reader-spinner"></div>
+        <div class="reader-loading-text">Loading document…</div>
+      `;
+      iframe.style.display  = 'none';
+      iframe.src            = '';
+
+      overlay.classList.add('active');
+      document.body.classList.add('reader-open');
+
+      // Canva embed uses a specific aspect ratio wrapper but inside our
+      // fixed-height reader panel we just let it fill the available space.
+      // Override the iframe to fill the panel, then point at the embed URL.
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          // Remove any inline styles that would constrain the iframe
+          iframe.removeAttribute('style');
+          iframe.style.cssText = 'flex:1; border:none; display:block; width:100%; background:#fff;';
+          iframe.allow         = 'fullscreen';
+          iframe.src           = canvaUrl;
+        }, 80);
+      });
+
+      iframe.onload = function () {
+        loading.style.display = 'none';
+        iframe.style.display  = 'block';
+      };
+
+      iframe.onerror = function () {
+        loading.innerHTML = `
+          <div style="text-align:center; padding:32px;">
+            <div style="font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Unable to load Canva embed</div>
+            <a href="https://quanta-analytica.com/reports/pdfs/mauritanian-paradox-systems-analysis.pdf" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.66rem; color:var(--gold-light); letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--gold-dim); padding-bottom:2px;">Open on GitHub &rarr;</a>
+          </div>
+        `;
+      };
+    }
+
+    function openReport(url, title, type, pdfUrl) {
+      currentUrl = url;
+      docTitle.textContent = title;
+      docType.textContent  = type || 'QAP Report';
+      urlBar.textContent   = url.replace('https://quanta-analytica.com/', 'quanta-analytica.com/').replace('https://research.quanta-analytica.com/', 'research.quanta-analytica.com/');
+
+      // ── PDF DOWNLOAD BUTTON ───────────────────────────────
+      const pdfBtn = document.getElementById('readerPdfDownload');
+      if (pdfUrl) {
+        pdfBtn.href = pdfUrl;
+        pdfBtn.style.display = 'inline-flex';
+      } else {
+        pdfBtn.href = '#';
+        pdfBtn.style.display = 'none';
+      }
+
+      // Reset panel state
+      loading.style.display = 'flex';
+      iframe.style.display  = 'none';
+      iframe.src            = '';
+
+      // Open overlay
+      overlay.classList.add('active');
+      document.body.classList.add('reader-open');
+
+      // ── PDF INTERCEPT ─────────────────────────────────────
+      // Browsers block cross-origin PDF embedding in iframes
+      // regardless of sandbox settings. Detect and intercept
+      // before attempting to load — show a purpose-built card
+      // with direct open/download actions instead.
+      if (url.toLowerCase().endsWith('.pdf')) {
+        loading.innerHTML = `
+          <div style="
+            display:flex; flex-direction:column; align-items:center;
+            justify-content:center; gap:24px; padding:48px 32px;
+            text-align:center; max-width:540px; margin:0 auto;
+          ">
+            <!-- PDF icon -->
+            <div style="
+              width:72px; height:72px; border-radius:12px;
+              background:rgba(200,169,110,0.08);
+              border:1px solid rgba(200,169,110,0.20);
+              display:flex; align-items:center; justify-content:center;
+              flex-shrink:0;
+            ">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4h10l8 8v16a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 4v8h8" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 17h12M10 21h8" stroke="#9a7f52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Label -->
+            <div>
+              <div style="
+                font-family:var(--font-mono); font-size:0.58rem;
+                letter-spacing:0.20em; text-transform:uppercase;
+                color:var(--gold-dim); margin-bottom:10px;
+              ">PDF Report &nbsp;|&nbsp; Full Document</div>
+              <div style="
+                font-family:'Libre Baskerville',Georgia,serif;
+                font-size:1.15rem; font-weight:700; line-height:1.35;
+                color:var(--text-primary); margin-bottom:10px;
+              ">${title}</div>
+              <div style="
+                font-family:var(--font-mono); font-size:0.64rem;
+                color:var(--text-muted); line-height:1.5;
+                max-width:420px;
+              ">PDF documents cannot be displayed inside the in-page reader due to browser security restrictions. Use the buttons below to open or download the full report.</div>
+            </div>
+
+            <!-- Action buttons -->
+            <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+              <a
+                href="${url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  display:inline-flex; align-items:center; gap:8px;
+                  background:var(--gold); color:var(--obsidian);
+                  font-family:var(--font-mono); font-size:0.66rem;
+                  letter-spacing:0.14em; text-transform:uppercase;
+                  font-weight:700; padding:11px 20px;
+                  border-radius:3px; text-decoration:none;
+                  transition:background 0.2s;
+                "
+                onmouseover="this.style.background='#dfc28e'"
+                onmouseout="this.style.background='#c8a96e'"
+              >
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Open PDF
+              </a>
+              <a
+                href="${url}"
+                download
+                style="
+                  display:inline-flex; align-items:center; gap:8px;
+                  background:transparent; color:var(--gold-light);
+                  font-family:var(--font-mono); font-size:0.66rem;
+                  letter-spacing:0.14em; text-transform:uppercase;
+                  font-weight:600; padding:11px 20px;
+                  border-radius:3px; text-decoration:none;
+                  border:1px solid var(--gold-dim);
+                  transition:background 0.2s, border-color 0.2s;
+                "
+                onmouseover="this.style.background='rgba(200,169,110,0.10)'"
+                onmouseout="this.style.background='transparent'"
+              >
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download
+              </a>
+            </div>
+
+            <!-- File path reference -->
+            <div style="
+              font-family:var(--font-mono); font-size:0.56rem;
+              letter-spacing:0.08em; color:var(--text-faint);
+              word-break:break-all;
+            ">${url.replace('https://quanta-analytica.com/', 'quanta-analytica.com/').replace('https://research.quanta-analytica.com/', 'research.quanta-analytica.com/')}</div>
+          </div>
+        `;
+        return; // Do not attempt iframe load
+      }
+
+      // ── HTML REPORT: normal iframe path ───────────────────
+      requestAnimationFrame(() => {
+        setTimeout(() => { iframe.src = url; }, 80);
+      });
+
+      iframe.onload = function () {
+        loading.style.display = 'none';
+        iframe.style.display  = 'block';
+      };
+
+      iframe.onerror = function () {
+        loading.innerHTML = `
+          <div style="text-align:center; padding:32px;">
+            <div style="font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Unable to load in reader</div>
+            <a href="${url}" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.66rem; color:var(--gold-light); letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--gold-dim); padding-bottom:2px;">Open in new tab &rarr;</a>
+          </div>
+        `;
+      };
+    }
+
+    function closeReader() {
+      overlay.classList.remove('active');
+      document.body.classList.remove('reader-open');
+      setTimeout(() => {
+        iframe.src            = '';
+        iframe.style.display  = 'none';
+        // Reset loading panel to original spinner state
+        loading.style.display = 'flex';
+        loading.innerHTML     = `
+          <div class="reader-spinner"></div>
+          <div class="reader-loading-text">Loading report…</div>
+        `;
+      }, 320);
+    }
+
+    function openInNewTab() {
+      if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Close on backdrop click
+    backdrop.addEventListener('click', closeReader);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeReader();
+    });
+
+    /* ----------------------------------------------------------
+    /* ----------------------------------------------------------
+       SCROLL PROGRESS RULE
+    ---------------------------------------------------------- */
+    const rule = document.getElementById('progressRule');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total = document.body.scrollHeight - window.innerHeight;
+      rule.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+    }, { passive: true });
+
+    /* ----------------------------------------------------------
+       LIVE DATE IN MASTHEAD STRIP
+    ---------------------------------------------------------- */
+    const dateEl = document.getElementById('liveDate');
+    const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateEl.textContent = new Date().toLocaleDateString('en-US', opts);
+
+    /* ----------------------------------------------------------
+       SCROLL REVEAL
+    ---------------------------------------------------------- */
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.07 });
+    revealEls.forEach(el => io.observe(el));
+
+    /* ----------------------------------------------------------
+       NAV ACTIVE STATE
+    ---------------------------------------------------------- */
+    const navLinks = document.querySelectorAll('.nav-primary a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section[id]').forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    }, { passive: true });
+  </script>
 </body>
 </html>

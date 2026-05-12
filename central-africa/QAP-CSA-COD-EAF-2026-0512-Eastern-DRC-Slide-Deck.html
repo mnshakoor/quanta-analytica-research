@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eastern DRC Militia Violence | QAP Slide Deck | MNS Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── PALETTE ── */
+:root {
+  --obsidian:       #0a0c10;
+  --obsidian-mid:   #10131a;
+  --obsidian-card:  #13161f;
+  --obsidian-lift:  #1e2235;
+  --border:         #1c2030;
+  --gold:           #c8a96e;
+  --gold-light:     #dfc28e;
+  --gold-dim:       #9a7f52;
+  --gold-muted:     #6b5838;
+  --gold-glow:      rgba(200,169,110,0.12);
+  --red:            #c0392b;
+  --red-light:      #e74c3c;
+  --red-bg:         rgba(192,57,43,0.15);
+  --amber:          #d4820a;
+  --amber-bg:       rgba(212,130,10,0.12);
+  --green:          #27ae60;
+  --green-bg:       rgba(39,174,96,0.12);
+  --blue:           #2980b9;
+  --blue-bg:        rgba(41,128,185,0.12);
+  --text:           #e8e4dc;
+  --text-sec:       #b8b0a0;
+  --text-muted:     #7a7264;
+  --mono:           'IBM Plex Mono', 'Courier New', monospace;
+  --sans:           'IBM Plex Sans', Arial, sans-serif;
+  --serif:          'Libre Baskerville', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--obsidian);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+}
+
+/* ── LAYOUT ── */
+.app { display: flex; height: 100vh; overflow: hidden; }
+
+/* ── NAV SIDEBAR ── */
+.nav-sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: var(--obsidian-mid);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, min-width 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+.nav-sidebar.collapsed { width: 48px; min-width: 48px; }
+
+.nav-header {
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  flex-shrink: 0;
+}
+.nav-logo {
+  width: 24px; height: 24px; flex-shrink: 0;
+}
+.nav-brand {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--gold);
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.nav-sidebar.collapsed .nav-brand { opacity: 0; pointer-events: none; }
+
+.nav-toggle {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 7px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-toggle:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+.nav-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.nav-list::-webkit-scrollbar { width: 4px; }
+.nav-list::-webkit-scrollbar-track { background: transparent; }
+.nav-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-left: 2px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav-item:hover { background: var(--gold-glow); }
+.nav-item.active {
+  background: var(--gold-glow);
+  border-left-color: var(--gold);
+}
+.nav-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--gold-dim);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 22px;
+}
+.nav-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-sec);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.nav-sidebar.collapsed .nav-label { opacity: 0; }
+.nav-item.active .nav-label { color: var(--gold-light); }
+
+/* ── MAIN CONTENT ── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Progress bar */
+#progress {
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Slide viewport */
+.slide-viewport {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  padding: 0;
+}
+.slide-viewport::-webkit-scrollbar { width: 4px; }
+.slide-viewport::-webkit-scrollbar-track { background: transparent; }
+.slide-viewport::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* SLIDE */
+.slide {
+  display: none;
+  min-height: calc(100vh - 60px);
+  padding: 48px 64px 80px;
+  animation: slideIn 0.3s ease;
+}
+.slide.active { display: block; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SLIDE COMPONENTS ── */
+.slide-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.slide-kicker {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  background: rgba(200,169,110,0.08);
+  border: 1px solid var(--gold-muted);
+  border-radius: 3px;
+  padding: 3px 8px;
+  flex-shrink: 0;
+}
+.slide-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+/* Cover slide */
+.cover-slide {
+  display: none;
+  min-height: calc(100vh - 60px);
+  background: var(--obsidian);
+  position: relative;
+  overflow: hidden;
+}
+.cover-slide.active { display: flex; flex-direction: column; justify-content: center; padding: 64px; }
+.cover-bg-hex {
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 500px; height: 500px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+.cover-brand {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.2em;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover-brand::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('https://quanta-analytica.com/logo.PNG') center/contain no-repeat;
+  opacity: 0.8;
+}
+.cover-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--amber);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.cover-h1 {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.cover-h1 span { color: var(--gold); display: block; }
+.cover-sub {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--text-sec);
+  margin-top: 20px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+.cover-meta {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+.cover-meta-item {
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 12px;
+}
+.cover-meta-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.cover-meta-val {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* ── TABLES ── */
+.qap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.875rem;
+}
+.qap-table th {
+  background: #0f1c35;
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+.qap-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  font-family: var(--sans);
+  font-size: 0.865rem;
+  color: var(--text-sec);
+  line-height: 1.55;
+}
+.qap-table tr:nth-child(odd) td { background: rgba(255,255,255,0.015); }
+.qap-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+.qap-table .cell-mono {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.qap-table .cell-label {
+  background: rgba(200,169,110,0.06) !important;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.qap-table .cell-bold { font-weight: 700; color: var(--text); }
+
+/* Judgment confidence badges */
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.badge-mod  { background: var(--blue-bg); color: #5dade2; border: 1px solid rgba(93,173,226,0.3); }
+.badge-high { background: var(--red-bg);  color: var(--red-light); border: 1px solid rgba(231,76,60,0.3); }
+.badge-low  { background: var(--amber-bg); color: #f39c12; border: 1px solid rgba(243,156,18,0.3); }
+
+/* Bluf items */
+.bluf-card {
+  background: var(--obsidian-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.bluf-card.action { border-left-color: var(--amber); }
+.bluf-num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.bluf-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--amber);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.bluf-text {
+  font-family: var(--serif);
+  font-size: 0.915rem;
+  color: var(--text-sec);
+  line-height: 1.65;
+}
+
+/* Scenario cards */
+.scenario-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 16px 0; }
+.scenario-card {
+  border-radius: 6px;
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+.scenario-card.best  { background: var(--green-bg);  border-top: 3px solid var(--green); }
+.scenario-card.base  { background: var(--amber-bg);  border-top: 3px solid var(--amber); }
+.scenario-card.worst { background: var(--red-bg);    border-top: 3px solid var(--red); }
+.scenario-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.scenario-card.best  .scenario-label { color: var(--green); }
+.scenario-card.base  .scenario-label { color: var(--amber); }
+.scenario-card.worst .scenario-label { color: var(--red-light); }
+.scenario-name {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.scenario-desc { font-size: 0.855rem; color: var(--text-sec); line-height: 1.55; margin-bottom: 10px; }
+.scenario-prob {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Timeline bands */
+.band {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+}
+.band-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+.band.immediate .band-label { background: #c0392b; color: #fff; }
+.band.nearterm  .band-label { background: #9b6a14; color: #fff8e6; }
+.band.medium    .band-label { background: #1e8449; color: #e8f8f0; }
+.band-body {
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-sec);
+}
+.band.immediate .band-body { background: rgba(192,57,43,0.08); }
+.band.nearterm  .band-body { background: rgba(155,106,20,0.08); }
+.band.medium    .band-body { background: rgba(30,132,73,0.08); }
+.band-body ul { list-style: none; }
+.band-body li { padding: 4px 0; padding-left: 16px; position: relative; }
+.band-body li::before { content: '›'; position: absolute; left: 0; color: var(--gold-dim); }
+
+/* KJ cards */
+.kj-card {
+  background: var(--obsidian-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.kj-header { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+.kj-id { font-family: var(--mono); font-size: 0.7rem; color: var(--gold-dim); font-weight: 700; }
+.kj-text { font-family: var(--serif); font-size: 0.905rem; color: var(--text-sec); line-height: 1.65; }
+.kj-map { font-family: var(--mono); font-size: 0.62rem; color: var(--text-muted); margin-top: 8px; }
+
+/* Confidence box */
+.conf-box {
+  background: #0f1c35;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.conf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.conf-title { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.12em; font-weight: 700; }
+.conf-level { font-family: var(--mono); font-size: 0.75rem; color: var(--gold); font-weight: 700; }
+.conf-body { list-style: none; }
+.conf-body li {
+  padding: 5px 0 5px 18px;
+  position: relative;
+  font-family: var(--serif);
+  font-size: 0.905rem;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+.conf-body li::before { content: '•'; position: absolute; left: 0; color: var(--gold-dim); }
+
+.flip-box {
+  background: rgba(192,57,43,0.08);
+  border: 1px solid rgba(192,57,43,0.25);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 0.89rem;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+.flip-box strong { color: var(--red-light); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+
+/* Info callout */
+.callout {
+  background: var(--blue-bg);
+  border: 1px solid rgba(41,128,185,0.3);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+.callout strong { color: #5dade2; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; display: block; margin-bottom: 4px; }
+
+/* Section body text */
+.body-text {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  color: var(--text-sec);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.subhead {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #5d7a9a;
+  text-transform: uppercase;
+  margin: 24px 0 10px;
+}
+.bullet-list { list-style: none; margin: 0 0 14px; }
+.bullet-list li {
+  padding: 5px 0 5px 20px;
+  position: relative;
+  font-family: var(--serif);
+  font-size: 0.905rem;
+  color: var(--text-sec);
+  line-height: 1.65;
+}
+.bullet-list li::before { content: '›'; position: absolute; left: 0; color: var(--gold-dim); font-weight: 700; }
+.bullet-list li strong { color: var(--text); }
+
+/* Threshold risk colors */
+.risk-critical { color: #e74c3c !important; font-weight: 700; }
+.risk-high     { color: #f39c12 !important; font-weight: 700; }
+
+/* ── CONTROLS ── */
+.controls {
+  height: 60px;
+  background: var(--obsidian-mid);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  flex-shrink: 0;
+}
+.slide-counter {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+.slide-counter span { color: var(--gold); font-weight: 700; }
+.nav-btns { display: flex; gap: 10px; }
+.nav-btn {
+  background: var(--obsidian-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 8px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nav-btn:hover:not(:disabled) {
+  background: var(--gold-glow);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.nav-btn.primary {
+  background: rgba(200,169,110,0.1);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+.nav-btn.primary:hover { background: rgba(200,169,110,0.18); }
+
+.slide-title-bar {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* EWI table special */
+.ewi-black { color: var(--red-light); font-weight: 700; }
+.ewi-red   { color: var(--red-light); }
+.ewi-amber { color: #f39c12; }
+.ewi-green { color: var(--green); }
+
+/* Source band pills */
+.band-green { color: #27ae60; font-weight: 700; font-size: 0.7rem; }
+.band-amber { color: #d4820a; font-weight: 700; font-size: 0.7rem; }
+.band-red   { color: #e74c3c; font-weight: 700; font-size: 0.7rem; }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- SIDEBAR NAV -->
+<nav class="nav-sidebar" id="sidebar">
+  <div class="nav-header">
+    <svg class="nav-logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" fill="#0a0c10"/>
+      <polygon points="16,4 28,12 28,20 16,28 4,20 4,12" fill="none" stroke="#c8a96e" stroke-width="1.5"/>
+      <circle cx="16" cy="16" r="3.5" fill="#c8a96e"/>
+    </svg>
+    <div class="nav-brand">QUANTA ANALYTICA<br>MNS CONSULTING</div>
+    <button class="nav-toggle" id="toggleBtn" title="Toggle navigation">&#9776;</button>
+  </div>
+  <div class="nav-list" id="navList">
+    <!-- populated by JS -->
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+  <div id="progress" style="width:0%"></div>
+
+  <div class="slide-viewport" id="slideViewport">
+
+    <!-- SLIDE 00: COVER -->
+    <div class="cover-slide slide active" data-slide="0" data-title="EASTERN DRC | COVER">
+      <svg class="cover-bg-hex" viewBox="0 0 400 400" fill="none">
+        <polygon points="200,20 360,110 360,290 200,380 40,290 40,110" stroke="#c8a96e" stroke-width="1" fill="none"/>
+        <polygon points="200,60 320,130 320,270 200,340 80,270 80,130" stroke="#c8a96e" stroke-width="0.5" fill="none"/>
+        <circle cx="200" cy="200" r="40" stroke="#c8a96e" stroke-width="0.5" fill="none"/>
+      </svg>
+      <div class="cover-brand">QUANTA ANALYTICA &nbsp;|&nbsp; MNS CONSULTING</div>
+      <div class="cover-eyebrow">CONFLICT SYSTEMS ANALYSIS &nbsp;//&nbsp; EASTERN DRC &nbsp;//&nbsp; 12 MAY 2026</div>
+      <div class="cover-h1">
+        Escalation of Militia<br>Violence in Eastern DRC
+        <span>Operational Risk, Armed Group Fragmentation, and Humanitarian Access</span>
+      </div>
+      <div class="cover-sub">A QAP intelligence assessment for NGO security coordination teams, humanitarian logistics managers, access negotiators, and regional diplomatic missions over the next 30 to 90 days.</div>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><div class="cover-meta-label">DOMAIN</div><div class="cover-meta-val">Conflict Systems Analysis</div></div>
+        <div class="cover-meta-item"><div class="cover-meta-label">CONFIDENCE</div><div class="cover-meta-val">Moderate</div></div>
+        <div class="cover-meta-item"><div class="cover-meta-label">THREAT LEVEL</div><div class="cover-meta-val" style="color:#e74c3c">HIGH</div></div>
+        <div class="cover-meta-item"><div class="cover-meta-label">HORIZON</div><div class="cover-meta-val">30–90 Days</div></div>
+        <div class="cover-meta-item"><div class="cover-meta-label">SCOPE</div><div class="cover-meta-val">Ituri, North Kivu, South Kivu</div></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 01: BLUF -->
+    <div class="slide" data-slide="1" data-title="01 // BLUF — BOTTOM LINE UP FRONT">
+      <div class="slide-header">
+        <div class="slide-kicker">01 // BLUF</div>
+        <div class="slide-title">Bottom Line Up Front</div>
+      </div>
+      <div class="bluf-card">
+        <div class="bluf-num">01</div>
+        <div>
+          <div class="bluf-tag">[ASSESS]</div>
+          <div class="bluf-text">Maintain essential field presence only under corridor-specific controls. Do not apply a blanket suspension yet. Current evidence indicates severe, fragmented, multi-actor violence degrading access, but not yet a proven coordinated campaign across CODECO, CRP-linked, ADF, and M23 actors. [S2][S3][S4][S14]</div>
+        </div>
+      </div>
+      <div class="bluf-card">
+        <div class="bluf-num">02</div>
+        <div>
+          <div class="bluf-tag">[ASSESS]</div>
+          <div class="bluf-text">Ituri and Beni / Butembo corridors require the highest immediate operational caution. CODECO / CRP-linked escalation in Ituri and ADF violence in North Kivu and Ituri create Red-trigger risk for same-corridor attacks, medical-site threats, abductions, and displacement pressure. [S2][S3][S4][S15]</div>
+        </div>
+      </div>
+      <div class="bluf-card">
+        <div class="bluf-num">03</div>
+        <div>
+          <div class="bluf-tag">[FACT / ASSESS]</div>
+          <div class="bluf-text">ADF violence presents a direct humanitarian access and medical neutrality threat. Independent reporting supports a pattern of civilian attacks, abductions, medical-facility targeting, and movement under military pressure. Specific casualty totals should remain provisional. [S2][S4][S5]</div>
+        </div>
+      </div>
+      <div class="bluf-card">
+        <div class="bluf-num">04</div>
+        <div>
+          <div class="bluf-tag">[ASSESS]</div>
+          <div class="bluf-text">The dominant conflict pattern is fragmented escalation with strategic humanitarian effects, not confirmed central coordination. Multiple armed actors can overwhelm humanitarian access and political bandwidth even without unified command. The strongest ACH outcome is fragmented but convergent operational pressure. [S5][S6][S7][S8]</div>
+        </div>
+      </div>
+      <div class="bluf-card action">
+        <div class="bluf-num">05</div>
+        <div>
+          <div class="bluf-tag" style="color:#c8a96e">[ACTION]</div>
+          <div class="bluf-text">Use threshold-based posture decisions: Amber for review, Red for suspension or reroute, Black for movement halt and remote management review. Decision thresholds should be tied to observable route incidents, medical facility threats, checkpoint proliferation, direct NGO threats, and provincial capital pressure. [S4][S7][S14][S15]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 02: KIQs -->
+    <div class="slide" data-slide="2" data-title="02 // KIQs — KEY INTELLIGENCE QUESTIONS">
+      <div class="slide-header">
+        <div class="slide-kicker">02 // KIQs</div>
+        <div class="slide-title">Key Intelligence Questions</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:90px">ID</th><th>INTELLIGENCE QUESTION</th><th style="width:220px">LINKS TO</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-mono">KIQ-1</td><td>Are recent CODECO, CRP-linked, ADF, and other militia incidents shifting from localized violence toward deliberate pressure on humanitarian corridors, medical facilities, or aid distribution nodes?</td><td>KJ1, KJ5, thresholds</td></tr>
+          <tr><td class="cell-mono">KIQ-2</td><td>Which mechanisms are driving remobilization: communal protection, retaliation, resource control, war-crime recidivism, FARDC / MONUSCO gaps, M23 negotiation incentives, or external patronage?</td><td>KJ2, ACH, behavioral forecast</td></tr>
+          <tr><td class="cell-mono">KIQ-3</td><td>How do mineral economies and regional-state interests shape armed-group objectives in Ituri, North Kivu, and South Kivu?</td><td>KJ3, ACH-H4</td></tr>
+          <tr><td class="cell-mono">KIQ-4</td><td>How likely is violence outside the M23 battlespace to stall, derail, or reframe DRC-AFC / M23 negotiations over the next 30 to 90 days?</td><td>KJ4, scenario matrix</td></tr>
+          <tr><td class="cell-mono">KIQ-5</td><td>What indicators would show transition from localized violence to a multi-province humanitarian emergency?</td><td>KJ5, Annex A</td></tr>
+          <tr><td class="cell-mono">KIQ-6</td><td>What field security and logistics thresholds should trigger rerouting, movement suspension, remote management, or temporary drawdown?</td><td>KJ5, Annex B</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 03: SNAPSHOT -->
+    <div class="slide" data-slide="3" data-title="03 // SNAPSHOT — SITUATION SNAPSHOT">
+      <div class="slide-header">
+        <div class="slide-kicker">03 // SNAPSHOT</div>
+        <div class="slide-title">Situation Snapshot</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:80px">ELEMENT</th><th>CONTENT</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-label">WHO</td><td>CODECO, CRP-linked actors, ADF / ISCAP-linked elements, M23 / AFC, Wazalendo, FARDC, MONUSCO, Rwanda, Uganda, Burundi, UN agencies, NGOs, and local communities.</td></tr>
+          <tr><td class="cell-label">WHAT</td><td>Fragmented armed-group violence is increasing civilian harm, access constraints, route uncertainty, and pressure on humanitarian delivery nodes.</td></tr>
+          <tr><td class="cell-label">WHERE</td><td>Primary focus: Ituri, North Kivu, and South Kivu. Watch locations include Bunia, Beni, Butembo, Djugu, Irumu, Goma, Bukavu, Uvira, Rutshuru, Masisi, and Walikale.</td></tr>
+          <tr><td class="cell-label">WHEN</td><td>Current operational environment with a forward monitoring horizon of 30 to 90 days.</td></tr>
+          <tr><td class="cell-label">WHY</td><td>Humanitarian operators must decide whether to maintain field presence, reroute deliveries, suspend movement, or shift to remote management.</td></tr>
+          <tr><td class="cell-label">HOW</td><td>Through raids, road pressure, local retaliation cycles, armed checkpoints, medical-site exposure, displacement, and conflict-economy incentives.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 04: KEY JUDGMENTS -->
+    <div class="slide" data-slide="4" data-title="04 // KEY JUDGMENTS">
+      <div class="slide-header">
+        <div class="slide-kicker">04 // KEY JUDGMENTS</div>
+        <div class="slide-title">Key Judgments</div>
+      </div>
+      <div class="kj-card">
+        <div class="kj-header"><span class="badge badge-mod">MODERATE</span><span class="kj-id">KJ-1</span></div>
+        <div class="kj-text">[ASSESS] Recent militia violence is degrading humanitarian access through corridor pressure, civilian displacement, medical-site risk, and checkpoint / attack patterns, but current evidence does not prove a coordinated multi-group campaign against humanitarian corridors.</div>
+        <div class="kj-map">Maps to KIQ-1, KIQ-5, KIQ-6 | Evidence: S2, S3, S4, S5, S14, S15</div>
+      </div>
+      <div class="kj-card">
+        <div class="kj-header"><span class="badge badge-mod">MODERATE</span><span class="kj-id">KJ-2</span></div>
+        <div class="kj-text">[ASSESS] The most supported explanation is fragmented escalation driven by local protection, retaliation, resource control, and opportunistic exploitation of FARDC / MONUSCO gaps, with M23 negotiations creating additional incentives for armed actors to demonstrate relevance.</div>
+        <div class="kj-map">Maps to KIQ-2, KIQ-4 | Evidence: S3, S4, S5, S6, S13</div>
+      </div>
+      <div class="kj-card">
+        <div class="kj-header"><span class="badge badge-high">MODERATE-HIGH</span><span class="kj-id">KJ-3</span></div>
+        <div class="kj-text">[FACT / ASSESS] Mineral economies and regional-state interests are central to the M23 conflict economy and regional instability, but evidence is weaker that the same mechanism centrally drives CODECO, CRP-linked, and ADF violence.</div>
+        <div class="kj-map">Maps to KIQ-3, KIQ-4 | Evidence: S10, S11, S12, S5</div>
+      </div>
+      <div class="kj-card">
+        <div class="kj-header"><span class="badge badge-mod">MODERATE</span><span class="kj-id">KJ-4</span></div>
+        <div class="kj-text">[ASSESS] Violence outside the M23 battlespace is likely to stall or reframe the DRC-AFC / M23 negotiation track over the next 30 to 90 days, but a complete derailment is only plausible unless a major access, civilian-mass-casualty, or provincial-capital shock occurs.</div>
+        <div class="kj-map">Maps to KIQ-4, KIQ-5 | Evidence: S1, S13, S7, S8</div>
+      </div>
+      <div class="kj-card">
+        <div class="kj-header"><span class="badge badge-high">MODERATE-HIGH</span><span class="kj-id">KJ-5</span></div>
+        <div class="kj-text">[ASSESS] NGO security posture should remain conditional rather than binary: maintain essential presence where access is verified, reroute after Amber triggers, suspend movement after Red triggers, and shift to remote management after Black triggers.</div>
+        <div class="kj-map">Maps to KIQ-5, KIQ-6 | Evidence: S4, S7, S8, S14, S15</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 05: EVIDENCE -->
+    <div class="slide" data-slide="5" data-title="05 // EVIDENCE — EVIDENCE SUMMARY">
+      <div class="slide-header">
+        <div class="slide-kicker">05 // EVIDENCE</div>
+        <div class="slide-title">Evidence Summary</div>
+      </div>
+      <div class="subhead">What We Know</div>
+      <ul class="bullet-list">
+        <li>ADF attacks have produced civilian harm in North Kivu and Ituri and include patterns of looting, burning, abduction, and medical-site threat reporting. [S2][S4]</li>
+        <li>CODECO and CRP-linked violence in Ituri has escalated around villages, FARDC positions, and MONUSCO civilian protection interventions. [S3][S15]</li>
+        <li>Food insecurity and displacement pressures are severe in conflict-affected eastern DRC. [S7][S8][S9]</li>
+      </ul>
+      <div class="subhead">What We Assess</div>
+      <ul class="bullet-list">
+        <li>ADF is not merely a background actor. It is an acute corridor and site-risk driver in Beni, Ituri, and northward movement zones.</li>
+        <li>Ituri is the most immediate localized-escalation hotspot for Bunia, Djugu, Irumu, and adjacent humanitarian corridors.</li>
+        <li>Fragmented violence can generate strategic humanitarian effects by blocking routes and overwhelming field presence.</li>
+      </ul>
+      <div class="subhead">What We Do Not Know</div>
+      <ul class="bullet-list">
+        <li>Whether attacks near humanitarian corridors are deliberate targeting or operational proximity.</li>
+        <li>The degree of centralized CRP command and Thomas Lubanga's operational relevance.</li>
+        <li>Whether mediators can enforce humanitarian access commitments across M23-controlled and contested areas.</li>
+      </ul>
+      <div class="subhead">Key Drivers and Binding Constraints</div>
+      <ul class="bullet-list">
+        <li><strong>FACT:</strong> Severe food insecurity and displacement are magnifying consequences of local violence. [S7][S8]</li>
+        <li><strong>ASSESS:</strong> Communal protection, resource control, retaliation, and bargaining leverage are the strongest near-term remobilization drivers.</li>
+        <li><strong>Structural constraints:</strong> Weak state reach, road dependency, terrain, and fragmented command environments.</li>
+        <li><strong>Operational constraints:</strong> Limited route verification, medical referral fragility, staff exposure, and inconsistent security backstops.</li>
+      </ul>
+      <div class="callout"><strong>WSI SOURCE INDEPENDENCE NOTE</strong>The five Key Judgments are supported by independent streams across wire reporting, UN/mission reporting, humanitarian coordination, rights investigation, conflict-event analysis, and technical food-security sources. Single-source claims are explicitly caveated and do not carry Key Judgments alone.</div>
+    </div>
+
+    <!-- SLIDE 06: ANALYSIS LAYERS -->
+    <div class="slide" data-slide="6" data-title="06 // ANALYSIS — FIVE-LAYER COGNITION MAP">
+      <div class="slide-header">
+        <div class="slide-kicker">06 // ANALYSIS</div>
+        <div class="slide-title">Five-Layer Strategic Cognition Map</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:140px">LAYER</th><th>ASSESSMENT</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-label">L1 FOUNDATIONS</td><td>Eastern DRC contains overlapping conflict geographies: Ituri communal violence, ADF areas in North Kivu and Ituri, M23 / AFC pressure in the Kivus, mineral corridors, and humanitarian hubs dependent on road, airport, and border access.</td></tr>
+          <tr><td class="cell-label">L2 MECHANISMS</td><td>Core mechanisms are localized protection and retaliation cycles, opportunistic armed-group expansion, resource taxation, FARDC / MONUSCO coverage gaps, and M23 negotiation incentives.</td></tr>
+          <tr><td class="cell-label">L3 DYNAMICS</td><td>Violence-displacement-access feedback is the key system: attacks displace civilians, displacement stresses aid nodes, armed actors tax or disrupt access, and security actors redeploy, creating new vacuums.</td></tr>
+          <tr><td class="cell-label">L4 LEVERAGE</td><td>Leverage points include local access negotiation, route segmentation, medical-site protection, checkpoint mapping, MONUSCO / FARDC posture tracking, and diplomatic pressure around access commitments.</td></tr>
+          <tr><td class="cell-label">L5 PARADIGMS</td><td>Best-fit paradigm: fragmented conflict economy with convergent humanitarian effects. The system can behave as if coordinated even when actor command structures remain fragmented.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 07: ACH -->
+    <div class="slide" data-slide="7" data-title="06 // ANALYSIS — COMPETING HYPOTHESES (ACH)">
+      <div class="slide-header">
+        <div class="slide-kicker">06 // ANALYSIS</div>
+        <div class="slide-title">Analysis of Competing Hypotheses</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:220px">HYPOTHESIS</th><th>EVIDENCE FOR</th><th>EVIDENCE AGAINST</th><th style="width:60px">DIAG.</th><th style="width:180px">VERDICT</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="cell-bold">H1: Localized competition over land, protection, and resource control.</td>
+            <td>Ituri violence patterns and communal retaliation dynamics. [S3][S15]</td>
+            <td>Does not fully explain M23 regional and mineral dynamics.</td>
+            <td class="cell-mono" style="text-align:center">4</td>
+            <td>Supported in Ituri and local militia theaters.</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">H2: Opportunistic escalation triggered by negotiations, redeployments, and state weakness.</td>
+            <td>ADF movement under pressure, M23 negotiation fragility, and FARDC / MONUSCO gaps. [S1][S4][S5][S13]</td>
+            <td>Does not alone prove deliberate humanitarian targeting.</td>
+            <td class="cell-mono" style="color:#27ae60;text-align:center;font-weight:700">5</td>
+            <td><strong>Strong mechanism.</strong></td>
+          </tr>
+          <tr>
+            <td class="cell-bold">H3: Broader coordination among armed actors to weaken peace negotiations.</td>
+            <td>Temporal overlap across theaters could create apparent convergence.</td>
+            <td>No verified shared command channels or synchronized multi-province humanitarian targeting.</td>
+            <td class="cell-mono" style="text-align:center">4</td>
+            <td>Least supported. Retain as watch hypothesis.</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">H4: External patronage and mineral networks are primary drivers.</td>
+            <td>Strong for M23 / Rwanda and Rubaya-related mineral rents. [S10][S11][S12]</td>
+            <td>Weaker evidence for CODECO, CRP-linked actors, and ADF as centrally driven by the same mechanism.</td>
+            <td class="cell-mono" style="color:#27ae60;text-align:center;font-weight:700">5</td>
+            <td>Strong for M23, limited for non-M23 groups.</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">H5: Fragmented violence produces strategic effects equivalent to coordination.</td>
+            <td>Multiple actors simultaneously degrade access, displacement, and political bandwidth. [S2][S4][S7][S8][S14]</td>
+            <td>Requires careful distinction between systemic convergence and command coordination.</td>
+            <td class="cell-mono" style="color:#27ae60;text-align:center;font-weight:700">5</td>
+            <td><strong>Most supported overall.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 08: SCENARIOS -->
+    <div class="slide" data-slide="8" data-title="06 // ANALYSIS — SCENARIO MATRIX">
+      <div class="slide-header">
+        <div class="slide-kicker">06 // ANALYSIS</div>
+        <div class="slide-title">Scenario Matrix</div>
+      </div>
+      <div class="scenario-grid">
+        <div class="scenario-card best">
+          <div class="scenario-label">BEST CASE</div>
+          <div class="scenario-name">Localized Containment</div>
+          <div class="scenario-desc">FARDC / MONUSCO patch gaps, local violence stabilizes, and M23 talks sustain access commitments.</div>
+          <div class="scenario-prob">30-DAY PROBABILITY: Unlikely — 10 to 25%</div>
+        </div>
+        <div class="scenario-card base">
+          <div class="scenario-label">BASE CASE</div>
+          <div class="scenario-name">Fragmented High-Risk Escalation</div>
+          <div class="scenario-desc">ADF, CODECO / CRP, M23 / AFC, and Wazalendo violence persists in separate but mutually reinforcing theaters.</div>
+          <div class="scenario-prob">30-DAY PROBABILITY: Likely — 45 to 70%</div>
+        </div>
+        <div class="scenario-card worst">
+          <div class="scenario-label">WORST CASE</div>
+          <div class="scenario-name">Multi-Province Humanitarian Emergency</div>
+          <div class="scenario-desc">Ituri, North Kivu, and South Kivu violence converges operationally through simultaneous access degradation.</div>
+          <div class="scenario-prob">30-DAY PROBABILITY: Plausible — 25 to 45%</div>
+        </div>
+      </div>
+      <div class="subhead">Key Assumptions Check (Summary)</div>
+      <table class="qap-table">
+        <thead><tr><th style="width:40px">ID</th><th>ASSUMPTION</th><th style="width:100px">STATUS</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-mono">A1</td><td>Incident reporting is sufficiently complete for monitoring trends.</td><td style="color:#27ae60;font-weight:700;font-size:0.75rem">ACTIVE</td></tr>
+          <tr><td class="cell-mono">A2</td><td>Armed groups can be distinguished reliably by incident attribution.</td><td style="color:#27ae60;font-weight:700;font-size:0.75rem">ACTIVE</td></tr>
+          <tr><td class="cell-mono">A3</td><td>Attacks near aid corridors indicate access pressure rather than incidental proximity.</td><td style="color:#e74c3c;font-weight:700;font-size:0.75rem">UNVERIFIED</td></tr>
+          <tr><td class="cell-mono">A4</td><td>M23 negotiations are sensitive to violence outside the M23 battlespace.</td><td style="color:#27ae60;font-weight:700;font-size:0.75rem">ACTIVE</td></tr>
+          <tr><td class="cell-mono">A5</td><td>FARDC / MONUSCO response will not fully suppress escalation within 30 to 90 days.</td><td style="color:#27ae60;font-weight:700;font-size:0.75rem">ACTIVE</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 09: BEHAVIORAL -->
+    <div class="slide" data-slide="9" data-title="07 // BEHAVIORAL — APPLIED BEHAVIORAL TRADECRAFT">
+      <div class="slide-header">
+        <div class="slide-kicker">07 // BEHAVIORAL</div>
+        <div class="slide-title">Applied Behavioral Tradecraft</div>
+      </div>
+      <p class="body-text">Behavioral tradecraft is applied only where observable evidence supports actor-level behavioral inference. No psychological speculation is introduced.</p>
+      <table class="qap-table">
+        <thead><tr><th style="width:120px">ACTOR</th><th>DOMINANT BEHAVIORAL DRIVERS</th><th>LIKELY 30-90 DAY BEHAVIOR</th><th>ESCALATION INDICATOR</th><th style="width:110px">CONFIDENCE</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="cell-bold">CODECO</td>
+            <td>Communal security, retaliation, survival, local authority.</td>
+            <td>Localized attacks and retaliation cycles in Ituri.</td>
+            <td>Repeated attacks near Bunia / Djugu / Irumu corridors.</td>
+            <td>Moderate</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">CRP-linked actors</td>
+            <td>Political leverage, communal protection, elite recidivism signal, anti-FARDC positioning.</td>
+            <td>Political-military mobilization and FARDC confrontation.</td>
+            <td>New recruitment, command claims, or expansion toward villages and road nodes.</td>
+            <td>Low-Moderate</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">ADF / ISCAP-linked</td>
+            <td>Ideology, survival, coercion, predatory control, opportunistic movement.</td>
+            <td>Raids, abductions, medical-site and civilian attacks.</td>
+            <td>Clinic attacks, abductions, road ambushes, or multi-axis attacks.</td>
+            <td>Moderate</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">M23 / AFC</td>
+            <td>Territorial leverage, bargaining power, identity framing, external-support dynamics, mineral rents.</td>
+            <td>Bargaining through territorial posture and controlled withdrawals or renewed pushes.</td>
+            <td>Armed movement toward Goma, Bukavu, or Uvira.</td>
+            <td class="risk-high">Moderate-High</td>
+          </tr>
+          <tr>
+            <td class="cell-bold">Wazalendo</td>
+            <td>Local defense, retaliation, identity protection, anti-M23 mobilization.</td>
+            <td>Loose militia activity and ad hoc checkpoint risk.</td>
+            <td>New checkpoints, aid-bias rumors, or misidentification of convoys.</td>
+            <td>Moderate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 10: CORRIDOR RISK -->
+    <div class="slide" data-slide="10" data-title="08 // IMPLICATIONS — CORRIDOR RISK SCORING">
+      <div class="slide-header">
+        <div class="slide-kicker">08 // IMPLICATIONS</div>
+        <div class="slide-title">Corridor Risk Scoring</div>
+      </div>
+      <p class="body-text">Recommended posture: <strong>Conditional maintain with corridor-specific hardening.</strong> Prioritize daily route validation, acceptance checks, medical referral redundancy, pre-cleared alternate routes, and remote-management packages for Ituri, Beni / Butembo, and volatile Goma / Bukavu approaches.</p>
+      <table class="qap-table">
+        <thead><tr><th>AREA / CORRIDOR</th><th style="width:80px">SCORE</th><th style="width:100px">LEVEL</th><th>MAIN DRIVERS</th><th>RECOMMENDATION</th><th style="width:120px">CADENCE</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-bold">Ituri overall</td><td class="cell-mono risk-critical" style="text-align:center">4.6 / 5</td><td class="risk-critical">Critical</td><td>CODECO / CRP escalation, ADF presence, civilian harm, MONUSCO / FARDC gaps.</td><td>Maintain only essential field activity. Pre-approve alternate routing.</td><td>Daily</td></tr>
+          <tr><td class="cell-bold">Bunia / Djugu / Irumu</td><td class="cell-mono risk-critical" style="text-align:center">4.8 / 5</td><td class="risk-critical">Critical</td><td>Ituri attacks, displacement, civilian protection interventions, route exposure.</td><td>Route-by-route authorization. No routine movement after incident clustering.</td><td>Daily and event-driven</td></tr>
+          <tr><td class="cell-bold">North Kivu overall</td><td class="cell-mono risk-critical" style="text-align:center">4.7 / 5</td><td class="risk-critical">Critical</td><td>ADF attacks, M23 pressures, Beni / Butembo exposure, humanitarian-worker incidents.</td><td>Harden movement. Reduce nonessential presence. Validate medical referral routes.</td><td>Daily</td></tr>
+          <tr><td class="cell-bold">Beni / Butembo corridors</td><td class="cell-mono risk-critical" style="text-align:center">4.7 / 5</td><td class="risk-critical">Critical</td><td>ADF raids, abductions, medical-facility threat, civilian harm.</td><td>Suspend movement after two same-corridor incidents in 7 days.</td><td>Daily</td></tr>
+          <tr><td class="cell-bold">Goma approach corridors</td><td class="cell-mono risk-critical" style="text-align:center">4.5 / 5</td><td class="risk-critical">Critical</td><td>M23 / AFC dynamics, air and road access dependency, negotiation volatility.</td><td>Maintain only with contingency extraction and route redundancy.</td><td>Daily</td></tr>
+          <tr><td class="cell-bold">South Kivu overall</td><td class="cell-mono risk-high" style="text-align:center">4.3 / 5</td><td class="risk-high">High-Critical</td><td>M23 / AFC movement, Wazalendo dynamics, Bukavu / Uvira exposure.</td><td>Conditional maintain. Daily access and security validation.</td><td>Daily</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 11: THRESHOLDS -->
+    <div class="slide" data-slide="11" data-title="08 // IMPLICATIONS — DECISION THRESHOLDS">
+      <div class="slide-header">
+        <div class="slide-kicker">08 // IMPLICATIONS</div>
+        <div class="slide-title">Decision Thresholds</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th>TRIGGER</th><th>THRESHOLD</th><th>ACTION</th><th style="width:140px">APPLIES TO</th><th style="width:160px">REVIEW AUTHORITY</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-bold">Verified clashes within 10 km of aid site</td><td>One verified: Amber. Repeated or ongoing: Red.</td><td>Hold nonessential movement 24h. Reassess route and site.</td><td>All field sites</td><td>Security lead + program lead</td></tr>
+          <tr><td class="cell-bold">Confirmed targeting of medical facility</td><td>Any confirmed attack, arson, looting, or threat.</td><td>Black: immediate halt in affected catchment. Remote management review.</td><td>Health operations</td><td>Country director + security cell</td></tr>
+          <tr><td class="cell-bold">Armed checkpoint on primary aid route</td><td>New checkpoint, taxation, staff questioning, or cargo inspection.</td><td>Amber to Red: reroute or suspend until negotiated and verified.</td><td>Primary corridors</td><td>Security coordinator</td></tr>
+          <tr><td class="cell-bold">Two or more attacks on same corridor in 7 days</td><td>Any actor, same route segment.</td><td>Red: suspend movement 72h minimum. Route review.</td><td>All corridors</td><td>Security cell</td></tr>
+          <tr><td class="cell-bold">Direct threat against NGO / UN staff</td><td>Named staff, site, or credible group statement.</td><td>Black: halt movement, shelter or relocate, notify coordination cell.</td><td>Staff, bases, convoys</td><td>Country director</td></tr>
+          <tr><td class="cell-bold">Armed movement toward hub city</td><td>Within 25 km: Red. Within 10 km or road cut: Black.</td><td>Reduce presence, relocation readiness, movement halt if threshold met.</td><td>Goma, Bukavu, Bunia, Beni, Butembo</td><td>Crisis management team</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 12: RECOMMENDATIONS -->
+    <div class="slide" data-slide="12" data-title="08 // IMPLICATIONS — RECOMMENDATIONS BY TIME HORIZON">
+      <div class="slide-header">
+        <div class="slide-kicker">08 // IMPLICATIONS</div>
+        <div class="slide-title">Recommendations by Time Horizon</div>
+      </div>
+      <div class="band immediate">
+        <div class="band-label">0-72H<br>IMMEDIATE</div>
+        <div class="band-body">
+          <ul>
+            <li>Activate corridor-level route verification for all Ituri, Beni / Butembo, and Goma-approach movements.</li>
+            <li>Apply threshold-triggered suspension in corridors meeting Red criteria now.</li>
+            <li>Brief all field teams on updated movement protocols and check-in frequencies.</li>
+            <li>Review medical referral route viability and backup options for ADF-affected areas.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="band nearterm">
+        <div class="band-label">3-30 DAYS<br>NEAR-TERM</div>
+        <div class="band-body">
+          <ul>
+            <li>Conduct corridor-specific acceptance checks across Ituri, North Kivu, and South Kivu.</li>
+            <li>Pre-clear alternate routes and obtain humanitarian access commitments from relevant actors.</li>
+            <li>Validate FARDC / MONUSCO backstop reliability for primary aid corridors.</li>
+            <li>Establish remote management packages for high-risk areas as contingency.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="band medium">
+        <div class="band-label">30-180 DAYS<br>MEDIUM-TERM</div>
+        <div class="band-body">
+          <ul>
+            <li>Develop scenario-based contingency plans for a Multi-Province Humanitarian Emergency scenario.</li>
+            <li>Strengthen local access negotiation capacity and interagency coordination mechanisms.</li>
+            <li>Build redundancy into medical referral and supply chain routing for all three provinces.</li>
+            <li>Monitor M23 negotiation track for access commitment implementation and compliance gaps.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 13: CONFIDENCE -->
+    <div class="slide" data-slide="13" data-title="09 // CONFIDENCE — CONFIDENCE AND UNCERTAINTIES">
+      <div class="slide-header">
+        <div class="slide-kicker">09 // CONFIDENCE</div>
+        <div class="slide-title">Confidence and Uncertainties</div>
+      </div>
+      <div class="conf-box">
+        <div class="conf-header">
+          <div class="conf-title">OVERALL CONFIDENCE ASSESSMENT</div>
+          <div class="conf-level">MODERATE</div>
+        </div>
+        <ul class="conf-body">
+          <li>Higher confidence for humanitarian severity, displacement scale, and broad conflict pattern assessments.</li>
+          <li>Higher confidence for M23 external-support findings corroborated across multiple independent streams.</li>
+          <li>Lower confidence for actor intent, internal command relationships, and exact casualty totals.</li>
+          <li>Lower confidence for whether corridor proximity constitutes deliberate humanitarian targeting.</li>
+        </ul>
+      </div>
+      <div class="subhead">Three Flip-Risk Uncertainties</div>
+      <div class="flip-box"><strong>FLIP-RISK 1</strong>Verified shared command channels emerge linking CODECO, CRP, ADF, and M23 in a coordinated targeting strategy against humanitarian corridors.</div>
+      <div class="flip-box"><strong>FLIP-RISK 2</strong>Synchronized attacks on aid corridors across provinces confirm deliberate humanitarian targeting rather than operational proximity.</div>
+      <div class="flip-box"><strong>FLIP-RISK 3</strong>Independently corroborated external support to multiple non-M23 militias emerges, fundamentally reshaping the conflict-economy assessment.</div>
+      <div class="callout"><strong>ANALYTIC CAVEAT</strong>Direct deliberate targeting of humanitarian corridors by all militias remains insufficiently established. This product therefore assesses corridor pressure and access degradation rather than a confirmed coordinated anti-humanitarian campaign.</div>
+    </div>
+
+    <!-- SLIDE 14: REFERENCES -->
+    <div class="slide" data-slide="14" data-title="10 // REFERENCES — SOURCE REGISTER AND WSI AUDIT">
+      <div class="slide-header">
+        <div class="slide-kicker">10 // REFERENCES</div>
+        <div class="slide-title">Source Register and WSI Audit</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:44px">#</th><th>SOURCE</th><th>TYPE</th><th style="width:70px">KJs</th><th>ATOMIC CLAIM USED</th><th style="width:60px">BAND</th><th style="width:44px">TIER</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-mono">S1</td><td class="cell-bold">Reuters</td><td>Secondary / wire</td><td>KJ4, KJ5</td><td>AFC/M23 partial withdrawals and continued conflict amid mediation pressure.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S2</td><td class="cell-bold">Associated Press</td><td>Secondary / wire</td><td>KJ1, KJ2, KJ5</td><td>ADF attacks and civilian harm in Beni, Ituri, and related areas.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S3</td><td class="cell-bold">Al Jazeera / AFP</td><td>Secondary / wire-local</td><td>KJ1, KJ2</td><td>CODECO-linked and CRP-related Ituri escalation, civilian harm, and MONUSCO protection activity.</td><td class="band-amber">Amber</td><td>B-C</td></tr>
+          <tr><td class="cell-mono">S4</td><td class="cell-bold">Amnesty International</td><td>Human rights / investigative</td><td>KJ1, KJ2, KJ5</td><td>ADF abuses include attacks on civilians, medical facilities, abductions, recruitment, and forced labor allegations.</td><td class="band-green">Green</td><td>A-B</td></tr>
+          <tr><td class="cell-mono">S5</td><td class="cell-bold">ACLED</td><td>Dataset / conflict monitoring</td><td>KJ1, KJ2, KJ3</td><td>ADF movement, armed-group pressure, and conflict economy patterns in northern and eastern DRC.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S6</td><td class="cell-bold">ACLED Great Lakes / DRC</td><td>Dataset / conflict analysis</td><td>KJ2, KJ4</td><td>Non-state armed group alliances, Wazalendo dynamics, ADF civilian targeting, and M23-linked conflict geometry.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S7</td><td class="cell-bold">IPC</td><td>Technical / food security</td><td>KJ5</td><td>Severe IPC Phase 3+ and Phase 4 food insecurity in DRC, including eastern conflict-affected areas.</td><td class="band-green">Green</td><td>A</td></tr>
+          <tr><td class="cell-mono">S8</td><td class="cell-bold">WFP / FAO</td><td>Technical / food security</td><td>KJ5</td><td>Projected severe food insecurity and eastern concentration of emergency hunger burden.</td><td class="band-green">Green</td><td>A</td></tr>
+          <tr><td class="cell-mono">S9</td><td class="cell-bold">FAO DRC emergency profile</td><td>Technical / humanitarian</td><td>KJ5</td><td>Displacement, food insecurity, conflict, disease, and price pressures shape emergency conditions.</td><td class="band-green">Green</td><td>A</td></tr>
+          <tr><td class="cell-mono">S10</td><td class="cell-bold">Reuters citing UN experts</td><td>Secondary with UN expert basis</td><td>KJ3, KJ4</td><td>UN expert reporting assessed Rwanda command and control over M23. Rwanda denies support.</td><td class="band-green">Green</td><td>A-B</td></tr>
+          <tr><td class="cell-mono">S11</td><td class="cell-bold">AP citing UN reporting</td><td>Secondary with UN report basis</td><td>KJ3, KJ4</td><td>M23 activity around mineral-rich areas and abuse allegations involving multiple parties.</td><td class="band-green">Green</td><td>A-B</td></tr>
+          <tr><td class="cell-mono">S12</td><td class="cell-bold">Reuters investigative report</td><td>Investigative secondary</td><td>KJ3</td><td>Rubaya coltan taxation and mineral-rent concerns connected to M23-controlled areas.</td><td class="band-green">Green</td><td>A-B</td></tr>
+          <tr><td class="cell-mono">S13</td><td class="cell-bold">Reuters diplomatic reporting</td><td>Secondary / diplomatic</td><td>KJ4, KJ5</td><td>Humanitarian access and ceasefire oversight discussions remain fragile amid fighting.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S14</td><td class="cell-bold">OCHA humanitarian summaries</td><td>Primary / coordination</td><td>KJ1, KJ5</td><td>Humanitarian-worker incidents reported across North Kivu, South Kivu, and Ituri.</td><td class="band-green">Green</td><td>B</td></tr>
+          <tr><td class="cell-mono">S15</td><td class="cell-bold">MONUSCO public reporting</td><td>Primary / UN mission</td><td>KJ1, KJ5</td><td>MONUSCO protection actions in Ituri amid armed violence and civilian threat.</td><td class="band-green">Green</td><td>B</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:12px;font-style:italic">Band Key: Green = high credibility, multi-source corroborated; Amber = single credible source or partial corroboration. Multiple outlets citing the same upstream report were counted as one independent stream.</p>
+    </div>
+
+    <!-- SLIDE 15: ANNEX A -->
+    <div class="slide" data-slide="15" data-title="ANNEX A // EARLY WARNING INDICATORS">
+      <div class="slide-header">
+        <div class="slide-kicker">ANNEX A // EWI</div>
+        <div class="slide-title">Early Warning Indicators and Scenario Triggers</div>
+      </div>
+      <table class="qap-table">
+        <thead><tr><th style="width:50px">ID</th><th>INDICATOR</th><th>SCENARIO SIGNAL</th><th>OBSERVABLE SIGNAL</th><th style="width:90px">LEVEL</th><th>ANALYTIC ACTION REQUIRED</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-mono">EWI-1</td><td class="cell-bold">Armed-group movement toward hub city</td><td>Worst Case / Escalation</td><td>Movement within 25 km of Goma, Bukavu, Bunia, Beni, or Butembo.</td><td class="ewi-red">Red</td><td>Reduce movement and relocate nonessential staff.</td></tr>
+          <tr><td class="cell-mono">EWI-2</td><td class="cell-bold">Medical facility targeting</td><td>ADF escalation / humanitarian neutrality breach</td><td>Attack, arson, looting, threat, or staff abduction at any health facility.</td><td class="ewi-black">Black</td><td>Immediate movement halt and remote-management review.</td></tr>
+          <tr><td class="cell-mono">EWI-3</td><td class="cell-bold">Corridor attack clustering</td><td>Fragmented to deliberate shift</td><td>Two attacks on same route in 7 days, any actor.</td><td class="ewi-red">Red</td><td>Suspend movement for at least 72 hours.</td></tr>
+          <tr><td class="cell-mono">EWI-4</td><td class="cell-bold">Checkpoint proliferation</td><td>Access degradation</td><td>New armed checkpoints, taxation, staff questioning, or cargo inspection.</td><td class="ewi-amber">Amber / Red</td><td>Reroute or suspend pending verification.</td></tr>
+          <tr><td class="cell-mono">EWI-5</td><td class="cell-bold">Negotiation disruption</td><td>M23 track collapse risk</td><td>Public suspension, ceasefire monitor failure, or access dispute confirmation.</td><td class="ewi-amber">Amber / Red</td><td>Update strategic posture and contingency plans.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 16: ANNEX B -->
+    <div class="slide" data-slide="16" data-title="ANNEX B // PRIORITY INTELLIGENCE GAPS">
+      <div class="slide-header">
+        <div class="slide-kicker">ANNEX B // PIGs</div>
+        <div class="slide-title">Priority Intelligence Gaps and Action Thresholds</div>
+      </div>
+      <div class="subhead">B.1 Priority Intelligence Gaps</div>
+      <table class="qap-table" style="margin-bottom:24px">
+        <thead><tr><th style="width:60px">GAP ID</th><th>INTELLIGENCE QUESTION</th><th>WHY IT MATTERS</th><th>COLLECTION PATH</th><th style="width:80px">PRIORITY</th><th style="width:80px">DEADLINE</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-mono">PIG-1</td><td>Are attacks near aid corridors deliberate or incidental?</td><td>Drives suspension versus reroute decision.</td><td>Geolocated incident logs, driver debriefs, access cluster.</td><td class="risk-critical">Critical</td><td>7 days</td></tr>
+          <tr><td class="cell-mono">PIG-2</td><td>What is CRP command structure and Lubanga's operational relevance?</td><td>Determines recidivism and negotiation leverage.</td><td>UN, local security partners, sanctions bodies.</td><td class="risk-high">High</td><td>14 days</td></tr>
+          <tr><td class="cell-mono">PIG-3</td><td>Are ADF medical-facility attacks increasing geographically?</td><td>Shapes medical neutrality and referral route assessment.</td><td>Health cluster, medical NGOs, UN reporting.</td><td class="risk-critical">Critical</td><td>7 days</td></tr>
+          <tr><td class="cell-mono">PIG-4</td><td>Are M23 access commitments being implemented on the ground?</td><td>Determines Goma / Bukavu route confidence.</td><td>Mediator statements, convoy experience, UN verification.</td><td class="risk-high">High</td><td>7 days</td></tr>
+          <tr><td class="cell-mono">PIG-5</td><td>Which FARDC / MONUSCO backstops are reliable for NGO routes?</td><td>Direct route viability and security assessment.</td><td>Security forums, patrol updates, local acceptance checks.</td><td class="risk-critical">Critical</td><td>72 hours</td></tr>
+        </tbody>
+      </table>
+      <div class="subhead">B.2 Action Thresholds</div>
+      <table class="qap-table">
+        <thead><tr><th style="width:130px">BAND</th><th>TRIGGER CONDITION</th><th>REQUIRED ACTIONS</th><th style="width:200px">RESPONSIBLE PARTIES</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="color:#27ae60;font-weight:700;background:rgba(39,174,96,0.08)">GREEN // MONITOR</td>
+            <td style="background:rgba(39,174,96,0.05)">Situation within acceptable parameters. No verified incidents in primary corridors within 72 hours. Access confirmed by field teams.</td>
+            <td style="background:rgba(39,174,96,0.05)">Continue essential operations. Maintain daily route validation and check-in protocols.</td>
+            <td style="background:rgba(39,174,96,0.05)">Security coordinator, field leads.</td>
+          </tr>
+          <tr>
+            <td style="color:#d4820a;font-weight:700;background:rgba(212,130,10,0.08)">AMBER // ACT NOW</td>
+            <td style="background:rgba(212,130,10,0.05)">One verified incident within 10 km of aid site. New checkpoint on primary route. Negotiation disruption reported. Armed movement within 25 km of hub city.</td>
+            <td style="background:rgba(212,130,10,0.05)">Hold nonessential movement. Activate alternate route review. Brief field teams and program leads.</td>
+            <td style="background:rgba(212,130,10,0.05)">Security lead, program lead, country office.</td>
+          </tr>
+          <tr>
+            <td style="color:#e74c3c;font-weight:700;background:rgba(192,57,43,0.08)">RED // EMERGENCY</td>
+            <td style="background:rgba(192,57,43,0.05)">Repeated corridor attacks within 7 days. Medical facility confirmed targeted. Direct staff threat. Armed movement within 10 km of hub city or road cut.</td>
+            <td style="background:rgba(192,57,43,0.05)">Halt movement. Shelter or relocate staff. Activate remote management review. Notify crisis management team.</td>
+            <td style="background:rgba(192,57,43,0.05)">Country director, security cell, crisis management team.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end slide-viewport -->
+
+  <!-- BOTTOM CONTROLS -->
+  <div class="controls">
+    <div class="slide-title-bar" id="slideTitleBar"></div>
+    <div class="slide-counter">Slide <span id="currentNum">1</span> of <span id="totalNum">17</span></div>
+    <div class="nav-btns">
+      <button class="nav-btn" id="btnPrev" onclick="navigate(-1)" disabled>&#8592; PREV</button>
+      <button class="nav-btn primary" id="btnNext" onclick="navigate(1)">NEXT &#8594;</button>
+    </div>
+  </div>
+</div><!-- end main -->
+</div><!-- end app -->
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const navList = document.getElementById('navList');
+const sidebar = document.getElementById('sidebar');
+const toggleBtn = document.getElementById('toggleBtn');
+const progress = document.getElementById('progress');
+const currentNumEl = document.getElementById('currentNum');
+const totalNumEl = document.getElementById('totalNum');
+const slideTitleBar = document.getElementById('slideTitleBar');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+let current = 0;
+const total = slides.length;
+totalNumEl.textContent = total;
+
+// Build nav items
+const navItems = Array.from(slides).map((slide, i) => {
+  const num = slide.dataset.slide;
+  const title = slide.dataset.title || '';
+  const [kicker, ...rest] = title.split(' — ');
+  const item = document.createElement('div');
+  item.className = 'nav-item' + (i === 0 ? ' active' : '');
+  item.innerHTML = `<span class="nav-num">${num.toString().padStart(2,'0')}</span><span class="nav-label">${kicker}</span>`;
+  item.addEventListener('click', () => goTo(i));
+  navList.appendChild(item);
+  return item;
+});
+
+function updateNav(index) {
+  navItems.forEach((item, i) => item.classList.toggle('active', i === index));
+  const pct = total > 1 ? (index / (total - 1)) * 100 : 100;
+  progress.style.width = pct + '%';
+  currentNumEl.textContent = index + 1;
+  btnPrev.disabled = index === 0;
+  btnNext.disabled = index === total - 1;
+  const title = slides[index].dataset.title || '';
+  slideTitleBar.textContent = title;
+  // scroll nav item into view
+  navItems[index].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function goTo(index) {
+  if (index < 0 || index >= total) return;
+  slides[current].classList.remove('active');
+  current = index;
+  slides[current].classList.add('active');
+  document.getElementById('slideViewport').scrollTop = 0;
+  updateNav(current);
+}
+
+function navigate(dir) { goTo(current + dir); }
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); navigate(1); }
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); navigate(-1); }
+});
+
+// Toggle sidebar
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('collapsed');
+});
+
+// Init
+updateNav(0);
+</script>
+</body>
+</html>

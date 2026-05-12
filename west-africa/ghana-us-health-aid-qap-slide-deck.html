@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghana's Rejection of U.S. Health Aid | QAP Slide Deck | MNS Consulting</title>
+  <meta name="description" content="QAP open-source intelligence assessment on Ghana's rejection of a proposed U.S. health aid package.">
+  <meta name="author" content="MNS Consulting">
+  <meta name="theme-color" content="#0a0c10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0c10'/><polygon points='16,4 28,12 28,20 16,28 4,20 4,12' fill='none' stroke='%23c8a96e' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%23c8a96e'/></svg>" />
+  <style>
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
+:root {
+  --obsidian:         #0a0c10;
+  --obsidian-mid:     #10131a;
+  --obsidian-card:    #13161f;
+  --obsidian-border:  #1c2030;
+  --obsidian-surface: #181b26;
+  --obsidian-lift:    #1e2235;
+  --gold:             #c8a96e;
+  --gold-light:       #dfc28e;
+  --gold-pale:        #e8d5aa;
+  --gold-dim:         #9a7f52;
+  --gold-muted:       #6b5838;
+  --gold-glow:        rgba(200,169,110,0.12);
+  --gold-glow-strong: rgba(200,169,110,0.22);
+  --red:              #c0392b;
+  --red-light:        #e74c3c;
+  --red-bg:           rgba(192,57,43,0.12);
+  --amber:            #d4820a;
+  --amber-light:      #f39c12;
+  --amber-bg:         rgba(212,130,10,0.12);
+  --green:            #27ae60;
+  --green-light:      #2ecc71;
+  --green-bg:         rgba(39,174,96,0.12);
+  --blue:             #2980b9;
+  --blue-light:       #3498db;
+  --blue-bg:          rgba(41,128,185,0.12);
+  --yellow:           #f1c40f;
+  --yellow-bg:        rgba(241,196,15,0.12);
+  --slate:            #5d7a9a;
+  --slate-light:      #7f9ab8;
+  --text-primary:     #e8e4dc;
+  --text-secondary:   #b8b0a0;
+  --text-muted:       #7a7264;
+  --text-faint:       #4a4640;
+  --font-display:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        10px;
+  --border-default:   1px solid var(--obsidian-border);
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+  --topbar-h:         52px;
+  --sidebar-w:        272px;
+  --footer-h:         64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; font-size: 16px; }
+
+body {
+  background: var(--obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-light); }
+p { margin-bottom: 0.75rem; color: var(--text-secondary); }
+p:last-child { margin-bottom: 0; }
+strong, b { color: var(--text-primary); font-weight: 600; }
+cite { font-style: normal; color: var(--gold-dim); font-size: 0.72rem; font-family: var(--font-mono); vertical-align: super; line-height: 0; }
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+#topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-h);
+  background: rgba(10,12,16,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  gap: 1rem;
+  z-index: 2000;
+}
+
+#menu-toggle {
+  background: none;
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 7px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+#menu-toggle:hover { border-color: var(--gold-dim); color: var(--gold); }
+#menu-toggle span { display: block; width: 16px; height: 2px; background: currentColor; border-radius: 1px; transition: transform var(--transition-base), opacity var(--transition-base); }
+body.nav-open #menu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+body.nav-open #menu-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.nav-open #menu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.topbar-brand {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topbar-brand span { color: var(--text-muted); font-weight: 400; }
+
+.topbar-counter {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.nav-classify {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-bg);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+#sidebar {
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--obsidian-mid);
+  border-right: 1px solid var(--obsidian-border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateX(calc(-1 * var(--sidebar-w)));
+  transition: transform var(--transition-slow);
+  z-index: 1800;
+  padding: 0.75rem 0 2rem;
+}
+body.nav-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1700;
+}
+body.nav-open #sidebar-overlay { display: block; }
+
+/* Sidebar group */
+.nav-group { border-bottom: 1px solid var(--obsidian-border); }
+
+.nav-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition-fast);
+}
+.nav-group-toggle:hover { background: var(--gold-glow); }
+
+.group-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  flex: 1;
+}
+.group-chevron {
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  transition: transform var(--transition-base);
+}
+.nav-group.collapsed .group-chevron { transform: rotate(-90deg); }
+
+.nav-group-items {
+  overflow: hidden;
+  max-height: 800px;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 1;
+}
+.nav-group.collapsed .nav-group-items { max-height: 0; opacity: 0; }
+
+/* Sidebar item */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 9px 1.25rem 9px 1rem;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.nav-item:hover { background: var(--gold-glow); border-left-color: var(--gold-dim); }
+.nav-item.active { background: var(--gold-glow); border-left-color: var(--gold); }
+.nav-item.active .nav-num,
+.nav-item.active .nav-label { color: var(--gold); }
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-dim);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-muted);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  min-width: 42px;
+  text-align: center;
+}
+.nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ============================================================
+   SLIDE CONTAINER
+   ============================================================ */
+#deck {
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0; right: 0;
+  bottom: var(--footer-h);
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2.5rem 2.5rem 2rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+.slide.fade-in { animation: fadeIn 0.3s ease forwards; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.slide-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================
+   FOOTER NAV BAR
+   ============================================================ */
+#footer-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--footer-h);
+  background: rgba(10,12,16,0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--obsidian-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  gap: 1rem;
+  z-index: 2000;
+}
+
+.nav-btn {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--obsidian-border);
+  background: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-btn:hover:not(:disabled) { border-color: var(--gold-dim); color: var(--gold); background: var(--gold-glow); }
+.nav-btn:disabled { opacity: 0.22; cursor: default; }
+
+.nav-btn .arrow { font-size: 0.9rem; }
+
+.slide-progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.progress-track {
+  flex: 1;
+  max-width: 300px;
+  height: 3px;
+  background: var(--obsidian-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.slide-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   HERO SLIDE STYLES
+   ============================================================ */
+.slide-hero {
+  background: radial-gradient(ellipse at 20% 60%, rgba(200,169,110,0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(41,128,185,0.04) 0%, transparent 50%),
+              var(--obsidian);
+  position: relative;
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(200,169,110,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,110,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 22s linear infinite;
+  pointer-events: none; z-index: 0;
+}
+@keyframes gridDrift { 0% { transform: translate(0,0); } 100% { transform: translate(40px,40px); } }
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero-running-head {
+  font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-muted);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 1.5rem; border-bottom: 1px solid var(--obsidian-border); padding-bottom: 0.5rem;
+}
+
+.hero-container {
+  display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.25rem;
+}
+
+.hero-logo { width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; margin-top: 6px; }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 700; line-height: 1.15; color: var(--text-primary);
+  letter-spacing: -0.01em; margin-bottom: 0.5rem;
+}
+.hero h1 .gold { color: var(--gold); display: block; margin-top: 0.35rem; font-size: 0.68em; }
+
+.hero-sub { font-size: 0.93rem; color: var(--text-secondary); max-width: 700px; line-height: 1.6; margin-bottom: 1.25rem; }
+
+.hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.meta-cell { display: flex; flex-direction: column; gap: 2px; }
+.meta-cell .lbl { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+.meta-cell .val { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; color: var(--text-primary); }
+.meta-div { width: 1px; height: 30px; background: var(--gold-dim); align-self: center; }
+
+.threat-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 700; padding: 4px 10px;
+  border-radius: var(--radius-sm); border: 1px solid;
+}
+.threat-badge.elevated { color: var(--yellow); border-color: var(--yellow); background: var(--yellow-bg); }
+.threat-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+.scope-note {
+  border-left: 3px solid var(--slate); padding: 0.6rem 1rem;
+  background: rgba(93,122,154,0.08); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic; font-size: 0.82rem; color: var(--slate-light); line-height: 1.55; margin-bottom: 1.25rem;
+}
+
+.metrics-strip {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  padding-top: 1rem; border-top: 1px solid var(--obsidian-border);
+}
+.metric-block {
+  background: var(--obsidian-card); border: var(--border-default);
+  border-top: 2px solid var(--gold-dim); padding: 0.75rem 1rem;
+  border-radius: var(--radius-md); min-width: 110px;
+}
+.metric-val { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 3px; }
+.metric-lbl { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.sec-header {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--obsidian-border);
+}
+.sec-num {
+  font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold-dim); background: var(--gold-glow);
+  border: 1px solid var(--gold-muted); padding: 3px 9px; border-radius: var(--radius-sm); white-space: nowrap;
+}
+.sec-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
+
+h3.sub {
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin: 1.5rem 0 0.75rem;
+}
+h3.sub:first-of-type { margin-top: 0; }
+
+/* ============================================================
+   BLUF
+   ============================================================ */
+.bluf-grid { display: flex; flex-direction: column; gap: 0.85rem; }
+.bluf-item {
+  display: grid; grid-template-columns: 36px 1fr; gap: 1rem;
+  padding: 1rem 1.25rem; background: var(--obsidian-card);
+  border: var(--border-default); border-left: 3px solid var(--gold-dim); border-radius: var(--radius-md);
+}
+.bluf-idx { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; color: var(--gold-pale); opacity: 0.35; line-height: 1; }
+.bluf-claim { font-weight: 700; color: var(--text-primary); font-size: 0.93rem; display: block; margin-bottom: 0.25rem; }
+.bluf-item p { font-size: 0.87rem; margin-bottom: 0; }
+
+/* ============================================================
+   SNAPSHOT GRID
+   ============================================================ */
+.snapshot-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; }
+.snap-cell { background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); padding: 1rem; }
+.snap-lbl { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dim); display: block; margin-bottom: 0.4rem; }
+.snap-cell p { font-size: 0.84rem; margin-bottom: 0; }
+
+/* ============================================================
+   KEY JUDGMENTS
+   ============================================================ */
+.kj-list { display: flex; flex-direction: column; gap: 0.85rem; }
+.kj-item { padding: 1rem 1.25rem; background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); border-left: 4px solid; }
+.kj-item.high     { border-left-color: var(--red); }
+.kj-item.moderate { border-left-color: var(--amber); }
+.kj-item.watch    { border-left-color: var(--yellow); }
+.kj-lbl { font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.4rem; }
+.kj-map { font-family: var(--font-mono); font-size: 0.63rem; color: var(--text-muted); margin-top: 0.35rem; }
+.kj-item p { font-size: 0.88rem; }
+
+/* ============================================================
+   EVIDENCE GRID
+   ============================================================ */
+.ev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; margin-bottom: 1rem; }
+.ev-box { background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); overflow: hidden; }
+.ev-head { padding: 0.4rem 1rem; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.ev-head.know   { background: var(--green-bg); color: var(--green-light); border-bottom: 1px solid var(--green); }
+.ev-head.assess { background: var(--amber-bg); color: var(--amber-light); border-bottom: 1px solid var(--amber); }
+.ev-head.gap    { background: var(--red-bg);   color: var(--red-light);   border-bottom: 1px solid var(--red); }
+.ev-box ul { list-style: none; padding: 0.75rem; }
+.ev-box li { font-size: 0.83rem; color: var(--text-secondary); padding: 4px 0 4px 1rem; border-bottom: 1px solid var(--obsidian-border); position: relative; line-height: 1.55; }
+.ev-box li::before { content: '//'; position: absolute; left: 0; color: var(--text-faint); font-family: var(--font-mono); font-size: 0.64rem; }
+.ev-box li:last-child { border-bottom: none; }
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+.tbl-wrap { overflow-x: auto; border-radius: var(--radius-md); border: var(--border-default); margin-bottom: 1rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+thead th { background: var(--obsidian-surface); padding: 7px 10px; text-align: left; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dim); border-bottom: 1px solid var(--obsidian-border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--obsidian-border); transition: background 0.1s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--obsidian-lift); }
+tbody td { padding: 7px 10px; color: var(--text-secondary); vertical-align: top; line-height: 1.55; }
+tbody td:first-child { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted); white-space: nowrap; }
+.matrix-score { font-family: var(--font-mono); font-weight: 700; color: var(--gold); }
+
+/* ============================================================
+   SCENARIO CARDS
+   ============================================================ */
+.scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; }
+.sc-card { background: var(--obsidian-card); border: var(--border-default); border-top: 3px solid; border-radius: var(--radius-md); padding: 1rem; }
+.sc-card.best  { border-top-color: var(--green); }
+.sc-card.base  { border-top-color: var(--amber); }
+.sc-card.worst { border-top-color: var(--red); }
+.sc-lbl { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.4rem; display: block; }
+.sc-card.best .sc-lbl  { color: var(--green-light); }
+.sc-card.base .sc-lbl  { color: var(--amber-light); }
+.sc-card.worst .sc-lbl { color: var(--red-light); }
+.sc-card h4 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; }
+.sc-card p   { font-size: 0.84rem; }
+
+/* ============================================================
+   BEHAVIORAL / RISK GRID
+   ============================================================ */
+.risk-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
+.risk-card { background: var(--obsidian-card); border: var(--border-default); border-left: 3px solid var(--gold-dim); border-radius: var(--radius-md); padding: 1rem; }
+.risk-lbl { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.4rem; }
+.risk-card p { font-size: 0.86rem; }
+
+/* ============================================================
+   RECOMMENDATIONS
+   ============================================================ */
+.rec-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+.rec-block { padding: 1rem 1.25rem; border-radius: var(--radius-md); background: var(--obsidian-card); border: var(--border-default); border-left: 4px solid; }
+.rec-block.immediate   { border-left-color: var(--red); }
+.rec-block.near-term   { border-left-color: var(--amber); }
+.rec-block.medium-term { border-left-color: var(--green); }
+.rec-time { font-family: var(--font-mono); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 0.35rem; }
+.rec-block.immediate   .rec-time { color: var(--red-light); }
+.rec-block.near-term   .rec-time { color: var(--amber-light); }
+.rec-block.medium-term .rec-time { color: var(--green-light); }
+.rec-block p { font-size: 0.87rem; }
+
+/* ============================================================
+   CONFIDENCE PANEL
+   ============================================================ */
+.conf-panel { padding: 1rem 1.25rem; border-radius: var(--radius-md); background: var(--obsidian-card); border: var(--border-default); border-left: 4px solid var(--amber); margin-bottom: 0.75rem; }
+.conf-lbl { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-light); display: block; margin-bottom: 0.4rem; }
+.conf-panel p { font-size: 0.87rem; }
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.audit-note { border-left: 3px solid var(--gold-dim); background: var(--gold-glow); padding: 0.75rem 1rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 0.75rem 0; color: var(--text-secondary); font-size: 0.83rem; }
+.badge-row   { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0.75rem; }
+.inline-tag  { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border: 1px solid var(--gold-muted); background: var(--gold-glow); color: var(--gold-light); border-radius: var(--radius-sm); white-space: nowrap; }
+.warning-strip { border: 1px solid var(--amber); background: var(--amber-bg); color: var(--amber-light); padding: 0.6rem 0.9rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 0.75rem 0; }
+.source-link { color: var(--gold-light); word-break: break-word; font-size: 0.78rem; }
+.small-note  { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.75rem; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 760px) {
+  .slide { padding: 1.5rem 1rem; }
+  .snapshot-grid, .ev-grid, .scenario-grid, .risk-grid { grid-template-columns: 1fr; }
+  .hero-container { flex-direction: column; gap: 0.75rem; }
+  .hero-logo { width: 52px; height: 52px; }
+  .bluf-item { grid-template-columns: 28px 1fr; }
+  table { font-size: 0.78rem; }
+  thead th, tbody td { padding: 5px 7px; }
+  #footer-nav { padding: 0 1rem; }
+  .nav-btn { padding: 7px 12px; font-size: 0.6rem; }
+}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header id="topbar">
+  <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="topbar-brand">QUANTA ANALYTICA <span>| MNS CONSULTING</span></div>
+  <div class="topbar-counter" id="topbar-counter">1 / 12</div>
+  <div class="nav-classify">Open Source</div>
+</header>
+
+<!-- SIDEBAR OVERLAY -->
+<div id="sidebar-overlay"></div>
+
+<!-- COLLAPSIBLE SIDEBAR -->
+<nav id="sidebar" aria-label="Slide navigation">
+
+  <div class="nav-group" id="grp-core">
+    <div class="nav-group-toggle" data-group="grp-core" tabindex="0" role="button" aria-expanded="true">
+      <span class="group-label">Core Report</span>
+      <span class="group-chevron">&#9660;</span>
+    </div>
+    <div class="nav-group-items">
+      <div class="nav-item active" data-slide="0"><span class="nav-num">00</span><span class="nav-label">Cover</span></div>
+      <div class="nav-item" data-slide="1"><span class="nav-num">01</span><span class="nav-label">BLUF</span></div>
+      <div class="nav-item" data-slide="2"><span class="nav-num">02</span><span class="nav-label">Key Intel Questions</span></div>
+      <div class="nav-item" data-slide="3"><span class="nav-num">03</span><span class="nav-label">Situation Snapshot</span></div>
+      <div class="nav-item" data-slide="4"><span class="nav-num">04</span><span class="nav-label">Key Judgments</span></div>
+      <div class="nav-item" data-slide="5"><span class="nav-num">05</span><span class="nav-label">Evidence Summary</span></div>
+    </div>
+  </div>
+
+  <div class="nav-group" id="grp-analytic">
+    <div class="nav-group-toggle" data-group="grp-analytic" tabindex="0" role="button" aria-expanded="true">
+      <span class="group-label">Analytic Tradecraft</span>
+      <span class="group-chevron">&#9660;</span>
+    </div>
+    <div class="nav-group-items">
+      <div class="nav-item" data-slide="6"><span class="nav-num">06</span><span class="nav-label">Structured Analysis</span></div>
+      <div class="nav-item" data-slide="7"><span class="nav-num">07</span><span class="nav-label">Behavioral Tradecraft</span></div>
+      <div class="nav-item" data-slide="8"><span class="nav-num">08</span><span class="nav-label">Implications &amp; Risk</span></div>
+    </div>
+  </div>
+
+  <div class="nav-group" id="grp-assess">
+    <div class="nav-group-toggle" data-group="grp-assess" tabindex="0" role="button" aria-expanded="true">
+      <span class="group-label">Assessment &amp; Annexes</span>
+      <span class="group-chevron">&#9660;</span>
+    </div>
+    <div class="nav-group-items">
+      <div class="nav-item" data-slide="9"><span class="nav-num">09</span><span class="nav-label">Confidence &amp; Gaps</span></div>
+      <div class="nav-item" data-slide="10"><span class="nav-num">10</span><span class="nav-label">Source Register</span></div>
+      <div class="nav-item" data-slide="11"><span class="nav-num">A</span><span class="nav-label">Early Warning</span></div>
+      <div class="nav-item" data-slide="12"><span class="nav-num">B</span><span class="nav-label">Intel Gaps</span></div>
+    </div>
+  </div>
+
+</nav>
+
+<!-- DECK -->
+<div id="deck">
+
+  <!-- ── SLIDE 0 — COVER ───────────────────────────────────── -->
+  <section class="slide slide-hero active fade-in" data-index="0">
+    <div class="slide-inner hero-content">
+      <div class="hero-grid"></div>
+      <div class="hero-running-head">
+        <span>QUANTA ANALYTICA | MNS CONSULTING</span>
+        <span>FRAGILITY &amp; GOVERNANCE MODELING // GHANA HEALTH AID</span>
+      </div>
+      <div class="hero-container">
+        <img class="hero-logo" src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica logo" />
+        <div>
+          <h1>Ghana's Rejection of U.S. Health Aid
+            <span class="gold">Aid Conditionality, USAID Replacement Gaps, and Health-Sector Sovereignty Risk</span>
+          </h1>
+          <p class="hero-sub">A QAP-compliant open-source intelligence assessment examining Ghana's reported refusal of a proposed U.S. health aid package after U.S. foreign assistance restructuring, with emphasis on data sovereignty, donor leverage, and health-sector continuity risk.</p>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-cell"><span class="lbl">Domain</span><span class="val">Fragility &amp; Governance Modeling</span></div>
+        <div class="meta-div"></div>
+        <div class="meta-cell"><span class="lbl">Date</span><span class="val">11 May 2026</span></div>
+        <div class="meta-div"></div>
+        <span class="threat-badge elevated"><span class="threat-dot"></span>Elevated</span>
+        <div class="meta-div"></div>
+        <div class="meta-cell"><span class="lbl">Classification</span><span class="val">Public / Open Source</span></div>
+      </div>
+      <div class="scope-note">
+        <strong>Analytic Scope Boundary:</strong> This assessment covers Ghana, U.S.&#8209;Ghana bilateral health assistance, USAID legacy programming, U.S. executive&#8209;branch foreign assistance restructuring, and Ghana's health&#8209;data governance environment. Retrospective window: January 2024 to present. Forward monitoring horizon: 90 to 180 days. Excluded streams: classified diplomatic intent, internal U.S. interagency deliberations, partisan speculation, and unverified social media. Confidence is Moderate because the full proposed agreement text has not been published.
+      </div>
+      <div class="metrics-strip">
+        <div class="metric-block"><div class="metric-val">$109M</div><div class="metric-lbl">Reported U.S. offer</div></div>
+        <div class="metric-block"><div class="metric-val">5 YRS</div><div class="metric-lbl">Reported package term</div></div>
+        <div class="metric-block"><div class="metric-val">$96M</div><div class="metric-lbl">Reported 2024 U.S. health aid</div></div>
+        <div class="metric-block"><div class="metric-val">MOD</div><div class="metric-lbl">Overall confidence</div></div>
+        <div class="metric-block"><div class="metric-val">90&#8209;180</div><div class="metric-lbl">Day watch horizon</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 1 — BLUF ────────────────────────────────────── -->
+  <section class="slide" data-index="1">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">01 // BLUF</span><h2 class="sec-title">Bottom Line Up Front</h2></div>
+      <div class="bluf-grid">
+        <div class="bluf-item">
+          <div class="bluf-idx">01</div>
+          <div><strong class="bluf-claim">Ghana's rejection most likely reflects a data-sovereignty dispute, not a rejection of health cooperation itself.</strong> The most diagnostic evidence is AP reporting quoting Ghana Data Protection Commission Executive Director Arnold Kavaarpuo and Reuters reporting that Ghana objected to sensitive health-data sharing terms. <cite>[1]</cite> <cite>[2]</cite></div>
+        </div>
+        <div class="bluf-item">
+          <div class="bluf-idx">02</div>
+          <div><strong class="bluf-claim">The proposed U.S. offer appears materially smaller on an annualized basis than recent U.S. health assistance to Ghana.</strong> Reuters reported a $109 million package over five years (~$21.8M/yr), compared with reported U.S. health assistance of $96 million in 2024 and USAID support of over $90 million in 2023. <cite>[1]</cite> <cite>[7]</cite></div>
+        </div>
+        <div class="bluf-item">
+          <div class="bluf-idx">03</div>
+          <div><strong class="bluf-claim">The episode exposes a credibility problem for the post-USAID aid model if partner governments perceive U.S. assistance as lower-value, higher-control, or politically transactional.</strong> Official U.S. documents confirm foreign assistance was realigned to the President's foreign-policy priorities. <cite>[5]</cite> <cite>[10]</cite> <cite>[12]</cite></div>
+        </div>
+        <div class="bluf-item">
+          <div class="bluf-idx">04</div>
+          <div><strong class="bluf-claim">Health-sector threat level remains Elevated rather than High.</strong> The rejection increases continuity risk for donor-supported health programming, but open-source evidence does not yet confirm immediate nationwide service disruption. <cite>[11]</cite></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 2 — KIQs ────────────────────────────────────── -->
+  <section class="slide" data-index="2">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">02 // KIQs</span><h2 class="sec-title">Key Intelligence Questions</h2></div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Question ID</th><th>Intelligence Question</th><th>Links To</th></tr></thead>
+          <tbody>
+            <tr><td>KIQ-1</td><td>What did the U.S. offer Ghana, and how much prior USAID-era coverage would it replace?</td><td>KJ-2, GAP-1, Source Register</td></tr>
+            <tr><td>KIQ-2</td><td>What obligations, constraints, or political expectations were attached to the offer?</td><td>KJ-1, ACH, Confidence Gaps</td></tr>
+            <tr><td>KIQ-3</td><td>Why did Ghana walk away from the offer?</td><td>KJ-1, ACH-H1/H2</td></tr>
+            <tr><td>KIQ-4</td><td>How does the offer differ from prior USAID support?</td><td>Gap Analysis, Implications</td></tr>
+            <tr><td>KIQ-5</td><td>What does the episode reveal about donor leverage, Ghanaian sovereignty concerns, and health-sector risk?</td><td>KJ-3, KJ-4, I&amp;W</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 3 — SNAPSHOT ────────────────────────────────── -->
+  <section class="slide" data-index="3">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">03 // SNAPSHOT</span><h2 class="sec-title">Situation Snapshot</h2></div>
+      <div class="snapshot-grid">
+        <div class="snap-cell"><span class="snap-lbl">WHO</span><p>Government of Ghana, Ghana Data Protection Commission, U.S. State Department, U.S. Embassy Ghana, Ghana Ministry of Health, and donor-health partners.</p></div>
+        <div class="snap-cell"><span class="snap-lbl">WHAT</span><p>Ghana reportedly declined a proposed U.S. health aid package after objecting to data-access provisions and broader aid terms.</p></div>
+        <div class="snap-cell"><span class="snap-lbl">WHERE</span><p>Ghana, with implications for U.S.-Africa health diplomacy and other African states negotiating similar health agreements.</p></div>
+        <div class="snap-cell"><span class="snap-lbl">WHEN</span><p>Negotiations reportedly began in November 2025, with Ghana refusing to accept the deal by an April 2026 deadline. Forward watch: 90 to 180 days.</p></div>
+        <div class="snap-cell"><span class="snap-lbl">WHY</span><p>The episode tests whether post-USAID health assistance can retain partner-government trust while imposing new data, funding, and accountability terms.</p></div>
+        <div class="snap-cell"><span class="snap-lbl">HOW</span><p>The primary mechanisms are aid conditionality, data-access governance, annualized funding decline, sovereignty signaling, and donor-replacement gaps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 4 — KEY JUDGMENTS ───────────────────────────── -->
+  <section class="slide" data-index="4">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">04 // KEY JUDGMENTS</span><h2 class="sec-title">Key Judgments</h2></div>
+      <div class="kj-list">
+        <div class="kj-item high">
+          <span class="kj-lbl">KJ-1 | Moderate-High Confidence</span>
+          <p><strong>Ghana most likely rejected the proposed agreement because the data-access provisions were viewed as excessive and insufficiently governed by Ghanaian prior-approval controls.</strong> The highest-diagnostic evidence is a named Ghanaian data-protection official quoted by AP and Reuters reporting that Ghana objected to sensitive data-sharing terms. <cite>[1]</cite> <cite>[2]</cite></p>
+          <div class="kj-map">Maps to KIQ-2, KIQ-3</div>
+        </div>
+        <div class="kj-item moderate">
+          <span class="kj-lbl">KJ-2 | Moderate Confidence</span>
+          <p><strong>The proposed package appears materially smaller than prior annual U.S. health support when measured on a yearly basis.</strong> The reported five-year offer averages about $21.8 million per year, compared with reported 2024 U.S. health assistance of $96 million and prior USAID health-sector support of over $90 million in 2023. <cite>[1]</cite> <cite>[7]</cite></p>
+          <div class="kj-map">Maps to KIQ-1, KIQ-4</div>
+        </div>
+        <div class="kj-item moderate">
+          <span class="kj-lbl">KJ-3 | Moderate-High Confidence</span>
+          <p><strong>The episode reflects a structural shift from USAID-style development partnership toward State-led, conditional, and more transactional health diplomacy.</strong> Official U.S. documents establish the foreign-assistance realignment and USAID transition context. <cite>[5]</cite> <cite>[10]</cite> <cite>[12]</cite></p>
+          <div class="kj-map">Maps to KIQ-4, KIQ-5</div>
+        </div>
+        <div class="kj-item watch">
+          <span class="kj-lbl">KJ-4 | Watch Judgment</span>
+          <p><strong>The dispute could become a regional precedent if other African governments reject similar terms on data-sovereignty grounds.</strong> This remains a monitoring judgment until more official agreement texts or comparable country decisions are available. <cite>[1]</cite> <cite>[2]</cite></p>
+          <div class="kj-map">Maps to KIQ-5, I&amp;W</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 5 — EVIDENCE ────────────────────────────────── -->
+  <section class="slide" data-index="5">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">05 // EVIDENCE</span><h2 class="sec-title">Evidence Summary</h2></div>
+      <div class="ev-grid">
+        <div class="ev-box">
+          <div class="ev-head know">What We Know</div>
+          <ul>
+            <li>Reuters reported Ghana rejected a proposed $109 million U.S. health aid agreement over five years. <cite>[1]</cite></li>
+            <li>AP reported Ghana rejected the deal over data privacy concerns and quoted Ghana's Data Protection Commission executive director. <cite>[2]</cite></li>
+            <li>U.S. official documents establish a post-2025 foreign-assistance realignment. <cite>[5]</cite> <cite>[12]</cite></li>
+          </ul>
+        </div>
+        <div class="ev-box">
+          <div class="ev-head assess">What We Assess</div>
+          <ul>
+            <li>[ASSESS] Data sovereignty was the primary rejection mechanism, with funding insufficiency as a reinforcing factor.</li>
+            <li>[ASSESS] Ghana is likely seeking revised terms rather than a full break in health cooperation.</li>
+            <li>[ASSESS] The U.S. aid model faces reputational risk if partner governments interpret data access as control rather than accountability.</li>
+          </ul>
+        </div>
+        <div class="ev-box">
+          <div class="ev-head gap">What We Do Not Know</div>
+          <ul>
+            <li>The full proposed agreement or MOU text is not public.</li>
+            <li>The exact Ghana co-investment obligation remains unclear.</li>
+            <li>The final list of eligible U.S. entities and scope of data-use rights is not independently verified.</li>
+            <li>Program-level service disruption data is not yet available.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="audit-note"><strong>WSI Source Independence Note:</strong> The rejection claim is supported by two independent reporting pathways: Reuters through a source familiar with negotiations and AP through a named Ghanaian data-protection official. Derivative media, social posts, and copied summaries are not counted as separate corroboration streams.</div>
+      <div class="badge-row">
+        <span class="inline-tag">Driver: Data sovereignty</span>
+        <span class="inline-tag">Driver: Aid conditionality</span>
+        <span class="inline-tag">Constraint: Missing MOU text</span>
+        <span class="inline-tag">Constraint: Donor dependency</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 6 — STRUCTURED ANALYSIS ────────────────────── -->
+  <section class="slide" data-index="6">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">06 // ANALYSIS</span><h2 class="sec-title">Structured Analytic Tradecraft</h2></div>
+      <p><strong>Techniques applied:</strong> Five-Layer Strategic Cognition Map, Key Assumptions Check, Analysis of Competing Hypotheses, Gap Analysis, Indicators and Warning, Scenario Matrix, Confidence Audit.</p>
+
+      <h3 class="sub">Five-Layer Strategic Cognition Map</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>Assessment</th></tr></thead>
+          <tbody>
+            <tr><td>L1 Foundations</td><td>Ghana depends on external health financing for disease control, surveillance, and program support, while Ghanaian law establishes a national data-protection authority.</td></tr>
+            <tr><td>L2 Mechanisms</td><td>A smaller annualized aid package combined with broad data-access provisions creates a sovereignty-cost mechanism that can outweigh the fiscal benefit of the offer.</td></tr>
+            <tr><td>L3 Dynamics</td><td>If U.S. messaging emphasizes compliance and access while Ghanaian actors frame the issue as data extraction, the dispute can produce reputational escalation even without service disruption.</td></tr>
+            <tr><td>L4 Leverage</td><td>The strongest de-escalation pathway is a revised agreement with Ghanaian prior approval, data minimization, local data residency, independent audit, and transparent program-benefit mapping.</td></tr>
+            <tr><td>L5 Paradigms</td><td>The deeper paradigm contest is development partnership versus transactional assistance. The latter risks triggering sovereignty resistance if perceived as conditional control.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Key Assumptions Check</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Assumption</th><th>Why It Matters</th><th>Risk If Wrong</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>A1</td><td>AP and Reuters accurately characterize the core data-access dispute.</td><td>Supports KJ-1.</td><td>Rejection may reflect a different financial or political dispute.</td><td>Active</td></tr>
+            <tr><td>A2</td><td>The $109 million figure represents the meaningful U.S. offer under negotiation.</td><td>Supports the funding-gap comparison.</td><td>Annualized gap may be overstated.</td><td>Active</td></tr>
+            <tr><td>A3</td><td>Prior USAID-era assistance is an appropriate baseline for comparison.</td><td>Frames replacement-capacity analysis.</td><td>Report could overstate continuity risk.</td><td>Active</td></tr>
+            <tr><td>A4</td><td>No immediate nationwide service disruption has yet occurred from this rejection.</td><td>Justifies Elevated, not High, threat level.</td><td>Threat level should be upgraded.</td><td>Unverified Watch</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Analysis of Competing Hypotheses</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Hypothesis</th><th>Evidence For</th><th>Evidence Against</th><th>Diag.</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr><td>H1: Narrow data-governance rejection</td><td>AP quotes named DPC official; Reuters reports data concerns.</td><td>Agreement text not public.</td><td class="matrix-score">5</td><td>Most likely</td></tr>
+            <tr><td>H2: Broader sovereignty rejection</td><td>Data access without prior approval fits sovereignty concern.</td><td>Ghana seeks new agreement, not full rupture.</td><td class="matrix-score">4</td><td>Likely reinforcing factor</td></tr>
+            <tr><td>H3: Financial inadequacy</td><td>Annualized offer smaller than prior annual health support.</td><td>Public explanation centers on data privacy.</td><td class="matrix-score">3</td><td>Plausible secondary driver</td></tr>
+            <tr><td>H4: Domestic political signaling</td><td>Sovereignty framing carries domestic legitimacy value.</td><td>No direct evidence of domestic political calculus.</td><td class="matrix-score">2</td><td>Possible but not primary</td></tr>
+            <tr><td>H5: Diplomatic rupture</td><td>Rejected offer is a negative bilateral signal.</td><td>Both sides retain incentives to negotiate.</td><td class="matrix-score">2</td><td>Unlikely at present</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Gap Analysis: Proposed Package vs Prior USAID Support</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Dimension</th><th>USAID-Era Support</th><th>Reported New Offer</th><th>Gap / Risk</th></tr></thead>
+          <tbody>
+            <tr><td>Funding scale</td><td>Over $90M in 2023 and $96M in 2024 health aid.</td><td>$109M over five years.</td><td>Large annualized shortfall unless donors backfill.</td></tr>
+            <tr><td>Delivery model</td><td>Mission-based programming with grants, contracts, implementing partners.</td><td>State-led bilateral agreement under post-USAID restructuring.</td><td>Possible loss of implementation flexibility.</td></tr>
+            <tr><td>Data governance</td><td>Program reporting with no comparable broad architecture access.</td><td>Reported access to datasets, metadata, dashboards, models, dictionaries.</td><td>High sovereignty and privacy friction.</td></tr>
+            <tr><td>Political framing</td><td>Development partnership and health systems support.</td><td>America First, co-investment, data-access accountability frame.</td><td>Higher perceived donor leverage.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 7 — BEHAVIORAL ──────────────────────────────── -->
+  <section class="slide" data-index="7">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">07 // BEHAVIORAL</span><h2 class="sec-title">Applied Behavioral Tradecraft</h2></div>
+      <div class="risk-grid">
+        <div class="risk-card">
+          <span class="risk-lbl">Sovereignty Trigger</span>
+          <p>Health data is not just technical infrastructure. It contains identity, vulnerability, and state legitimacy content. Data-access terms can therefore activate fairness, control, and postcolonial-dependency frames.</p>
+        </div>
+        <div class="risk-card">
+          <span class="risk-lbl">Authority Friction</span>
+          <p>U.S. pressure near a deadline may have reduced perceived legitimacy of the offer by making compliance appear coerced rather than negotiated.</p>
+        </div>
+        <div class="risk-card">
+          <span class="risk-lbl">Narrative Vulnerability</span>
+          <p>The phrase "data access" can be reframed publicly as "data extraction" if U.S. entities are seen as receiving privileged control over Ghanaian health information.</p>
+        </div>
+        <div class="risk-card">
+          <span class="risk-lbl">Decision Architecture</span>
+          <p>Ghana's rejection preserves negotiation leverage, but also increases the urgency of finding bridge financing and service-continuity alternatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 8 — IMPLICATIONS ────────────────────────────── -->
+  <section class="slide" data-index="8">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">08 // IMPLICATIONS</span><h2 class="sec-title">Strategic Implications, Risk &amp; Recommendations</h2></div>
+      <div class="rec-list">
+        <div class="rec-block immediate">
+          <span class="rec-time">Immediate: 0 to 30 Days</span>
+          <p><strong>Ghana:</strong> Publish a principled data-governance position that separates acceptance of health cooperation from rejection of overbroad data access. Identify program areas most exposed to funding interruption.</p>
+        </div>
+        <div class="rec-block near-term">
+          <span class="rec-time">Near-Term: 30 to 90 Days</span>
+          <p><strong>United States:</strong> Revise terms around prior approval, data minimization, auditability, and local data governance. Avoid messaging that frames Ghana's objection as non-cooperation.</p>
+        </div>
+        <div class="rec-block medium-term">
+          <span class="rec-time">Medium-Term: 90 to 180 Days</span>
+          <p><strong>Donors and partners:</strong> Prepare bridge financing options for HIV, malaria, TB, maternal-child health, surveillance, and supply-chain support if bilateral renegotiation stalls.</p>
+        </div>
+      </div>
+      <h3 class="sub">Risk Matrix</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th><th>Mitigant</th></tr></thead>
+          <tbody>
+            <tr><td>Negotiations stall without bridge funding</td><td>3</td><td>4</td><td class="matrix-score">12</td><td>Donor backfill and public service-continuity plan.</td></tr>
+            <tr><td>Public backlash over health-data sovereignty</td><td>3</td><td>3</td><td class="matrix-score">9</td><td>Transparent data-protection clauses and parliamentary briefing.</td></tr>
+            <tr><td>Health service disruption</td><td>2</td><td>5</td><td class="matrix-score">10</td><td>Commodity and program gap assessment within 30 days.</td></tr>
+            <tr><td>Regional copycat rejections</td><td>3</td><td>4</td><td class="matrix-score">12</td><td>Common data-governance standard for U.S.-Africa health agreements.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 9 — CONFIDENCE ──────────────────────────────── -->
+  <section class="slide" data-index="9">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">09 // CONFIDENCE</span><h2 class="sec-title">Confidence &amp; Uncertainties</h2></div>
+      <div class="conf-panel">
+        <span class="conf-lbl">Overall Confidence: Moderate</span>
+        <p>Confidence is supported by independent Reuters and AP reporting, official U.S. foreign-assistance restructuring documents, U.S. Embassy Ghana health-support statements, and Ghanaian data-protection legal context. Confidence is constrained by the absence of the full proposed agreement text and limited official Ghana ministry documentation.</p>
+      </div>
+      <div class="warning-strip">Primary flip risk: publication of the full agreement text could materially alter the assessment of conditionality, data-access scope, and U.S. obligations.</div>
+      <h3 class="sub">Priority Intelligence Gaps</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Intelligence Gap</th><th>Why It Matters</th><th>Collection Priority</th></tr></thead>
+          <tbody>
+            <tr><td>Full proposed agreement or MOU</td><td>Would verify or correct reported data-access and funding provisions.</td><td>High</td></tr>
+            <tr><td>Ghana Cabinet or MoH decision memorandum</td><td>Would clarify Ghana's official decision calculus.</td><td>High</td></tr>
+            <tr><td>U.S. data-access annex and entity list</td><td>Would test the claim about up to 10 U.S. entities and data architecture access.</td><td>High</td></tr>
+            <tr><td>Program-level funding and service gaps</td><td>Would determine whether the threat level should rise to High.</td><td>High</td></tr>
+            <tr><td>Alternative donor commitments</td><td>Would determine whether service-continuity risk is mitigated.</td><td>Medium</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 10 — SOURCE REGISTER ───────────────────────── -->
+  <section class="slide" data-index="10">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">10 // REFERENCES</span><h2 class="sec-title">Source Register &amp; WSI Audit</h2></div>
+      <p class="small-note">Source register uses RAPITIS scoring: Reliability, Access, Provenance, Manipulation Risk, Timeliness, Independence, Specificity. Claim-level discipline uses C-D-F: Corroboration, Diagnosticity, Falsifiability.</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Source</th><th>Document / Page</th><th>Date</th><th>Type</th><th>Band</th></tr></thead>
+          <tbody>
+            <tr><td>S1</td><td>Reuters</td><td><a class="source-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/ghana-rejects-proposed-us-health-aid-deal-citing-data-concerns-source-says-2026-04-28/" target="_blank" rel="noopener">Ghana rejects proposed US health aid deal, citing data concerns</a></td><td>28 Apr 2026</td><td>Wire / secondary</td><td>Green / Amber</td></tr>
+            <tr><td>S2</td><td>Associated Press</td><td><a class="source-link" href="https://apnews.com/article/ghana-us-health-deal-africa-usaid-f29f680cc017204de9269159f34b250d" target="_blank" rel="noopener">Ghana rejects US health deal over data access concerns</a></td><td>1 May 2026</td><td>Wire / secondary</td><td>Green</td></tr>
+            <tr><td>S3</td><td>Ghana Data Protection Commission</td><td><a class="source-link" href="https://dataprotection.org.gh/help-faqs/" target="_blank" rel="noopener">Mandate under Ghana Data Protection Act</a></td><td>Current</td><td>Official / primary</td><td>Green</td></tr>
+            <tr><td>S4</td><td>Republic of Ghana</td><td><a class="source-link" href="https://www.dataprotection.org.gh/sites/default/files/Data%20Protection%20Act%20%2C%202012%20%28Act%20843%29.pdf" target="_blank" rel="noopener">Data Protection Act, 2012, Act 843</a></td><td>2012</td><td>Legal / primary</td><td>Green</td></tr>
+            <tr><td>S5</td><td>White House</td><td><a class="source-link" href="https://www.whitehouse.gov/presidential-actions/2025/01/reevaluating-and-realigning-united-states-foreign-aid/" target="_blank" rel="noopener">Reevaluating and Realigning United States Foreign Aid</a></td><td>20 Jan 2025</td><td>U.S. official / primary</td><td>Green</td></tr>
+            <tr><td>S6</td><td>U.S. Department of State</td><td><a class="source-link" href="https://www.state.gov/" target="_blank" rel="noopener">America First foreign assistance realignment context</a></td><td>2025</td><td>U.S. official / primary</td><td>Green</td></tr>
+            <tr><td>S7</td><td>U.S. Embassy Ghana</td><td><a class="source-link" href="https://gh.usembassy.gov/u-s-donates-vehicles-to-improve-health-systems-in-the-western-western-north-and-ahafo-regions/" target="_blank" rel="noopener">U.S. health-sector support to Ghana in 2023</a></td><td>7 Aug 2024</td><td>U.S. official / primary</td><td>Green</td></tr>
+            <tr><td>S8</td><td>ForeignAssistance.gov</td><td><a class="source-link" href="https://www.foreignassistance.gov/" target="_blank" rel="noopener">U.S. foreign assistance data for Ghana</a></td><td>Dynamic</td><td>U.S. official data / primary</td><td>Green / Amber</td></tr>
+            <tr><td>S9</td><td>Ghana Ministry of Health</td><td><a class="source-link" href="https://www.moh.gov.gh/" target="_blank" rel="noopener">USAID legacy programming and health-sector cooperation context</a></td><td>Current</td><td>Ghana official / contextual</td><td>Amber</td></tr>
+            <tr><td>S10</td><td>KFF</td><td><a class="source-link" href="https://www.kff.org/global-health-policy/u-s-foreign-aid-freeze-dissolution-of-usaid-timeline-of-events/" target="_blank" rel="noopener">U.S. foreign aid freeze and USAID dissolution timeline</a></td><td>24 Oct 2025</td><td>Policy research / secondary</td><td>Green / Amber</td></tr>
+            <tr><td>S11</td><td>Reuters</td><td><a class="source-link" href="https://www.reuters.com/world/africa/ghana-takes-steps-bridge-156-million-funding-gap-after-usaid-freeze-2025-02-11/" target="_blank" rel="noopener">Ghana takes steps to bridge $156 million funding gap after USAID freeze</a></td><td>11 Feb 2025</td><td>Wire / secondary</td><td>Green / Amber</td></tr>
+            <tr><td>S12</td><td>State OIG</td><td><a class="source-link" href="https://www.stateoig.gov/uploads/report/report_pdf_file/aud-geer-25-20-web-posting_508.pdf" target="_blank" rel="noopener">Evaluation of State approach to foreign assistance pause</a></td><td>2025</td><td>U.S. oversight / primary</td><td>Green</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="audit-note"><strong>Independence audit:</strong> Reuters and AP are treated as distinct reporting pathways for the rejection fact because one relies on a negotiation-source pathway and the other quotes a named Ghanaian data-protection official. Derivative media, social posts, and copied summaries are not counted as separate corroboration streams.</div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 11 — EARLY WARNING ──────────────────────────── -->
+  <section class="slide" data-index="11">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">A // EARLY WARNING</span><h2 class="sec-title">Early Warning Indicators</h2></div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Indicator</th><th>Direction</th><th>Current Status</th><th>Threshold</th><th>Cadence</th></tr></thead>
+          <tbody>
+            <tr><td>Full agreement text published or leaked</td><td>Clarifying or escalatory</td><td>Not public</td><td>Text confirms broad U.S. access without Ghanaian prior approval</td><td>Daily</td></tr>
+            <tr><td>Ghana MoH reports service disruptions</td><td>Escalatory</td><td>Not confirmed</td><td>Confirmed disruption in HIV, malaria, TB, vaccines, or maternal-child health</td><td>Weekly</td></tr>
+            <tr><td>U.S. revises data clauses</td><td>De-escalatory</td><td>Not confirmed</td><td>Prior approval, data minimization, audit, and local governance added</td><td>Weekly</td></tr>
+            <tr><td>Parliamentary hearings or civil-society litigation</td><td>Escalatory</td><td>Monitor</td><td>Formal committee inquiry or legal challenge</td><td>Weekly</td></tr>
+            <tr><td>Other African governments reject similar deals</td><td>Regionalization</td><td>Emerging pattern</td><td>Two or more additional rejections or suspensions</td><td>Weekly</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 12 — INTEL GAPS ─────────────────────────────── -->
+  <section class="slide" data-index="12">
+    <div class="slide-inner">
+      <div class="sec-header"><span class="sec-num">B // INTEL GAPS</span><h2 class="sec-title">Priority Intelligence Gaps &amp; Action Thresholds</h2></div>
+      <div class="ev-grid">
+        <div class="ev-box">
+          <div class="ev-head know">Green</div>
+          <ul><li>Negotiations resume with explicit Ghanaian data-control safeguards and no confirmed service disruptions.</li></ul>
+        </div>
+        <div class="ev-box">
+          <div class="ev-head assess">Amber</div>
+          <ul><li>Talks remain stalled beyond 30 days, but Ghana or donors announce interim financing and no major service interruption is confirmed.</li></ul>
+        </div>
+        <div class="ev-box">
+          <div class="ev-head gap">Red</div>
+          <ul><li>Program-level service disruptions are confirmed, public backlash hardens around data-sovereignty claims, or the U.S. publicly pressures Ghana without revising terms.</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--obsidian-border);display:flex;align-items:center;gap:1.25rem;justify-content:center;">
+        <img src="https://quanta-analytica.com/logo.PNG" style="width:40px;height:40px;object-fit:contain;opacity:0.8;" alt="Quanta Analytica logo" />
+        <div style="text-align:left;">
+          <div style="font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);">Quanta Analytica Process™</div>
+          <div style="font-family:var(--font-mono);font-size:0.64rem;color:var(--text-faint);">Produced by MNS Consulting &nbsp;|&nbsp; Evidence-caveated open-source analytic product</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /deck -->
+
+<!-- FOOTER NAV -->
+<div id="footer-nav">
+  <button class="nav-btn" id="btn-prev" disabled>
+    <span class="arrow">&#8592;</span> Previous
+  </button>
+  <div class="slide-progress">
+    <span class="slide-label" id="lbl-section">Cover</span>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:7.7%"></div>
+    </div>
+    <span class="slide-label" id="lbl-counter">1 / 13</span>
+  </div>
+  <button class="nav-btn" id="btn-next">
+    Next <span class="arrow">&#8594;</span>
+  </button>
+</div>
+
+<script>
+/* ============================================================
+   QAP SLIDE DECK — CONTROLLER
+   ============================================================ */
+
+const SLIDES = document.querySelectorAll('.slide');
+const TOTAL  = SLIDES.length;
+
+const LABELS = [
+  'Cover', 'BLUF', 'Key Intel Questions', 'Situation Snapshot',
+  'Key Judgments', 'Evidence Summary', 'Structured Analysis',
+  'Behavioral Tradecraft', 'Implications & Risk', 'Confidence & Gaps',
+  'Source Register', 'Early Warning', 'Intel Gaps'
+];
+
+let current = 0;
+
+const btnPrev       = document.getElementById('btn-prev');
+const btnNext       = document.getElementById('btn-next');
+const lblSection    = document.getElementById('lbl-section');
+const lblCounter    = document.getElementById('lbl-counter');
+const topbarCounter = document.getElementById('topbar-counter');
+const progressFill  = document.getElementById('progress-fill');
+const navItems      = document.querySelectorAll('.nav-item[data-slide]');
+
+function goTo(idx) {
+  if (idx < 0 || idx >= TOTAL) return;
+
+  // Hide current
+  SLIDES[current].classList.remove('active', 'fade-in');
+  SLIDES[current].style.display = 'none';
+
+  current = idx;
+
+  // Show new
+  SLIDES[current].style.display = 'block';
+  // Force reflow for animation
+  void SLIDES[current].offsetWidth;
+  SLIDES[current].classList.add('active', 'fade-in');
+
+  // Update controls
+  btnPrev.disabled = current === 0;
+  btnNext.disabled = current === TOTAL - 1;
+  btnNext.innerHTML = current === TOTAL - 1
+    ? 'End of Deck'
+    : 'Next <span class="arrow">&#8594;</span>';
+
+  lblSection.textContent    = LABELS[current] || '';
+  lblCounter.textContent    = (current + 1) + ' / ' + TOTAL;
+  topbarCounter.textContent = (current + 1) + ' / ' + TOTAL;
+  progressFill.style.width  = ((current + 1) / TOTAL * 100) + '%';
+
+  // Sidebar active state
+  navItems.forEach(item => {
+    item.classList.toggle('active', parseInt(item.dataset.slide) === current);
+  });
+
+  // Scroll slide content to top
+  SLIDES[current].scrollTop = 0;
+}
+
+btnPrev.addEventListener('click', () => goTo(current - 1));
+btnNext.addEventListener('click', () => goTo(current + 1));
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goTo(current - 1);
+});
+
+// Sidebar item navigation
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    goTo(parseInt(item.dataset.slide));
+    if (window.innerWidth < 900) closeNav();
+  });
+});
+
+/* ----------- Sidebar open/close ----------- */
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar    = document.getElementById('sidebar');
+const overlay    = document.getElementById('sidebar-overlay');
+
+function openNav() {
+  document.body.classList.add('nav-open');
+  menuToggle.setAttribute('aria-expanded', 'true');
+}
+function closeNav() {
+  document.body.classList.remove('nav-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}
+
+menuToggle.addEventListener('click', () => {
+  document.body.classList.contains('nav-open') ? closeNav() : openNav();
+});
+overlay.addEventListener('click', closeNav);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeNav();
+});
+
+/* ----------- Collapsible groups ----------- */
+document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const grp = document.getElementById(toggle.dataset.group);
+    if (grp) {
+      grp.classList.toggle('collapsed');
+      toggle.setAttribute('aria-expanded', !grp.classList.contains('collapsed'));
+    }
+  });
+  toggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
+  });
+});
+
+/* ----------- Init display state ----------- */
+SLIDES.forEach((s, i) => { if (i !== 0) s.style.display = 'none'; });
+</script>
+</body>
+</html>

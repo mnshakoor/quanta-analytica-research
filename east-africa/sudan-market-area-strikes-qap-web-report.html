@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Strikes in Sudan and the Targeting of Markets | Quanta Analytica Process™ | 22 May 2026</title>
+  <meta name="title" content="Drone Strikes in Sudan and the Targeting of Markets | Quanta Analytica Process™">
+  <meta name="description" content="A QAP Conflict Systems Assessment on Sudan market-area drone and air strikes, civilian harm, humanitarian disruption, and legal-risk implications.">
+  <meta name="author" content="Quanta Analytica | MNS Consulting">
+  <meta name="theme-color" content="#0a0c10">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Drone Strikes in Sudan and the Targeting of Markets">
+  <meta property="og:description" content="QAP Conflict Systems Assessment and WSI-audited OSINT report on market-area drone and air strikes in Sudan.">
+  <meta property="og:image" content="https://quanta-analytica.com/logo.PNG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drone Strikes in Sudan and the Targeting of Markets">
+  <meta name="twitter:description" content="A QAP Conflict Systems Assessment of security, humanitarian, and legal risk.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="image_src" href="https://quanta-analytica.com/logo.PNG" />
+  <style>
+/* ============================================================
+   QAP WEB REPORT - CANONICAL STYLESHEET
+   Quanta Analytica Process™ | MNS Consulting
+   quanta-analytica.com/reports/
+   Version: 2.0 | Design System Reference
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. ROOT VARIABLES - Color, Typography, Spacing
+   ------------------------------------------------------------ */
+:root {
+  /* Core Palette */
+  --obsidian:         #0a0c10;
+  --obsidian-mid:     #10131a;
+  --obsidian-card:    #13161f;
+  --obsidian-border:  #1c2030;
+  --obsidian-surface: #181b26;
+  --obsidian-lift:    #1e2235;
+
+  /* Gold Scale */
+  --gold:             #c8a96e;
+  --gold-light:       #dfc28e;
+  --gold-pale:        #e8d5aa;
+  --gold-dim:         #9a7f52;
+  --gold-muted:       #6b5838;
+  --gold-glow:        rgba(200, 169, 110, 0.12);
+  --gold-glow-strong: rgba(200, 169, 110, 0.22);
+
+  /* Alert / Status Colors */
+  --red:              #c0392b;
+  --red-light:        #e74c3c;
+  --red-bg:           rgba(192, 57, 43, 0.12);
+  --amber:            #d4820a;
+  --amber-light:      #f39c12;
+  --amber-bg:         rgba(212, 130, 10, 0.12);
+  --green:            #27ae60;
+  --green-light:      #2ecc71;
+  --green-bg:         rgba(39, 174, 96, 0.12);
+  --blue:             #2980b9;
+  --blue-light:       #3498db;
+  --blue-bg:          rgba(41, 128, 185, 0.12);
+  --yellow:           #f1c40f;
+  --yellow-bg:        rgba(241, 196, 15, 0.12);
+  --slate:            #5d7a9a;
+  --slate-light:      #7f9ab8;
+
+  /* Text Scale */
+  --text-primary:     #e8e4dc;
+  --text-secondary:   #b8b0a0;
+  --text-muted:       #7a7264;
+  --text-faint:       #4a4640;
+
+  /* Typography */
+  --font-display:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:         0.25rem;
+  --space-sm:         0.5rem;
+  --space-md:         1rem;
+  --space-lg:         1.5rem;
+  --space-xl:         2rem;
+  --space-2xl:        3rem;
+  --space-3xl:        4rem;
+
+  /* Borders & Radius */
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        10px;
+  --border-default:   1px solid var(--obsidian-border);
+  --border-gold:      1px solid var(--gold-dim);
+
+  /* Transitions */
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+
+  /* Shadows */
+  --shadow-card:      0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lift:      0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong, b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+em, i {
+  color: var(--slate-light);
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* ------------------------------------------------------------
+   3. SCROLL PROGRESS BAR
+   ------------------------------------------------------------ */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--gold-glow-strong);
+}
+
+/* ------------------------------------------------------------
+   4. NAVIGATION
+   ------------------------------------------------------------ */
+nav {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding: 0 var(--space-xl);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-brand span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-classify {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-bg);
+}
+
+/* ------------------------------------------------------------
+   5. HERO BLOCK
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 140px var(--space-xl) var(--space-3xl);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 60%, rgba(200, 169, 110, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(41, 128, 185, 0.04) 0%, transparent 50%),
+              var(--obsidian);
+}
+
+/* Animated background grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 110, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridDrift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-running-head {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-bottom: var(--space-sm);
+}
+
+.hero-container {
+  display: flex;          /* Enables side-by-side layout */
+  align-items: center;    /* Vertically centers the image with the text */
+  gap: 30px;              /* Creates space between the image and the text */
+  margin: 20px 0;
+}
+/* ----------------------------------------------------------------------
+   DEFAULT HERO IMG URL TO BE USED 'https://quanta-analytica.com/logo.PNG
+   -------Place image to the left of h1 title in hero section--------- */
+
+.hero-image {
+  max-width: 200px;       /* Adjust this size to fit your design */
+  height: auto;           /* Maintains aspect ratio */
+  border-radius: 8px;     /* Optional: rounds the corners of your image */
+}
+
+.hero-text {
+  flex: 1;                /* Allows text to take up remaining space */
+}
+
+/* Optional: Mobile Responsiveness */
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: column; /* Stacks image on top of text on small screens */
+    text-align: center;
+  }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 .title-gold {
+  color: var(--gold); 
+  display: block;      /* Ensures it starts on a new line */
+  margin-top: 0.5rem;  /* Optional: adds a small gap between lines */
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* Hero Metadata Row */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+
+.meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta-cell .value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gold-dim);
+  align-self: center;
+}
+
+/* Threat Badge */
+.threat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.threat-badge.critical  { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.threat-badge.high      { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.threat-badge.elevated  { color: var(--yellow);       border-color: var(--yellow);background: var(--yellow-bg);}
+.threat-badge.moderate  { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.threat-badge.low       { color: var(--green-light);  border-color: var(--green); background: var(--green-bg); }
+
+.threat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* Analytic Scope Boundary */
+.scope-boundary {
+  border-left: 3px solid var(--slate);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(93, 122, 154, 0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-lg);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+
+/* Key Metrics Strip */
+.metrics-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--obsidian-border);
+}
+
+.metric-block {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 2px solid var(--gold-dim);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+}
+
+.metric-block .metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-block .metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   6. MAIN CONTENT WRAPPER
+   ------------------------------------------------------------ */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+/* ------------------------------------------------------------
+   7. SECTION WRAPPER & SCROLL REVEAL
+   ------------------------------------------------------------ */
+.section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  margin-bottom: var(--space-3xl);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Sub-section divider */
+.sub-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
+.sub-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-muted), transparent);
+  margin-bottom: var(--space-lg);
+}
+
+.sub-section h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+/* ------------------------------------------------------------
+   8. BLUF - Bottom Line Up Front
+   ------------------------------------------------------------ */
+.bluf-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.bluf-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+}
+
+.bluf-index {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.bluf-text .bluf-claim {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.bluf-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   9. SNAPSHOT GRID - Who / What / Where / When / Why / How
+   ------------------------------------------------------------ */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.snapshot-cell {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.snapshot-cell .snap-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.snapshot-cell .snap-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   10. KEY JUDGMENTS
+   ------------------------------------------------------------ */
+.kj-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kj-item {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  position: relative;
+}
+
+.kj-item.high     { border-left-color: var(--red);   }
+.kj-item.moderate { border-left-color: var(--amber);  }
+.kj-item.low      { border-left-color: var(--blue);   }
+.kj-item.watch    { border-left-color: var(--yellow);  }
+
+.kj-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.kj-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.kj-conf {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.kj-item.high     .kj-conf { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.kj-item.moderate .kj-conf { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.kj-item.low      .kj-conf { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.kj-item.watch    .kj-conf { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg);}
+
+.kj-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+.kj-mapping {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ------------------------------------------------------------
+   11. EVIDENCE GRID - Know / Assess / Gap
+   ------------------------------------------------------------ */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.evidence-box {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.evidence-box-header {
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.evidence-box-header.know   { background: var(--green-bg);  color: var(--green-light);  border-bottom: 1px solid var(--green);  }
+.evidence-box-header.assess { background: var(--amber-bg);  color: var(--amber-light);  border-bottom: 1px solid var(--amber);  }
+.evidence-box-header.gap    { background: var(--red-bg);    color: var(--red-light);    border-bottom: 1px solid var(--red);    }
+
+.evidence-box-body {
+  padding: var(--space-lg);
+}
+
+.evidence-box-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.evidence-box-body li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.evidence-box-body li::before {
+  content: '//';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.evidence-box-body li:last-child {
+  border-bottom: none;
+}
+
+/* WSI Source Independence Note */
+.wsi-note {
+  background: rgba(93, 122, 154, 0.1);
+  border: 1px solid rgba(93, 122, 154, 0.3);
+  border-left: 3px solid var(--slate);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.83rem;
+  color: var(--slate-light);
+  font-style: italic;
+  margin-top: var(--space-lg);
+}
+
+.wsi-note strong {
+  color: var(--slate-light);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   12. TABLES - Assumption, ACH, IW, KIQ, Risk, PIGs
+   ------------------------------------------------------------ */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: var(--border-default);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+thead th {
+  background: var(--obsidian-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  border-bottom: 1px solid var(--obsidian-border);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--obsidian-border);
+  transition: background var(--transition-fast);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--obsidian-lift);
+}
+
+tbody td {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Assumption Table */
+.assumption-table { }
+
+/* ACH Table */
+.ach-table thead th:nth-child(4) { text-align: center; }
+.ach-table tbody td:nth-child(4) { text-align: center; font-family: var(--font-mono); }
+
+/* IW Table - Indicators & Warnings */
+.iw-table { }
+
+/* Risk Matrix - high-score rows */
+.risk-matrix tbody tr.risk-high {
+  background: var(--red-bg);
+}
+
+.risk-matrix tbody tr.risk-high td {
+  color: var(--text-primary);
+}
+
+.risk-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.risk-score.score-high   { color: var(--red-light);   }
+.risk-score.score-medium { color: var(--amber-light);  }
+.risk-score.score-low    { color: var(--green-light);  }
+
+/* KIQ Table */
+.kiq-table { }
+
+/* Priority Intelligence Gaps Table */
+.pig-table { }
+
+/* KPI Table (optional - fragility reports) */
+.kpi-table { }
+
+.pillar-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--obsidian-border);
+  color: var(--text-muted);
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------------------------------
+   13. SCENARIO CARDS
+   ------------------------------------------------------------ */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.scenario-card {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 3px solid;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.scenario-card.best  { border-top-color: var(--green);  }
+.scenario-card.base  { border-top-color: var(--amber);  }
+.scenario-card.worst { border-top-color: var(--red);    }
+
+.scenario-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.scenario-card.best  .scenario-label { color: var(--green-light);  }
+.scenario-card.base  .scenario-label { color: var(--amber-light);  }
+.scenario-card.worst .scenario-label { color: var(--red-light);    }
+
+.scenario-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.scenario-card p {
+  font-size: 0.87rem;
+}
+
+.scenario-prob {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  display: block;
+  letter-spacing: 0.06em;
+}
+
+/* ------------------------------------------------------------
+   14. BEHAVIORAL GRID
+   ------------------------------------------------------------ */
+.behavioral-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.behavioral-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.behavioral-rank {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.25;
+  line-height: 1;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.behavioral-content h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-content p {
+  font-size: 0.88rem;
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-inference {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   15. RECOMMENDATION TIMELINE
+   ------------------------------------------------------------ */
+.rec-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--obsidian-border);
+  margin-left: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.rec-block {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.rec-block::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 1px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--obsidian-border);
+  border: 2px solid;
+}
+
+.rec-block.immediate  ::before { border-color: var(--red);   background: var(--red-bg);   }
+.rec-block.near-term  ::before { border-color: var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term::before { border-color: var(--green); background: var(--green-bg); }
+
+.rec-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.rec-block.immediate   .rec-time { color: var(--red-light);  border: 1px solid var(--red);   background: var(--red-bg);   }
+.rec-block.near-term   .rec-time { color: var(--amber-light);border: 1px solid var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term .rec-time { color: var(--green-light);border: 1px solid var(--green); background: var(--green-bg); }
+
+.rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rec-content p {
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   16. CONFIDENCE PANEL
+   ------------------------------------------------------------ */
+.conf-panel {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.conf-header {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.conf-band {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.conf-band.high     { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.conf-band.moderate { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.conf-band.low      { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+.conf-header-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.conf-body {
+  padding: var(--space-lg);
+}
+
+.conf-body p {
+  font-size: 0.9rem;
+}
+
+/* Uncertainty / Flip Risk List */
+.uncertainty-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.uncertainty-item {
+  background: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.uncertainty-item .u-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-light);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.uncertainty-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   17. THRESHOLD GRID - Green / Amber / Red Zones
+   ------------------------------------------------------------ */
+.threshold-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.threshold-cell {
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.threshold-cell.green-zone { border-color: var(--green);  background: var(--green-bg);  }
+.threshold-cell.amber-zone { border-color: var(--amber);  background: var(--amber-bg);  }
+.threshold-cell.red-zone   { border-color: var(--red);    background: var(--red-bg);    }
+
+.threshold-header {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+
+.threshold-cell.green-zone .threshold-header { color: var(--green-light);  border-color: var(--green);  background: rgba(39, 174, 96, 0.18);  }
+.threshold-cell.amber-zone .threshold-header { color: var(--amber-light);  border-color: var(--amber);  background: rgba(212, 130, 10, 0.18);  }
+.threshold-cell.red-zone   .threshold-header { color: var(--red-light);    border-color: var(--red);    background: rgba(192, 57, 43, 0.18);    }
+
+.threshold-body {
+  padding: var(--space-md);
+}
+
+.threshold-body p {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.threshold-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.threshold-body li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 3px 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.threshold-body li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+/* ------------------------------------------------------------
+   18. STATUS & BAND PILLS (inline)
+   ------------------------------------------------------------ */
+.status-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.status-pill.red    { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);    }
+.status-pill.amber  { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg);  }
+.status-pill.green  { color: var(--green-light);  border-color: var(--green); background: var(--green-bg);  }
+.status-pill.blue   { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);   }
+.status-pill.yellow { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg); }
+.status-pill.gold   { color: var(--gold);          border-color: var(--gold-dim); background: var(--gold-glow); }
+
+/* Band Pills (source register table) */
+.band-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.band-pill.green { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.band-pill.amber { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.band-pill.red   { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+/* Inline fact/inference labels */
+.label-fact {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue-light);
+  border: 1px solid var(--blue);
+  background: var(--blue-bg);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+.label-inference {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+/* Structural constraint labels */
+.label-structural { color: var(--red-light);    }
+.label-political  { color: var(--amber-light);  }
+.label-resource   { color: var(--blue-light);   }
+.label-temporal   { color: var(--green-light);  }
+
+/* Analytic technique declaration block */
+.technique-declaration {
+  background: var(--obsidian-surface);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.technique-declaration strong {
+  color: var(--gold-dim);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   19. FOOTER
+   ------------------------------------------------------------ */
+footer {
+  border-top: 1px solid var(--obsidian-border);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-doc-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-legal {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   20. RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 var(--space-md);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px var(--space-md) var(--space-2xl);
+  }
+
+  main {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .snapshot-grid,
+  .evidence-grid,
+  .scenario-grid,
+  .threshold-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bluf-item {
+    grid-template-columns: 28px 1fr;
+    gap: var(--space-md);
+  }
+
+  .behavioral-item {
+    grid-template-columns: 1fr;
+  }
+
+  .behavioral-rank {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 0;
+    opacity: 0.35;
+  }
+
+  .hero-running-head {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .hero-meta {
+    gap: var(--space-sm);
+  }
+
+  .metrics-strip {
+    gap: var(--space-sm);
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* Report-specific adjustments */
+.report-note { background: var(--obsidian-card); border: var(--border-default); border-left: 3px solid var(--gold-dim); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); color: var(--text-secondary); font-size: .9rem; margin: var(--space-lg) 0; }
+.callout-critical { background: var(--red-bg); border: 1px solid var(--red); border-left: 4px solid var(--red); border-radius: var(--radius-md); padding: var(--space-lg); margin: var(--space-lg) 0; }
+.callout-critical p { color: var(--text-primary); }
+.compact-list { margin: 0; padding-left: 1.2rem; color: var(--text-secondary); }
+.compact-list li { margin-bottom: .45rem; }
+.small-text { font-size: .83rem; color: var(--text-muted); }
+.source-mini { font-family: var(--font-mono); font-size: .68rem; color: var(--gold-dim); letter-spacing: .06em; }
+.badge-inline { display:inline-block; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; padding:2px 6px; border-radius:var(--radius-sm); border:1px solid var(--obsidian-border); margin-right:4px; color:var(--text-muted); }
+.badge-fact { color: var(--green-light); border-color: var(--green); background: var(--green-bg); }
+.badge-assess { color: var(--amber-light); border-color: var(--amber); background: var(--amber-bg); }
+.badge-caveat { color: var(--red-light); border-color: var(--red); background: var(--red-bg); }
+.source-register td { min-width: 120px; }
+.source-register td:nth-child(1) { min-width: 55px; }
+.source-register td:nth-child(2) { min-width: 220px; }
+.source-register td:nth-child(7) { min-width: 260px; }
+.incident-register td { min-width: 95px; }
+.incident-register td:nth-child(3) { min-width: 170px; }
+.incident-register td:nth-child(5) { min-width: 80px; }
+.footer-docid { font-family: var(--font-mono); color: var(--text-muted); letter-spacing: .08em; }
+.hero-container .hero-image { background: rgba(200,169,110,0.05); padding: 8px; border: 1px solid var(--gold-muted); }
+
+  </style>
+</head>
+<body>
+  <div id="progress"></div>
+  <nav>
+    <div class="nav-brand">QUANTA ANALYTICA <span>| MNS CONSULTING</span></div>
+    <ul class="nav-links">
+      <li><a href="#bluf">BLUF</a></li>
+      <li><a href="#analysis">Analysis</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <div class="nav-classify">OPEN SOURCE</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-running-head"><span>QUANTA ANALYTICA | MNS CONSULTING</span><span>CONFLICT SYSTEMS ANALYSIS // SUDAN</span></div>
+      <div class="hero-container">
+        <img class="hero-image" src="https://quanta-analytica.com/logo.PNG" alt="Quanta Analytica logo" />
+        <div class="hero-text">
+          <h1>Drone Strikes in Sudan and the <span class="title-gold">Targeting of Markets</span></h1>
+          <p class="hero-subtitle">A QAP Conflict Systems Assessment of security, humanitarian, and legal implications from drone and air strikes impacting civilian market areas during the SAF-RSF war.</p>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-cell"><span class="label">Domain</span><span class="value">Conflict Systems Analysis</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Reporting Cutoff</span><span class="value">22 May 2026</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Confidence</span><span class="value">Moderate-High</span></div>
+        <div class="meta-divider"></div>
+        <span class="threat-badge critical"><span class="threat-dot"></span>Severe-Critical</span>
+        <div class="meta-divider"></div>
+        <div class="meta-cell"><span class="label">Classification</span><span class="value">Open Source</span></div>
+      </div>
+      <div class="scope-boundary"><strong>Analytic Scope Boundary:</strong> This report covers open-source evidence on drone, air, or loitering-munition strikes impacting civilian markets, fuel markets, hospital-adjacent markets, transport nodes, and economic infrastructure in Sudan from April 2023 through 22 May 2026. It projects a 30- to 180-day monitoring horizon. It excludes classified intelligence, sealed legal evidence, non-public hospital registries, and unverified social media claims except as lead-only signals. Confidence is constrained by uneven coordinate precision, incomplete imagery chain-of-custody, and limited munition-remnant evidence.</div>
+      <div class="metrics-strip">
+        <div class="metric-block"><div class="metric-value">28+</div><div class="metric-label">Market casualty attacks, Jan-Apr 2026</div></div>
+        <div class="metric-block"><div class="metric-value">880</div><div class="metric-label">Civilian drone deaths, Jan-Apr 2026</div></div>
+        <div class="metric-block"><div class="metric-value">7</div><div class="metric-label">Priority market incidents</div></div>
+        <div class="metric-block"><div class="metric-value">H4</div><div class="metric-label">Best-fit hypothesis</div></div>
+        <div class="metric-block"><div class="metric-value">16</div><div class="metric-label">Coded incident records</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="bluf">
+      <div class="section-header"><span class="section-num">01 // BLUF</span><h2 class="section-title">Bottom Line Up Front</h2></div>
+      <div class="bluf-grid">
+        <div class="bluf-item"><div class="bluf-index">1</div><div class="bluf-text"><span class="bluf-claim">[ASSESS] Sudan's market-area strike pattern is recurrent and geographically clustered, not adequately explained by isolated tactical error.</span><p>Open-source evidence identifies repeated strikes impacting markets and civilian economic nodes across Darfur and the Kordofan belt. OHCHR reported at least 28 market attacks causing civilian casualties during January-April 2026, and the priority incidents are clustered in RSF-controlled or contested towns. <cite>[S1]</cite> <cite>[S4]</cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">2</div><div class="bluf-text"><span class="bluf-claim">[ASSESS] H4 is the best-fit hypothesis: military targeting near markets plus unlawful attacks on civilian objects.</span><p>The evidence supports a mixed pattern. Some incidents are tied to alleged military or logistics activity near markets, while others show direct or foreseeable civilian-market harm. H2, recurrent reckless or permissive targeting, remains the strongest underlying judgment. <cite>[S3]</cite> <cite>[S5]</cite> <cite>[S7]</cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">3</div><div class="bluf-text"><span class="bluf-claim">[CAVEAT] SAF is the dominant alleged actor in the market-strike subset, but attribution remains incident-specific.</span><p>Six of the seven priority incidents are attributed in the source set to SAF-linked air or drone activity. That judgment is not uniform legal attribution. Belligerent denials, anonymous military accounts, missing munition remnants, and incomplete platform attribution keep confidence below High. <cite>[S2]</cite> <cite>[S3]</cite> <cite>[S15]</cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">4</div><div class="bluf-text"><span class="bluf-claim">[FACT] The humanitarian effect is severe because markets are survival infrastructure.</span><p>Markets in Sudan's conflict economy function as food, fuel, liquidity, transport, remittance, and informal aid nodes. Repeated strikes can reduce trader movement, fuel availability, and food access while increasing displacement and health-system burden. <cite>[S5]</cite> <cite>[S6]</cite> <cite>[S16]</cite></p></div></div>
+        <div class="bluf-item"><div class="bluf-index">5</div><div class="bluf-text"><span class="bluf-claim">[ASSESS] Legal-risk exposure is high, but the public record does not prove criminal responsibility for all incidents.</span><p>Civilian markets are protected civilian objects unless they become military objectives. Even where combatants or logistics are present nearby, distinction, proportionality, and precautions remain binding. The current evidence supports investigation into possible direct, indiscriminate, or disproportionate attacks. <cite>[S11]</cite> <cite>[S12]</cite></p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="kiqs">
+      <div class="section-header"><span class="section-num">02 // KIQs</span><h2 class="section-title">Key Intelligence Questions</h2></div>
+      <div class="table-wrapper"><table class="kiq-table"><thead><tr><th>ID</th><th>Intelligence Question</th><th>Links To</th></tr></thead><tbody>
+        <tr><td>KIQ-1</td><td>Are market-area strikes isolated errors, reckless targeting practices, deliberate economic attacks, or a mixed pattern?</td><td>KJ-1, ACH, Annex B</td></tr>
+        <tr><td>KIQ-2</td><td>Which incidents are sufficiently verified for legal-risk and humanitarian planning use?</td><td>KJ-2, Incident Register</td></tr>
+        <tr><td>KIQ-3</td><td>What do the strikes indicate about operational doctrine, intelligence quality, and rules of engagement?</td><td>KJ-3, Behavioral section</td></tr>
+        <tr><td>KIQ-4</td><td>How are attacks affecting food access, displacement, market stability, and local survival systems?</td><td>KJ-4, Risk Matrix</td></tr>
+        <tr><td>KIQ-5</td><td>What external supply chains or weapons networks may enable expanded drone use?</td><td>KJ-5, Source Register</td></tr>
+        <tr><td>KIQ-6</td><td>What evidence would materially change legal or attribution confidence?</td><td>Confidence, Annex B</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" id="snapshot">
+      <div class="section-header"><span class="section-num">03 // SNAPSHOT</span><h2 class="section-title">Situation Snapshot</h2></div>
+      <div class="snapshot-grid">
+        <div class="snapshot-cell"><span class="snap-label">Who</span><div class="snap-content">SAF, RSF, civilians, market traders, emergency rooms, humanitarian responders, rights monitors, and external arms suppliers.</div></div>
+        <div class="snapshot-cell"><span class="snap-label">What</span><div class="snap-content">Drone, air, or loitering-munition strikes impacting markets, fuel markets, hospital-adjacent markets, and transport nodes.</div></div>
+        <div class="snapshot-cell"><span class="snap-label">Where</span><div class="snap-content">Darfur and the Kordofan belt, with priority incidents in Ghubaysh, Saraf Omra, Adikong, Al-Muglad, Abu Zabad, Wad Banda, Al Safiya, and Tora.</div></div>
+        <div class="snapshot-cell"><span class="snap-label">When</span><div class="snap-content">War period from April 2023 through reporting cutoff on 22 May 2026, with a major acceleration in early 2026.</div></div>
+        <div class="snapshot-cell"><span class="snap-label">Why</span><div class="snap-content">Decision-makers need to determine whether market strikes are tactical errors, reckless interdiction, or intentional attacks on civilian economic infrastructure.</div></div>
+        <div class="snapshot-cell"><span class="snap-label">How</span><div class="snap-content">Market areas are exposed when fuel, vehicles, transport, alleged RSF logistics, or crowd density intersect with remote-strike systems.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="key-judgments">
+      <div class="section-header"><span class="section-num">04 // KEY JUDGMENTS</span><h2 class="section-title">Key Judgments</h2></div>
+      <div class="kj-list">
+        <div class="kj-item high"><div class="kj-header"><span class="kj-id">KJ-1</span><span class="kj-conf">High Confidence</span></div><div class="kj-text"><span class="badge-inline badge-assess">ASSESS</span> Market-area strikes are recurrent and geographically concentrated across Darfur and Kordofan. The pattern rejects H1 as a general explanation.</div><div class="kj-mapping">Maps to KIQ-1 | Sources S1, S4, S7</div></div>
+        <div class="kj-item moderate"><div class="kj-header"><span class="kj-id">KJ-2</span><span class="kj-conf">Moderate-High Confidence</span></div><div class="kj-text"><span class="badge-inline badge-assess">ASSESS</span> SAF is the dominant alleged actor in the market-strike subset, but attribution must remain incident-specific because several cases are contested or lack public platform evidence.</div><div class="kj-mapping">Maps to KIQ-2 and KIQ-3 | Sources S2, S3, S4, S7, S15</div></div>
+        <div class="kj-item moderate"><div class="kj-header"><span class="kj-id">KJ-3</span><span class="kj-conf">Moderate-High Confidence</span></div><div class="kj-text"><span class="badge-inline badge-assess">ASSESS</span> H4 is the strongest synthesis: a mixed pattern of military targeting near markets and unlawful or foreseeably harmful attacks on civilian objects. H2 is strongly supported; H3 remains plausible but not proven.</div><div class="kj-mapping">Maps to KIQ-1 and KIQ-6 | Sources S1, S3, S5, S7, S11, S12</div></div>
+        <div class="kj-item high"><div class="kj-header"><span class="kj-id">KJ-4</span><span class="kj-conf">High Impact</span></div><div class="kj-text"><span class="badge-inline badge-assess">ASSESS</span> Humanitarian and economic impact is severe because markets are civilian survival systems. The risk is not limited to immediate casualties.</div><div class="kj-mapping">Maps to KIQ-4 | Sources S5, S6, S17</div></div>
+        <div class="kj-item watch"><div class="kj-header"><span class="kj-id">KJ-5</span><span class="kj-conf">Watch Judgment</span></div><div class="kj-text"><span class="badge-inline badge-caveat">CAVEAT</span> External drone and munition supply chains are likely enabling escalation, but direct platform-to-incident linkage remains incomplete for the seven priority market incidents.</div><div class="kj-mapping">Maps to KIQ-5 and KIQ-6 | Sources S9, S10, S14</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="section-header"><span class="section-num">05 // EVIDENCE</span><h2 class="section-title">Evidence Summary</h2></div>
+      <div class="evidence-grid">
+        <div class="evidence-box"><div class="evidence-box-header know">What We Know</div><div class="evidence-box-body"><ul>
+          <li>OHCHR reported drone strikes caused at least 880 civilian deaths from January-April 2026.</li>
+          <li>Market attacks with civilian casualties were repeatedly reported in the same period.</li>
+          <li>Priority incidents include Ghubaysh, Saraf Omra, Adikong, Al-Muglad, Abu Zabad, Wad Banda, Al Safiya, and Tora.</li>
+          <li>Tora is the strongest verified case due to imagery and satellite validation reported through Reuters and CIR.</li>
+        </ul></div></div>
+        <div class="evidence-box"><div class="evidence-box-header assess">What We Assess</div><div class="evidence-box-body"><ul>
+          <li>Markets are being treated as logistics-adjacent battlespace when fuel, vehicles, roads, or armed actors are alleged nearby.</li>
+          <li>Repeated peak-market harm indicates a permissive or reckless targeting environment.</li>
+          <li>H4 best explains the data because both military-adjacent targeting and unlawful civilian-object harm appear in the same pattern.</li>
+          <li>External supply chains likely contribute to scale and reach, but incident-level platform attribution remains incomplete.</li>
+        </ul></div></div>
+        <div class="evidence-box"><div class="evidence-box-header gap">What We Do Not Know</div><div class="evidence-box-body"><ul>
+          <li>Exact market footprints for all priority sites.</li>
+          <li>Original imagery chain-of-custody for multiple cases.</li>
+          <li>Named or de-identified hospital intake records for several incidents.</li>
+          <li>Munition-remnant photographs for the seven priority market cases.</li>
+          <li>Operator chain, launch platform, and target-selection record.</li>
+        </ul></div></div>
+      </div>
+      <div class="report-note"><strong>WSI Source Independence Note:</strong> Load-bearing judgments rely on multiple collection pathways: UN/human rights reporting, humanitarian medical intake, reputable wire reporting, technical geolocation, regional reporting, and legal reference sources. Non-independent repetition, belligerent claims, and social media posts are not counted as separate corroboration streams.</div>
+      <div class="report-note"><strong>Key Drivers:</strong> <span class="badge-inline badge-fact">FACT</span> expanded drone use; <span class="badge-inline badge-assess">INFERENCE</span> target-category drift from markets to logistics nodes; <span class="badge-inline badge-assess">INFERENCE</span> civilian-harm normalization; <span class="badge-inline badge-fact">FACT</span> contested attribution and denial narratives.</div>
+      <div class="report-note"><strong>Binding Constraints:</strong> conflict-zone access limits, incomplete forensic evidence, contested information environment, rapid media syndication, and high harm potential from publishing sensitive details.</div>
+    </section>
+
+    <section class="section" id="analysis">
+      <div class="section-header"><span class="section-num">06 // ANALYSIS</span><h2 class="section-title">Structured Analytic Tradecraft</h2></div>
+      <p><span class="source-mini">TECHNIQUES APPLIED:</span> Five-Layer Strategic Cognition Map, Key Assumptions Check, Analysis of Competing Hypotheses, Indicators and Warnings, Scenario Modeling, Risk Matrix.</p>
+
+      <h3 class="subsection-title">A. Five-Layer Strategic Cognition Map</h3>
+      <div class="table-wrapper"><table><thead><tr><th>Layer</th><th>Finding</th><th>Analytic Use</th></tr></thead><tbody>
+        <tr><td>L1 Foundations</td><td>SAF, RSF, foreign-supported drone inventories, civilian markets, fuel nodes, hospitals, border routes.</td><td>Defines the operating system.</td></tr>
+        <tr><td>L2 Mechanisms</td><td>Remote interdiction of logistics, fuel ignition, denial narratives, and civilian-market exposure.</td><td>Explains how strikes produce harm.</td></tr>
+        <tr><td>L3 Dynamics</td><td>Trader withdrawal, displacement, price stress, retaliation narratives, and drone normalization reinforce each other.</td><td>Shows system behavior over time.</td></tr>
+        <tr><td>L4 Leverage</td><td>Evidence preservation, humanitarian deconfliction, sanctions enforcement, arms-transfer monitoring, and satellite verification.</td><td>Identifies practical intervention points.</td></tr>
+        <tr><td>L5 Paradigms</td><td>Civilian markets are increasingly reframed by belligerents as conflict logistics terrain.</td><td>Explains why protections erode.</td></tr>
+      </tbody></table></div>
+
+      <h3 class="subsection-title">B. Key Assumptions Check</h3>
+      <div class="table-wrapper"><table class="assumption-table"><thead><tr><th>ID</th><th>Assumption</th><th>Why It Matters</th><th>Risk if Wrong</th><th>Status</th></tr></thead><tbody>
+        <tr><td>A1</td><td>Most priority incidents are separate events, not duplicated reports.</td><td>Supports recurrence judgment.</td><td>Pattern strength would decrease.</td><td>Active</td></tr>
+        <tr><td>A2</td><td>Market impacts are not solely incidental to lawful military targets.</td><td>Supports H4 and H2.</td><td>Legal-risk assessment would narrow.</td><td>Active</td></tr>
+        <tr><td>A3</td><td>OHCHR, MSF, Reuters, AP, and technical sources are sufficiently independent for pattern judgment.</td><td>Supports WSI confidence.</td><td>Confidence drops if streams converge on same upstream.</td><td>Active</td></tr>
+        <tr><td>A4</td><td>Unverified belligerent claims are not reliable enough for attribution by themselves.</td><td>Prevents overclaiming.</td><td>Understates potential lawful-target explanations if true.</td><td>Confirmed as source-rule</td></tr>
+        <tr><td>A5</td><td>Absence of remnants does not disprove drone or airstrike use when multiple credible sources report it.</td><td>Allows incident inclusion with caveats.</td><td>Weapon-type confidence remains limited.</td><td>Active</td></tr>
+      </tbody></table></div>
+
+      <h3 class="subsection-title">C. Analysis of Competing Hypotheses</h3>
+      <div class="table-wrapper"><table class="ach-table"><thead><tr><th>Hypothesis</th><th>Evidence For</th><th>Evidence Against</th><th>Diagnosticity</th><th>Verdict</th></tr></thead><tbody>
+        <tr><td>H1: Isolated tactical errors</td><td>Some incidents include claims of RSF vehicles or fuel nodes nearby.</td><td>Recurrence, clustering, market timing, and repeated civilian harm.</td><td>4</td><td>Rejected</td></tr>
+        <tr><td>H2: Reckless or permissive targeting near civilian economic infrastructure</td><td>Repeated strikes in crowded markets and fuel nodes with foreseeable harm.</td><td>Does not fully explain some apparently direct market impacts.</td><td>5</td><td>Strongly supported</td></tr>
+        <tr><td>H3: Deliberate targeting of civilian economic infrastructure</td><td>Pattern, market-day timing, economic impact, and repeated high-casualty cases.</td><td>No public targeting orders, no platform-to-incident proof, no full forensic chain.</td><td>4</td><td>Plausible, not proven</td></tr>
+        <tr><td>H4: Mixed pattern</td><td>Accommodates military-adjacent targeting claims and unlawful civilian-object harm.</td><td>Requires case-by-case separation of intent, effects, and attribution.</td><td>5</td><td>Best fit</td></tr>
+      </tbody></table></div>
+
+      <h3 class="subsection-title">D. Priority Incident Matrix</h3>
+      <div class="table-wrapper"><table class="incident-register"><thead><tr><th>ID</th><th>Date</th><th>Location</th><th>Object</th><th>Killed</th><th>Alleged Actor</th><th>Attrib.</th><th>Coordinates / Geo</th><th>Tier</th></tr></thead><tbody>
+<tr>
+<td>SDN-MKT-001</td>
+<td>2026-05-19</td>
+<td>Ghubaysh market</td>
+<td>Market / restaurant</td>
+<td>28</td>
+<td>SAF</td>
+<td>Medium</td>
+<td>12.15, 28.7 / Low</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-002</td>
+<td>2026-03-25</td>
+<td>Saraf Omra market</td>
+<td>Market + oil truck</td>
+<td>22</td>
+<td>Unclear / SAF alleged in companion report</td>
+<td>Low-Medium</td>
+<td>13.48, 23.31 / High</td>
+<td>B-</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-003</td>
+<td>2026-03-12</td>
+<td>Adikong border fuel market</td>
+<td>Fuel market / border crossing</td>
+<td>4-11</td>
+<td>SAF</td>
+<td>Medium</td>
+<td>13.47, 22.2 / High</td>
+<td>B+</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-004</td>
+<td>2026-03-04</td>
+<td>Al-Muglad market and hospital area</td>
+<td>Market + hospital-adjacent area</td>
+<td>18-50</td>
+<td>SAF</td>
+<td>High in dossier; medium for incident specifics</td>
+<td>11.03, 27.74 / Moderate</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-005</td>
+<td>2026-03-07</td>
+<td>Abu Zabad market</td>
+<td>Weekly market</td>
+<td>33-40</td>
+<td>SAF</td>
+<td>High in dossier</td>
+<td>12.35, 29.27 / Moderate</td>
+<td>B+</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-006</td>
+<td>2026-03-07</td>
+<td>Wad Banda market</td>
+<td>Weekly market</td>
+<td>None-40</td>
+<td>SAF</td>
+<td>Medium-High</td>
+<td>13.09, 27.94 / High</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-007</td>
+<td>2026-02-15</td>
+<td>Al Safiya market, Sodari locality</td>
+<td>Market</td>
+<td>28</td>
+<td>SAF</td>
+<td>Medium</td>
+<td>14.41, 29.06 / Low</td>
+<td>B-</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-008</td>
+<td>2025-03-24</td>
+<td>Tora weekly market</td>
+<td>Weekly market</td>
+<td>26-61</td>
+<td>SAF</td>
+<td>High for event; Medium for intent</td>
+<td>14, 25.3 / High</td>
+<td>A-</td>
+</tr></tbody></table></div>
+    </section>
+
+    <section class="section" id="behavioral">
+      <div class="section-header"><span class="section-num">07 // BEHAVIORAL</span><h2 class="section-title">Applied Behavioral Tradecraft</h2></div>
+      <p><em>Behavioral analysis is used here only where it improves conflict risk modeling. It does not infer individual psychology. It models observable group incentives, framing, and decision patterns.</em></p>
+      <div class="behavioral-grid">
+        <div class="behavioral-item"><div class="behavioral-rank">01</div><div class="behavioral-content"><h4>Target-category drift</h4><p>Markets are increasingly framed as logistics nodes when fuel, roads, vehicles, or armed actors are alleged nearby.</p><div class="behavioral-inference">Implication: civilian-object protection is degraded through operational framing.</div></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">02</div><div class="behavioral-content"><h4>Civilian-harm normalization</h4><p>Repeated strikes despite known crowd density indicate tolerance for foreseeable harm, even when intent is contested.</p><div class="behavioral-inference">Implication: each unaccountable event lowers the threshold for the next.</div></div></div>
+        <div class="behavioral-item"><div class="behavioral-rank">03</div><div class="behavioral-content"><h4>Narrative denial loop</h4><p>Belligerents use denial, hostile-force framing, and counter-accusation to manage accountability pressure.</p><div class="behavioral-inference">Implication: incident documentation must separate event, casualties, weapon, actor, and intent.</div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="implications">
+      <div class="section-header"><span class="section-num">08 // IMPLICATIONS</span><h2 class="section-title">Strategic Implications, Risk and Recommendations</h2></div>
+      <h3 class="subsection-title">A. Strategic Implications</h3>
+      <p><strong>For humanitarian actors:</strong> Market days, fuel queues, hospital-adjacent markets, and cross-border trading points should be treated as elevated-risk nodes. Distribution models that create predictable civilian concentrations near contested logistics should be stress-tested.</p>
+      <p><strong>For legal and human rights actors:</strong> The evidence supports investigation into possible direct, indiscriminate, or disproportionate attacks. Legal work must keep event occurrence, civilian harm, weapon type, operator, target intent, and proportionality separate.</p>
+      <p><strong>For diplomatic and sanctions actors:</strong> Arms-transfer controls, drone components, ground-control systems, optical payloads, guided munitions, and transit logistics are priority monitoring targets.</p>
+
+      <h3 class="subsection-title">B. Risk Scoring Matrix</h3>
+      <div class="table-wrapper"><table class="risk-matrix"><thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th><th>Mitigant</th></tr></thead><tbody>
+        <tr class="risk-high"><td>Further market-area strikes</td><td>5</td><td>5</td><td><span class="risk-score score-high">25</span></td><td>Market-day monitoring, deconfliction, public documentation.</td></tr>
+        <tr class="risk-high"><td>Food-access disruption</td><td>5</td><td>5</td><td><span class="risk-score score-high">25</span></td><td>Alternative delivery points and trader protection protocols.</td></tr>
+        <tr class="risk-high"><td>Civilian displacement</td><td>4</td><td>5</td><td><span class="risk-score score-high">20</span></td><td>Early movement warnings and reception capacity.</td></tr>
+        <tr class="risk-high"><td>Legal accountability escalation</td><td>4</td><td>4</td><td><span class="risk-score score-high">16</span></td><td>Evidence preservation and chain-of-custody procedures.</td></tr>
+        <tr class="risk-high"><td>External drone supply expansion</td><td>4</td><td>5</td><td><span class="risk-score score-high">20</span></td><td>Sanctions, monitoring, and end-use investigation.</td></tr>
+        <tr><td>Misattribution or deception</td><td>5</td><td>3</td><td><span class="risk-score score-medium">15</span></td><td>RAPITIS, C-D-F scoring, and source independence checks.</td></tr>
+      </tbody></table></div>
+
+      <h3 class="subsection-title">C. Recommendations</h3>
+      <div class="rec-timeline">
+        <div class="rec-block immediate"><div class="rec-time">0-72H Immediate</div><div class="rec-content"><strong>Preserve evidence and reduce predictable civilian exposure.</strong><p>Archive all strike imagery and statements with metadata, record hospital intake time windows, avoid concentrating distributions at known market-risk nodes, and separate verified facts from claims in public communications.</p></div></div>
+        <div class="rec-block near-term"><div class="rec-time">3-30 Days Near-Term</div><div class="rec-content"><strong>Build incident case files by evidence layer.</strong><p>For each priority incident, compile coordinates, casualty source, imagery status, remnant status, attribution claims, contradictory claims, and falsifiers.</p></div></div>
+        <div class="rec-block medium-term"><div class="rec-time">30-180 Days Medium-Term</div><div class="rec-content"><strong>Move from incident collection to accountability architecture.</strong><p>Commission remote-sensing review, monitor UN Panel and Conflict Armament Research outputs, and create a secure handoff protocol for legal investigators.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="confidence">
+      <div class="section-header"><span class="section-num">09 // CONFIDENCE</span><h2 class="section-title">Confidence and Uncertainties</h2></div>
+      <div class="conf-panel"><div class="conf-header">Overall Confidence: Moderate-High</div><div class="conf-body"><p>Confidence is elevated by recurrence across multiple independently reported incidents, the presence of high-quality UN and humanitarian sources, and technical verification in the Tora case. Confidence is constrained by incomplete market-footprint geolocation, missing munition-remnant photographs for the priority set, and contested attribution in several incidents.</p></div></div>
+      <h3 class="subsection-title">Flip-Risk Uncertainties</h3>
+      <div class="uncertainty-list">
+        <div class="uncertainty-item"><strong>Platform-to-incident linkage:</strong> confirmed munition or drone remnants tied to two or more market strikes would increase confidence in H3.</div>
+        <div class="uncertainty-item"><strong>Co-location evidence:</strong> verified evidence of systematic RSF military co-location in markets would pull the assessment toward H2 and away from H3 elements.</div>
+        <div class="uncertainty-item"><strong>Coordinate correction:</strong> verified geolocation for Ghubaysh and Al Safiya could either strengthen or weaken clustering and intent analysis.</div>
+      </div>
+      <h3 class="subsection-title">Assumption Failure Drill</h3>
+      <div class="table-wrapper"><table><thead><tr><th>Assumption</th><th>Failure Signal</th><th>Consequence</th></tr></thead><tbody>
+        <tr><td>Multiple incidents are independently corroborated.</td><td>Source audit shows common upstream chain.</td><td>Confidence drops to Moderate.</td></tr>
+        <tr><td>Market impacts were foreseeable.</td><td>Imagery shows empty market at strike time.</td><td>Legal-risk framing narrows.</td></tr>
+        <tr><td>SAF attribution is dominant in the subset.</td><td>Forensic evidence links multiple priority strikes to RSF or unknown actors.</td><td>Attribution finding becomes mixed or unknown.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="section-header"><span class="section-num">10 // REFERENCES</span><h2 class="section-title">Source Register and WSI Audit</h2></div>
+      <div class="wsi-note"><strong>RAPITIS Key:</strong> R Reliability, A Access, P Provenance, M Manipulation resistance, T Timeliness, I Independence, S Specificity. C-D-F means Corroboration, Diagnosticity, and Falsifiability. Belligerent statements are used only for claims and denials, not as factual attribution.</div>
+      <div class="table-wrapper"><table class="source-register"><thead><tr><th>#</th><th>Source</th><th>Type</th><th>Band</th><th>RAPITIS / C-D-F</th><th>Independence Note</th><th>Locator / Atomic Claim / Falsifier</th></tr></thead><tbody>
+<tr id="S1"><td>[S1]</td><td>OHCHR / UN Human Rights: surge in deadly drone attacks on civilians in Sudan</td><td>Primary / authoritative</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P5 M5 T5 I5 S4<br><span class="small-text">CDF: C5 D4 F4 / Tier A</span></td><td>UN source. Independent of belligerents.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.ohchr.org/en/press-releases/2026/05/turk-appalled-surge-deadly-drone-attacks-civilians-sudan" target="_blank" rel="noopener">Source locator</a><br>880 civilian drone deaths Jan-Apr 2026; market attacks count. Falsifier: corrected OHCHR release or later UN dataset.</td></tr>
+
+<tr id="S2"><td>[S2]</td><td>Reuters: UN rights chief raises alarm after February drone strikes</td><td>Wire / secondary</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P4 M4 T5 I4 S4<br><span class="small-text">CDF: C4 D4 F4 / Tier B</span></td><td>Wire service with UN upstream. Counts as one UN-linked stream.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.reuters.com/world/africa/un-human-rights-chief-raises-alarm-after-drone-strikes-kill-more-than-50-2026-02-18/" target="_blank" rel="noopener">Source locator</a><br>Al Safiya and Al Sunut strike claims. Falsifier: UN correction or verified alternate site data.</td></tr>
+
+<tr id="S3"><td>[S3]</td><td>Associated Press: Ghubaysh market drone strike</td><td>Wire / secondary</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P4 M4 T5 I4 S4<br><span class="small-text">CDF: C4 D4 F4 / Tier B</span></td><td>Independent wire reporting, includes competing SAF account.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://apnews.com/article/74e4acca9b7e45fda759277dc320ea73" target="_blank" rel="noopener">Source locator</a><br>Ghubaysh casualties and contested attribution. Falsifier: verified imagery disproving market location or casualty count.</td></tr>
+
+<tr id="S4"><td>[S4]</td><td>Al Jazeera: Adikong and March market-strike sequence</td><td>Major press / secondary</td><td><span class="band-pill green">GREEN</span></td><td>R4 A3 P4 M4 T5 I4 S4<br><span class="small-text">CDF: C4 D3 F4 / Tier B</span></td><td>Uses MSF, UN, ACLED, and regional reporting. Check upstream independence.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.aljazeera.com/news/2026/3/13/drone-attack-on-market-in-sudan-kills-11-as-air-war-civilian-toll-mounts" target="_blank" rel="noopener">Source locator</a><br>Adikong, Al-Muglad, Abu Zabad and Wad Banda sequence. Falsifier: upstream source correction.</td></tr>
+
+<tr id="S5"><td>[S5]</td><td>MSF / Doctors Without Borders: Adikong clinical intake and drone injuries</td><td>Humanitarian primary / medical</td><td><span class="band-pill green">GREEN</span></td><td>R5 A5 P4 M5 T5 I5 S4<br><span class="small-text">CDF: C5 D4 F4 / Tier A</span></td><td>Direct medical access. High proximity for casualties.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.doctorswithoutborders.org/latest/sudan-medical-facilities-threatened-drone-strikes-kordofan-darfur" target="_blank" rel="noopener">Source locator</a><br>Adikong wounded treated in Adre and burn injury pattern. Falsifier: corrected MSF clinical release.</td></tr>
+
+<tr id="S6"><td>[S6]</td><td>The Guardian: Saraf Omra and North Darfur strike reporting</td><td>Major press / secondary</td><td><span class="band-pill green">GREEN</span></td><td>R4 A3 P4 M4 T5 I4 S4<br><span class="small-text">CDF: C4 D3 F4 / Tier B</span></td><td>International desk using local medical and rights sources.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.theguardian.com/world/2026/mar/26/sudan-drone-strikes-civilian-targets-north-darfur-market-north-kordofan-truck" target="_blank" rel="noopener">Source locator</a><br>Saraf Omra market casualty count and oil truck ignition. Falsifier: hospital records or imagery contradicting event.</td></tr>
+
+<tr id="S7"><td>[S7]</td><td>Reuters: Tora market airstrike, CIR verification, casualty list</td><td>Wire / technical reporting</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P4 M4 T4 I4 S5<br><span class="small-text">CDF: C5 D5 F4 / Tier A</span></td><td>Wire reporting plus technical geolocation and satellite validation.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.reuters.com/world/africa/sudanese-army-airstrike-darfur-kills-dozens-activists-say-2025-03-25/" target="_blank" rel="noopener">Source locator</a><br>Tora event, CIR geolocation, satellite burn scar. Falsifier: CIR retraction or alternate verified location.</td></tr>
+
+<tr id="S8"><td>[S8]</td><td>ACHPR: human rights situation and market-strike condemnation</td><td>Primary / regional mandate</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P5 M5 T4 I5 S4<br><span class="small-text">CDF: C4 D4 F4 / Tier A/B</span></td><td>Regional human rights mandate independent of belligerents.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://achpr.au.int/en/news/press-releases/2026-04-13/joint-fact-finding-mission-human-rights-situation-sudan" target="_blank" rel="noopener">Source locator</a><br>Civilian object targeting concern. Falsifier: later formal correction or contrary forensic finding.</td></tr>
+
+<tr id="S9"><td>[S9]</td><td>Amnesty International: advanced weaponry and GB50A investigation</td><td>Technical NGO / investigative</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P5 M4 T4 I5 S5<br><span class="small-text">CDF: C4 D4 F4 / Tier A/B</span></td><td>Technical weapons analysis, but adjacent to market incidents rather than direct proof for all cases.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.amnesty.org/en/latest/news/2025/05/sudan-advanced-chinese-weaponry-provided-by-uae-identified-in-breach-of-arms-embargo-new-investigation/" target="_blank" rel="noopener">Source locator</a><br>GB50A and external supply-chain indicators. Falsifier: CAR or UN Panel contradictory forensic report.</td></tr>
+
+<tr id="S10"><td>[S10]</td><td>ACLED: Sudan drone use and external supply networks</td><td>Conflict dataset / analytic</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P5 M4 T4 I5 S4<br><span class="small-text">CDF: C4 D4 F4 / Tier A/B</span></td><td>Method-based conflict event coding with caveats.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://acleddata.com/qa/qa-how-do-escalating-tensions-middle-east-affect-sudan-conflict/" target="_blank" rel="noopener">Source locator</a><br>Drone attack trends and supply-chain context. Falsifier: updated ACLED coding or source methodology change.</td></tr>
+
+<tr id="S11"><td>[S11]</td><td>ICRC Customary IHL Rule 7: distinction between civilian objects and military objectives</td><td>Legal authority</td><td><span class="band-pill green">GREEN</span></td><td>R5 A5 P5 M5 T5 I5 S5<br><span class="small-text">CDF: C5 D5 F5 / Tier A</span></td><td>Primary legal reference for distinction.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://ihl-databases.icrc.org/en/customary-ihl/v1/rule7" target="_blank" rel="noopener">Source locator</a><br>Legal framework for civilian objects. Falsifier: not applicable, legal rule not factual event evidence.</td></tr>
+
+<tr id="S12"><td>[S12]</td><td>ICRC Customary IHL Rule 14: proportionality</td><td>Legal authority</td><td><span class="band-pill green">GREEN</span></td><td>R5 A5 P5 M5 T5 I5 S5<br><span class="small-text">CDF: C5 D5 F5 / Tier A</span></td><td>Primary legal reference for proportionality.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://ihl-databases.icrc.org/en/customary-ihl/v1/rule14" target="_blank" rel="noopener">Source locator</a><br>Legal framework for excessive incidental civilian harm. Falsifier: not applicable, legal rule not factual event evidence.</td></tr>
+
+<tr id="S13"><td>[S13]</td><td>Radio Dabanga: Kordofan market-strike reporting</td><td>Regional press / local network</td><td><span class="band-pill amber">AMBER</span></td><td>R4 A3 P3 M3 T5 I3 S4<br><span class="small-text">CDF: C3 D3 F4 / Tier B/C</span></td><td>Valuable local access but must be triangulated.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.dabangasudan.org/en/all-news/article/dozens-killed-in-drone-strikes-on-markets-in-kordofan-and-east-darfur" target="_blank" rel="noopener">Source locator</a><br>Abu Zabad and Wad Banda casualties and local response. Falsifier: hospital or UN correction.</td></tr>
+
+<tr id="S14"><td>[S14]</td><td>Sudan War Monitor: drone platform and incident context</td><td>Specialized monitoring / OSINT</td><td><span class="band-pill amber">AMBER</span></td><td>R4 A3 P3 M3 T5 I3 S4<br><span class="small-text">CDF: C3 D3 F4 / Tier C</span></td><td>Useful for leads and platform context, not sole basis for key judgments.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://sudanwarmonitor.com/" target="_blank" rel="noopener">Source locator</a><br>YIHA-III / market targeting context and extended leads. Falsifier: platform analysis by CAR or UN Panel.</td></tr>
+
+<tr id="S15"><td>[S15]</td><td>SAF and RSF statements</td><td>Belligerent claims</td><td><span class="band-pill red">RED</span></td><td>R2 A3 P2 M1 T4 I1 S3<br><span class="small-text">CDF: C1 D3 F3 / Tier C</span></td><td>Use only to document claims, denials, and narrative positions.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="On-record statements and official spokesperson channels" target="_blank" rel="noopener">Source locator</a><br>Claims of hostile-force targeting or denials of civilian targeting. Falsifier: physical evidence or independent investigation.</td></tr>
+<tr id="S16"><td>[S16]</td><td>WFP, FAO, and UNICEF: joint warning on acute food insecurity in Sudan</td><td>Humanitarian primary / food security</td><td><span class="band-pill green">GREEN</span></td><td>R5 A4 P5 M5 T5 I5 S4<br><span class="small-text">CDF: C4 D4 F4 / Tier A/B</span></td><td>UN humanitarian agencies. Independent from belligerent claims.<br><span class="small-text">Retrieved: 22 May 2026</span></td><td><a href="https://www.wfp.org/news/joint-news-release-wfpfaounicef-risk-famine-persists-nearly-195-million-people-face-acute-food" target="_blank" rel="noopener">Source locator</a><br>Food insecurity baseline and market-access implications. Falsifier: updated IPC or UN food security release.</td></tr></tbody></table></div>
+      <div class="report-note"><strong>Independence Test Statement:</strong> Multiple outlets repeating the same UN statement, wire dispatch, local rights-group casualty list, or viral clip are treated as one source stream. Social media is lead-only unless independently geolocated, chronolocated, and corroborated through a separate collection path.</div>
+    </section>
+
+    <section class="section" id="early-warning">
+      <div class="section-header"><span class="section-num">ANNEX A // EARLY WARNING</span><h2 class="section-title">Early Warning Indicators</h2></div>
+      <div class="table-wrapper"><table class="iw-table"><thead><tr><th>ID</th><th>Trigger Event</th><th>Scenario Signal</th><th>Leading Indicators</th><th>Analytic Action</th></tr></thead><tbody>
+        <tr><td>EW-1</td><td>Two market-area strikes in 30 days.</td><td>Escalation of economic interdiction.</td><td>New strikes near fuel, grain, or livestock markets.</td><td>Update risk score to Critical.</td></tr>
+        <tr><td>EW-2</td><td>Verified market-day strike.</td><td>Possible deliberate timing.</td><td>Strike occurs during weekly market peak hours.</td><td>Open legal-risk case file.</td></tr>
+        <tr><td>EW-3</td><td>New munition remnant imagery.</td><td>Attribution hardening.</td><td>Serial markings, fragments, crater pattern, platform debris.</td><td>Run weapons-chain assessment.</td></tr>
+        <tr><td>EW-4</td><td>Hospital intake spike after strike.</td><td>Civilian harm escalation.</td><td>20+ wounded or burns cluster.</td><td>Prioritize casualty validation.</td></tr>
+        <tr><td>EW-5</td><td>Belligerent frames markets as logistics hubs.</td><td>Narrative preconditioning.</td><td>Repeated official claims or aligned media language.</td><td>Track rhetoric and targeting follow-on.</td></tr>
+        <tr><td>EW-6</td><td>Trader flight or market closure.</td><td>Food-access degradation.</td><td>Three or more markets disrupted in one month.</td><td>Escalate humanitarian impact assessment.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" id="intel-gaps">
+      <div class="section-header"><span class="section-num">ANNEX B // INTEL GAPS</span><h2 class="section-title">Priority Intelligence Gaps and Action Thresholds</h2></div>
+      <h3 class="subsection-title">B.1 Priority Intelligence Gaps</h3>
+      <div class="table-wrapper"><table class="pig-table"><thead><tr><th>Gap</th><th>Why It Matters</th><th>Collection Pathway</th><th>Judgment Impact</th></tr></thead><tbody>
+        <tr><td>PIG-1: Market footprints</td><td>Separates town-level from market-level strike claims.</td><td>CIR, OSM, Maxar, Planet, local maps.</td><td>Refines geolocation confidence.</td></tr>
+        <tr><td>PIG-2: Munition remnants</td><td>Enables platform and supply-chain attribution.</td><td>Amnesty, CAR, UN Panel, field photos.</td><td>Could upgrade H3 confidence.</td></tr>
+        <tr><td>PIG-3: Hospital records</td><td>Validates casualty numbers and demographics.</td><td>Emergency rooms, MSF, local hospitals.</td><td>Strengthens civilian-harm assessment.</td></tr>
+        <tr><td>PIG-4: Original videos and metadata</td><td>Prevents recycled or manipulated imagery.</td><td>Hunch.ly, Wayback, CIR data hub.</td><td>Improves chain-of-custody.</td></tr>
+        <tr><td>PIG-5: On-record belligerent statements</td><td>Separates denial posture from targeting logic.</td><td>Named spokespersons and official channels.</td><td>Clarifies attribution caveats.</td></tr>
+        <tr><td>PIG-6: Co-location evidence</td><td>Tests lawful military objective claims.</td><td>Satellite imagery, witness testimony, RSF/SAP movement data.</td><td>Could shift H4 toward H2 or H3.</td></tr>
+      </tbody></table></div>
+      <h3 class="subsection-title">B.2 Action Thresholds</h3>
+      <div class="threshold-grid">
+        <div class="threshold-cell green-zone"><h4>GREEN // MONITOR</h4><p>No new verified market strikes in 30 days. Maintain weekly scan of UN, ACLED, MSF, Reuters, AP, Radio Dabanga, and Sudan Witness.</p></div>
+        <div class="threshold-cell amber-zone"><h4>AMBER // ACT NOW</h4><p>One verified market strike, new remnant imagery, or hospital intake spike above 20 wounded. Open case-file update and preserve multimedia evidence.</p></div>
+        <div class="threshold-cell red-zone"><h4>RED // EMERGENCY</h4><p>Two or more verified strikes in 30 days, mass casualty event above 50, or confirmed platform-to-incident linkage. Escalate to legal, humanitarian, and sanctions review.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="incident-register">
+      <div class="section-header"><span class="section-num">ANNEX C // INCIDENT REGISTER</span><h2 class="section-title">Machine-Readable Incident Register Summary</h2></div>
+      <p>This table summarizes the 16 coded records used for the assessment. It preserves low-confidence leads rather than flattening them into the same evidentiary category as verified priority incidents.</p>
+      <div class="table-wrapper"><table class="incident-register"><thead><tr><th>ID</th><th>Date</th><th>Location</th><th>State</th><th>Coords</th><th>Geo</th><th>Object</th><th>Killed</th><th>Actor</th><th>Tier</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>SDN-MKT-001</td>
+<td>2026-05-19</td>
+<td>Ghubaysh market</td>
+<td>West Kordofan</td>
+<td>12.15, 28.7</td>
+<td>Low</td>
+<td>Market / restaurant</td>
+<td>28</td>
+<td>SAF</td>
+<td>B</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-002</td>
+<td>2026-03-25</td>
+<td>Saraf Omra market</td>
+<td>North Darfur</td>
+<td>13.48, 23.31</td>
+<td>High</td>
+<td>Market + oil truck</td>
+<td>22</td>
+<td>Unclear / SAF alleged in companion report</td>
+<td>B-</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-003</td>
+<td>2026-03-12</td>
+<td>Adikong border fuel market</td>
+<td>West Darfur</td>
+<td>13.47, 22.2</td>
+<td>High</td>
+<td>Fuel market / border crossing</td>
+<td>4-11</td>
+<td>SAF</td>
+<td>B+</td>
+<td>Partial</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-004</td>
+<td>2026-03-04</td>
+<td>Al-Muglad market and hospital area</td>
+<td>West Kordofan</td>
+<td>11.03, 27.74</td>
+<td>Moderate</td>
+<td>Market + hospital-adjacent area</td>
+<td>18-50</td>
+<td>SAF</td>
+<td>B</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-005</td>
+<td>2026-03-07</td>
+<td>Abu Zabad market</td>
+<td>West Kordofan</td>
+<td>12.35, 29.27</td>
+<td>Moderate</td>
+<td>Weekly market</td>
+<td>33-40</td>
+<td>SAF</td>
+<td>B+</td>
+<td>Partial</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-006</td>
+<td>2026-03-07</td>
+<td>Wad Banda market</td>
+<td>West Kordofan</td>
+<td>13.09, 27.94</td>
+<td>High</td>
+<td>Weekly market</td>
+<td>None-40</td>
+<td>SAF</td>
+<td>B</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-007</td>
+<td>2026-02-15</td>
+<td>Al Safiya market, Sodari locality</td>
+<td>North Kordofan</td>
+<td>14.41, 29.06</td>
+<td>Low</td>
+<td>Market</td>
+<td>28</td>
+<td>SAF</td>
+<td>B-</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-008</td>
+<td>2025-03-24</td>
+<td>Tora weekly market</td>
+<td>North Darfur</td>
+<td>14, 25.3</td>
+<td>High</td>
+<td>Weekly market</td>
+<td>26-61</td>
+<td>SAF</td>
+<td>A-</td>
+<td>Partial</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-009</td>
+<td>2025-10-19</td>
+<td>Saraf Omra market</td>
+<td>North Darfur</td>
+<td>13.48, 23.31</td>
+<td>High</td>
+<td>Municipal market</td>
+<td>7</td>
+<td>SAF</td>
+<td>C+</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-010</td>
+<td>2026-03-04</td>
+<td>Rabak popular market / fuel truck stop</td>
+<td>White Nile</td>
+<td>13.18, 32.74</td>
+<td>Moderate</td>
+<td>Fuel truck stop / popular market</td>
+<td>Unspecified</td>
+<td>RSF</td>
+<td>C</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-011</td>
+<td>2024-07-24</td>
+<td>Jebel Aulia Triangle Market</td>
+<td>Khartoum</td>
+<td>15.24, 32.5</td>
+<td>Very High</td>
+<td>Market / urban commercial node</td>
+<td>Unspecified</td>
+<td>Unknown / likely conflict actor</td>
+<td>B</td>
+<td>Partial</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-012</td>
+<td>2024-12-09</td>
+<td>Kabkabiya market</td>
+<td>North Darfur</td>
+<td>13.65, 24.07</td>
+<td>Moderate</td>
+<td>Market</td>
+<td>Unspecified</td>
+<td>Unknown / SAF alleged in local context</td>
+<td>C</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-013</td>
+<td>2026-01-25</td>
+<td>Jebel Issa market, Malha locality</td>
+<td>North Darfur</td>
+<td>Unverified</td>
+<td>Low</td>
+<td>Market</td>
+<td>12</td>
+<td>Unknown</td>
+<td>C</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-014</td>
+<td>2026-02-03</td>
+<td>Amiet / Souq al-Na&#x27;am, Abyei</td>
+<td>Abyei</td>
+<td>Unverified</td>
+<td>Low</td>
+<td>Market / major fire</td>
+<td>Unspecified</td>
+<td>SAA / unclear</td>
+<td>C</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-015</td>
+<td>2026-03-14</td>
+<td>Al Fula market area</td>
+<td>West Kordofan</td>
+<td>11.71, 28.36</td>
+<td>Low-Moderate</td>
+<td>Market area</td>
+<td>Unspecified</td>
+<td>Unknown / SAF alleged context</td>
+<td>C+</td>
+<td>Lead</td>
+</tr>
+
+<tr>
+<td>SDN-MKT-016</td>
+<td>2026-03-07</td>
+<td>Ad-Du&#x27;ayn fuel market</td>
+<td>East Darfur</td>
+<td>11.46, 26.13</td>
+<td>Moderate</td>
+<td>Fuel market</td>
+<td>7</td>
+<td>Unknown / SAF alleged context</td>
+<td>C+</td>
+<td>Lead</td>
+</tr></tbody></table></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-docid">QAP-CSA-SDN-2026-0522</div>
+    <p>This report is an evidence-caveated open-source assessment produced under the Quanta Analytica Process™. It is not a judicial finding and does not assign criminal liability.</p>
+    <p>Prepared by Quanta Analytica | MNS Consulting. Reporting cutoff: 22 May 2026.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+      document.getElementById('progress').style.width = p + '%';
+    });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.section').forEach(s => obs.observe(s));
+  </script>
+</body>
+</html>

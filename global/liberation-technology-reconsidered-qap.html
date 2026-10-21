@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberation Technology Reconsidered | Quanta Analytica Process™ | 21 Oct 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 90,27 90,73 50,95 10,73 10,27' fill='%230a0c10' stroke='%23c8a96e' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23c8a96e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --obsidian:         #0a0c10;
+  --obsidian-mid:     #10131a;
+  --obsidian-card:    #13161f;
+  --obsidian-border:  #1c2030;
+  --obsidian-surface: #181b26;
+  --obsidian-lift:    #1e2235;
+  --gold:             #c8a96e;
+  --gold-light:       #dfc28e;
+  --gold-pale:        #e8d5aa;
+  --gold-dim:         #9a7f52;
+  --gold-muted:       #6b5838;
+  --gold-glow:        rgba(200, 169, 110, 0.12);
+  --gold-glow-strong: rgba(200, 169, 110, 0.22);
+  --red:              #c0392b;
+  --red-light:        #e74c3c;
+  --red-bg:           rgba(192, 57, 43, 0.12);
+  --amber:            #d4820a;
+  --amber-light:      #f39c12;
+  --amber-bg:         rgba(212, 130, 10, 0.12);
+  --green:            #27ae60;
+  --green-light:      #2ecc71;
+  --green-bg:         rgba(39, 174, 96, 0.12);
+  --blue:             #2980b9;
+  --blue-light:       #3498db;
+  --blue-bg:          rgba(41, 128, 185, 0.12);
+  --yellow:           #f1c40f;
+  --yellow-bg:        rgba(241, 196, 15, 0.12);
+  --slate:            #5d7a9a;
+  --slate-light:      #7f9ab8;
+  --text-primary:     #e8e4dc;
+  --text-secondary:   #b8b0a0;
+  --text-muted:       #7a7264;
+  --text-faint:       #4a4640;
+  --font-display:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+  --space-xs:         0.25rem;
+  --space-sm:         0.5rem;
+  --space-md:         1rem;
+  --space-lg:         1.5rem;
+  --space-xl:         2rem;
+  --space-2xl:        3rem;
+  --space-3xl:        4rem;
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        10px;
+  --border-default:   1px solid var(--obsidian-border);
+  --border-gold:      1px solid var(--gold-dim);
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+  --shadow-card:      0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lift:      0 4px 24px rgba(0, 0, 0, 0.5);
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  background-color: var(--obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--gold-light);
+}
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+strong, b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+em, i {
+  color: var(--slate-light);
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  vertical-align: super;
+  line-height: 0;
+}
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--gold-glow-strong);
+}
+nav {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding: 0 var(--space-xl);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.nav-brand span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+.nav-links a:hover {
+  color: var(--gold);
+}
+.nav-classify {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-bg);
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 140px var(--space-xl) var(--space-3xl);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 60%, rgba(200, 169, 110, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(41, 128, 185, 0.04) 0%, transparent 50%),
+              var(--obsidian);
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 110, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes gridDrift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-running-head {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-bottom: var(--space-sm);
+}
+.hero-container {
+  display: flex;          
+  align-items: center;    
+  gap: 30px;              
+  margin: 20px 0;
+}
+.hero-image {
+  max-width: 200px;       
+  height: auto;           
+  border-radius: 8px;     
+}
+.hero-text {
+  flex: 1;                
+}
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: column; 
+    text-align: center;
+  }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+.hero h1 .title-gold {
+  color: var(--gold); 
+  display: block;      
+  margin-top: 0.5rem;  
+}
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 720px;
+  line-height: 1.6;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+.meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.meta-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.meta-cell .value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+.meta-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gold-dim);
+  align-self: center;
+}
+.threat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+.threat-badge.critical  { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.threat-badge.high      { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.threat-badge.elevated  { color: var(--yellow);       border-color: var(--yellow);background: var(--yellow-bg);}
+.threat-badge.moderate  { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.threat-badge.low       { color: var(--green-light);  border-color: var(--green); background: var(--green-bg); }
+.threat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+.scope-boundary {
+  border-left: 3px solid var(--slate);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(93, 122, 154, 0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-lg);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+.metrics-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--obsidian-border);
+}
+.metric-block {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 2px solid var(--gold-dim);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+}
+.metric-block .metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.metric-block .metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+.section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  margin-bottom: var(--space-3xl);
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.sub-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+.sub-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-muted), transparent);
+  margin-bottom: var(--space-lg);
+}
+.sub-section h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+.bluf-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.bluf-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+}
+.bluf-index {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  line-height: 1;
+  padding-top: 4px;
+}
+.bluf-text .bluf-claim {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+.bluf-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.snapshot-cell {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.snapshot-cell .snap-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+.snapshot-cell .snap-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.kj-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.kj-item {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  position: relative;
+}
+.kj-item.high     { border-left-color: var(--red);   }
+.kj-item.moderate { border-left-color: var(--amber);  }
+.kj-item.low      { border-left-color: var(--blue);   }
+.kj-item.watch    { border-left-color: var(--yellow);  }
+.kj-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+.kj-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+.kj-conf {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+.kj-item.high     .kj-conf { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.kj-item.moderate .kj-conf { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.kj-item.low      .kj-conf { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.kj-item.watch    .kj-conf { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg);}
+.kj-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+.kj-mapping {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+.evidence-box {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.evidence-box-header {
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.evidence-box-header.know   { background: var(--green-bg);  color: var(--green-light);  border-bottom: 1px solid var(--green);  }
+.evidence-box-header.assess { background: var(--amber-bg);  color: var(--amber-light);  border-bottom: 1px solid var(--amber);  }
+.evidence-box-header.gap    { background: var(--red-bg);    color: var(--red-light);    border-bottom: 1px solid var(--red);    }
+.evidence-box-body {
+  padding: var(--space-lg);
+}
+.evidence-box-body ul {
+  list-style: none;
+  padding: 0;
+}
+.evidence-box-body li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-left: var(--space-md);
+  position: relative;
+}
+.evidence-box-body li::before {
+  content: '//';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+.evidence-box-body li:last-child {
+  border-bottom: none;
+}
+.wsi-note {
+  background: rgba(93, 122, 154, 0.1);
+  border: 1px solid rgba(93, 122, 154, 0.3);
+  border-left: 3px solid var(--slate);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.83rem;
+  color: var(--slate-light);
+  font-style: italic;
+  margin-top: var(--space-lg);
+}
+.wsi-note strong {
+  color: var(--slate-light);
+  font-style: normal;
+}
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: var(--border-default);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+thead th {
+  background: var(--obsidian-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  border-bottom: 1px solid var(--obsidian-border);
+  white-space: nowrap;
+}
+tbody tr {
+  border-bottom: 1px solid var(--obsidian-border);
+  transition: background var(--transition-fast);
+}
+tbody tr:last-child {
+  border-bottom: none;
+}
+tbody tr:hover {
+  background: var(--obsidian-lift);
+}
+tbody td {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.assumption-table { }
+.ach-table thead th:nth-child(4) { text-align: center; }
+.ach-table tbody td:nth-child(4) { text-align: center; font-family: var(--font-mono); }
+.iw-table { }
+.risk-matrix tbody tr.risk-high {
+  background: var(--red-bg);
+}
+.risk-matrix tbody tr.risk-high td {
+  color: var(--text-primary);
+}
+.risk-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.risk-score.score-high   { color: var(--red-light);   }
+.risk-score.score-medium { color: var(--amber-light);  }
+.risk-score.score-low    { color: var(--green-light);  }
+.kiq-table { }
+.pig-table { }
+.kpi-table { }
+.pillar-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--obsidian-border);
+  color: var(--text-muted);
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.scenario-card {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 3px solid;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.scenario-card.best  { border-top-color: var(--green);  }
+.scenario-card.base  { border-top-color: var(--amber);  }
+.scenario-card.worst { border-top-color: var(--red);    }
+.scenario-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+.scenario-card.best  .scenario-label { color: var(--green-light);  }
+.scenario-card.base  .scenario-label { color: var(--amber-light);  }
+.scenario-card.worst .scenario-label { color: var(--red-light);    }
+.scenario-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+.scenario-card p {
+  font-size: 0.87rem;
+}
+.scenario-prob {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  display: block;
+  letter-spacing: 0.06em;
+}
+.behavioral-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.behavioral-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+.behavioral-rank {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.25;
+  line-height: 1;
+  text-align: center;
+  padding-top: 4px;
+}
+.behavioral-content h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+.behavioral-content p {
+  font-size: 0.88rem;
+  margin-bottom: var(--space-xs);
+}
+.behavioral-inference {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  display: block;
+}
+.rec-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--obsidian-border);
+  margin-left: var(--space-md);
+  padding-left: var(--space-xl);
+}
+.rec-block {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+.rec-block::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 1px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--obsidian-border);
+  border: 2px solid;
+}
+.rec-block.immediate  ::before { border-color: var(--red);   background: var(--red-bg);   }
+.rec-block.near-term  ::before { border-color: var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term::before { border-color: var(--green); background: var(--green-bg); }
+.rec-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+.rec-block.immediate   .rec-time { color: var(--red-light);  border: 1px solid var(--red);   background: var(--red-bg);   }
+.rec-block.near-term   .rec-time { color: var(--amber-light);border: 1px solid var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term .rec-time { color: var(--green-light);border: 1px solid var(--green); background: var(--green-bg); }
+.rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.rec-content p {
+  font-size: 0.9rem;
+}
+.conf-panel {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+.conf-header {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+.conf-band {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+.conf-band.high     { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.conf-band.moderate { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.conf-band.low      { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+.conf-header-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+.conf-body {
+  padding: var(--space-lg);
+}
+.conf-body p {
+  font-size: 0.9rem;
+}
+.uncertainty-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.uncertainty-item {
+  background: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+.uncertainty-item .u-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-light);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+.uncertainty-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+.threshold-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.threshold-cell {
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  overflow: hidden;
+}
+.threshold-cell.green-zone { border-color: var(--green);  background: var(--green-bg);  }
+.threshold-cell.amber-zone { border-color: var(--amber);  background: var(--amber-bg);  }
+.threshold-cell.red-zone   { border-color: var(--red);    background: var(--red-bg);    }
+.threshold-header {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+.threshold-cell.green-zone .threshold-header { color: var(--green-light);  border-color: var(--green);  background: rgba(39, 174, 96, 0.18);  }
+.threshold-cell.amber-zone .threshold-header { color: var(--amber-light);  border-color: var(--amber);  background: rgba(212, 130, 10, 0.18);  }
+.threshold-cell.red-zone   .threshold-header { color: var(--red-light);    border-color: var(--red);    background: rgba(192, 57, 43, 0.18);    }
+.threshold-body {
+  padding: var(--space-md);
+}
+.threshold-body p {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+.threshold-body ul {
+  list-style: none;
+  padding: 0;
+}
+.threshold-body li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 3px 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+.threshold-body li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+.status-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  white-space: nowrap;
+}
+.status-pill.red    { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);    }
+.status-pill.amber  { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg);  }
+.status-pill.green  { color: var(--green-light);  border-color: var(--green); background: var(--green-bg);  }
+.status-pill.blue   { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);   }
+.status-pill.yellow { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg); }
+.status-pill.gold   { color: var(--gold);          border-color: var(--gold-dim); background: var(--gold-glow); }
+.band-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+.band-pill.green { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.band-pill.amber { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.band-pill.red   { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+.label-fact {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue-light);
+  border: 1px solid var(--blue);
+  background: var(--blue-bg);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+.label-inference {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+.label-structural { color: var(--red-light);    }
+.label-political  { color: var(--amber-light);  }
+.label-resource   { color: var(--blue-light);   }
+.label-temporal   { color: var(--green-light);  }
+.technique-declaration {
+  background: var(--obsidian-surface);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.technique-declaration strong {
+  color: var(--gold-dim);
+  font-style: normal;
+}
+footer {
+  border-top: 1px solid var(--obsidian-border);
+  padding: var(--space-xl);
+  text-align: center;
+}
+.footer-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+}
+.footer-doc-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: var(--space-sm);
+}
+.footer-legal {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 0 var(--space-md);
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    padding: 100px var(--space-md) var(--space-2xl);
+  }
+  main {
+    padding: var(--space-2xl) var(--space-md);
+  }
+  .snapshot-grid,
+  .evidence-grid,
+  .scenario-grid,
+  .threshold-grid {
+    grid-template-columns: 1fr;
+  }
+  .bluf-item {
+    grid-template-columns: 28px 1fr;
+    gap: var(--space-md);
+  }
+  .behavioral-item {
+    grid-template-columns: 1fr;
+  }
+  .behavioral-rank {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 0;
+    opacity: 0.35;
+  }
+  .hero-running-head {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .hero-meta {
+    gap: var(--space-sm);
+  }
+  .metrics-strip {
+    gap: var(--space-sm);
+  }
+  table {
+    font-size: 0.8rem;
+  }
+  thead th,
+  tbody td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  .section-title {
+    font-size: 1.15rem;
+  }
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0px, transparent 1px, transparent 3px);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.28;
+}
+.hero.no-image { min-height: 100vh; }
+.provenance {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.86rem;
+}
+.section-header { display:flex; align-items:baseline; gap:var(--space-md); margin-bottom:var(--space-xl); padding-bottom:var(--space-md); border-bottom:1px solid var(--obsidian-border); }
+.section > .section-num, .section > .section-title, .section > .annex-header { display:none; }
+.sub-title { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-md); }
+.prose, .bluf-text, .snapshot-cell p, .kj-text, .evidence-box-body li, .behavioral-body p, .threshold-body, .conf-body li, .uncertainty-item, footer div { color: var(--text-secondary); font-family: var(--font-body); }
+.section-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
+.section {
+  background: transparent;
+}
+.bluf-item, .snapshot-cell, .kj-item, .evidence-box, .behavioral-item, .conf-panel, .uncertainty-item, .threshold-cell, .scenario-card, .metric-block {
+  box-shadow: var(--shadow-card);
+}
+.evidence-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); }
+.evidence-box { background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); overflow:hidden; }
+.evidence-box-header { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.75rem 1rem; }
+.evidence-box-header.know { color: var(--green-light); background: var(--green-bg); border-bottom:1px solid rgba(39,174,96,0.2); }
+.evidence-box-header.assess { color: var(--amber-light); background: var(--amber-bg); border-bottom:1px solid rgba(212,130,10,0.2); }
+.evidence-box-header.gap { color: var(--red-light); background: var(--red-bg); border-bottom:1px solid rgba(192,57,43,0.2); }
+.evidence-box-body { padding: 1rem 1.1rem; }
+.evidence-box-body ul { padding-left: 1rem; }
+.evidence-box-body li { margin-bottom: 0.55rem; }
+.kj-kiq { font-family: var(--font-mono); font-size: 0.65rem; color: var(--slate-light); letter-spacing: 0.1em; }
+.status-pill, .band-pill {
+  display:inline-block; font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; padding:2px 8px; border-radius:var(--radius-sm); border:1px solid;
+}
+.status-pill.green, .band-pill.green { color: var(--green-light); border-color: var(--green); background: var(--green-bg); }
+.status-pill.red, .band-pill.red { color: var(--red-light); border-color: var(--red); background: var(--red-bg); }
+.status-pill.amber, .band-pill.amber { color: var(--amber-light); border-color: var(--amber); background: var(--amber-bg); }
+.status-pill.blue { color: var(--blue-light); border-color: var(--blue); background: var(--blue-bg); }
+.status-pill.yellow { color: var(--yellow); border-color: var(--yellow); background: var(--yellow-bg); }
+.status-pill.green, .status-pill.red, .status-pill.amber, .band-pill.green, .band-pill.red, .band-pill.amber {}
+.status-pill:not(.green):not(.red):not(.amber):not(.blue):not(.yellow), .band-pill:not(.green):not(.red):not(.amber) { color: var(--text-secondary); border-color: var(--obsidian-border); background: var(--obsidian-surface); }
+.assumption-table, .ach-table, .iw-table, .risk-matrix, .ewi-table, table { width:100%; border-collapse:collapse; }
+table th { background: var(--obsidian-surface); color: var(--gold); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing:0.11em; text-transform:uppercase; padding: 0.75rem 0.8rem; border:1px solid var(--obsidian-border); }
+table td { background: var(--obsidian-card); color: var(--text-secondary); font-family: var(--font-body); font-size: 0.9rem; padding: 0.8rem; border:1px solid var(--obsidian-border); vertical-align: top; }
+table tbody tr:nth-child(even) td { background: #151925; }
+.td-mono { font-family: var(--font-mono); color: var(--gold-light); font-size: 0.76rem; }
+.td-label { font-family: var(--font-mono); color: var(--gold); font-size: 0.72rem; letter-spacing:0.08em; text-transform:uppercase; }
+.scenario-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); }
+.scenario-card { background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); overflow:hidden; }
+.scenario-card-head { font-family: var(--font-mono); padding: 0.75rem 1rem; font-size: 0.74rem; letter-spacing:0.1em; text-transform:uppercase; }
+.scenario-card.best .scenario-card-head { background: var(--green-bg); color: var(--green-light); }
+.scenario-card.base .scenario-card-head { background: var(--amber-bg); color: var(--amber-light); }
+.scenario-card.worst .scenario-card-head { background: var(--red-bg); color: var(--red-light); }
+.scenario-card-body { padding: 1rem; }
+.behavioral-grid { display:flex; flex-direction:column; gap:var(--space-md); }
+.behavioral-item { display:grid; grid-template-columns:44px 1fr; gap:var(--space-lg); padding: var(--space-lg); background: var(--obsidian-card); border: var(--border-default); border-left:3px solid var(--slate); border-radius: var(--radius-md); }
+.behavioral-rank { font-family: var(--font-mono); font-size:1.15rem; color: var(--gold-pale); opacity:0.55; }
+.rec-timeline { display:flex; flex-direction:column; gap:var(--space-md); }
+.rec-block { display:grid; grid-template-columns:155px 1fr; background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); overflow:hidden; }
+.rec-time { padding: 1rem; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing:0.11em; text-transform:uppercase; }
+.rec-content { padding: 1rem 1.15rem; }
+.rec-block.immediate .rec-time { background: var(--red-bg); color: var(--red-light); }
+.rec-block.near-term .rec-time { background: var(--amber-bg); color: var(--amber-light); }
+.rec-block.medium-term .rec-time { background: var(--green-bg); color: var(--green-light); }
+.conf-panel { background: var(--obsidian-card); border: var(--border-default); border-radius: var(--radius-md); overflow:hidden; }
+.conf-header { display:flex; justify-content:space-between; padding: 0.85rem 1rem; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--blue-light); background: var(--blue-bg); }
+.conf-body { padding: 1rem 1.15rem; }
+.conf-body ul { padding-left: 1rem; }
+.uncertainty-list { display:flex; flex-direction:column; gap:var(--space-md); }
+.uncertainty-item { background: var(--obsidian-card); border: var(--border-default); border-left:3px solid var(--amber); border-radius: var(--radius-md); padding: 1rem 1.1rem; }
+.threshold-grid { display:flex; flex-direction:column; gap: var(--space-md); }
+.threshold-cell { border: var(--border-default); border-radius: var(--radius-md); overflow:hidden; background: var(--obsidian-card); }
+.threshold-label { font-family: var(--font-mono); padding: 0.8rem 1rem; font-size:0.74rem; letter-spacing:0.11em; text-transform:uppercase; }
+.green-zone .threshold-label { background: var(--green-bg); color: var(--green-light); }
+.amber-zone .threshold-label { background: var(--amber-bg); color: var(--amber-light); }
+.red-zone .threshold-label { background: var(--red-bg); color: var(--red-light); }
+.threshold-body { padding: 1rem 1.15rem; }
+.wsi-note, .rapitis-note { margin-top: 1rem; background: var(--obsidian-card); border: var(--border-default); border-left: 3px solid var(--slate); border-radius: var(--radius-md); padding: 0.9rem 1rem; color: var(--text-secondary); font-size: 0.88rem; }
+.inline-tag { display:inline-block; margin-right:0.45rem; font-family: var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; padding:2px 7px; border-radius:var(--radius-sm); border:1px solid; }
+.inline-tag.assess { color: var(--amber-light); border-color: var(--amber); background: var(--amber-bg); }
+.inline-tag.caveat { color: var(--red-light); border-color: var(--red); background: var(--red-bg); }
+.inline-tag.fact { color: var(--green-light); border-color: var(--green); background: var(--green-bg); }
+.ach-matrix { margin-top:1rem; }
+.ach-matrix td.center, .ach-matrix th.center { text-align:center; }
+.ach-hit { font-weight:700; color: var(--gold-light); }
+footer { margin: 0 auto; max-width: 1000px; padding: 0 2rem 3rem; color: var(--text-muted); font-family: var(--font-body); font-size: 0.84rem; text-align:center; }
+.footer-doc-id { font-family:var(--font-mono); color: var(--gold-dim); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.5rem; }
+@media (max-width: 900px) {
+  .snapshot-grid, .evidence-grid, .scenario-grid { grid-template-columns: 1fr; }
+  .rec-block { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-brand">Quanta Analytica <span>// MNS Consulting</span></div>
+  <ul class="nav-links">
+    <li><a href="#s1">BLUF</a></li>
+    <li><a href="#s4">Judgments</a></li>
+    <li><a href="#s6">Analysis</a></li>
+    <li><a href="#s8">Implications</a></li>
+    <li><a href="#s10">Sources</a></li>
+  </ul>
+  <div class="nav-classify">Open Source // Conceptual Assessment</div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-running-head">
+      <span>QUANTA ANALYTICA | MNS CONSULTING</span>
+      <span>DIGITAL GOVERNANCE // LIBERATION TECHNOLOGY</span>
+    </div>
+    <div class="hero-container">
+      <img src="https://quanta-analytica.com/logo.PNG" class="hero-image" alt="Quanta Analytica logo" onerror="this.style.display='none'">
+      <div class="hero-text">
+        <h1>Liberation Technology, Reconsidered<span class="title-gold">Which Forms of Digital Empowerment Produce Durable Institutional Change?</span></h1>
+        <p class="hero-subtitle">A structured comparison of Larry Diamond (2010) and Rabah Arezki (2026) on communications technology, digital-finance infrastructure, and the conditions under which either can alter political outcomes.</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-cell"><span class="label">Document ID</span><span class="value">QAP-DIGDEM-GLB-2026-1021</span></div>
+      <div class="meta-divider"></div>
+      <div class="meta-cell"><span class="label">Date</span><span class="value">21 OCT 2026</span></div>
+      <div class="meta-divider"></div>
+      <div class="meta-cell"><span class="label">Analyst</span><span class="value">N. SHAKOOR</span></div>
+      <div class="meta-divider"></div>
+      <div class="meta-cell"><span class="label">Product Type</span><span class="value">CONCEPTUAL ASSESSMENT</span></div>
+      <div class="meta-divider"></div>
+      <span class="threat-badge moderate"><span class="threat-dot"></span>Overall Confidence: Moderate</span>
+    </div>
+    <div class="scope-boundary">
+      <strong>Scope boundary.</strong> Time range: published literature from July 2010 to October 2026. Forward horizon: not applicable; this is a conceptual comparison, not a country forecast. Source limits: two primary articles. The Diamond essay was assessed through its published abstract and the key judgment supplied by the commissioning analyst. The Arezki essay was assessed through its published abstract and issue metadata; the full text is behind a publisher access check and was not reviewed. Excluded streams: country-level case data, platform-specific datasets, and Global Findex microdata. Confidence note: judgments are bounded by abstract-level access to [2] and by the absence of any independent empirical test in this product.
+    </div>
+    <div class="metrics-strip">
+      <div class="metric-block"><div class="metric-value">2</div><div class="metric-label">Primary sources</div></div>
+      <div class="metric-block"><div class="metric-value">16 YRS</div><div class="metric-label">Interval between sources</div></div>
+      <div class="metric-block"><div class="metric-value">5</div><div class="metric-label">Key judgments</div></div>
+      <div class="metric-block"><div class="metric-value">MOD</div><div class="metric-label">Overall confidence</div></div>
+    </div>
+    <p class="provenance">Prepared under the Quanta Analytica Process™ (QAP™), a proprietary workflow that applies established, peer-reviewed structured analytic techniques. All claims are traced to a numbered source or labelled as analyst inference.</p>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 BLUF -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <span class="section-num">01 // BLUF</span>
+    <div class="section-title">Bottom Line Up Front</div>
+  </div>
+  <div class="bluf-grid">
+    <div class="bluf-item">
+      <div class="bluf-index">01</div>
+      <div class="bluf-text">
+        <span class="bluf-claim">The central analytical question is not whether digital technology can empower populations. It is which forms of digital empowerment can produce durable institutional change when political authorities retain control over underlying infrastructure.</span>
+        <p><span class="inline-tag fact">Fact</span>Diamond argues that the internet, mobile phones and social media can widen expression, support mobilization and expand freedom, while also noting that the outcome depends on political organization and strategy as well as on technology <cite>[1]</cite><cite>[3]</cite>. <span class="inline-tag fact">Fact</span>Arezki argues that social media has not freed closed regimes because autocrats control the off switch, and that digital payments are a more durable pathway because they enlarge the economy that rulers themselves depend on <cite>[2]</cite><cite>[4]</cite>.</p>
+      </div>
+    </div>
+    <div class="bluf-item">
+      <div class="bluf-index">02</div>
+      <div class="bluf-text">
+        <span class="bluf-claim">Political mobilization and political liberalization are different outcomes, and control over infrastructure is the intervening variable that separates them.</span>
+        <p><span class="inline-tag assess">Assess</span>Both authors treat infrastructure control as consequential, Diamond by acknowledging that authoritarian states can use the same tools to suppress protest, Arezki by making the off switch central to his argument <cite>[2]</cite><cite>[6]</cite>. The two sources therefore agree on the constraint and disagree on which technology survives it.</p>
+      </div>
+    </div>
+    <div class="bluf-item">
+      <div class="bluf-index">03</div>
+      <div class="bluf-text">
+        <span class="bluf-claim">Economic empowerment is a plausible but incompletely demonstrated pathway to political change. Neither model is protected against institutional or commercial capture.</span>
+        <p><span class="inline-tag caveat">Caveat</span>Arezki ties political effects to a conditional mechanism: a new digital middle class whose demand for the rule of law drives change when it is a challenger rather than an incumbent <cite>[2]</cite>. <span class="inline-tag assess">Assess</span>That condition is the weak point. If the beneficiaries are co-opted, or if payment rails are repurposed for surveillance, the pathway closes. The most defensible integrated explanation places accountable institutions, not any single technology, at the center of durable freedom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 KIQs -->
+<section class="section" id="s2">
+  <div class="section-header">
+    <span class="section-num">02 // KIQs</span>
+    <div class="section-title">Key Intelligence Questions</div>
+  </div>
+  <div class="table-wrapper">
+    <table class="kiq-table">
+      <thead><tr><th>Question ID</th><th>Intelligence Question</th><th>Links To</th></tr></thead>
+      <tbody>
+        <tr><td>KIQ-1</td><td>Is political mobilization a sufficient indicator of political liberalization, or are they distinct outcomes?</td><td>KJ-1</td></tr>
+        <tr><td>KIQ-2</td><td>To what extent does state control of infrastructure determine whether a digital technology can empower citizens?</td><td>KJ-2</td></tr>
+        <tr><td>KIQ-3</td><td>Under what conditions does economic empowerment through digital finance translate into demand for institutional change?</td><td>KJ-3</td></tr>
+        <tr><td>KIQ-4</td><td>What mechanisms of institutional and commercial capture apply to both communications and payments infrastructure?</td><td>KJ-4</td></tr>
+        <tr><td>KIQ-5</td><td>Which integrated explanation best accounts for both sources without overstating either?</td><td>KJ-5</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 03 SNAPSHOT -->
+<section class="section" id="s3">
+  <div class="section-header">
+    <span class="section-num">03 // SNAPSHOT</span>
+    <div class="section-title">Situation Snapshot</div>
+  </div>
+  <div class="snapshot-grid">
+    <div class="snapshot-cell"><span class="snap-label">Who</span><div class="snap-content">Larry Diamond, founding co-editor of the Journal of Democracy, and Rabah Arezki, director of research at CNRS and former chief economist at the African Development Bank <cite>[3]</cite><cite>[4]</cite>.</div></div>
+    <div class="snapshot-cell"><span class="snap-label">What</span><div class="snap-content">Two competing theories of which digital technology can expand freedom: communications platforms (Diamond) versus digital-finance infrastructure (Arezki).</div></div>
+    <div class="snapshot-cell"><span class="snap-label">Where</span><div class="snap-content">Closed and hybrid regimes in general. Neither source is reduced to a single country in the material reviewed.</div></div>
+    <div class="snapshot-cell"><span class="snap-label">When</span><div class="snap-content">Diamond: July 2010, vol. 21, no. 3. Arezki: October 2026, vol. 37, no. 4, pp. 40-50 <cite>[3]</cite><cite>[4]</cite>.</div></div>
+    <div class="snapshot-cell"><span class="snap-label">Why</span><div class="snap-content">Social media proved easier for regimes to censor, surveil and switch off than early optimism assumed, which reopens the question of where durable leverage lies <cite>[2]</cite><cite>[5]</cite>.</div></div>
+    <div class="snapshot-cell"><span class="snap-label">How</span><div class="snap-content">Diamond: expression, exposure and mobilization. Arezki: incentive-compatible payments, erosion of authoritarian rents, and a new digital middle class that demands rule of law <cite>[1]</cite><cite>[2]</cite>.</div></div>
+  </div>
+</section>
+
+<!-- 04 KEY JUDGMENTS -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <span class="section-num">04 // KEY JUDGMENTS</span>
+    <div class="section-title">Key Judgments</div>
+  </div>
+  <div class="kj-list">
+    <div class="kj-item high">
+      <div class="kj-header"><span class="kj-conf">High confidence</span><span class="kj-id">KJ-1</span><span class="kj-kiq">KIQ-1</span></div>
+      <p class="kj-text">Political mobilization and political liberalization are different outcomes. Mobilization is an event-level result; liberalization requires durable changes in rules, enforcement and accountability. Diamond himself places the final outcome in political organization and strategy rather than in the technology <cite>[3]</cite>.</p>
+      <div class="kj-mapping">BASIS: [1][3] definitional distinction | SINGLE-SOURCE CAVEAT: not applicable, both sources consistent</div>
+    </div>
+    <div class="kj-item moderate">
+      <div class="kj-header"><span class="kj-conf">Moderate confidence</span><span class="kj-id">KJ-2</span><span class="kj-kiq">KIQ-2</span></div>
+      <p class="kj-text">Control over infrastructure is a decisive intervening variable. A technology that a regime can disable or repurpose at low cost will not, on its own, generate durable institutional change. Both authors reach this constraint from different directions <cite>[2]</cite><cite>[6]</cite>. Confidence is moderate because the two authors publish in the same venue and the claim has not been tested here against independent data.</p>
+      <div class="kj-mapping">BASIS: [2][4][6] | INDEPENDENCE: LOW (two author clusters)</div>
+    </div>
+    <div class="kj-item low">
+      <div class="kj-header"><span class="kj-conf">Low confidence (causal demonstration)</span><span class="kj-id">KJ-3</span><span class="kj-kiq">KIQ-3</span></div>
+      <p class="kj-text">Economic empowerment through digital finance is a plausible pathway to political change, but the causal chain from payment adoption to institutional demand is incompletely demonstrated in the material reviewed. Arezki reports grounding in Findex data, mobile money and tax revolts, and conditions the political effect on whether the new middle class is a challenger or an incumbent <cite>[2]</cite>. The full text, and therefore the strength of that evidence, was not reviewed.</p>
+      <div class="kj-mapping">BASIS: [2] abstract only | SINGLE-SOURCE CAVEAT: APPLIES</div>
+    </div>
+    <div class="kj-item moderate">
+      <div class="kj-header"><span class="kj-conf">Moderate confidence</span><span class="kj-id">KJ-4</span><span class="kj-kiq">KIQ-4</span></div>
+      <p class="kj-text"><span class="inline-tag assess">Assess</span>Neither model guarantees protection from institutional and commercial capture. Communications platforms can be censored, surveilled or manipulated <cite>[5]</cite>. By structural analogy, payment rails concentrate transaction data and can become instruments of conditionality or surveillance. This second claim is analyst inference, not a finding in the sources reviewed.</p>
+      <div class="kj-mapping">BASIS: [5] for communications; analyst inference for payments | STATUS: REQUIRES TESTING (PIG-3)</div>
+    </div>
+    <div class="kj-item moderate">
+      <div class="kj-header"><span class="kj-conf">Moderate confidence</span><span class="kj-id">KJ-5</span><span class="kj-kiq">KIQ-5</span></div>
+      <p class="kj-text">The most defensible integrated explanation makes accountable institutions central. Technology expands capacity; institutions determine whether that capacity converts into durable rights. Diamond's emphasis on organization and strategy and Arezki's conditional mechanism both point to the same intermediate layer <cite>[2]</cite><cite>[3]</cite>.</p>
+      <div class="kj-mapping">BASIS: [2][3] convergence | STATUS: SYNTHESIS, ANALYST INFERENCE</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 EVIDENCE -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <span class="section-num">05 // EVIDENCE</span>
+    <div class="section-title">Evidence Summary</div>
+  </div>
+  <div class="evidence-grid">
+    <div class="evidence-box">
+      <div class="evidence-box-header know">Know</div>
+      <div class="evidence-box-body"><ul>
+        <li>Diamond's essay appeared in July 2010 (vol. 21, no. 3) and describes the internet and mobile phones as tools that enable expression, mobilization and wider freedom <cite>[3]</cite>.</li>
+        <li>Diamond's essay concludes that the contest between democrats and autocrats depends on political organization and strategy as well as technology <cite>[3]</cite>.</li>
+        <li>Arezki's essay appeared in October 2026 (vol. 37, no. 4, pp. 40-50) <cite>[4]</cite>.</li>
+        <li>Arezki's stated claim is that autocrats control the off switch for social media, whereas payments are incentive-compatible for rulers <cite>[2]</cite>.</li>
+      </ul></div>
+    </div>
+    <div class="evidence-box">
+      <div class="evidence-box-header assess">Assess</div>
+      <div class="evidence-box-body"><ul>
+        <li>Infrastructure control separates mobilization from liberalization (KJ-2).</li>
+        <li>Payment-led empowerment is plausible but conditional on the political position of the new middle class (KJ-3).</li>
+        <li>Capture risk is symmetrical across both technology layers (KJ-4).</li>
+        <li>Institutions are the convergent explanatory layer (KJ-5).</li>
+      </ul></div>
+    </div>
+    <div class="evidence-box">
+      <div class="evidence-box-header gap">Unknown</div>
+      <div class="evidence-box-body"><ul>
+        <li>How [2] defines and measures durable institutional change.</li>
+        <li>The temporal ordering of payment adoption and institutional demand in the cases [2] cites.</li>
+        <li>How prevalent state access to payment-transaction data is in closed regimes.</li>
+        <li>Whether the "challenger versus incumbent" condition can be identified in advance.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>Key Drivers</h3>
+    <ul class="prose" style="list-style:none;padding:0;">
+      <li><span class="status-pill gold">Driver 1</span> Regime cost of disabling the technology. Low for social platforms, high for payments, according to [2].</li>
+      <li style="margin-top:.5rem"><span class="status-pill gold">Driver 2</span> Immediate economic utility to citizens, which produces adoption without a political motive <cite>[2]</cite>.</li>
+      <li style="margin-top:.5rem"><span class="status-pill gold">Driver 3</span> Organizational capacity of civil society and the new middle class to convert capability into demands <cite>[3]</cite>.</li>
+    </ul>
+  </div>
+
+  <div class="sub-section">
+    <h3>Binding Constraints</h3>
+    <ul class="prose" style="list-style:none;padding:0;">
+      <li><span class="label-structural">STRUCTURAL.</span> State ownership or licensing control of networks and payment rails.</li>
+      <li style="margin-top:.5rem"><span class="label-political">POLITICAL.</span> Whether ruling coalitions treat the emerging digital middle class as a threat or as a client.</li>
+      <li style="margin-top:.5rem"><span class="label-resource">RESOURCE.</span> Access to the full text of [2] and to comparative data for this product.</li>
+      <li style="margin-top:.5rem"><span class="label-temporal">TEMPORAL.</span> Arezki's essay is days to weeks old as of this assessment; no critical response or replication exists in the material reviewed.</li>
+    </ul>
+  </div>
+
+  <div class="wsi-note"><strong>WSI / source independence note.</strong> Seven sources are registered, but they reduce to two independent analytic voices: Diamond and Arezki. Sources [3] and [6] derive from Diamond's own work or editorship, and sources [4] and [5] derive from Arezki. Convergence between the two authors is therefore informative, but it is convergence of two scholars, not corroboration by independent data.</div>
+</section>
+
+<!-- 06 ANALYSIS -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <span class="section-num">06 // ANALYSIS</span>
+    <div class="section-title">Structured Analytic Tradecraft</div>
+  </div>
+  <div class="technique-declaration"><strong>Techniques applied:</strong> systems layering (five-layer map), Key Assumptions Check, Analysis of Competing Hypotheses (ACH), Indicators and Warnings, and scenario analysis. These are established, peer-reviewed structured analytic techniques applied within the QAP™ workflow. No technique output below is a statistical estimate.</div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">6.1 Five-Layer Systems Map</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Layer</th><th>Function</th><th>Communications model (Diamond)</th><th>Payments model (Arezki)</th></tr></thead>
+        <tbody>
+          <tr><td>L1</td><td>Technology</td><td>Internet, mobile phones, social media <cite>[1]</cite></td><td>Digital payments and mobile money <cite>[2]</cite></td></tr>
+          <tr><td>L2</td><td>Infrastructure control</td><td>Regime can censor, surveil or switch off <cite>[2]</cite><cite>[6]</cite></td><td>Regime faces economic cost if it disables <cite>[2]</cite></td></tr>
+          <tr><td>L3</td><td>Economic incentive</td><td>Weak overlap between citizen and ruler interests</td><td>Overlap through a larger taxable economy <cite>[2]</cite></td></tr>
+          <tr><td>L4</td><td>Institutional mediation</td><td>Organization and strategy of opposition <cite>[3]</cite></td><td>Rule-of-law demand from a challenger middle class <cite>[2]</cite></td></tr>
+          <tr><td>L5</td><td>Political outcome</td><td>Mobilization, then possible liberalization</td><td>Erosion of rents, then possible liberalization <cite>[2]</cite></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><span class="inline-tag assess">Assess</span>The two models differ most at L2 and L3. They converge at L4. This convergence is the basis for KJ-5.</p>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">6.2 Key Assumptions Check</h3>
+    <div class="table-wrapper">
+      <table class="assumption-table">
+        <thead><tr><th>ID</th><th>Assumption</th><th>Why It Matters</th><th>Risk if Wrong</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>The published abstracts accurately represent each article's central argument.</td><td>Judgments rest on abstract-level access to [2].</td><td>Full text may add qualifiers that narrow or reverse a judgment.</td><td><span class="status-pill amber">Partly verified</span></td></tr>
+          <tr><td>A2</td><td>The commissioning analyst's summary of Diamond (exposure of abuses, challenge to information monopolies) is consistent with the full essay.</td><td>Informs the characterization of the communications model.</td><td>Mischaracterizing Diamond would distort the comparison.</td><td><span class="status-pill amber">Consistent with abstract; full text not reviewed</span></td></tr>
+          <tr><td>A3</td><td>"Durable institutional change" can be operationalized consistently across both models.</td><td>Required to compare the models fairly.</td><td>Authors may be measuring different dependent variables.</td><td><span class="status-pill red">Unverified</span></td></tr>
+          <tr><td>A4</td><td>Rulers cannot easily repurpose payment rails for control without losing their economic benefit.</td><td>Underpins the incentive-compatibility claim.</td><td>If repurposing is cheap, the pathway is weaker than argued.</td><td><span class="status-pill red">Contested by analyst inference</span></td></tr>
+          <tr><td>A5</td><td>The 16-year interval does not confound the comparison.</td><td>Platform and payment landscapes changed materially between 2010 and 2026.</td><td>Differences may reflect period effects rather than model effects.</td><td><span class="status-pill amber">Plausible</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">6.3 Analysis of Competing Hypotheses</h3>
+    <div class="table-wrapper">
+      <table class="ach-table">
+        <thead><tr><th>Hypothesis</th><th>Evidence For</th><th>Evidence Against</th><th>Diagnosticity</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>H1: Communications technology is the primary route to durable change.</td><td>Diamond documents expression and mobilization effects <cite>[1]</cite>.</td><td>Arezki argues closed regimes were not freed because autocrats control the off switch <cite>[2]</cite>. Diamond himself cites regime countermeasures <cite>[6]</cite>.</td><td>MEDIUM</td><td>Weakened</td></tr>
+          <tr><td>H2: Digital-finance infrastructure is the primary route.</td><td>Incentive-compatibility argument and reported grounding in Findex, mobile money and tax revolts <cite>[2]</cite>.</td><td>Causal chain is conditional and incompletely demonstrated in the material reviewed.</td><td>MEDIUM</td><td>Plausible, not established</td></tr>
+          <tr><td>H3: Neither is sufficient alone; accountable institutions mediate outcomes.</td><td>Diamond emphasizes organization and strategy <cite>[3]</cite>. Arezki conditions the effect on challenger status <cite>[2]</cite>.</td><td>No direct counter-evidence in the material reviewed.</td><td>HIGH</td><td>Least inconsistent</td></tr>
+          <tr><td>H4: Capture dominates; neither technology yields durable change.</td><td>Regimes can censor communications <cite>[5]</cite>. Payment capture is plausible by analogy (inference).</td><td>Arezki reports political effects from payments in some settings <cite>[2]</cite>.</td><td>LOW</td><td>Not excluded</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><span class="inline-tag caveat">Caveat</span>ACH favors the hypothesis with the least inconsistent evidence, not the one with the most supporting evidence. H3 survives partly because it is the broadest. Its weakness is low falsifiability unless "accountable institutions" is defined operationally.</p>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">6.4 Indicators and Warnings</h3>
+    <div class="table-wrapper">
+      <table class="iw-table">
+        <thead><tr><th>Indicator</th><th>Direction</th><th>Current Status</th><th>Threshold</th><th>Cadence</th></tr></thead>
+        <tbody>
+          <tr><td>Divergence between social-media shutdowns and payment-system continuity</td><td>Supports Arezki</td><td>Not assessed here</td><td>Repeated cases where platforms are blocked and payments continue</td><td>Quarterly</td></tr>
+          <tr><td>State access to payment-transaction data for political targeting</td><td>Undermines Arezki</td><td>Not assessed here</td><td>Documented use against civil-society actors</td><td>Quarterly</td></tr>
+          <tr><td>Independent tax or consumer-protection institutions alongside payment expansion</td><td>Supports H3</td><td>Not assessed here</td><td>Institution established with enforcement capacity</td><td>Semi-annual</td></tr>
+          <tr><td>Concentration of payment rails in a regime-linked provider</td><td>Capture risk</td><td>Not assessed here</td><td>Single provider above a dominant share, regime-affiliated</td><td>Semi-annual</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">6.5 Scenarios (Conceptual)</h3>
+    <div class="scenario-grid">
+      <div class="scenario-card best">
+        <div class="scenario-card-head">Best case</div>
+        <div class="scenario-card-body">
+          <h4>Capacity meets accountability</h4>
+          <p>Digital-finance expansion coincides with independent revenue and consumer-protection institutions. The new middle class operates as a challenger and its demands are institutionalized. This is the pathway Arezki describes <cite>[2]</cite>.</p>
+          <span class="scenario-prob">Probability: not assigned; evidence base insufficient for calibration.</span>
+        </div>
+      </div>
+      <div class="scenario-card base">
+        <div class="scenario-card-head">Base case</div>
+        <div class="scenario-card-body">
+          <h4>Economic gains, political closure</h4>
+          <p>Payments expand and welfare improves, but the digital middle class is co-opted or absorbed as an incumbent. Rents shift rather than erode. Liberalization does not follow.</p>
+          <span class="scenario-prob">Probability: not assigned; analyst inference.</span>
+        </div>
+      </div>
+      <div class="scenario-card worst">
+        <div class="scenario-card-head">Worst case</div>
+        <div class="scenario-card-body">
+          <h4>Rails become instruments of control</h4>
+          <p>Payment infrastructure is used for surveillance and conditionality, and communications platforms are already constrained <cite>[5]</cite>. Both technology layers are captured.</p>
+          <span class="scenario-prob">Probability: not assigned; analyst inference.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 BEHAVIORAL -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <span class="section-num">07 // BEHAVIORAL</span>
+    <div class="section-title">Applied Behavioral Tradecraft</div>
+  </div>
+  <p><em>Justification: the pathway from technology to institutional change runs through the incentives of rulers, citizens and intermediaries. Behavioral analysis is therefore used to rank which incentives are most likely to determine outcomes. Rankings below are analyst inference unless a source is cited.</em></p>
+  <div class="behavioral-grid">
+    <div class="behavioral-item">
+      <div class="behavioral-rank">01</div>
+      <div class="behavioral-content">
+        <h4>Ruler survival and revenue calculus</h4>
+        <p>Rulers weigh the political risk of a technology against its fiscal benefit. Arezki's argument depends on payments tilting that calculus toward tolerance <cite>[2]</cite>.</p>
+        <span class="behavioral-inference">INFERENCE: tolerance lasts only while the fiscal benefit exceeds the perceived political cost.</span>
+      </div>
+    </div>
+    <div class="behavioral-item">
+      <div class="behavioral-rank">02</div>
+      <div class="behavioral-content">
+        <h4>Citizen adoption driven by utility, not politics</h4>
+        <p>Adoption of payments follows immediate economic benefit, which lowers the barrier to participation compared with explicitly political platforms <cite>[2]</cite>.</p>
+        <span class="behavioral-inference">INFERENCE: low political salience at adoption may delay political demand.</span>
+      </div>
+    </div>
+    <div class="behavioral-item">
+      <div class="behavioral-rank">03</div>
+      <div class="behavioral-content">
+        <h4>Intermediary incentives</h4>
+        <p>Platform firms and payment providers respond to licensing and regulatory pressure from the state that controls market access.</p>
+        <span class="behavioral-inference">INFERENCE: no source reviewed tests this; relevant to KJ-4 and PIG-3.</span>
+      </div>
+    </div>
+    <div class="behavioral-item">
+      <div class="behavioral-rank">04</div>
+      <div class="behavioral-content">
+        <h4>Middle-class position as challenger or incumbent</h4>
+        <p>Arezki conditions the political effect on whether the new digital middle class remains a challenger <cite>[2]</cite>.</p>
+        <span class="behavioral-inference">INFERENCE: co-optation through contracts, licenses or protection converts challengers into incumbents.</span>
+      </div>
+    </div>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">Narrative Vulnerabilities</h3>
+    <p>Two narratives require care. First, technological determinism: the claim that a tool, by its nature, liberates. Both sources qualify this, Diamond by naming organization and strategy, Arezki by naming conditions on the middle class <cite>[2]</cite><cite>[3]</cite>. Second, a replacement narrative: the claim that payments supersede communications. The evidence reviewed supports a narrower statement, that payments may be harder for rulers to suppress at low cost. The wider literature remains divided on whether the internet erodes or expands democracy <cite>[7]</cite>.</p>
+  </div>
+</section>
+
+<!-- 08 IMPLICATIONS -->
+<section class="section" id="s8">
+  <div class="section-header">
+    <span class="section-num">08 // IMPLICATIONS</span>
+    <div class="section-title">Strategic Implications, Risk and Recommendations</div>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">Implications for Local Actors (Governments and Civil Society)</h3>
+    <p><span class="inline-tag assess">Assess</span>Regimes that restrict communications platforms may still promote payments for fiscal reasons <cite>[2]</cite>. Civil-society actors who rely only on communications platforms remain exposed to the off switch. Strategies that combine economic inclusion with organizational capacity are more resilient than platform-only strategies, consistent with Diamond's emphasis on organization <cite>[3]</cite>.</p>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">Implications for International Actors (Donors, Development Banks, Democracy-Support Bodies)</h3>
+    <p><span class="inline-tag assess">Assess</span>Arezki's framing implies that outside actors may support democratic evolution indirectly through financial inclusion <cite>[2]</cite>. The assessment here is that such support should be paired with institutional safeguards, such as data-protection rules and independent oversight, because the pathway is conditional and capture risk is symmetrical (KJ-4).</p>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">Implications for Regional and Commercial Actors</h3>
+    <p><span class="inline-tag assess">Assess</span>Payment providers and platform firms operate inside state licensing regimes. Their design choices on data retention and access determine whether the infrastructure can be repurposed for control. This is analyst inference and a priority collection gap.</p>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">Risk Matrix (Ordinal, Not Probabilistic)</h3>
+    <div class="table-wrapper">
+      <table class="risk-matrix">
+        <thead><tr><th>ID</th><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr class="risk-high"><td>R-1</td><td>Payment rails repurposed for surveillance or political conditionality</td><td>Medium</td><td>High</td><td><span class="risk-score score-high">HIGH</span></td></tr>
+          <tr class="risk-high"><td>R-2</td><td>Digital middle class co-opted, converting challenger into incumbent</td><td>Medium</td><td>High</td><td><span class="risk-score score-high">HIGH</span></td></tr>
+          <tr><td>R-3</td><td>Over-reliance on [2] abstract-level reading distorts judgments</td><td>Medium</td><td>Medium</td><td><span class="risk-score score-medium">MEDIUM</span></td></tr>
+          <tr><td>R-4</td><td>Analytic overcorrection that dismisses communications technology entirely</td><td>Low</td><td>Medium</td><td><span class="risk-score score-low">LOW</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">Recommendations</h3>
+    <div class="rec-timeline">
+      <div class="rec-block immediate">
+        <div class="rec-time">0 to 30 days</div>
+        <div class="rec-content">
+          <p>Obtain and review the full text of [2]. Extract its operational definition of durable institutional change and its evidence for the challenger versus incumbent condition. Re-grade KJ-3 on that basis.</p>
+        </div>
+      </div>
+      <div class="rec-block near-term">
+        <div class="rec-time">1 to 6 months</div>
+        <div class="rec-content">
+          <p>Build a comparative indicator set from the I&amp;W table, drawing on Global Findex and internet-shutdown monitoring. Test whether payment continuity during platform shutdowns is observable across multiple cases.</p>
+        </div>
+      </div>
+      <div class="rec-block medium-term">
+        <div class="rec-time">6 to 18 months</div>
+        <div class="rec-content">
+          <p>Develop a capture-risk assessment for payment infrastructure covering data retention, licensing and provider concentration. Use it to condition any recommendation that treats financial inclusion as a democratization strategy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 CONFIDENCE -->
+<section class="section" id="s9">
+  <div class="section-header">
+    <span class="section-num">09 // CONFIDENCE</span>
+    <div class="section-title">Confidence and Uncertainties</div>
+  </div>
+  <div class="conf-panel">
+    <div class="conf-header"><span class="conf-band moderate">Moderate</span><span class="conf-header-label">OVERALL CONFIDENCE // BOUNDED BY ABSTRACT-LEVEL ACCESS AND LOW SOURCE INDEPENDENCE</span></div>
+    <div class="conf-body">
+      <p>Confidence is highest where both authors converge on a conceptual distinction (KJ-1) and lowest where a causal chain depends on evidence not reviewed here (KJ-3). No judgment in this product rests on independent empirical data collected by the analyst.</p>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">Flip Risks</h3>
+    <div class="uncertainty-list">
+      <div class="uncertainty-item"><span class="u-label">Flip risk 1</span><p>Full-text review of [2] shows qualifiers or case limits that materially narrow the payments argument. KJ-3 and KJ-5 would be downgraded.</p></div>
+      <div class="uncertainty-item"><span class="u-label">Flip risk 2</span><p>Evidence emerges of payment digitization accompanied by widespread state financial surveillance without any liberalizing demand. KJ-3 would move to low confidence and H4 would gain weight.</p></div>
+      <div class="uncertainty-item"><span class="u-label">Flip risk 3</span><p>Documented cases show communications platforms producing durable institutional change under restricted infrastructure. KJ-2 would require revision.</p></div>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3 class="sub-title">Assumption Failure Drill</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Assumption</th><th>Failure Signal</th><th>Consequence</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Full text contradicts or substantially qualifies the abstract.</td><td>Re-run ACH; revise KJ-2, KJ-3.</td></tr>
+          <tr><td>A3</td><td>The two authors define durable change differently.</td><td>Comparison is partly non-commensurable; restate KJ-5 as a bridging proposal.</td></tr>
+          <tr><td>A4</td><td>Documented repurposing of payment rails with limited economic penalty to the regime.</td><td>Incentive-compatibility weakens; R-1 rises.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 10 REFERENCES -->
+<section class="section" id="s10">
+  <div class="section-header">
+    <span class="section-num">10 // REFERENCES</span>
+    <div class="section-title">Source Register and WSI Audit</div>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>#</th><th>Source</th><th>Type</th><th>Band</th><th>Independence Note</th><th>URL / Locator</th><th>Atomic Claim / Falsifiability</th></tr></thead>
+      <tbody>
+        <tr><td>[1]</td><td>Diamond, L. (2010). Liberation technology. Journal of Democracy, 21(3), 69-83.</td><td>Primary, peer-reviewed</td><td><span class="band-pill amber">Amber</span></td><td>Author cluster A. Full text not reviewed; DOI supplied by commissioning analyst and not independently resolved.</td><td>https://doi.org/10.1353/jod.0.0190</td><td>Internet and mobile tools can expand expression and mobilization. Falsifiable by full-text review.</td></tr>
+        <tr><td>[2]</td><td>Arezki, R. (2026). The real liberation technology. Journal of Democracy, 37(4), 40-50.</td><td>Primary, peer-reviewed</td><td><span class="band-pill amber">Amber</span></td><td>Author cluster B. Abstract reviewed; full text behind publisher verification.</td><td>https://doi.org/10.1353/jod.2026.a1001895</td><td>Payments are incentive-compatible for rulers; social media is switchable; political effect depends on challenger status. Falsifiable by full-text and case evidence.</td></tr>
+        <tr><td>[3]</td><td>Journal of Democracy, Larry Diamond author page and 2010 issue listing.</td><td>Publisher listing</td><td><span class="band-pill green">Green</span></td><td>Same publisher as [1]; confirms issue date and the essay's closing emphasis on organization and strategy.</td><td>https://journalofdemocracy.org/authors/larry-diamond</td><td>July 2010, vol. 21, no. 3; outcome depends on organization and strategy. Falsifiable by publisher correction.</td></tr>
+        <tr><td>[4]</td><td>Journal of Democracy, "The Real Liberation Technology" article page.</td><td>Publisher listing</td><td><span class="band-pill green">Green</span></td><td>Same publisher as [2]; confirms issue, pages and abstract.</td><td>https://www.journalofdemocracy.org/articles/the-real-liberation-technology/</td><td>October 2026, vol. 37, no. 4, pp. 40-50. Falsifiable by publisher correction.</td></tr>
+        <tr><td>[5]</td><td>Arezki, R. LinkedIn post announcing the article (author self-description).</td><td>Author statement</td><td><span class="band-pill amber">Amber</span></td><td>Not independent of [2]; promotional context.</td><td>https://www.linkedin.com/in/rabah-arezki-40b14a66/</td><td>Regimes have an incentive to censor, surveil or shut down social media. Falsifiable by the full article.</td></tr>
+        <tr><td>[6]</td><td>Stanford CDDRL description of Liberation Technology volume (Diamond and Plattner, eds.).</td><td>Institutional description</td><td><span class="band-pill amber">Amber</span></td><td>Diamond is co-editor; not independent of [1].</td><td>https://cddrl.fsi.stanford.edu/taxonomy/term/74?page=57</td><td>Authoritarian states such as China and Iran use the same tools to stifle protest. Falsifiable by the volume itself.</td></tr>
+        <tr><td>[7]</td><td>"Technology and democracy: a paradox wrapped in a contradiction inside an irony," Memory, Mind &amp; Media.</td><td>Peer-reviewed context</td><td><span class="band-pill amber">Amber</span></td><td>Independent of both authors; read at summary level only.</td><td>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7613775/</td><td>The literature holds that the internet both erodes and expands democracy. Falsifiable by the article text.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Band key.</strong> <span class="band-pill green">Green</span> verified and content accessed directly. <span class="band-pill amber">Amber</span> existence verified; content accessed at abstract, summary or secondary level. <span class="band-pill red">Red</span> unverified or contradicted.</p>
+  <div class="wsi-note"><strong>Independence test.</strong> After grouping by author cluster, the register contains two independent analytic voices ([1] with [3] and [6]; [2] with [4] and [5]) plus one independent context source ([7]). No key judgment rests on three or more independent sources. Judgments are labelled accordingly. Page numbers for [1] and the DOI in [1] are reproduced from the commissioning analyst's citation and were not independently resolved in this session.</div>
+</section>
+
+<!-- ANNEX A -->
+<section class="section" id="annex-a">
+  <div class="section-header">
+    <span class="section-num">ANNEX A // EARLY WARNING</span>
+    <div class="section-title">Early Warning Indicators</div>
+  </div>
+  <div class="table-wrapper">
+    <table class="ewi-table">
+      <thead><tr><th>ID</th><th>Trigger Event</th><th>Scenario Signal</th><th>Leading Indicators</th><th>Analytic Action Required</th></tr></thead>
+      <tbody>
+        <tr><td>EWI-01</td><td>A regime blocks social platforms while payment systems continue normally.</td><td>Supports incentive-compatibility (Base to Best)</td><td>Shutdown reports; payment-volume continuity</td><td>Log case; strengthen KJ-2 evidence base.</td></tr>
+        <tr><td>EWI-02</td><td>Documented use of payment-transaction data against civil-society actors.</td><td>Worst case</td><td>Court records, NGO and press reports, data-access legislation</td><td>Downgrade KJ-3; raise R-1.</td></tr>
+        <tr><td>EWI-03</td><td>A payment rail is consolidated under a regime-affiliated provider.</td><td>Base to Worst</td><td>Licensing decisions; ownership filings; market share</td><td>Reassess A4 and capture-risk assessment.</td></tr>
+        <tr><td>EWI-04</td><td>Independent tax or consumer-protection bodies gain enforcement capacity alongside payment expansion.</td><td>Best case</td><td>Statutory independence; budget autonomy; enforcement actions</td><td>Strengthen H3; test KJ-5.</td></tr>
+        <tr><td>EWI-05</td><td>Publication of critical or replicating studies of [2].</td><td>Evidence update</td><td>Journal responses; working papers</td><td>Re-run ACH; re-grade KJ-3.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ANNEX B -->
+<section class="section" id="annex-b">
+  <div class="section-header">
+    <span class="section-num">ANNEX B // INTEL GAPS</span>
+    <div class="section-title">Priority Intelligence Gaps and Action Thresholds</div>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">B.1 Priority Intelligence Gaps</h3>
+    <div class="table-wrapper">
+      <table class="pig-table">
+        <thead><tr><th>Gap ID</th><th>Intelligence Question</th><th>Why It Matters</th><th>Collection Recommendation</th></tr></thead>
+        <tbody>
+          <tr><td>PIG-1</td><td>How does [2] define and measure durable institutional change?</td><td>Determines whether the two models are commensurable (A3).</td><td>Obtain full text through Project MUSE or institutional access.</td></tr>
+          <tr><td>PIG-2</td><td>What is the temporal ordering of payment adoption and institutional demand in the cases cited by [2]?</td><td>Required to test the causal direction of KJ-3.</td><td>Review the cited Findex, mobile-money and tax-revolt evidence.</td></tr>
+          <tr><td>PIG-3</td><td>How prevalent is state access to payment-transaction data in closed regimes?</td><td>Tests capture risk and A4.</td><td>Legal and regulatory review; civil-society and press reporting.</td></tr>
+          <tr><td>PIG-4</td><td>Can the challenger versus incumbent condition be identified in advance?</td><td>Determines whether the pathway is predictive or only retrospective.</td><td>Comparative case study of co-optation and exclusion of digital entrepreneurs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sub-section">
+    <h3 class="sub-title">B.2 Action Thresholds</h3>
+    <div class="threshold-grid">
+      <div class="threshold-cell green-zone">
+        <div class="threshold-label">Green: confidence may be raised</div>
+        <div class="threshold-body"><ul>
+          <li>Full text of [2] confirms the abstract's claims and defines durable change operationally.</li>
+          <li>Two or more independent cases show payment continuity during platform shutdowns.</li>
+        </ul></div>
+      </div>
+      <div class="threshold-cell amber-zone">
+        <div class="threshold-label">Amber: hold and collect</div>
+        <div class="threshold-body"><ul>
+          <li>Full text adds qualifiers but leaves the core argument intact.</li>
+          <li>Mixed evidence on payment-data surveillance across cases.</li>
+        </ul></div>
+      </div>
+      <div class="threshold-cell red-zone">
+        <div class="threshold-label">Red: confidence must be lowered</div>
+        <div class="threshold-body"><ul>
+          <li>Documented repurposing of payment rails for political targeting at low cost to the regime.</li>
+          <li>Full text shows the causal evidence is largely correlational or case-limited.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">Quanta Analytica Process™ | MNS Consulting | ARAC International Inc.</div>
+  <div class="footer-doc-id">QAP-DIGDEM-GLB-2026-1021</div>
+  <div class="footer-legal">All claims traced to open-source evidence or labelled as analyst inference. No fabricated sources, quotes, or data.</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+    document.getElementById('progress').style.width = p + '%';
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.section').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

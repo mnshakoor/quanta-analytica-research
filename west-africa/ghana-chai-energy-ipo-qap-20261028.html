@@ -1520,6 +1520,15 @@ ul.clean li { margin-bottom: .4rem; }
 .ach-compact-table th:first-child, .ach-compact-table td:first-child { width:23%; max-width:23%; }
 .ach-compact-table th:not(:first-child), .ach-compact-table td:not(:first-child) { width:19.25%; max-width:19.25%; }
 @media(max-width:740px){ .ach-compact-table { min-width:760px; } .ach-responsive { border:1px solid var(--obsidian-border); border-radius:6px; } }
+
+/* ACH first column: override global tbody td:first-child nowrap rule. */
+.ach-compact-table tbody td:first-child {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  min-width: 0;
+}
+.ach-compact-table th:first-child { overflow-wrap: anywhere; white-space: normal; }
 </style>
 <meta content="QAP independent assessment of Chai Energy Ghana IPO, shareholder relationships, ECG payment exposure, preference share risks and outstanding disclosures." name="description"/><style>
 /* Integrated report access and publication finishes */

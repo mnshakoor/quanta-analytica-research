@@ -1505,6 +1505,13 @@ ul.clean li { margin-bottom: .4rem; }
 .check-card li { color: var(--text-secondary); font-size: .84rem; padding: 2px 0 2px 1rem; position:relative; }
 .check-card li::before { content: '✓'; position:absolute; left:0; color: var(--green-light); }
 @media (max-width: 760px) { .qa-checklist { grid-template-columns: 1fr; } }
+
+/* QAP Situation Snapshot: prevent intrinsic-width grid blowout. */
+#snapshot .snapshot-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-md); width:100%; max-width:100%; }
+#snapshot .snapshot-cell { min-width:0; overflow-wrap:anywhere; word-break:normal; }
+#snapshot .snap-content { white-space:normal; overflow-wrap:anywhere; }
+@media (max-width:900px) { #snapshot .snapshot-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px) { #snapshot .snapshot-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 <meta content="QAP independent assessment of Chai Energy Ghana IPO, shareholder relationships, ECG payment exposure, preference share risks and outstanding disclosures." name="description"/><style>
 /* Integrated report access and publication finishes */
@@ -1610,32 +1617,14 @@ ul.clean li { margin-bottom: .4rem; }
 </tbody>
 </table>
 </section>
-<section class="section" id="snapshot"><div class="section-header"><span class="section-num">03 // SNAPSHOT</span><h2 class="section-title">Situation Snapshot</h2></div><table class="assumption-table">
-<thead>
-<tr class="table-header">
-<th>WHO</th>
-<th>WHAT</th>
-<th>WHERE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Issuer Chai Energy PLC; project sponsors Endeavor Energy/Andaris; project companies Early Power Limited and Amandi Energy Limited; ECG and public sector counterparties</td>
-<td>Reported ~US$300m (GH¢3.5bn) preference-share IPO intended to acquire equity interests in two existing plants</td>
-<td>Issuer and exchange in Ghana; Bridge Power at Kpone/Tema; Twin City at Aboadze; foreign sponsor/lender nexus</td>
-</tr>
-<tr>
-<td><strong>WHEN</strong></td>
-<td><strong>WHY</strong></td>
-<td><strong>HOW</strong></td>
-</tr>
-<tr>
-<td>Reported SEC application and tentative November 2026 offer; no final approval established at 28 Oct 2026</td>
-<td>Tests domestic infrastructure ownership and investor exposure to a fiscally supported electricity system</td>
-<td>Reported primary issuance by Chai; downstream acquisition of project interests; projected returns depend on project cash distributions [1][2]</td>
-</tr>
-</tbody>
-</table>
+<section class="section" id="snapshot"><div class="section-header"><span class="section-num">03 // SNAPSHOT</span><h2 class="section-title">Situation Snapshot</h2></div><div class="snapshot-grid">
+<div class="snapshot-cell"><span class="snap-label">WHO</span><div class="snap-content">Issuer Chai Energy PLC; project sponsors Endeavor Energy/Andaris; project companies Early Power Limited and Amandi Energy Limited; ECG and public sector counterparties</div></div>
+<div class="snapshot-cell"><span class="snap-label">WHAT</span><div class="snap-content">Reported ~US$300m (GH¢3.5bn) preference-share IPO intended to acquire equity interests in two existing plants</div></div>
+<div class="snapshot-cell"><span class="snap-label">WHERE</span><div class="snap-content">Issuer and exchange in Ghana; Bridge Power at Kpone/Tema; Twin City at Aboadze; foreign sponsor/lender nexus</div></div>
+<div class="snapshot-cell"><span class="snap-label">WHEN</span><div class="snap-content">Reported SEC application and tentative November 2026 offer; no final approval established at 28 Oct 2026</div></div>
+<div class="snapshot-cell"><span class="snap-label">WHY</span><div class="snap-content">Tests domestic infrastructure ownership and investor exposure to a fiscally supported electricity system</div></div>
+<div class="snapshot-cell"><span class="snap-label">HOW</span><div class="snap-content">Reported primary issuance by Chai; downstream acquisition of project interests; projected returns depend on project cash distributions [1][2]</div></div>
+</div>
 <p><strong>Measured orientation:</strong> reported <strong>US$300m</strong> offer size (not raised); <strong>2</strong> named existing target assets; Endeavor's <strong>51.02%</strong> current Twin City stake; ECG <strong>GH¢840.372m</strong> combined year-end 2025 payables to the two project companies; <strong>US$1.1bn</strong> projected 2026 sector shortfall. [1][2][4][7][8]</p>
 </section>
 <section class="section" id="judgments"><div class="section-header"><span class="section-num">04 // KEY JUDGMENTS</span><h2 class="section-title">Key Judgments</h2></div><p><strong>KJ-01 | Priority 1 | [ASSESS] | MODERATE confidence | KIQ-01, KIQ-03.</strong> The more defensible preliminary classification is an infrastructure <em>equity acquisition/ownership transfer</em>, potentially with ancillary financing. Publicly stated acquisition intentions and already operating assets support that structure; the exact secondary-versus-primary share allocation remains unverified. <strong>Upgrade condition:</strong> executed agreements plus final use-of-proceeds table. <strong>Disconfirmation:</strong> documents showing that most funds are new subscriptions, capex, or debt restructuring rather than purchase consideration. [1][2][3][4]</p>

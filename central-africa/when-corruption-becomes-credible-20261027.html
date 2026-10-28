@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Quanta Analytica | MNS Consulting" name="author"/><meta content="#0a0c10" name="theme-color"/><title>When Corruption Becomes Credible | QAP™ | 27 Oct 2026</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://quanta-analytica.com/logo.PNG" rel="icon"/><style>/* ============================================================
+   QAP WEB REPORT — CANONICAL STYLESHEET
+   Quanta Analytica Process™ | MNS Consulting
+   quanta-analytica.com/reports/
+   Version: 2.0 | Design System Reference
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. ROOT VARIABLES — Color, Typography, Spacing
+   ------------------------------------------------------------ */
+:root {
+  /* Core Palette */
+  --obsidian:         #0a0c10;
+  --obsidian-mid:     #10131a;
+  --obsidian-card:    #13161f;
+  --obsidian-border:  #1c2030;
+  --obsidian-surface: #181b26;
+  --obsidian-lift:    #1e2235;
+
+  /* Gold Scale */
+  --gold:             #c8a96e;
+  --gold-light:       #dfc28e;
+  --gold-pale:        #e8d5aa;
+  --gold-dim:         #9a7f52;
+  --gold-muted:       #6b5838;
+  --gold-glow:        rgba(200, 169, 110, 0.12);
+  --gold-glow-strong: rgba(200, 169, 110, 0.22);
+
+  /* Alert / Status Colors */
+  --red:              #c0392b;
+  --red-light:        #e74c3c;
+  --red-bg:           rgba(192, 57, 43, 0.12);
+  --amber:            #d4820a;
+  --amber-light:      #f39c12;
+  --amber-bg:         rgba(212, 130, 10, 0.12);
+  --green:            #27ae60;
+  --green-light:      #2ecc71;
+  --green-bg:         rgba(39, 174, 96, 0.12);
+  --blue:             #2980b9;
+  --blue-light:       #3498db;
+  --blue-bg:          rgba(41, 128, 185, 0.12);
+  --yellow:           #f1c40f;
+  --yellow-bg:        rgba(241, 196, 15, 0.12);
+  --slate:            #5d7a9a;
+  --slate-light:      #7f9ab8;
+
+  /* Text Scale */
+  --text-primary:     #e8e4dc;
+  --text-secondary:   #b8b0a0;
+  --text-muted:       #7a7264;
+  --text-faint:       #4a4640;
+
+  /* Typography */
+  --font-display:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:         0.25rem;
+  --space-sm:         0.5rem;
+  --space-md:         1rem;
+  --space-lg:         1.5rem;
+  --space-xl:         2rem;
+  --space-2xl:        3rem;
+  --space-3xl:        4rem;
+
+  /* Borders & Radius */
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        10px;
+  --border-default:   1px solid var(--obsidian-border);
+  --border-gold:      1px solid var(--gold-dim);
+
+  /* Transitions */
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+
+  /* Shadows */
+  --shadow-card:      0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lift:      0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong, b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+em, i {
+  color: var(--slate-light);
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* ------------------------------------------------------------
+   3. SCROLL PROGRESS BAR
+   ------------------------------------------------------------ */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--gold-glow-strong);
+}
+
+/* ------------------------------------------------------------
+   4. NAVIGATION
+   ------------------------------------------------------------ */
+nav {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding: 0 var(--space-xl);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-brand span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-classify {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-bg);
+}
+
+/* ------------------------------------------------------------
+   5. HERO BLOCK
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 140px var(--space-xl) var(--space-3xl);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 60%, rgba(200, 169, 110, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(41, 128, 185, 0.04) 0%, transparent 50%),
+              var(--obsidian);
+}
+
+/* Animated background grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 110, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridDrift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-running-head {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-bottom: var(--space-sm);
+}
+
+.hero-container {
+  display: flex;          /* Enables side-by-side layout */
+  align-items: center;    /* Vertically centers the image with the text */
+  gap: 30px;              /* Creates space between the image and the text */
+  margin: 20px 0;
+}
+/* ----------------------------------------------------------------------
+   DEFAULT HERO IMG URL TO BE USED 'https://quanta-analytica.com/logo.PNG
+   -------Place image to the left of h1 title in hero section--------- */
+
+.hero-image {
+  max-width: 200px;       /* Adjust this size to fit your design */
+  height: auto;           /* Maintains aspect ratio */
+  border-radius: 8px;     /* Optional: rounds the corners of your image */
+}
+
+.hero-text {
+  flex: 1;                /* Allows text to take up remaining space */
+}
+
+/* Optional: Mobile Responsiveness */
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: column; /* Stacks image on top of text on small screens */
+    text-align: center;
+  }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 .title-gold {
+  color: var(--gold); 
+  display: block;      /* Ensures it starts on a new line */
+  margin-top: 0.5rem;  /* Optional: adds a small gap between lines */
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* Hero Metadata Row */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+
+.meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta-cell .value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gold-dim);
+  align-self: center;
+}
+
+/* Threat Badge */
+.threat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.threat-badge.critical  { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.threat-badge.high      { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.threat-badge.elevated  { color: var(--yellow);       border-color: var(--yellow);background: var(--yellow-bg);}
+.threat-badge.moderate  { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.threat-badge.low       { color: var(--green-light);  border-color: var(--green); background: var(--green-bg); }
+
+.threat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* Analytic Scope Boundary */
+.scope-boundary {
+  border-left: 3px solid var(--slate);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(93, 122, 154, 0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-lg);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+
+/* Key Metrics Strip */
+.metrics-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--obsidian-border);
+}
+
+.metric-block {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 2px solid var(--gold-dim);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+}
+
+.metric-block .metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-block .metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   6. MAIN CONTENT WRAPPER
+   ------------------------------------------------------------ */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+/* ------------------------------------------------------------
+   7. SECTION WRAPPER & SCROLL REVEAL
+   ------------------------------------------------------------ */
+.section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  margin-bottom: var(--space-3xl);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Sub-section divider */
+.sub-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
+.sub-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-muted), transparent);
+  margin-bottom: var(--space-lg);
+}
+
+.sub-section h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+/* ------------------------------------------------------------
+   8. BLUF — Bottom Line Up Front
+   ------------------------------------------------------------ */
+.bluf-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.bluf-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+}
+
+.bluf-index {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.bluf-text .bluf-claim {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.bluf-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   9. SNAPSHOT GRID — Who / What / Where / When / Why / How
+   ------------------------------------------------------------ */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.snapshot-cell {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.snapshot-cell .snap-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.snapshot-cell .snap-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   10. KEY JUDGMENTS
+   ------------------------------------------------------------ */
+.kj-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kj-item {
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  position: relative;
+}
+
+.kj-item.high     { border-left-color: var(--red);   }
+.kj-item.moderate { border-left-color: var(--amber);  }
+.kj-item.low      { border-left-color: var(--blue);   }
+.kj-item.watch    { border-left-color: var(--yellow);  }
+
+.kj-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.kj-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.kj-conf {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.kj-item.high     .kj-conf { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);   }
+.kj-item.moderate .kj-conf { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg); }
+.kj-item.low      .kj-conf { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);  }
+.kj-item.watch    .kj-conf { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg);}
+
+.kj-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+.kj-mapping {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ------------------------------------------------------------
+   11. EVIDENCE GRID — Know / Assess / Gap
+   ------------------------------------------------------------ */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.evidence-box {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.evidence-box-header {
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.evidence-box-header.know   { background: var(--green-bg);  color: var(--green-light);  border-bottom: 1px solid var(--green);  }
+.evidence-box-header.assess { background: var(--amber-bg);  color: var(--amber-light);  border-bottom: 1px solid var(--amber);  }
+.evidence-box-header.gap    { background: var(--red-bg);    color: var(--red-light);    border-bottom: 1px solid var(--red);    }
+
+.evidence-box-body {
+  padding: var(--space-lg);
+}
+
+.evidence-box-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.evidence-box-body li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.evidence-box-body li::before {
+  content: '//';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.evidence-box-body li:last-child {
+  border-bottom: none;
+}
+
+/* WSI Source Independence Note */
+.wsi-note {
+  background: rgba(93, 122, 154, 0.1);
+  border: 1px solid rgba(93, 122, 154, 0.3);
+  border-left: 3px solid var(--slate);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.83rem;
+  color: var(--slate-light);
+  font-style: italic;
+  margin-top: var(--space-lg);
+}
+
+.wsi-note strong {
+  color: var(--slate-light);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   12. TABLES — Assumption, ACH, IW, KIQ, Risk, PIGs
+   ------------------------------------------------------------ */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: var(--border-default);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+thead th {
+  background: var(--obsidian-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  border-bottom: 1px solid var(--obsidian-border);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--obsidian-border);
+  transition: background var(--transition-fast);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--obsidian-lift);
+}
+
+tbody td {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Assumption Table */
+.assumption-table { }
+
+/* ACH Table */
+.ach-table thead th:nth-child(4) { text-align: center; }
+.ach-table tbody td:nth-child(4) { text-align: center; font-family: var(--font-mono); }
+
+/* IW Table — Indicators & Warnings */
+.iw-table { }
+
+/* Risk Matrix — high-score rows */
+.risk-matrix tbody tr.risk-high {
+  background: var(--red-bg);
+}
+
+.risk-matrix tbody tr.risk-high td {
+  color: var(--text-primary);
+}
+
+.risk-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.risk-score.score-high   { color: var(--red-light);   }
+.risk-score.score-medium { color: var(--amber-light);  }
+.risk-score.score-low    { color: var(--green-light);  }
+
+/* KIQ Table */
+.kiq-table { }
+
+/* Priority Intelligence Gaps Table */
+.pig-table { }
+
+/* KPI Table (optional — fragility reports) */
+.kpi-table { }
+
+.pillar-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--obsidian-border);
+  color: var(--text-muted);
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------------------------------
+   13. SCENARIO CARDS
+   ------------------------------------------------------------ */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.scenario-card {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-top: 3px solid;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.scenario-card.best  { border-top-color: var(--green);  }
+.scenario-card.base  { border-top-color: var(--amber);  }
+.scenario-card.worst { border-top-color: var(--red);    }
+
+.scenario-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.scenario-card.best  .scenario-label { color: var(--green-light);  }
+.scenario-card.base  .scenario-label { color: var(--amber-light);  }
+.scenario-card.worst .scenario-label { color: var(--red-light);    }
+
+.scenario-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.scenario-card p {
+  font-size: 0.87rem;
+}
+
+.scenario-prob {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  display: block;
+  letter-spacing: 0.06em;
+}
+
+/* ------------------------------------------------------------
+   14. BEHAVIORAL GRID
+   ------------------------------------------------------------ */
+.behavioral-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.behavioral-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.behavioral-rank {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+  opacity: 0.25;
+  line-height: 1;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.behavioral-content h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-content p {
+  font-size: 0.88rem;
+  margin-bottom: var(--space-xs);
+}
+
+.behavioral-inference {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   15. RECOMMENDATION TIMELINE
+   ------------------------------------------------------------ */
+.rec-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--obsidian-border);
+  margin-left: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.rec-block {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.rec-block::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 1px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--obsidian-border);
+  border: 2px solid;
+}
+
+.rec-block.immediate  ::before { border-color: var(--red);   background: var(--red-bg);   }
+.rec-block.near-term  ::before { border-color: var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term::before { border-color: var(--green); background: var(--green-bg); }
+
+.rec-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.rec-block.immediate   .rec-time { color: var(--red-light);  border: 1px solid var(--red);   background: var(--red-bg);   }
+.rec-block.near-term   .rec-time { color: var(--amber-light);border: 1px solid var(--amber); background: var(--amber-bg); }
+.rec-block.medium-term .rec-time { color: var(--green-light);border: 1px solid var(--green); background: var(--green-bg); }
+
+.rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rec-content p {
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   16. CONFIDENCE PANEL
+   ------------------------------------------------------------ */
+.conf-panel {
+  background: var(--obsidian-card);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.conf-header {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.conf-band {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.conf-band.high     { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.conf-band.moderate { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.conf-band.low      { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+.conf-header-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.conf-body {
+  padding: var(--space-lg);
+}
+
+.conf-body p {
+  font-size: 0.9rem;
+}
+
+/* Uncertainty / Flip Risk List */
+.uncertainty-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.uncertainty-item {
+  background: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.uncertainty-item .u-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-light);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.uncertainty-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   17. THRESHOLD GRID — Green / Amber / Red Zones
+   ------------------------------------------------------------ */
+.threshold-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.threshold-cell {
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.threshold-cell.green-zone { border-color: var(--green);  background: var(--green-bg);  }
+.threshold-cell.amber-zone { border-color: var(--amber);  background: var(--amber-bg);  }
+.threshold-cell.red-zone   { border-color: var(--red);    background: var(--red-bg);    }
+
+.threshold-header {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+
+.threshold-cell.green-zone .threshold-header { color: var(--green-light);  border-color: var(--green);  background: rgba(39, 174, 96, 0.18);  }
+.threshold-cell.amber-zone .threshold-header { color: var(--amber-light);  border-color: var(--amber);  background: rgba(212, 130, 10, 0.18);  }
+.threshold-cell.red-zone   .threshold-header { color: var(--red-light);    border-color: var(--red);    background: rgba(192, 57, 43, 0.18);    }
+
+.threshold-body {
+  padding: var(--space-md);
+}
+
+.threshold-body p {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.threshold-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.threshold-body li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 3px 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.threshold-body li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+/* ------------------------------------------------------------
+   18. STATUS & BAND PILLS (inline)
+   ------------------------------------------------------------ */
+.status-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.status-pill.red    { color: var(--red-light);   border-color: var(--red);   background: var(--red-bg);    }
+.status-pill.amber  { color: var(--amber-light);  border-color: var(--amber); background: var(--amber-bg);  }
+.status-pill.green  { color: var(--green-light);  border-color: var(--green); background: var(--green-bg);  }
+.status-pill.blue   { color: var(--blue-light);   border-color: var(--blue);  background: var(--blue-bg);   }
+.status-pill.yellow { color: var(--yellow);        border-color: var(--yellow);background: var(--yellow-bg); }
+.status-pill.gold   { color: var(--gold);          border-color: var(--gold-dim); background: var(--gold-glow); }
+
+/* Band Pills (source register table) */
+.band-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.band-pill.green { color: var(--green-light);  border-color: var(--green);  background: var(--green-bg);  }
+.band-pill.amber { color: var(--amber-light);  border-color: var(--amber);  background: var(--amber-bg);  }
+.band-pill.red   { color: var(--red-light);    border-color: var(--red);    background: var(--red-bg);    }
+
+/* Inline fact/inference labels */
+.label-fact {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue-light);
+  border: 1px solid var(--blue);
+  background: var(--blue-bg);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+.label-inference {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  margin-right: 6px;
+}
+
+/* Structural constraint labels */
+.label-structural { color: var(--red-light);    }
+.label-political  { color: var(--amber-light);  }
+.label-resource   { color: var(--blue-light);   }
+.label-temporal   { color: var(--green-light);  }
+
+/* Analytic technique declaration block */
+.technique-declaration {
+  background: var(--obsidian-surface);
+  border: var(--border-default);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.technique-declaration strong {
+  color: var(--gold-dim);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   19. FOOTER
+   ------------------------------------------------------------ */
+footer {
+  border-top: 1px solid var(--obsidian-border);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-doc-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-legal {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   20. RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 var(--space-md);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px var(--space-md) var(--space-2xl);
+  }
+
+  main {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .snapshot-grid,
+  .evidence-grid,
+  .scenario-grid,
+  .threshold-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bluf-item {
+    grid-template-columns: 28px 1fr;
+    gap: var(--space-md);
+  }
+
+  .behavioral-item {
+    grid-template-columns: 1fr;
+  }
+
+  .behavioral-rank {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 0;
+    opacity: 0.35;
+  }
+
+  .hero-running-head {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .hero-meta {
+    gap: var(--space-sm);
+  }
+
+  .metrics-strip {
+    gap: var(--space-sm);
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+  }
+}
+
+.logo-lockup{display:flex;align-items:center;gap:1.5rem;margin:1.2rem 0 1.3rem}.logo-lockup img{width:145px;max-width:25vw;height:auto;object-fit:contain}.title-wrap{flex:1}.section{opacity:1!important;transform:none!important;margin:2.8rem auto;max-width:1100px;padding:1.6rem;border:1px solid #29283a;background:#11141c}.section h2{font-family:var(--font-display);font-size:1.6rem;margin:0 0 1.3rem;color:var(--gold)}.section h3{font-family:var(--font-display);font-size:1.2rem;margin:1.3rem 0 .6rem;color:var(--gold-light)}.section h4{font-family:var(--font-body);font-size:1.06rem;color:var(--gold-light);margin:1.2rem 0 .4rem}.section ul,.section ol{padding-left:1.8rem;margin:1rem 0}.section li{margin:.5rem 0}.section p{margin:.8rem 0}.section table{border-collapse:collapse;width:100%;font-family:var(--font-body);font-size:.82rem;margin:1.25rem 0;display:block;overflow-x:auto}.section th,.section td{border:1px solid #34303a;padding:.6rem .65rem;text-align:left;vertical-align:top;min-width:70px}.section th{color:var(--gold-light);background:#1c2030}.section tr:nth-child(even) td{background:#171b25}.section blockquote{border-left:4px solid var(--gold);padding:1.2rem;margin:1.5rem 0;background:#1c1c22}.section strong{color:#f7eedb}.section a{overflow-wrap:anywhere}.nav-links{gap:1rem;overflow:auto}.nav-links a{white-space:nowrap}.hero{min-height:auto;padding:105px 2rem 50px}main{width:min(1200px,96vw);margin:2rem auto}.hero h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem)}.hero-subtitle{font-size:1.08rem;max-width:980px}.scope-boundary{border-left:3px solid var(--gold);padding:1rem;margin-top:2rem;background:#171b25}.metadata-wrap{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}.meta-pill{border:1px solid #6b5838;padding:.4rem .75rem;font-family:var(--font-mono);color:var(--gold);font-size:.72rem}@media(max-width:650px){.logo-lockup{flex-direction:column;align-items:flex-start}.nav-links{display:none}.section{padding:1rem}}@media print{nav,.scroll-progress{display:none!important}body{background:white!important;color:#111!important}.section{background:white!important;border:none!important;break-inside:auto}.section p,.section td{color:#111!important}.section h2,.section h3{color:#997126!important}.section th{color:#111!important}a{color:#4f4838!important}}
+</style><meta content="M. Nuri Shakoor | MNS Consulting for Lladner Business Solutions, LLC and Partners" name="author"/><link href="https://research.quanta-analytica.com/central-africa/when-corruption-becomes-credible-20261027.html" rel="canonical"/></head><body><div id="progress"></div><nav><div class="nav-brand">QUANTA ANALYTICA <span>| MNS CONSULTING</span></div><ul class="nav-links"><li><a href="#how-government-distrust-fuels-the-ebola-misinformation-cycle">How Government Di</a></li><li><a href="#01-bottom-line-up-front">BOTTOM LINE UP FR</a></li><li><a href="#02-problem-architecture-and-key-intelligence-questions">PROBLEM ARCHITECT</a></li><li><a href="#03-factual-situation-snapshot-and-reconciliation">FACTUAL SITUATION</a></li><li><a href="#04-prioritized-key-judgments">PRIORITIZED KEY J</a></li><li><a href="#05-evidence-and-structural-drivers">EVIDENCE AND STRU</a></li><li><a href="#06-structured-analytic-tradecraft">STRUCTURED ANALYT</a></li><li><a href="#07-applied-behavioral-tradecraft-and-information-integrity">APPLIED BEHAVIORA</a></li><li><a href="#08-strategic-implications-rca-cps-risk-and-recommendations">STRATEGIC IMPLICA</a></li><li><a href="#09-confidence-counterevidence-and-collection-plan">CONFIDENCE, COUNT</a></li></ul><div class="nav-classify">OPEN SOURCE</div></nav><header class="hero"><div class="hero-grid"></div><div class="hero-content"><div class="hero-running-head"><span>QUANTA ANALYTICA | MNS CONSULTING</span><span>INFORMATION INTEGRITY // DRC EBOLA</span></div><div class="logo-lockup"><img alt="Quanta Analytica globe logo" src="https://quanta-analytica.com/logo.PNG"/><div class="title-wrap"><h1>WHEN CORRUPTION <span class="title-gold">BECOMES CREDIBLE</span></h1><p class="hero-subtitle">How Government Distrust Fuels the Ebola Misinformation Cycle<br/><em>When Fear Becomes the Threat: Ebola, Misinformation, and Institutional Trust in the DRC</em></p></div></div><div class="metadata-wrap"><span class="meta-pill">27 OCT 2026</span><span class="meta-pill">CONFIDENCE: MODERATE</span><span class="meta-pill">LOCALIZED STAFF RISK: HIGH</span><span class="meta-pill">OPEN SOURCE</span></div><p class="scope-boundary"><strong>Analytic Scope Boundary:</strong> DRC with focus on Tshopo, Ituri and North Kivu; historic baseline 2018–2020; forecast 0–90 days and 3–12 months. No restricted health surveillance, confidential police, or financial audit files. Human QA sign-off pending.</p></div><div style="margin:1.5rem 0;padding:1.3rem;border:1px solid #c8a96e;background:#111722;color:#e8e4dc;font-family:IBM Plex Sans,Arial,sans-serif;line-height:1.7"><strong style="color:#dfc28e">PRODUCTION ATTRIBUTION</strong><br/>Produced By Quanta AI developed by MNS Consulting for Lladner Business Solutions, LLC and Partners</div></header><main><section class="section visible" id="how-government-distrust-fuels-the-ebola-misinformation-cycle"><div class="section-header"><span class="section-num">How Government Distrust Fuels the Ebola Misinformation Cycle</span></div><h2>How Government Distrust Fuels the Ebola Misinformation Cycle</h2>
+<h3>When Fear Becomes the Threat: Ebola, Misinformation, and Institutional Trust in the Democratic Republic of the Congo</h3>
+<p><strong>ARAC International Inc. | Quanta Analytica | MNS Consulting</strong><br>
+<strong>Assessment ID:</strong> QAP-DRC-INFO-2026-1027-V2<br/>
+<strong>As of:</strong> 27 October 2026, 21:00 EDT | <strong>Geography:</strong> DRC, emphasis on Tshopo, Ituri, North Kivu | <strong>Historical comparison:</strong> 2018–2020 eastern DRC epidemic | <strong>Forward horizon:</strong> 0–90 days and 3–12 months<br/>
+<strong>Primary QAP domain:</strong> Information Integrity &amp; Influence Analysis | <strong>Supporting:</strong> Fragility &amp; Governance; Behavioral Risk; NGO Security Risk Management<br/>
+<strong>Handling:</strong> Open source | <strong>Intended audience:</strong> humanitarian coordination, health and NGO security leaders, accountability and peacebuilding analysts<br/>
+<strong>Overall judgment confidence:</strong> <strong>MODERATE</strong>, differentiated by key judgment | <strong>Localized health-worker protection risk:</strong> <strong>HIGH</strong> (planning judgment)<br/>
+<strong>Production status:</strong> Evidence-hardened analytical version; internal QA reviewed; independent human release review outstanding.</br></p>
+<p><strong>Analytic boundary.</strong> This is an open-source synthesis of contemporaneous WHO/CDC situation reporting, Reuters and AP event reporting, 2018–2020 peer-reviewed research, and governance/resilience evidence. No confidential health-zone field data, police case file, individual interview transcripts, response budgets, or classified streams were obtained. Causal attribution to corruption or a coordinated influence actor in the Bafwasende killing is <strong>not established</strong>. Cited historical prevalence estimates <strong>do not</strong> describe 2026 Tshopo.</p>
+<blockquote>
+<p><strong>EVIDENCE-HARDENING RESULT:</strong> The review confirmed the reported killing of a nurse but identified unresolved <strong>23 versus 24 October</strong> event dating; independently identified an arithmetic/denominator error in WHO's 20 October contact-follow-up provincial breakdown; corrected the previous report's DRC 2025 CPI score from <strong>20 to 19</strong>; and integrated disconfirming research indicating political exclusion, not distrust alone, was the historical escalation trigger. The official 27 October national caseload is reported as <strong>10,060 confirmed cases and 4,887 deaths</strong> through an INSP data pathway reported by Reuters and reflected in CDC reporting. [1]–[5], [9], [12]</p>
+</blockquote>
+<hr/>
+</section>
+<section class="section visible" id="01-bottom-line-up-front"><div class="section-header"><span class="section-num">01</span></div><h2>01 // BOTTOM LINE UP FRONT</h2>
+<p><strong>BLUF-1 | Legitimacy affects operational access. [ASSESS; MODERATE confidence]</strong> Historical population-based and mixed-method research finds that lower institutional trust and misinformation beliefs were associated with reduced willingness to undertake prevention and formal care. Current WHO qualitative observations identify rumors about lethal injections and profiteering as reasons given for delaying treatment. This establishes a credible mechanism, <strong>not a quantified causal effect for Tshopo in 2026</strong>. [6]–[8], [14]</p>
+<p><strong>BLUF-2 | Corruption perceptions matter, but must not be substituted for proof of corruption. [ASSESS; MODERATE]</strong> Salary disparities, recruitment favoritism allegations, exclusion, and opaque incentives featured in prior Ebola responses. A national CPI of <strong>19/100</strong> provides corruption-perception context, <strong>not</strong> evidence that present Ebola funds were diverted or that corruption caused the Bafwasende attack. [7], [8], [12]</p>
+<p><strong>BLUF-3 | Violence requires a separate explanation from mere distrust. [ASSESS; MODERATE]</strong> The Bafwasende fatality establishes a serious health-worker protection risk. Historical research by Sauter found that politicization and electoral exclusion, rather than distrust alone, drove broad violent mobilization in the 2018–2020 epidemic. No equivalent current mobilization sequence has yet been demonstrated in Tshopo. [4], [5], [9]</p>
+<p><strong>BLUF-4 | Outbreak-control capacity is exposed to compounding risk. [FACT + ASSESS; MODERATE]</strong> As of 20 October, WHO reported 9,704 DRC cases, 4,687 deaths and 79.7% daily contact follow-up, below its 95% benchmark; the 27 October INSP data reported by Reuters put DRC totals at 10,060 cases and 4,887 deaths. The case increase does not by itself demonstrate that misinformation caused transmission. [1]–[3]</p>
+<p><strong>BLUF-5 | The response priority is credible, accountable engagement coupled with duty of care. [RECOMMENDATION]</strong> Protect personnel, investigate violence, correct the specific rumor claims, make response allocations reviewable, incorporate local professionals into decisions, and test changes in trust and access. Communication-only interventions should not be assumed sufficient where grievances concern how decisions are made. [7]–[11], [14]</p>
+<hr/>
+</section>
+<section class="section visible" id="02-problem-architecture-and-key-intelligence-questions"><div class="section-header"><span class="section-num">02</span></div><h2>02 // PROBLEM ARCHITECTURE AND KEY INTELLIGENCE QUESTIONS</h2>
+<p><strong>Problem statement.</strong> To what extent do distrust of public authorities, perceived response profiteering, service inequity, fear and politically mobilized grievances influence Ebola misinformation acceptance, service avoidance and violence against health personnel in eastern DRC, and which interventions could interrupt the resulting feedback mechanisms?</p>
+<table>
+<thead>
+<tr>
+<th>KIQ</th>
+<th>Question to resolve</th>
+<th>Judgment / gap linkage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KIQ-1</td>
+<td>How strongly does institutional trust influence acceptance of false Ebola claims and care-seeking in the current affected health zones?</td>
+<td>KJ-1; PIG-1</td>
+</tr>
+<tr>
+<td>KIQ-2</td>
+<td>Which allegations concern measurable corruption, which describe perceived unfairness, and which are demonstrably false?</td>
+<td>KJ-2; PIG-2</td>
+</tr>
+<tr>
+<td>KIQ-3</td>
+<td>What conditions transform avoidance and criticism into targeted violence, and what were the specific motives at Bafwasende?</td>
+<td>KJ-3; PIG-3</td>
+</tr>
+<tr>
+<td>KIQ-4</td>
+<td>Is current rumor circulation organic, locally mobilized, or coordinated by an identifiable influence actor?</td>
+<td>KJ-4; PIG-4</td>
+</tr>
+<tr>
+<td>KIQ-5</td>
+<td>What is the operational relationship between trust, response implementation, contact tracing, and access?</td>
+<td>KJ-5; PIG-5</td>
+</tr>
+<tr>
+<td>KIQ-6</td>
+<td>Which protection, accountability and community-co-design measures are feasible and testably effective?</td>
+<td>KJ-5; action plan</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Unit of analysis:</strong> community and response-network interactions at health-zone level, not national attitudes as a proxy for individuals. <strong>Key confounders:</strong> security incident frequency, treatment and supply availability, road access, reported disease severity, employment conditions, political mobilization, language, preexisting health-service relations, burial practices, and selection into care.</p>
+<h3>Assumptions register</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Key assumption</th>
+<th>Status</th>
+<th>Failure signal / consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Historical eastern-DRC trust mechanisms remain relevant to contemporary zones.</td>
+<td>Unverified transfer</td>
+<td>Contemporary survey indicates high trust and no association with care avoidance; downgrade KJ-1 present-day inference.</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Some contemporary commercial-scheme claims are accepted by affected residents.</td>
+<td>Partially supported by WHO field account</td>
+<td>Representative survey finds very low uptake; redirect communication resources.</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Institutional trust affects cooperation independently of medical access.</td>
+<td>Untested current</td>
+<td>Matched zone analysis attributes delays to distance or supply absence after adjusting for trust.</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>The Bafwasende attack is related to the Ebola-response context.</td>
+<td>Supported; motive not confirmed</td>
+<td>Official investigation establishes an unrelated personal or criminal motive.</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Community participation and transparent accountability could improve access.</td>
+<td>Plausible; untested locally</td>
+<td>Measured improvements fail under comparative evaluation.</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>No specific coordinated disinformation actor can presently be identified.</td>
+<td>Current evidentiary limit</td>
+<td>Authenticated network/organizational evidence changes KJ-4.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+</section>
+<section class="section visible" id="03-factual-situation-snapshot-and-reconciliation"><div class="section-header"><span class="section-num">03</span></div><h2>03 // FACTUAL SITUATION SNAPSHOT AND RECONCILIATION</h2>
+<table>
+<thead>
+<tr>
+<th>WHO</th>
+<th>WHAT</th>
+<th>WHERE</th>
+<th>WHEN</th>
+<th>WHY IT MATTERS</th>
+<th>HOW ESTABLISHED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ebola responders, affected households, WHO and DRC health institutions</td>
+<td>Severe Bundibugyo virus disease epidemic and reported fatal attack on a nurse</td>
+<td>DRC; Bafwasende in Tshopo for the attack; major epidemic burden in Ituri and North Kivu</td>
+<td>Outbreak declared 15 May 2026; attack reported 23 or 24 Oct; assessment dated 27 Oct</td>
+<td>Disease control relies on staff safety, case identification, treatment, contact follow-up and public cooperation</td>
+<td>WHO situation updates; Reuters/AP; historical independent research [1]–[9]</td>
+</tr>
+</tbody>
+</table>
+<h3>Data reconciliation, completed to the limit of available public records</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Verified observation</th>
+<th>Resolution / remaining constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRC epidemic baseline</td>
+<td>WHO 23 Oct DON reports <strong>9,704 cases / 4,687 deaths</strong> as of <strong>20 Oct</strong> and 66 health zones in eight provinces. [1]</td>
+<td>Source-verified baseline, not current on 27 Oct.</td>
+</tr>
+<tr>
+<td>Later DRC totals</td>
+<td>Reuters 27 Oct reports national public-health institute data <strong>10,060 / 4,887</strong>; CDC's 25 Oct data snapshot also reproduces DRC values. [2][3]</td>
+<td>Use 10,060 / 4,887 as <strong>reported latest DRC national total</strong>, not as two independent surveillance systems. Date of record as given by CDC is 25 Oct; Reuters published 27 Oct. Obtain original INSP SitRep to fully establish data lineage.</td>
+</tr>
+<tr>
+<td>Contact follow-up</td>
+<td>WHO: <strong>24,017 / 30,130 = 79.7%</strong> nationally against <strong>95%</strong> threshold on 20 Oct. [1]</td>
+<td>Arithmetic internally consistent nationally; locality-specific analysis limited by WHO provincial typo.</td>
+</tr>
+<tr>
+<td>Tshopo denominator error</td>
+<td>WHO text prints <strong>83.7%; 1,077/12,086</strong>. This quotient is <strong>8.91%</strong>, not 83.7%; the printed provincial denominators sum <strong>40,930</strong>, not 30,130. [1]</td>
+<td>Arithmetic reconstruction suggests denominator <strong>1,286</strong> because 1,077/1,286 = <strong>83.75%</strong> and corrected provincial denominators sum <strong>30,130</strong>. <strong>Inference only</strong>, not a verified WHO erratum. Do not publish the reconstructed figure as official.</td>
+</tr>
+<tr>
+<td>Bafwasende fatality</td>
+<td>Reuters attributes attack to <strong>Friday</strong>; AP attributes it to <strong>Saturday</strong>, citing WHO official statement. [4][5]</td>
+<td>Fatal attack corroborated; day unresolved. Do not convert competing dates into a fixed single day. Police/WHO incident log required.</td>
+</tr>
+<tr>
+<td>Corruption index</td>
+<td>TI 2025 CPI: <strong>DRC = 19/100, rank 163/182</strong>. [12]</td>
+<td>Corrects earlier draft's <strong>20/100</strong>. Distinguish <strong>Republic of the Congo (23/100)</strong> from <strong>Democratic Republic of the Congo (19/100)</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Source independence:</strong> Reuters' October 27 epidemiological totals and CDC's same values trace back to DRC national public-health reporting, hence <strong>one upstream national statistical pathway</strong>. AP's account of Bafwasende cites WHO public statements; Reuters separately quotes local health officials, giving partially independent access while leaving the precise incident date in dispute. [2]–[5]</p>
+<p><strong>Current information-environment signals:</strong> WHO AFRO's October 26 field account reports that more than <strong>34,650 online content items</strong> were analyzed May–September, that Ituri teams addressed <strong>over 1,000 rumors</strong> since the outbreak began, and that dialogue supported access to some formerly resistant communities. These are program monitoring counts and illustrative observations, <strong>not representative rates of population belief, campaign reach, or attributable intervention effects</strong>. [6]</p>
+<hr/>
+</section>
+<section class="section visible" id="04-prioritized-key-judgments"><div class="section-header"><span class="section-num">04</span></div><h2>04 // PRIORITIZED KEY JUDGMENTS</h2>
+<p><strong>KJ-1 | Institutional distrust increases information-integrity vulnerability in some epidemic settings. MODERATE confidence for a 2026 generalized mechanism; HIGH for demonstrated 2018–2019 association.</strong> Vinck et al. surveyed 961 people in Beni and Butembo: weighted figures included 31.9% trusting local authorities to represent their interests, 25.5% believing the outbreak was not real, and <strong>32.6% believing Ebola was fabricated for financial gains</strong>. The study associates mistrust/misinformation with lower preventive participation but is observational and historically/geographically bounded. An independent contemporary WHO qualitative account describes a similar false commercial-scheme narrative affecting care delay. <strong>Counter-evidence:</strong> a single field story is not prevalence evidence; documented service deficits could explain care delay without distrust. <strong>Falsifier:</strong> representative 2026 matched-zone data show no adjusted trust–behavior relationship. KIQ-1. [6][7][14]</p>
+<p><strong>KJ-2 | Perceived inequity in outbreak governance is a plausible credibility mechanism, but specific diversion of 2026 Ebola funding is unverified. MODERATE confidence for historical mechanism; LOW for current magnitude.</strong> Park et al. document allegations surrounding compensation, recruitment and control of emergency resources; Mayhew et al. independently review deficiencies in community participation. TI's 2025 CPI is contextual. <strong>Counter-evidence:</strong> no audited 2026 procurement or expenditure evidence has been reviewed; selected accusations could be unfounded. <strong>Falsifier:</strong> independent financial and operational audit finds consistently fair, disclosed allocations combined with no local perception of exploitation. KIQ-2. [8][10][12]</p>
+<p><strong>KJ-3 | Health-worker violence poses a direct response-continuity risk; distrust alone does not explain escalation. MODERATE confidence.</strong> Bafwasende's fatal attack is corroborated through Reuters/local-official and WHO/AP reporting, notwithstanding a date disagreement. Sauter's earlier process tracing and interrupted time-series identify <em>politicization of Ebola and electoral exclusion</em> as the escalation point for mass resistance in 2018–2020, contradicting a mono-causal mistrust account. <strong>Counter-evidence:</strong> Bafwasende could have a distinct local criminal or personal trigger. <strong>Falsifier:</strong> incident investigation shows unrelated motive and no outbreak-linked threats. KIQ-3. [4][5][9]</p>
+<p><strong>KJ-4 | Deliberate, coordinated influence behind the present attack is unproven. WATCH / LOW confidence on actor attribution.</strong> Rumor themes are documented; collection to date does not establish synchronized network behavior, organizational direction, funding, or attributable effects. Similar messages in multiple places can arise organically or through ordinary reuse. <strong>Upgrade condition:</strong> verified actor infrastructure and at least two independent pathways across actor, behavior, dissemination scale or effect. <strong>Retirement condition:</strong> independently reconstructed propagation demonstrates uncoordinated transmission and no organizational link. KIQ-4. [4]–[6][9]</p>
+<p><strong>KJ-5 | Outbreak management should jointly monitor epidemiology, access, rumor themes and protection while testing transparent local participation. MODERATE confidence in operational necessity; LOW–MODERATE in intervention effect size.</strong> WHO reports below-target follow-up and repeated community-response problems; historical research finds power imbalances and exclusion from response design. Intervention evidence is suggestive and context-dependent. <strong>Counter-evidence:</strong> better communications cannot compensate for shortages, insecurity, or absent clinical services. <strong>Falsifier:</strong> comparative intervention study detects no improvement in trust, access or outcomes after confounder adjustment. KIQ-5, KIQ-6. [1][6][10][11]</p>
+<hr/>
+</section>
+<section class="section visible" id="05-evidence-and-structural-drivers"><div class="section-header"><span class="section-num">05</span></div><h2>05 // EVIDENCE AND STRUCTURAL DRIVERS</h2>
+<h3>What is known [FACT]</h3>
+<p>The outbreak and national case figures above were released through WHO, national and CDC reporting; a serious Bafwasende attack occurred; WHO documented current false claims about treatment centres; peer-reviewed research established historically relevant patterns of mistrust and of political mobilization. [1]–[10]</p>
+<h3>What is assessed [INFERENCE]</h3>
+<p>The combination of distrust, prior unfairness, visible response inequality and poor communications can increase the plausibility of false health narratives. The immediate risk of a further serious incident justifies precautionary personnel security planning. Neither inference establishes who organized the attack, how widely a rumor is believed, or how many infections are attributable to misinformation.</p>
+<h3>What is unknown [GAP]</h3>
+<p>There is no verified current representative trust/misinformation survey for Tshopo in the reviewed source set; no original police incident investigation, complete provincial contact follow-up dataset, audit of outbreak expenditure, longitudinal intervention outcome dataset, or authenticated network attribution evidence was obtained.</p>
+<h3>PESTELS system map</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Material variables</th>
+<th>Implications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Political</td>
+<td>Response legitimacy; perceived partisan exclusion; local governance</td>
+<td>Politicized decisions may mobilize resistance beyond ordinary skepticism. [9]</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Salary/per diem distribution, hiring, emergency procurement; household burdens</td>
+<td>Perceived profiteering may legitimize false narratives; complaints require independent checking. [8]</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>Historic grievance, religious/traditional provider relationships, language, mourning norms</td>
+<td>Trust and communication pathways vary by local social network. [7][10][14]</td>
+</tr>
+<tr>
+<td>Technological</td>
+<td>Online rumors, radio, helplines, field monitoring</td>
+<td>WHO reports 34,650 content items analyzed, not a representative public sample. [6]</td>
+</tr>
+<tr>
+<td>Environmental</td>
+<td>Remote access, disease exposure, transportation constraints</td>
+<td>Physical access constraints can mimic noncompliance. [1][10]</td>
+</tr>
+<tr>
+<td>Legal</td>
+<td>Worker protection, complaint due process, personal data protection</td>
+<td>Counter-rumor and protection measures must respect rights and medical confidentiality.</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Threats, unrest, armed-group presence, coercive responses</td>
+<td>Violence impairs services; security methods can themselves influence trust. [9][11]</td>
+</tr>
+</tbody>
+</table>
+<h3>Binding constraints</h3>
+<p><strong>Evidence:</strong> current local field research missing. <strong>Operational:</strong> case workload, geography and safety. <strong>Institutional:</strong> procurement and complaint processes must be auditable. <strong>Ethical:</strong> safeguarding patients, informants and local workers; avoid stigmatizing entire communities. <strong>Temporal:</strong> interventions cannot wait for complete causal proof where credible threats to life exist.</p>
+<hr/>
+</section>
+<section class="section visible" id="06-structured-analytic-tradecraft"><div class="section-header"><span class="section-num">06</span></div><h2>06 // STRUCTURED ANALYTIC TRADECRAFT</h2>
+<h3>Five-Layer Strategic Cognition: foundations → mechanisms → dynamics → leverage → paradigms</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Analytic finding</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1 Foundations</strong></td>
+<td>Health-service availability, unequal institutional authority, national corruption perceptions, conflict exposure and varied local legitimacy structures condition response choices.</td>
+<td>Collect locality-matched baseline and access data.</td>
+</tr>
+<tr>
+<td><strong>L2 Mechanisms</strong></td>
+<td>Perceived exploitation and exclusion may affect credibility; fear and treatment-center rumor influence decisions; politicization may catalyze violent mobilization.</td>
+<td>Survey each belief separately; investigate trigger chronology.</td>
+</tr>
+<tr>
+<td><strong>L3 Dynamics</strong></td>
+<td>Candidate reinforcing loops: grievance → mistrust → rumor uptake → avoidance → disrupted services → grievance. Competing loop: fear → delayed treatment → bad outcomes → fear.</td>
+<td>Track temporality and distinguish independent drivers.</td>
+</tr>
+<tr>
+<td><strong>L4 Leverage</strong></td>
+<td>Independent audits, transparent compensation, accessible quality care, community role in decisions, responder security and grievance redress.</td>
+<td>Compare phased rollouts against predefined outcomes.</td>
+</tr>
+<tr>
+<td><strong>L5 Paradigms</strong></td>
+<td>Is outbreak control perceived as externally imposed security enforcement or as accountable, locally co-governed protection?</td>
+<td>Elicit community explanations through ethical interviews; test behavior, not slogans.</td>
+</tr>
+</tbody>
+</table>
+<h3>Analysis of Competing Hypotheses (ACH)</h3>
+<p><strong>H1:</strong> Structural institutional mistrust is the dominant driver of response resistance. <strong>H2:</strong> Direct service failures/unequal response benefits are dominant. <strong>H3:</strong> Politicization and exclusion trigger transition from skepticism to collective violence. <strong>H4:</strong> General epidemic fear and medical uncertainty dominate. <strong>H5:</strong> An organized influence actor centrally directs current hostility.</p>
+<p>Legend: <strong>++</strong> strongly consistent/diagnostic; <strong>+</strong> consistent; <strong>0</strong> nondiagnostic; <strong>−</strong> tension; <strong>?</strong> untested current.</p>
+<table>
+<thead>
+<tr>
+<th>Diagnostic evidence item</th>
+<th>H1</th>
+<th>H2</th>
+<th>H3</th>
+<th>H4</th>
+<th>H5</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1: 2019 survey correlates trust/misinformation with prevention [7]</td>
+<td>++</td>
+<td>+</td>
+<td>0</td>
+<td>+</td>
+<td>0</td>
+<td>Supports behavioral role, not causal primacy.</td>
+</tr>
+<tr>
+<td>E2: 2018–2020 field interviews document pay/recruitment inequity complaints [8][14]</td>
+<td>+</td>
+<td>++</td>
+<td>+</td>
+<td>0</td>
+<td>0</td>
+<td>More diagnostic for operational grievance.</td>
+</tr>
+<tr>
+<td>E3: Sauter's interrupted-time-series links electoral exclusion to attacks [9]</td>
+<td>−</td>
+<td>0</td>
+<td>++</td>
+<td>−</td>
+<td>0</td>
+<td><strong>Active disconfirmation</strong> of distrust-only violence explanation.</td>
+</tr>
+<tr>
+<td>E4: WHO October 2026 case narrative cites harmful-injection/commercial-scheme claims [6]</td>
+<td>+</td>
+<td>+</td>
+<td>0</td>
+<td>++</td>
+<td>?</td>
+<td>Illustrates present rumor content, but is not representative.</td>
+</tr>
+<tr>
+<td>E5: Bafwasende killing documented, motive unknown [4][5]</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>Nondiagnostic for attribution</strong>; do not turn occurrence into motive.</td>
+</tr>
+<tr>
+<td>E6: WHO under-target follow-up and clinical capacity constraints [1]</td>
+<td>0</td>
+<td>+</td>
+<td>0</td>
+<td>+</td>
+<td>0</td>
+<td>Multiple alternative explanations.</td>
+</tr>
+<tr>
+<td>E7: No verified coordination or actor infrastructure</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>Missing evidence, not evidence of absence.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ACH result:</strong> For <em>historical large-scale violence</em>, H3 has the most diagnostic support and H1 as a sufficient explanation is contradicted. For <em>2026 rumor-informed avoidance</em>, H1/H2/H4 are all plausible and not ranked conclusively. For the <em>Bafwasende event</em>, the incident record is insufficient to choose among motives. H5 remains a collection hypothesis only. A composite system hypothesis is retained: institutional distrust is an enabling condition in some communities; operational inequity and fear shape uptake; politicization or specific triggers may be necessary for escalation. This is a disciplined provisional judgment, not a statistical causal decomposition.</p>
+<h3>Competing causal feedback loops</h3>
+<p><strong>R1, credibility loop [PROPOSED]:</strong> perceived unfairness (+) → institutional mistrust (+) → belief in false medical claims (+) → delayed care/access resistance (+) → visible response failure (+) → perceived unfairness. <strong>Critical missing test:</strong> time ordering of grievance, belief and delay.</p>
+<p><strong>R2, violence loop [CONDITIONAL]:</strong> triggering political/service incident → mobilizing narrative → threats/attacks → service withdrawal → reduced accessible care → grievance. <strong>Sauter provides a historical pathway; no matching 2026 trigger has yet been verified.</strong> [9]</p>
+<p><strong>B1, stabilizing loop [TESTABLE]:</strong> transparent rule-setting and community co-decision → verified grievance resolution → increased perceived procedural fairness → safer service engagement → improved coverage → stronger credible information. Not a demonstrated 2026 effect.</p>
+<h3>Scenarios, 0–90 days</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Conditional description</th>
+<th>Leading trigger</th>
+<th>Implication</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recovery</strong></td>
+<td>Locally accepted co-governance and protection reduce threats, improve access and monitoring</td>
+<td>Verified complaint resolution plus sustained access improvements</td>
+<td>Maintain measured adaptations</td>
+<td><strong>Uncalibrated</strong></td>
+</tr>
+<tr>
+<td><strong>Persistent fragmentation</strong></td>
+<td>Repeated rumors and uneven access continue alongside outbreak response</td>
+<td>Flat trust surveys, episodic service interruptions</td>
+<td>Maintain layered precautions</td>
+<td><strong>Uncalibrated</strong></td>
+</tr>
+<tr>
+<td><strong>Escalation</strong></td>
+<td>Additional attacks or coercive political responses trigger prolonged service disruption</td>
+<td>Serious repeated incidents plus documented mobilization</td>
+<td>Activate duty-of-care relocation/continuity plans</td>
+<td><strong>Uncalibrated</strong></td>
+</tr>
+</tbody>
+</table>
+<p>No numerical scenario probabilities are assigned without an empirical reference class and baseline trend. An earlier draft's numerical risk scores should be treated as <strong>ordinal planning judgments</strong>, not probabilistic forecasts.</p>
+<hr/>
+</section>
+<section class="section visible" id="07-applied-behavioral-tradecraft-and-information-integrity"><div class="section-header"><span class="section-num">07</span></div><h2>07 // APPLIED BEHAVIORAL TRADECRAFT AND INFORMATION INTEGRITY</h2>
+<p><strong>Why applicable:</strong> Present WHO field testimony and historical empirical studies link beliefs, institutional signals and health-seeking decisions. Behavioral analysis is limited to observable social mechanisms, not diagnosis of individuals. [6]–[10]</p>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>Observed basis</th>
+<th>Inference and operational indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credibility filtering</strong></td>
+<td>Lower trust associated with lower preventive participation in 2019. [7]</td>
+<td>Monitor differential belief by messenger and prior service experience.</td>
+</tr>
+<tr>
+<td><strong>Profit narrative resonance</strong></td>
+<td>Park et al. document complaints over compensation and recruitment. [8]</td>
+<td>Audit any specific payment/recruitment claim before labeling it true or false.</td>
+</tr>
+<tr>
+<td><strong>Loss/fear salience</strong></td>
+<td>WHO 2026 field account describes avoidance related to lethal-injection rumor. [6]</td>
+<td>Record stated care-delay reasons, including provider availability.</td>
+</tr>
+<tr>
+<td><strong>Political injustice framing</strong></td>
+<td>Sauter's historical analysis shows exclusion as violence tipping point. [9]</td>
+<td>Watch verified shifts from grievances to explicit exclusion/collective action calls.</td>
+</tr>
+<tr>
+<td><strong>Peer-network trust</strong></td>
+<td>Local professional, healer and community roles documented in WHO experience. [6][10]</td>
+<td>Compare the same factual message delivered via different local channels.</td>
+</tr>
+</tbody>
+</table>
+<h3>ABC+DE malign-influence attribution gate</h3>
+<p><strong>Actor:</strong> None independently established for Bafwasende. <strong>Behavior:</strong> No authenticated synchronized amplification dataset obtained. <strong>Content:</strong> False claims about harmful injections and Ebola profiteering have been documented. <strong>Degree:</strong> WHO content volume measures monitored items, <strong>not unique persons or reach</strong>. <strong>Effect:</strong> WHO presents individual testimony and access narratives, not a controlled effect estimate. [6]</p>
+<p><strong>Decision:</strong> Describe a <em>misinformation environment</em> and documented rumors; do not identify a <em>disinformation operation</em> without intention/actor/coordination evidence. Information integrity policy must protect legitimate criticism and whistleblowing from being treated as hostile influence.</p>
+<hr/>
+</section>
+<section class="section visible" id="08-strategic-implications-rca-cps-risk-and-recommendations"><div class="section-header"><span class="section-num">08</span></div><h2>08 // STRATEGIC IMPLICATIONS, RCA/CPS, RISK AND RECOMMENDATIONS</h2>
+<h3>RCA/CPS and Positive Peace alignment</h3>
+<p>IEP's Positive Peace pillars provide a <strong>conceptual systems overlay</strong>, not an Ebola-specific predictive tool. Relevant pillars include Well-Functioning Government, Low Levels of Corruption, Free Flow of Information, Equitable Distribution of Resources, Acceptance of the Rights of Others and High Levels of Human Capital. [13]</p>
+<p><strong>Root-cause proposition:</strong> Where response benefits or decision rights are perceived as captured by outsiders, technical expertise alone may fail to secure consent. Remedy pathways require both verifiably sound health services and procedures through which affected communities can influence how resources are allocated. Historical critique from Mayhew et al. finds that consultation without actual co-decision was a recurring problem. [10]</p>
+<h3>Localized risk register (1–5 ordinal, L×I; analyst planning scores)</h3>
+<table>
+<thead>
+<tr>
+<th>Operational risk</th>
+<th style="text-align:right">L</th>
+<th style="text-align:right">I</th>
+<th style="text-align:right">Score</th>
+<th>Confidence</th>
+<th>Mitigation owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Further serious threat to frontline workers</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right"><strong>20</strong></td>
+<td>Moderate</td>
+<td>Health-zone security + duty-of-care management</td>
+</tr>
+<tr>
+<td>Outreach or contact-tracing interruption</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right"><strong>16</strong></td>
+<td>Moderate</td>
+<td>Health operations lead</td>
+</tr>
+<tr>
+<td>Harmful medical rumor delaying referral</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right"><strong>16</strong></td>
+<td>Moderate</td>
+<td>RCCE + clinical lead</td>
+</tr>
+<tr>
+<td>Coercive protection undermining acceptance</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right"><strong>12</strong></td>
+<td>Low–moderate</td>
+<td>Joint protection/community liaison</td>
+</tr>
+<tr>
+<td>Unresolved compensation grievance</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right"><strong>9</strong></td>
+<td>Low current baseline</td>
+<td>HR, procurement, accountability</td>
+</tr>
+<tr>
+<td>Coordinated influence exploitation</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right"><strong>8</strong></td>
+<td>Low</td>
+<td>Information-integrity analysis cell</td>
+</tr>
+</tbody>
+</table>
+<p>Scores are internally generated planning priorities, <strong>not measured frequencies</strong>. The 20–25 risk tier is critical under the local QAP risk matrix. Personnel protection need not wait for causal attribution.</p>
+<h3>Action plan with owners, thresholds and measurable deliverables</h3>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Specific action</th>
+<th>Owner class</th>
+<th>Trigger / benchmark</th>
+<th>Verifiable output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–72h</td>
+<td>Confirm incident chronology and motive categories without publicly naming witnesses; coordinate proportionate staff protection</td>
+<td>DRC investigation liaison + health security</td>
+<td>Any fatal attack / specific credible threat</td>
+<td>Protected incident file and safe-access plan</td>
+</tr>
+<tr>
+<td>0–72h</td>
+<td>Identify suspended outreach, contact follow-up loss and potential care disruption</td>
+<td>Health-zone management + surveillance</td>
+<td>Any security suspension &gt;24h</td>
+<td>Daily service-continuity log</td>
+</tr>
+<tr>
+<td>0–72h</td>
+<td>Correct specific lethal-injection/profiteering claims with accessible evidence and noncoercive discussion</td>
+<td>RCCE + local clinicians</td>
+<td>Documented harmful narrative linked to delay</td>
+<td>Language-matched questions/answers and feedback log</td>
+</tr>
+<tr>
+<td>3–30d</td>
+<td>Review compensation scales, hiring criteria, procurement transparency and grievance channels</td>
+<td>Ministry procurement/HR + independent auditors</td>
+<td>Repeated specific unfairness complaints</td>
+<td>Audit trail and anonymized corrective-action tracker</td>
+</tr>
+<tr>
+<td>3–30d</td>
+<td>Launch sampled trust / information / service-quality study, including non-users</td>
+<td>Local researchers + epidemiologists</td>
+<td>Lack of comparable 2026 baseline</td>
+<td>Pre-registered questionnaire, disaggregated data and bias note</td>
+</tr>
+<tr>
+<td>3–30d</td>
+<td>Give local health professionals and representatives documented decision rights in adaptations</td>
+<td>Health coordination + community assemblies</td>
+<td>Repeated concerns with no response adjustment</td>
+<td>Public decisions log and change notices</td>
+</tr>
+<tr>
+<td>30–180d</td>
+<td>Evaluate service and transparency interventions across comparable areas</td>
+<td>Independent evaluation lead</td>
+<td>Baseline established and operationally feasible matching</td>
+<td>Outcome analysis with confounder and harm checks</td>
+</tr>
+<tr>
+<td>30–180d</td>
+<td>Institutionalize safe complaint systems, whistleblower protection and annual review</td>
+<td>Governance + HR + civil society</td>
+<td>Persistent unresolved concerns</td>
+<td>Published anonymized accountability indicators</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Do-no-harm safeguards:</strong> No public release of staff routines, protective movement schedules, names of suspected instigators, precise household locations, or identifiable patient details. Protection teams should distinguish credible threats from routine criticism. Disclosure must preserve health-data privacy.</p>
+<hr/>
+</section>
+<section class="section visible" id="09-confidence-counterevidence-and-collection-plan"><div class="section-header"><span class="section-num">09</span></div><h2>09 // CONFIDENCE, COUNTEREVIDENCE AND COLLECTION PLAN</h2>
+<p><strong>Overall confidence: MODERATE.</strong> Confidence is strengthened by independent historical methodological streams (survey, qualitative research, process tracing), contemporaneous WHO firsthand reporting and verified outbreak/incident reporting. It is reduced by missing Tshopo representative surveys, absent police case file, imperfect reporter independence, one WHO numeric inconsistency and unavailable original current national sitrep.</p>
+<h3>Judgment-to-evidence and counter-evidence matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Judgment</th>
+<th>Positive evidence streams</th>
+<th>Material counter-evidence / constraint</th>
+<th>Falsification or confidence upgrade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KJ-1</td>
+<td>Historic probability survey [7], mixed-method resistance study [14], present WHO qualitative field observation [6]</td>
+<td>2019 Beni/Butembo ≠ 2026 Tshopo; survey associations not causal</td>
+<td>Matched 2026 survey and verified care records</td>
+</tr>
+<tr>
+<td>KJ-2</td>
+<td>Interview study [8], humanitarian review [10], context index [12]</td>
+<td>No specific 2026 financial audit; CPI is national perception measure</td>
+<td>Procurement data plus local grievance validation</td>
+</tr>
+<tr>
+<td>KJ-3</td>
+<td>Reuters with local access [4]; AP citing WHO [5]; historical escalation paper [9]</td>
+<td>Event day conflict; no verified current mobilization evidence</td>
+<td>WHO/police incident chronology and witness-validated trigger sequence</td>
+</tr>
+<tr>
+<td>KJ-4</td>
+<td>WHO current rumors [6]; no positive actor attribution</td>
+<td>Absence of evidence cannot prove absence of an operation</td>
+<td>Authentic network signatures + two independent actor/behavior/effect streams</td>
+</tr>
+<tr>
+<td>KJ-5</td>
+<td>WHO outbreak operations [1]; WHO RCCE [6]; historical UNICEF field lessons [11]; Mayhew [10]</td>
+<td>Intervention evidence not controlled; infrastructure gaps confound impact</td>
+<td>Phased or matched intervention evaluation</td>
+</tr>
+</tbody>
+</table>
+<h3>Priority Intelligence Gaps (PIG)</h3>
+<table>
+<thead>
+<tr>
+<th>PIG</th>
+<th>Why decision-sensitive</th>
+<th>Collection design</th>
+<th>Judgment affected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIG-1</td>
+<td>Cannot quantify current trust–health behavior effect</td>
+<td>Probability or purposive-plus-weighted health-zone surveys, language validated</td>
+<td>KJ-1, KJ-5</td>
+</tr>
+<tr>
+<td>PIG-2</td>
+<td>Cannot distinguish corrupt practice from perceived unfairness</td>
+<td>Independent procurement/payroll audit with grievance anonymization</td>
+<td>KJ-2</td>
+</tr>
+<tr>
+<td>PIG-3</td>
+<td>Cannot attribute Bafwasende motive or settle day</td>
+<td>Official incident log, independent witness interviews, geotemporal checks</td>
+<td>KJ-3</td>
+</tr>
+<tr>
+<td>PIG-4</td>
+<td>Cannot infer coordinated campaign</td>
+<td>Origin/behavior/timing analysis with privacy safeguards and upstream dependence tests</td>
+<td>KJ-4</td>
+</tr>
+<tr>
+<td>PIG-5</td>
+<td>WHO provincial contact denominators inconsistent</td>
+<td>Obtain corrected WHO dataset and authoritative erratum</td>
+<td>KJ-5 technical baseline</td>
+</tr>
+<tr>
+<td>PIG-6</td>
+<td>Intervention effectiveness unknown</td>
+<td>Pre-specified matched evaluation of complaint resolution, trust and service access</td>
+<td>Recommendations</td>
+</tr>
+</tbody>
+</table>
+<h3>Operational indicators and thresholds (proposed, not validated forecasting cutoffs)</h3>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>AMBER threshold</th>
+<th>RED threshold</th>
+<th>Cadence / owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threats against staff</td>
+<td>Credible specific threat</td>
+<td>Attack or imminent threat</td>
+<td>Immediate / security lead</td>
+</tr>
+<tr>
+<td>Service interruptions</td>
+<td>Security-related cessation &gt;24h</td>
+<td>Repeated cessation affecting care access &gt;72h</td>
+<td>Daily / operations</td>
+</tr>
+<tr>
+<td>Contact follow-up</td>
+<td>Below WHO 95% benchmark for 3 reporting days</td>
+<td>Sustained decrease with multiple missed teams or safety restrictions</td>
+<td>Daily / surveillance</td>
+</tr>
+<tr>
+<td>Trusted-messenger acceptance</td>
+<td>Decline from first comparable local baseline</td>
+<td>Concurrent fall in trust and care access</td>
+<td>Biweekly / social research</td>
+</tr>
+<tr>
+<td>Harmful rumor recurrence</td>
+<td>Same verified false claim in ≥2 independent community channels</td>
+<td>Credible case of threats or care denial linked to claim</td>
+<td>Weekly / RCCE</td>
+</tr>
+<tr>
+<td>Unresolved grievances</td>
+<td>Repeat unresolved issue across 2 review cycles</td>
+<td>Specific grievance linked to mobilized threats</td>
+<td>Weekly / accountability</td>
+</tr>
+<tr>
+<td>Politicization</td>
+<td>Verified claim that health measures unfairly target group</td>
+<td>Demonstrated coordination plus violent call to action</td>
+<td>Weekly / conflict analysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assumption failure drill:</strong> If A1 fails, prioritize locally observed service barriers rather than imported historical trust mechanisms. If A4 fails, remove any Bafwasende-specific rumor or governance causal attribution while retaining general health-worker threat concern.</p>
+<hr/>
+</section>
+<section class="section visible" id="10-wsi-source-register-and-final-analytic-disposition"><div class="section-header"><span class="section-num">10</span></div><h2>10 // WSI SOURCE REGISTER AND FINAL ANALYTIC DISPOSITION</h2>
+<h3>WSI rules applied</h3>
+<p>The source-level <strong>RAPITIS</strong> dimensions are reliability (R), access (A), provenance (P), manipulation resistance (M), timeliness (T), independence (I) and specificity (S), all <strong>0–5</strong>. A green band requires an average ≥4 with no fatal flaw; amber is 2.5–3.9; red &lt;2.5 or fatal issues. The <strong>C/D/F</strong> claim measures are corroboration, ACH diagnosticity and falsifiability. Per the QAP WSI SOP, load-bearing claims require <strong>C≥4 and D≥3</strong>, without an unresolved hard conflict. <strong>Claims failing this gate are caveated, confined to background or designated collection leads</strong>, even if drawn from a strong source. Full per-source cards and claim tests appear in Annexes C and D.</p>
+<h3>Source independence and hard conflicts</h3>
+<ol>
+<li><strong>National totals:</strong> Reuters and CDC derive the 10,060/4,887 figures from national surveillance. Cross-publication consistency supports faithful reproduction, not independently duplicated enumeration.</li>
+<li><strong>Bafwasende event:</strong> Reuters/local health access and AP/WHO are partially independent <em>for occurrence</em>, but the source pathways <strong>conflict on Friday versus Saturday</strong>. Event date is <strong>not load-bearing</strong> and remains unresolved.</li>
+<li><strong>WHO provincial contact arithmetic:</strong> Proven error in published textual denominator; corrected candidate is inferential pending WHO action. Only national 79.7% and target are used operationally.</li>
+<li><strong>CPI ambiguity:</strong> DRC 19/100 must not be confused with neighboring Republic of Congo 23/100. Neither demonstrates outbreak fund misuse.</li>
+<li><strong>Historical transfer:</strong> Research from 2018–2020 is accepted as mechanism evidence, not as representative 2026 frequency estimates.</li>
+<li><strong>Narrative intent:</strong> Neither rumor repetition nor WHO use of the term “disinformation” demonstrates an attributable coordinated actor; KJ-4 remains WATCH.</li>
+</ol>
+<p><strong>Publication control:</strong> This analytical edition is evidence-hardened. It can be reviewed and disseminated with these explicit caveats, but it is <strong>not certified as fully independent-review-complete</strong>. Annex E documents transparent provisional checklist coverage rather than an invented official weighted QA score.</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-a-advanced-causal-research-and-measurement-plan"><div class="section-header"><span class="section-num">ANNEX A</span></div><h2>ANNEX A // ADVANCED CAUSAL RESEARCH AND MEASUREMENT PLAN</h2>
+<p><strong>Design:</strong> health-zone panel study, 8–12 weeks minimum with repeated measurements; compare zones on security, service availability, baseline trust and epidemic severity. Primary preregistered outcomes: time from symptom onset to care, verified referral uptake, contact-follow-up completeness and staff access incidents. Explanatory measures: trusted source type, specific rumor belief, perceived fairness of hiring/resource allocation, audit awareness, prior experiences and political exclusion perceptions. Avoid inferring individual beliefs from aggregate CPI or WHO digital-item counts. Use difference-in-differences or matched comparative analyses only if assumptions and sample size allow. Ethical safeguards: local research oversight, consent, non-retaliatory complaint mechanisms and nonidentifiable publication.</p>
+<p><strong>Decision tests:</strong> a statistically and operationally meaningful rise in transparency visibility <strong>without</strong> any trust/access improvement would weaken the proposed accountability pathway; improved access after locally co-designed changes with stable security/supply conditions would strengthen it. Predefine what degree of change counts as material rather than choosing thresholds retrospectively.</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-b-atomic-claim-evidence-register"><div class="section-header"><span class="section-num">ANNEX B</span></div><h2>ANNEX B // ATOMIC CLAIM EVIDENCE REGISTER</h2>
+<table>
+<thead>
+<tr>
+<th>Claim ID</th>
+<th>Atomic proposition</th>
+<th>Source(s)</th>
+<th style="text-align:right">C</th>
+<th style="text-align:right">D</th>
+<th style="text-align:right">F</th>
+<th>Tier / authorized use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-01</td>
+<td>WHO reported 9,704 DRC confirmed cases and 4,687 deaths as of 20 Oct</td>
+<td>[1]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>A: official count, dated</td>
+</tr>
+<tr>
+<td>C-02</td>
+<td>National reported totals rose to 10,060 cases and 4,887 deaths by late Oct</td>
+<td>[2][3]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>A: shared upstream national dataset, not independent counts</td>
+</tr>
+<tr>
+<td>C-03</td>
+<td>A nurse died and colleague was injured in Bafwasende Ebola-response incident</td>
+<td>[4][5]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td>B: partially independent incident reporting</td>
+</tr>
+<tr>
+<td>C-04</td>
+<td>Attack happened specifically on <strong>23 Oct</strong></td>
+<td>[4] versus [5]</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>C / CONFLICTED: <strong>not accepted</strong></td>
+</tr>
+<tr>
+<td>C-05</td>
+<td>Attack happened specifically on <strong>24 Oct</strong></td>
+<td>[5] versus [4]</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>C / CONFLICTED: <strong>not accepted</strong></td>
+</tr>
+<tr>
+<td>C-06</td>
+<td>WHO national follow-up was 79.7%, below 95% target as of 20 Oct</td>
+<td>[1]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>A: official report, numerically checkable</td>
+</tr>
+<tr>
+<td>C-07</td>
+<td>WHO's Tshopo published provincial denominator has an arithmetic error</td>
+<td>[1], arithmetic</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td>A: official original plus independent arithmetic validation</td>
+</tr>
+<tr>
+<td>C-08</td>
+<td>1,286 is WHO's <em>official corrected</em> Tshopo denominator</td>
+<td>arithmetic inference</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td>C: <strong>not accepted as official</strong></td>
+</tr>
+<tr>
+<td>C-09</td>
+<td>Historical lower trust/misinformation associated with less prevention</td>
+<td>[7][14]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td>B: separate historic survey pathways</td>
+</tr>
+<tr>
+<td>C-10</td>
+<td>“Ebola is a business” reflected historical grievances</td>
+<td>[8][10][14]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td>B: independent qualitative/review pathways</td>
+</tr>
+<tr>
+<td>C-11</td>
+<td>2018–2020 political exclusion amplified attacks beyond distrust alone</td>
+<td>[9]</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td>C: strong single methodological study, explicit caveat</td>
+</tr>
+<tr>
+<td>C-12</td>
+<td>Contemporary WHO documented harmful-injection and commercial-scheme rumor themes</td>
+<td>[6]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>A: WHO direct field observations; prevalence unspecified</td>
+</tr>
+<tr>
+<td>C-13</td>
+<td>DRC scored 19/100 and ranked 163/182 in CPI 2025</td>
+<td>[12]</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>A: direct issuer index; context only</td>
+</tr>
+<tr>
+<td>C-14</td>
+<td>Specific corruption caused Bafwasende attack</td>
+<td>no direct corroboration</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5</td>
+<td>REJECTED causal claim</td>
+</tr>
+<tr>
+<td>C-15</td>
+<td>Coordinated hostile influence actor organized the attack</td>
+<td>no direct attribution</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5</td>
+<td>WATCH only, no attribution</td>
+</tr>
+<tr>
+<td>C-16</td>
+<td>Transparency and co-governance <em>will</em> reduce current attacks</td>
+<td>historical plausibility only</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td>Testable recommendation, <strong>not established effect</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>C/D/F rationale:</strong> C=4 is used for authoritative direct evidence with credible external/contextual validation or independent pathways; a single complex study with no independent replication of its particular causal estimate gets C=3. D distinguishes whether an item helps discriminate competing mechanisms; the <em>occurrence</em> of a violent incident has high discrimination between “no attack” and “attack,” but low discrimination <strong>among motive hypotheses</strong>. The C-03 D4 applies to incident occurrence/operational threat, <strong>not</strong> motive. F=5 reflects testability against records, audit or repeat measurement, not that falsification has actually been performed.</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-c-rapitis-source-score-summary-and-complete-wsi-cards"><div class="section-header"><span class="section-num">ANNEX C</span></div><h2>ANNEX C // RAPITIS SOURCE SCORE SUMMARY AND COMPLETE WSI CARDS</h2>
+<p><strong>Source register scoring notes.</strong> Numbers are analyst-specified, not an independent measurement of truth. Primary and historical sources are scored for the particular claims extracted. <strong>M</strong> is scored as <em>resistance to manipulation</em>, where a higher number is better. Unweighted average is used for the source band; applicable domain-specific weighted scores should not be confused with the mean. Each card supplies provenance, access, source dependency, contestability, MOM/POP/MOSES/EVE and a specific potential falsifier.</p>
+<h3>Domain-specific WSI weighting and attribution tests</h3>
+<p>The <strong>Information Integrity / Counter-Malign-Influence overlay</strong> is <strong>P .18, I .16, M .16, B (observed behavior) .16, A (actor evidence) .14, E (effect evidence) .12, T .08</strong>. These differ from the seven general RAPITIS source dimensions, and are scored on a <em>claim-specific influence-evidence package</em>, not on an outlet's prestige. An illustrative test of <strong>WHO-documented current rumor themes</strong> (P=5, I=4, M=4, B=3, A=0, E=2, T=5) yields <strong>3.30/5</strong>; this supports describing the themes but fails the <strong>actor</strong> requirement for an attribution claim. A hypothetical coordinated-actor package without verified network/actor records (P=2, I=1, M=2, B=0, A=0, E=0, T=5) yields <strong>1.24/5</strong> and is strictly <strong>lead-only</strong>. These numbers represent analyst evidentiary sufficiency, <strong>not</strong> the prevalence of narratives, a probability of coordination, or a source reliability grade.</p>
+<p>For the <strong>NGO SRM overlay</strong>, the SOP requires H (do-no-harm) .18, A .16, M .14, P .14, I .12, R .10, S .10, T .06. The report uses public incident-level descriptions without individuals' names, staff schedules, precise residences or identifying witness data. H is assessed <strong>5/5</strong> for this sanitized product, but operational release must be rechecked if sensitive annexes are added. For the Reuters attack report, assumed domain values H5, A4, M4, P4, I4, R5, S5, T5 give <strong>4.44/5</strong> under the NGO SRM weighting; source strength still does not prove motive. The obligatory <em>content/coordination/effect</em> attribution gates and <em>protective security without stigmatization</em> controls remain independent of numeric scores.</p>
+<h3>RAPITIS register summary</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source</th>
+<th style="text-align:right">R</th>
+<th style="text-align:right">A</th>
+<th style="text-align:right">P</th>
+<th style="text-align:right">M</th>
+<th style="text-align:right">T</th>
+<th style="text-align:right">I</th>
+<th style="text-align:right">S</th>
+<th style="text-align:right">Mean</th>
+<th>Band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1]</td>
+<td>World Health Organization (2026-10-23)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.71</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[2]</td>
+<td>Reuters (2026-10-27)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[3]</td>
+<td>U.S. Centers for Disease Control and Prevention (2026-10-25)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.14</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[4]</td>
+<td>Reuters (2026-10-26)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[5]</td>
+<td>Associated Press / Sebastien Kitsa Musayi (2026-10-25)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[6]</td>
+<td>World Health Organization, Regional Office for Africa (2026-10-26)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.71</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[7]</td>
+<td>Vinck et al. (2019-03-27)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[8]</td>
+<td>Park et al. (2023)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[9]</td>
+<td>Sauter, M. (2024)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[10]</td>
+<td>Mayhew et al. (2021-04-28)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.14</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[11]</td>
+<td>UNICEF (n.d. (2026 context))</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4.00</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[12]</td>
+<td>Transparency International (2026)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.86</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[13]</td>
+<td>Institute for Economics &amp; Peace (2024)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4.29</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>[14]</td>
+<td>Masumbuko Claude, K., Underschultz, J., &amp; Hawkes, M. T. (2019-09-26)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">4.43</td>
+<td>GREEN</td>
+</tr>
+</tbody>
+</table>
+<h3>WSI cards: provenance, extracted claims, independence, falsifiers, MOM/POP/MOSES/EVE</h3>
+<h4>WSI CARD [01] World Health Organization</h4>
+<p><strong>Publication:</strong> 2026-10-23; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary institutional surveillance; <strong>RAPITIS:</strong> 5/5/5/4/5/4/5; <strong>mean:</strong> 4.71; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622">https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-01 (4/3/5; Tier A); C-06 (4/3/5; Tier A); C-07 (4/5/5; arithmetic verification).<br/>
+<strong>Atomic extracted claim:</strong> 2026 DRC 9,704/4,687 as of 20 Oct, 66 zones, 79.7% follow-up, printed provincial typo.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> WHO national/partner surveillance; national case data originate from DRC health authorities.<br/>
+<strong>Disconfirming test:</strong> Official erratum changes dated surveillance values or contact totals.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [02] Reuters</h4>
+<p><strong>Publication:</strong> 2026-10-27; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Secondary wire, source of national report; <strong>RAPITIS:</strong> 5/4/5/4/5/3/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.reuters.com/business/healthcare-pharmaceuticals/congos-ebola-infections-surpass-10000-government-says-2026-10-27/">https://www.reuters.com/business/healthcare-pharmaceuticals/congos-ebola-infections-surpass-10000-government-says-2026-10-27/</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-02 (4/3/5; Tier A, shared INSP upstream).<br/>
+<strong>Atomic extracted claim:</strong> 10,060 cases / 4,887 deaths via INSP.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Reporting cites DRC national public-health institute; not independent from CDC use of same INSP figures.<br/>
+<strong>Disconfirming test:</strong> Original national INSP sitrep differs or Reuters issues correction.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [03] U.S. Centers for Disease Control and Prevention</h4>
+<p><strong>Publication:</strong> 2026-10-25; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Secondary institutional synthesis of national records; <strong>RAPITIS:</strong> 5/4/4/4/5/2/5; <strong>mean:</strong> 4.14; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.cdc.gov/ebola/situation-summary/">https://www.cdc.gov/ebola/situation-summary/</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-02 (4/3/5; Tier A, shared INSP upstream).<br/>
+<strong>Atomic extracted claim:</strong> Lists DRC 10,060/4,887 as of Oct 25 in accessible page version.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> DRC national figures trace to national surveillance; not another independent sample.<br/>
+<strong>Disconfirming test:</strong> Archive/timestamp shows other source date or DRC national record revision.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [04] Reuters</h4>
+<p><strong>Publication:</strong> 2026-10-26; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Secondary wire, local health-official access; <strong>RAPITIS:</strong> 5/4/4/4/5/4/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.marketscreener.com/news/protesters-kill-longtime-nurse-treating-ebola-patients-in-congo-ce785cdcdc81f026">https://www.marketscreener.com/news/protesters-kill-longtime-nurse-treating-ebola-patients-in-congo-ce785cdcdc81f026</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-03 (4/4/5; Tier B); C-04 (2/3/5; REJECT disputed date).<br/>
+<strong>Atomic extracted claim:</strong> Nurse killed, colleague survived, other health workers sheltered; Friday claim disputed.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Reuters cites local officials; Friday timing conflicts with AP WHO statement.<br/>
+<strong>Disconfirming test:</strong> Authenticated police log or first-hand video contradicts account.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [05] Associated Press / Sebastien Kitsa Musayi</h4>
+<p><strong>Publication:</strong> 2026-10-25; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Secondary wire reproducing WHO officials; <strong>RAPITIS:</strong> 5/4/5/4/5/3/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://apnews.com/article/congo-ebola-b739277681b530aef772cf66be7e41f0">https://apnews.com/article/congo-ebola-b739277681b530aef772cf66be7e41f0</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-03 (4/4/5; Tier B); C-05 (2/3/5; REJECT disputed date).<br/>
+<strong>Atomic extracted claim:</strong> Same fatal attack, health worker injury, Saturday claim disputed.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> AP cites WHO DG social post; editorial independent from Reuters, but event-day detail tied to institutional source.<br/>
+<strong>Disconfirming test:</strong> WHO original statement is clarified/corrected or incident log disputes account.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [06] World Health Organization, Regional Office for Africa</h4>
+<p><strong>Publication:</strong> 2026-10-26; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary WHO program field feature, nonrepresentative; <strong>RAPITIS:</strong> 5/5/5/4/5/4/5; <strong>mean:</strong> 4.71; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.afro.who.int/countries/democratic-republic-of-congo/news/ebola-response-disinformation-kills-care-saves-lives">https://www.afro.who.int/countries/democratic-republic-of-congo/news/ebola-response-disinformation-kills-care-saves-lives</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-12 (4/3/5; Tier A, claim limited to WHO observation).<br/>
+<strong>Atomic extracted claim:</strong> Present-day false lethal-injection/commercial-scheme claims; 34,650 items reviewed and &gt;1,000 rumors addressed.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> WHO field narrative and internal social listening; evaluation of own interventions risks institutional incentive bias.<br/>
+<strong>Disconfirming test:</strong> Independent patient records contradict chronology or WHO retracts program counts.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [07] Vinck et al.</h4>
+<p><strong>Publication:</strong> 2019-03-27; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary peer-reviewed population-based survey; <strong>RAPITIS:</strong> 5/5/5/4/2/5/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30928435/">https://pubmed.ncbi.nlm.nih.gov/30928435/</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-09 (4/4/5; Tier B, historical population).<br/>
+<strong>Atomic extracted claim:</strong> n=961; 31.9% local-authority trust; 25.5% denial; 32.6% finance-fabrication belief; behavioral association.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Original 2018–19 Beni/Butembo survey; not a 2026 population estimate.<br/>
+<strong>Disconfirming test:</strong> Study raw data, erratum or subsequent reanalysis undermines statistical result.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [08] Park et al.</h4>
+<p><strong>Publication:</strong> 2023; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary peer-reviewed qualitative study; metadata corroborated via FCDO/RKI; <strong>RAPITIS:</strong> 5/5/5/4/2/5/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://doi.org/10.1080/09581596.2022.2128990">https://doi.org/10.1080/09581596.2022.2128990</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-10 (4/4/5; Tier B, historically bounded).<br/>
+<strong>Atomic extracted claim:</strong> Reported salary/recruitment inequity complaints and business narrative.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Original qualitative interviews of prior epidemic; cannot establish prevalence or 2026 misconduct.<br/>
+<strong>Disconfirming test:</strong> Interview transcripts or independent reanalysis refute interpretations.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [09] Sauter, M.</h4>
+<p><strong>Publication:</strong> 2024; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary scholarly process tracing + time-series; <strong>RAPITIS:</strong> 5/5/5/4/2/5/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://doi.org/10.1177/00223433231158144">https://doi.org/10.1177/00223433231158144</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-11 (3/5/5; Tier C, single historical causal study, caveated).<br/>
+<strong>Atomic extracted claim:</strong> Political exclusion increased violent mobilization; distrust alone did not explain mass attacks.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> 2018–20 event compilation using multiple conflict/health datasets; historically bounded and not independent of all cited historical background.<br/>
+<strong>Disconfirming test:</strong> Model replication or sensitivity test overturns discontinuity.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [10] Mayhew et al.</h4>
+<p><strong>Publication:</strong> 2021-04-28; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Peer-reviewed critical review with local scholarly participation; <strong>RAPITIS:</strong> 5/4/5/4/2/4/5; <strong>mean:</strong> 4.14; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8092619/">https://pmc.ncbi.nlm.nih.gov/articles/PMC8092619/</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-10 (4/4/5; Tier B, review may echo some primary studies).<br/>
+<strong>Atomic extracted claim:</strong> Limited local decision authority and recurrent engagement failures.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Review synthesizes overlapping published literature; NOT independent underlying evidence for each cited fact.<br/>
+<strong>Disconfirming test:</strong> Further review demonstrates materially different participation pattern.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [11] UNICEF</h4>
+<p><strong>Publication:</strong> n.d. (2026 context); <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary agency overview and program description; <strong>RAPITIS:</strong> 5/4/4/4/4/3/4; <strong>mean:</strong> 4.00; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.unicef.org/emergencies/ebola-emergency">https://www.unicef.org/emergencies/ebola-emergency</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> Context only (C/D/F not applicable to conceptual/program-practice claim; no load-bearing causal use).<br/>
+<strong>Atomic extracted claim:</strong> UNICEF 2026 engagement, rumor countering and service continuity priorities.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Agency account of own operations; program impact statements require external evaluation.<br/>
+<strong>Disconfirming test:</strong> Updated program document contradicts activity or scope.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [12] Transparency International</h4>
+<p><strong>Publication:</strong> 2026; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary index publisher, aggregated expert/perception measures; <strong>RAPITIS:</strong> 5/5/5/4/5/5/5; <strong>mean:</strong> 4.86; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.transparency.org/en/cpi/2025">https://www.transparency.org/en/cpi/2025</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-13 (4/3/5; Tier A; issuer index, contextual only).<br/>
+<strong>Atomic extracted claim:</strong> DRC 19/100, rank 163/182; distinct from Republic of Congo 23/100.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Direct index source; ecological national indicator not 2026 project-level audit.<br/>
+<strong>Disconfirming test:</strong> Issuer changes 2025 DRC country entry or publishes erratum.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [13] Institute for Economics &amp; Peace</h4>
+<p><strong>Publication:</strong> 2024; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary methodological framework, not Ebola event evidence; <strong>RAPITIS:</strong> 5/4/5/4/3/5/4; <strong>mean:</strong> 4.29; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://www.economicsandpeace.org/report/positive-peace-report-2024/">https://www.economicsandpeace.org/report/positive-peace-report-2024/</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> Conceptual framework only (no empirical Ebola claim; C/D/F not applicable).<br/>
+<strong>Atomic extracted claim:</strong> Eight Positive Peace pillars relevant to institutional resilience.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Framework source only; indicators have different units and no local Ebola causal calibration.<br/>
+<strong>Disconfirming test:</strong> Official framework revision changes pillar definitions.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<h4>WSI CARD [14] Masumbuko Claude, K., Underschultz, J., &amp; Hawkes, M. T.</h4>
+<p><strong>Publication:</strong> 2019-09-26; <strong>Retrieval:</strong> 2026-10-27 (EDT); exact per-source timestamp not independently logged; <strong>Type:</strong> Primary peer-reviewed convenience survey/focus groups; <strong>RAPITIS:</strong> 5/5/5/4/2/5/5; <strong>mean:</strong> 4.43; <strong>band:</strong> GREEN.</p>
+<p><strong>URL/source:</strong> <a href="https://doi.org/10.1371/journal.pone.0223104">https://doi.org/10.1371/journal.pone.0223104</a><br/>
+<strong>Claim-level C/D/F linkage (C/D/F):</strong> C-09 (4/4/5; Tier B); C-10 (4/4/5; Tier B, historical convenience survey caveat).<br/>
+<strong>Atomic extracted claim:</strong> Mistrust/response quality/social resistance association; sample 630 item respondents, not representative of 2026.<br/>
+<strong>Access/provenance and independent-upstream check:</strong> Own focus groups and non-probability sample; denominator 630 on specific questionnaire, not population prevalence.<br/>
+<strong>Disconfirming test:</strong> Study data audit/reanalysis invalidates findings or another representative sample fails to replicate.<br/>
+<strong>MOM:</strong> Potential institutional, author or editorial incentives considered; no source allegation presumed deceptive.<br/>
+<strong>POP:</strong> Publisher methods/track record evaluated; applicable error/correction mechanisms remain relevant.<br/>
+<strong>MOSES:</strong> Official and peer-reviewed originals preferred; syndicated copies and common upstream data are not independent.<br/>
+<strong>EVE:</strong> Compared with alternate pathways; date, population and method limitations recorded; disputed details are quarantined.</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-d-wsi-validation-exceptions-and-disconfirmation-protocol"><div class="section-header"><span class="section-num">ANNEX D</span></div><h2>ANNEX D // WSI VALIDATION EXCEPTIONS AND DISCONFIRMATION PROTOCOL</h2>
+<p><strong>Exceptions recorded:</strong> event-day discrepancy (23/24 Oct) unresolved; original WHO Tshopo denominator is inconsistent and corrected candidate is not issuer-verified; INSP national original has not been separately collected; present 2026 trust prevalence and audited corruption have not been measured in this packet. No unsupported date, intent or project-level corruption allegation is promoted to a Key Judgment. Historical Sauter evidence explicitly contradicts distrust-alone explanation of mass violence.</p>
+<p><strong>Independent review challenge prompts:</strong> (a) Could supply shortages and road insecurity explain the same behavior without mistrust? (b) Are AP/Reuters accounts merely different branches of the same initial local statement? (c) How could a representative 2026 field survey disprove our trust pathway? (d) Is a reported complaint actually true, exaggerated, or falsely attributed? (e) What would establish organized influence beyond widespread repetition?</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-e-formal-pre-release-qa-checklist-and-disposition"><div class="section-header"><span class="section-num">ANNEX E</span></div><h2>ANNEX E // FORMAL PRE-RELEASE QA CHECKLIST AND DISPOSITION</h2>
+<p><strong>Scoring method:</strong> 28 criteria drawn from project QAP tradecraft, QAP rubric-compliant web template, and WSI SOP. 1 = evidenced/complete; 0.5 = partial; 0 = unmet. <strong>This is an analyst self-audit of checklist coverage, not an official weighted QA rubric certification.</strong> Critical release requirements are gates independent of the arithmetic score.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Criterion</th>
+<th style="text-align:right">Score</th>
+<th>Location or gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Scope, domain, audience, time and handling</td>
+<td style="text-align:right">1</td>
+<td>Metadata and scope boundary</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Problem statement and 3–6 KIQs</td>
+<td style="text-align:right">1</td>
+<td>Section 02</td>
+</tr>
+<tr>
+<td>3</td>
+<td>KIQ linkage to judgments/gaps</td>
+<td style="text-align:right">1</td>
+<td>Sections 02/04/09</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Snapshot factual and time-bounded</td>
+<td style="text-align:right">1</td>
+<td>Section 03</td>
+</tr>
+<tr>
+<td>5</td>
+<td>BLUF is decision relevant and cited</td>
+<td style="text-align:right">1</td>
+<td>Section 01</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Key judgments prioritized with confidence</td>
+<td style="text-align:right">1</td>
+<td>Section 04</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Known/assess/unknown separation</td>
+<td style="text-align:right">1</td>
+<td>Section 05</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Five-layer strategic cognition applied</td>
+<td style="text-align:right">1</td>
+<td>Section 06</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Assumptions checked with failure signals</td>
+<td style="text-align:right">1</td>
+<td>Sections 02/09</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Competing hypotheses visibly compared</td>
+<td style="text-align:right">1</td>
+<td>Section 06</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Disconfirming evidence actively considered</td>
+<td style="text-align:right">1</td>
+<td>Sauter competing explanation</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Feedback mechanisms explicitly conditional</td>
+<td style="text-align:right">1</td>
+<td>Section 06</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Behavioral inference tied to observations</td>
+<td style="text-align:right">1</td>
+<td>Section 07</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Information attribution burden respected</td>
+<td style="text-align:right">1</td>
+<td>Section 07 ABC+DE</td>
+</tr>
+<tr>
+<td>15</td>
+<td>RCA/CPS / Positive Peace correctly scoped</td>
+<td style="text-align:right">1</td>
+<td>Section 08</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Operational risk owner and mitigant</td>
+<td style="text-align:right">1</td>
+<td>Section 08</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Scenario triggers and confidence</td>
+<td style="text-align:right">1</td>
+<td>Section 06</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Indicators with thresholds, cadence and owner</td>
+<td style="text-align:right">1</td>
+<td>Section 09</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Recommendations with action, owner and output</td>
+<td style="text-align:right">1</td>
+<td>Section 08</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Reference list numbered and URLs linked</td>
+<td style="text-align:right">1</td>
+<td>Annex F</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Individual WSI cards for every cited source</td>
+<td style="text-align:right">0.5</td>
+<td>Annex C; exact per-source clock timestamps missing</td>
+</tr>
+<tr>
+<td>22</td>
+<td>RAPITIS seven-component scoring complete</td>
+<td style="text-align:right">1</td>
+<td>Annex C</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Claim-level C/D/F with explicit reject gates</td>
+<td style="text-align:right">1</td>
+<td>Annex B</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Independence anti-echo check</td>
+<td style="text-align:right">1</td>
+<td>Section 10</td>
+</tr>
+<tr>
+<td>25</td>
+<td>MOM/POP/MOSES/EVE and falsifiers</td>
+<td style="text-align:right">1</td>
+<td>Annex C</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Source conflicts quarantined, not invented away</td>
+<td style="text-align:right">1</td>
+<td>Section 03/10</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Local 2026 baseline &amp; original INSP source fully captured</td>
+<td style="text-align:right">0.5</td>
+<td>Original INSP PDF and representative Tshopo survey not obtained</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Independent human QA sign-off</td>
+<td style="text-align:right">0</td>
+<td>Not performed; human review is a publication condition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Self-audit coverage:</strong> <strong>26/28 = 92.9%</strong>. <strong>Release disposition: CONDITIONAL / HUMAN SIGN-OFF PENDING</strong>, because independent human QA has not been performed and full current primary data collection is incomplete. A high checklist fraction does not override WSI hard stops or turn missing field evidence into facts.</p>
+<p><strong>QA corrective-action log:</strong> CA-01 settled national totals to latest reported dated surveillance; CA-02 downgraded/conflicted incident-day claims; CA-03 isolated WHO provincial typo and made arithmetic transparent; CA-04 corrected CPI score and country name; CA-05 integrated politically-driven violence counter-hypothesis; CA-06 completed 14 source cards and 16 atomic claim C/D/F entries; CA-07 withheld coordinated influence attribution; CA-08 named pending release sign-off.</p>
+<hr/>
+</section>
+<section class="section visible" id="annex-f-apa-references-numbered-to-match-in-text-citations"><div class="section-header"><span class="section-num">ANNEX F</span></div><h2>ANNEX F // APA REFERENCES (NUMBERED TO MATCH IN-TEXT CITATIONS)</h2>
+<p>[1] World Health Organization. (2026, October 23). <em>Ebola disease caused by Bundibugyo virus: Democratic Republic of the Congo, Kenya and Nigeria</em> (Disease Outbreak News DON622). <a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622">https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622</a></p>
+<p>[2] Reuters. (2026, October 27). <em>Congo’s Ebola cases surpass 10,000 as fears grow of wider African spread.</em> <a href="https://www.reuters.com/business/healthcare-pharmaceuticals/congos-ebola-infections-surpass-10000-government-says-2026-10-27/">https://www.reuters.com/business/healthcare-pharmaceuticals/congos-ebola-infections-surpass-10000-government-says-2026-10-27/</a></p>
+<p>[3] Centers for Disease Control and Prevention. (2026, October 25 snapshot). <em>Ebola outbreak: Current situation.</em> <a href="https://www.cdc.gov/ebola/situation-summary/">https://www.cdc.gov/ebola/situation-summary/</a></p>
+<p>[4] Reuters. (2026, October 26). <em>Protesters kill longtime nurse treating Ebola patients in Congo.</em> MarketScreener syndication. <a href="https://www.marketscreener.com/news/protesters-kill-longtime-nurse-treating-ebola-patients-in-congo-ce785cdcdc81f026">https://www.marketscreener.com/news/protesters-kill-longtime-nurse-treating-ebola-patients-in-congo-ce785cdcdc81f026</a></p>
+<p>[5] Musayi, S. K. (2026, October 25). <em>Attackers kill nurse, severely injure health worker responding to Ebola case in eastern Congo.</em> Associated Press. <a href="https://apnews.com/article/congo-ebola-b739277681b530aef772cf66be7e41f0">https://apnews.com/article/congo-ebola-b739277681b530aef772cf66be7e41f0</a></p>
+<p>[6] World Health Organization, Regional Office for Africa. (2026, October 26). <em>Ebola response: Disinformation kills, care saves lives.</em> <a href="https://www.afro.who.int/countries/democratic-republic-of-congo/news/ebola-response-disinformation-kills-care-saves-lives">https://www.afro.who.int/countries/democratic-republic-of-congo/news/ebola-response-disinformation-kills-care-saves-lives</a></p>
+<p>[7] Vinck, P., Pham, P. N., Bindu, K. K., Bedford, J., &amp; Nilles, E. J. (2019). Institutional trust and misinformation in the response to the 2018–19 Ebola outbreak in North Kivu, DR Congo: A population-based survey. <em>The Lancet Infectious Diseases, 19</em>(5), 529–536. <a href="https://pubmed.ncbi.nlm.nih.gov/30928435/">https://pubmed.ncbi.nlm.nih.gov/30928435/</a></p>
+<p>[8] Park, S.-J., Brown, H., Wema, K. M., Gobat, N., Borchert, M., Kalubi, J., Komanda, G., &amp; Morisho, N. (2023). ‘Ebola is a business’: An analysis of the atmosphere of mistrust in the tenth Ebola epidemic in the DRC. <em>Critical Public Health, 33</em>(3), 297–307. <a href="https://doi.org/10.1080/09581596.2022.2128990">https://doi.org/10.1080/09581596.2022.2128990</a></p>
+<p>[9] Sauter, M. (2024). Politicized health emergencies and violent resistance against healthcare responders. <em>Journal of Peace Research, 61</em>(4), 513–528. <a href="https://doi.org/10.1177/00223433231158144">https://doi.org/10.1177/00223433231158144</a></p>
+<p>[10] Mayhew, S. H., Kyamusugulwa, P. M., Bindu, K. K., Richards, P., Kiyungu, C., &amp; Balabanova, D. (2021). Responding to the 2018–2020 Ebola virus outbreak in the Democratic Republic of the Congo: Rethinking humanitarian approaches. <em>Risk Management and Healthcare Policy, 14</em>, 1731–1747. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8092619/">https://pmc.ncbi.nlm.nih.gov/articles/PMC8092619/</a></p>
+<p>[11] UNICEF. (n.d.). <em>Ebola emergency: Protecting children and families.</em> (Webpage describes 2026 response; publication date not shown.) <a href="https://www.unicef.org/emergencies/ebola-emergency">https://www.unicef.org/emergencies/ebola-emergency</a></p>
+<p>[12] Transparency International. (2026). <em>Corruption Perceptions Index 2025.</em> <a href="https://www.transparency.org/en/cpi/2025">https://www.transparency.org/en/cpi/2025</a></p>
+<p>[13] Institute for Economics &amp; Peace. (2024). <em>Positive Peace Report 2024.</em> <a href="https://www.economicsandpeace.org/report/positive-peace-report-2024/">https://www.economicsandpeace.org/report/positive-peace-report-2024/</a></p>
+<p>[14] Masumbuko Claude, K., Underschultz, J., &amp; Hawkes, M. T. (2019). Social resistance drives persistent transmission of Ebola virus disease in Eastern Democratic Republic of Congo: A mixed-methods study. <em>PLOS ONE, 14</em>(9), e0223104. <a href="https://doi.org/10.1371/journal.pone.0223104">https://doi.org/10.1371/journal.pone.0223104</a></p>
+<p><strong>Method source (internal project standard):</strong> M. Nuri Shakoor. <em>Web-Sourced Information Policy (WSI)</em> v1.0; <em>QAP Analytic Tradecraft: Section-by-Section Production Standards</em>; <em>QAP Rubric-Compliant HTML Report Template.</em> These govern methodology, not external facts.</p>
+</section><section id="analyst-release-signoff" style="max-width:1100px;margin:3rem auto;padding:2rem;border-top:2px solid #c8a96e;background:#10131a;color:#e8e4dc"><h2 style="font-family:Georgia,serif;color:#dfc28e">Analyst Sign-Off &amp; Release Authorization</h2><p><strong>Analyst Sign-Off:</strong> M. Nuri Shakoor, Senior Risk &amp; Strategic Intelligence Consultant, LBS, LLC Global Development &amp; Risk Management Division</p><p><strong>Publication:</strong> Approved for public release by the authorized analyst on 27 October 2026. Open source. Evidence limitations and provisional 92.9% QA checklist coverage remain as documented in the report and do not signify external independent QA certification.</p><p><strong>Production:</strong> Produced By Quanta AI developed by MNS Consulting for Lladner Business Solutions, LLC and Partners.</p></section></main><footer><p>Quanta Analytica Process™ | MNS Consulting | Evidence-hardened analytical edition. Independent human release review pending. 27 October 2026.</p></footer><script>const progress=document.getElementById('progress');addEventListener('scroll',()=>{const h=document.documentElement;progress.style.width=(100*h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))+'%'})</script></body></html>

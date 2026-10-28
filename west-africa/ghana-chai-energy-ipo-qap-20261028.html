@@ -1529,6 +1529,17 @@ ul.clean li { margin-bottom: .4rem; }
   min-width: 0;
 }
 .ach-compact-table th:first-child { overflow-wrap: anywhere; white-space: normal; }
+
+/* Section 6.8 only: prioritize conditions over short scenario titles. */
+.scenario-table-scroll { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.scenario-assessment-table { width:100%; table-layout:fixed; }
+.scenario-assessment-table th, .scenario-assessment-table td { white-space:normal; overflow-wrap:anywhere; word-break:normal; vertical-align:top; }
+.scenario-assessment-table th:nth-child(1), .scenario-assessment-table td:nth-child(1) { width:22%; }
+.scenario-assessment-table th:nth-child(2), .scenario-assessment-table td:nth-child(2) { width:34%; }
+.scenario-assessment-table th:nth-child(3), .scenario-assessment-table td:nth-child(3) { width:24%; }
+.scenario-assessment-table th:nth-child(4), .scenario-assessment-table td:nth-child(4) { width:20%; }
+.scenario-assessment-table tbody td:first-child { white-space:normal; overflow-wrap:anywhere; }
+@media(max-width:690px) { .scenario-assessment-table { min-width:690px; } }
 </style>
 <meta content="QAP independent assessment of Chai Energy Ghana IPO, shareholder relationships, ECG payment exposure, preference share risks and outstanding disclosures." name="description"/><style>
 /* Integrated report access and publication finishes */
@@ -1981,7 +1992,7 @@ ul.clean li { margin-bottom: .4rem; }
 <li><strong>Illustrative combined stress:</strong> If Chai's otherwise distributable upstream cash falls by 20%, a baseline <strong>1.25x</strong> coverage ratio would fall to <strong>1.00x</strong> (1.25 × 0.8). If preference distributions indexed to USD rise 15% in cedi terms with no matching hedge or incoming cash increase, that ratio would fall further to <strong>0.87x</strong> (1.00 / 1.15). The 20%, 15% and 1.25x values are solely <strong>hypothetical demonstration assumptions</strong>, not current issuer metrics.</li>
 </ul>
 <h3>6.8 Scenarios and falsification (0–24 months)</h3>
-<table class="assumption-table">
+<div class="scenario-table-scroll"><table class="assumption-table scenario-assessment-table">
 <thead>
 <tr class="table-header">
 <th>Scenario</th>
@@ -2022,7 +2033,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Sector-level risk; company impact contingent on contracts</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Red-team checks:</strong> What evidence shows shareholder distributions are blocked despite accounting earnings? Could ECG payables have declined through noncash offsets or haircuts? Are any disclosed ultimate owners or advisers on both sides of a proposed sale? Would post-IPO pension funds own ordinary voting control or only subordinated preference claims? Which scenario becomes least consistent if target accounts show stable cash receipts and funded reserves? [7][8][9][11]</p>
 </section>
 <section class="section" id="behavioral"><div class="section-header"><span class="section-num">07 // BEHAVIORAL</span><h2 class="section-title">Applied Behavioral Tradecraft</h2></div><p><strong>Justification:</strong> Investor behavior is relevant only through <em>observable public framing</em> and resulting decision-process vulnerabilities, not unsupported psychological profiling of Chai personnel, regulators, pension managers or sellers.</p>

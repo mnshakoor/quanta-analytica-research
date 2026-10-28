@@ -1512,6 +1512,14 @@ ul.clean li { margin-bottom: .4rem; }
 #snapshot .snap-content { white-space:normal; overflow-wrap:anywhere; }
 @media (max-width:900px) { #snapshot .snapshot-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:600px) { #snapshot .snapshot-grid { grid-template-columns:minmax(0,1fr); } }
+
+/* Section 6.5 ACH: constrain five-column intrinsic widths and provide an accessible horizontal scroll on narrow screens. */
+.ach-responsive { width:100%; max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+#analysis .ach-compact-table, .ach-compact-table { table-layout:fixed; width:100%; min-width:0; border-collapse:collapse; }
+.ach-compact-table th, .ach-compact-table td { min-width:0; width:20%; max-width:20%; overflow-wrap:anywhere; word-break:normal; white-space:normal; vertical-align:top; padding:12px 10px; }
+.ach-compact-table th:first-child, .ach-compact-table td:first-child { width:23%; max-width:23%; }
+.ach-compact-table th:not(:first-child), .ach-compact-table td:not(:first-child) { width:19.25%; max-width:19.25%; }
+@media(max-width:740px){ .ach-compact-table { min-width:760px; } .ach-responsive { border:1px solid var(--obsidian-border); border-radius:6px; } }
 </style>
 <meta content="QAP independent assessment of Chai Energy Ghana IPO, shareholder relationships, ECG payment exposure, preference share risks and outstanding disclosures." name="description"/><style>
 /* Integrated report access and publication finishes */
@@ -1842,7 +1850,7 @@ ul.clean li { margin-bottom: .4rem; }
 <p><strong>Capital market proportionality test:</strong> GH¢3.5bn planned IPO / GH¢5.33958bn <em>January–September equity secondary turnover</em> = <strong>65.55%</strong>. This is scale context only. Equity turnover does not measure pension-fund commitments or demand for a primary issue, and a stated offer is not a completed subscription. [1][13]</p>
 <h3>6.5 Analysis of Competing Hypotheses (ACH)</h3>
 <p>The hypotheses below concern the <strong>primary economic purpose and incidence of the proposed offering</strong>. They are working alternatives with partial overlap; evidence is assigned diagnostic value by whether it <em>discriminates</em>, not merely whether it is compatible.</p>
-<table class="assumption-table">
+<div class="ach-responsive" role="region" aria-label="ACH evidence comparison, scroll horizontally on smaller screens" tabindex="0"><table class="assumption-table ach-compact-table">
 <thead>
 <tr class="table-header">
 <th>Evidence / diagnostic test</th>
@@ -1896,7 +1904,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Independent valuation versus price, conflicts, risk disclosures and actual purchased rights</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>ACH verdict:</strong> H1 and H2 are <strong>structurally compatible</strong>, not exclusive; H3 remains possible for a disclosed minority of proceeds. H4 is a <strong>monitoring hypothesis</strong>, not a finding of wrongdoing or intent. The current evidence is <strong>insufficient to select a dominant purpose</strong>. The first decisive discriminants are executed purchase/sale schedules, independent valuation, issuer UBO disclosures, and the final use-of-proceeds statement. [1][2][18]</p>
 <h3>6.6 Key Assumptions Check (KAC)</h3>
 <table class="assumption-table">

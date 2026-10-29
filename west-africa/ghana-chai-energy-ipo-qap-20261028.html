@@ -1547,6 +1547,13 @@ ul.clean li { margin-bottom: .4rem; }
 #annex-d .wsi-band-amber { color:#efbf68; background:rgba(187,124,29,.17); }
 #annex-d .wsi-band-red { color:#f38b8f; background:rgba(189,54,65,.17); }
 #annex-d .wsi-band-cell { white-space:nowrap; }
+
+/* Section 10: source-use WSI bands, preserving mixed classifications and qualifications. */
+#references .wsi-register-band-cell { white-space:normal; overflow-wrap:anywhere; }
+#references .wsi-band { display:inline-block; padding:2px 7px; border:1px solid currentColor; border-radius:4px; font-family:var(--font-mono); font-size:.73rem; font-weight:700; letter-spacing:.04em; line-height:1.45; vertical-align:baseline; }
+#references .wsi-band-green { color:#72d5a1; background:rgba(48,145,92,.16); }
+#references .wsi-band-amber { color:#efbf68; background:rgba(187,124,29,.17); }
+#references .wsi-band-red { color:#f38b8f; background:rgba(189,54,65,.17); }
 </style>
 <meta content="QAP independent assessment of Chai Energy Ghana IPO, shareholder relationships, ECG payment exposure, preference share risks and outstanding disclosures." name="description"/><style>
 /* Integrated report access and publication finishes */
@@ -2172,7 +2179,7 @@ ul.clean li { margin-bottom: .4rem; }
 <p><strong>Release determination:</strong> This integrated report materially improves the <strong>analytical-completeness</strong> position versus the supplied Phase II research, but it cannot legitimately be designated a 95%+ <strong>evidentiary compliant, decision-grade</strong> valuation assessment until minimum primary records are available. Completeness of the QAP section structure is not the same thing as closure of transaction facts.</p>
 </section>
 <section class="section" id="references"><div class="section-header"><span class="section-num">10 // REFERENCES</span><h2 class="section-title">Source Register &amp; WSI Audit</h2></div><p><strong>Access/review date:</strong> 28 October 2026. <strong>Rating convention:</strong> Green = authoritative and fit for the stated narrow claim; Amber = useful firsthand corporate statement, historical source or uncorroborated original reporting; Red = lead-only. Color scores concern each <em>use</em>, not a blanket endorsement of all source content. Corporate statements about holdings are not automatically independent evidence of underlying valuation.</p>
-<table class="assumption-table">
+<table class="assumption-table wsi-register-table">
 <thead>
 <tr class="table-header">
 <th>Ref</th>
@@ -2190,7 +2197,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Original secondary</td>
 <td>US$300m aim, proposed indexation, SEC application</td>
 <td>One unnamed source + unpublished document within same reporting stream</td>
-<td>AMBER; no SEC confirmation</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span>; no SEC confirmation</td>
 </tr>
 <tr>
 <td>[2]</td>
@@ -2198,7 +2205,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Issuer primary</td>
 <td>Intended Bridge and Twin City acquisitions; dividend policy conditional</td>
 <td>Issuer self-description</td>
-<td>AMBER; intention only</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span>; intention only</td>
 </tr>
 <tr>
 <td>[3]</td>
@@ -2206,7 +2213,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Project partner primary</td>
 <td>Bridge sponsors, Early Power, PPA/PCOA, capacity</td>
 <td>Project participant, separate from issuer media</td>
-<td>GREEN for stated project arrangements; PCOA scope must be read</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for stated project arrangements; PCOA scope must be read</td>
 </tr>
 <tr>
 <td>[4]</td>
@@ -2214,7 +2221,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Sponsor primary</td>
 <td>Amandi/Twin City, 51.02% stake, USD-linked PPA, steam-cycle work</td>
 <td>Sponsor firsthand, conflict interest acknowledged</td>
-<td>AMBER for investor-interest uses; GREEN for direct attribution</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span> for investor-interest uses; <span class="wsi-band wsi-band-green">GREEN</span> for direct attribution</td>
 </tr>
 <tr>
 <td>[5]</td>
@@ -2222,7 +2229,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Fund manager primary/historical</td>
 <td>Twin City financing and AIIF3 participation</td>
 <td>Historical investment pathway</td>
-<td>AMBER; current continuity unknown</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span>; current continuity unknown</td>
 </tr>
 <tr>
 <td>[6]</td>
@@ -2230,7 +2237,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Fund manager primary/historical</td>
 <td>Historical minority acquisition</td>
 <td>Same investment family as [5], NOT independently corroborating current stake</td>
-<td>AMBER; historical only</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span>; historical only</td>
 </tr>
 <tr>
 <td>[7]</td>
@@ -2238,7 +2245,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Audited institutional primary</td>
 <td>Supplier payables, revenues, cash flows, FX, losses</td>
 <td>Audited statutory accounts, distinct from sponsors</td>
-<td>GREEN for historical measured amounts; not project bank receipts</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for historical measured amounts; not project bank receipts</td>
 </tr>
 <tr>
 <td>[8]</td>
@@ -2246,7 +2253,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Independent institutional primary</td>
 <td>Energy shortfall, CWM and fiscal transfer assessment</td>
 <td>Distinct macroeconomic review</td>
-<td>GREEN for sector-level metrics</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for sector-level metrics</td>
 </tr>
 <tr>
 <td>[9]</td>
@@ -2254,7 +2261,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Independent institutional analysis</td>
 <td>Payment transmission and FX/tariff gaps</td>
 <td>Same IMF institutional family as [8], NOT a second independent IMF pathway</td>
-<td>GREEN for methods/context</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for methods/context</td>
 </tr>
 <tr>
 <td>[10]</td>
@@ -2262,7 +2269,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Government primary</td>
 <td>Energy-sector debt payments</td>
 <td>Government account, separate from ECG but same sector information chain</td>
-<td>AMBER; interpret as government claim</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span>; interpret as government claim</td>
 </tr>
 <tr>
 <td>[11]</td>
@@ -2270,7 +2277,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Regulator primary</td>
 <td>Securities registration requirements</td>
 <td>Statutory authority</td>
-<td>GREEN for rules, not Chai approval</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for rules, not Chai approval</td>
 </tr>
 <tr>
 <td>[12]</td>
@@ -2278,7 +2285,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Exchange primary</td>
 <td>Admissions, sponsor and public information conditions</td>
 <td>Exchange rules</td>
-<td>GREEN for rules, not Chai listing</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for rules, not Chai listing</td>
 </tr>
 <tr>
 <td>[13]</td>
@@ -2286,7 +2293,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Exchange primary data</td>
 <td>GH¢5.33958bn equity turnover to Sept 2026</td>
 <td>Market transaction statistics</td>
-<td>GREEN for comparatives</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for comparatives</td>
 </tr>
 <tr>
 <td>[14]</td>
@@ -2294,7 +2301,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Government primary</td>
 <td>Bridge PPA/PCOA legislative materials</td>
 <td>Parliamentary record</td>
-<td>GREEN for existence; verify underlying terms individually</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for existence; verify underlying terms individually</td>
 </tr>
 <tr>
 <td>[15]</td>
@@ -2302,7 +2309,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Lender/investor primary</td>
 <td>Historical Amandi financing</td>
 <td>DFI independent business records</td>
-<td>GREEN for disclosed historical involvement</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for disclosed historical involvement</td>
 </tr>
 <tr>
 <td>[16]</td>
@@ -2310,7 +2317,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Sponsor primary/historical</td>
 <td>Historic sponsor description</td>
 <td>Sponsor family related to Endeavor, not independent of all ownership claims</td>
-<td>AMBER for 2026 inference</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span> for 2026 inference</td>
 </tr>
 <tr>
 <td>[17]</td>
@@ -2318,7 +2325,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Independent multilateral</td>
 <td>Systemwide Ghana sector sustainability context</td>
 <td>Independent development-bank research</td>
-<td>GREEN for background, not Chai deal</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-green">GREEN</span> for background, not Chai deal</td>
 </tr>
 <tr>
 <td>[18]</td>
@@ -2326,7 +2333,7 @@ ul.clean li { margin-bottom: .4rem; }
 <td>Supplied secondary analytical research</td>
 <td>Compiled Phase II work and explicit evidence gaps</td>
 <td>Derivative of [1]–[17], NOT additional independent corroboration</td>
-<td>AMBER as synthesis only</td>
+<td class="wsi-register-band-cell"><span class="wsi-band wsi-band-amber">AMBER</span> as synthesis only</td>
 </tr>
 </tbody>
 </table>
